@@ -7,3 +7,4 @@ license = GPLv2+
 bundle_id = org.laptop.StarChart
 exec = sugar-activity StarChart.StarChart
 summary = explore the cosmos
+category = science
