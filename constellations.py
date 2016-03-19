@@ -435,7 +435,7 @@ data = {                                                     \
   (   17.394722,    37.145833,    17.937500,    37.250556),  \
   (   17.004722,    30.926389,    17.250833,    36.809167),  \
 ]],                                                          \
-# TRANS: http://en.wikipedia.org/wiki/Horologium
+# TRANS: http://en.wikipedia.org/wiki/Horologium_(constellation)
 'Hor' : [ _("Horologium"), [                                 \
   (    4.233333,   -42.294444,     2.709444,   -50.800278),  \
   (    2.709444,   -50.800278,     2.623333,   -52.543056),  \
