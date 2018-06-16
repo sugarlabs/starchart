@@ -148,30 +148,30 @@ except:
 
 # =================================== IMPORTS ================================
 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
+from gi.repository import GObject
 import sys
 import os
-import gobject
 from datetime import *
 from time import sleep
 from time import time as systime
 from math import sin, cos, tan, asin, acos, atan, pi, sqrt, atan2
-from sugar.activity import activity
-from sugar.activity.activity import get_bundle_path
+from sugar3.activity import activity
+from sugar3.activity.activity import get_bundle_path
 try:
-    from sugar.graphics.toolbarbox import ToolbarBox
+    from sugar3.graphics.toolbarbox import ToolbarBox
     _have_toolbox = True
 except ImportError:
     _have_toolbox = False
 if _have_toolbox:
-    from sugar.activity.widgets import ActivityToolbarButton
-    from sugar.graphics.toolbarbox import ToolbarButton
-    from sugar.activity.widgets import StopButton
-from sugar.graphics.toolbutton import ToolButton
-from sugar.graphics.palette import Palette, ToolInvoker
-from sugar.graphics.icon import Icon
+    from sugar3.activity.widgets import ActivityToolbarButton
+    from sugar3.graphics.toolbarbox import ToolbarButton
+    from sugar3.activity.widgets import StopButton
+from sugar3.graphics.toolbutton import ToolButton
+from sugar3.graphics.palette import Palette, ToolInvoker
+from sugar3.graphics.icon import Icon
 import logging
 from gettext import gettext as _
 
@@ -187,12 +187,12 @@ class ToggleButtonTool(ToolButton):
       self._palette_invoker = ToolInvoker()
       self._active = False
 
-      gobject.GObject.__init__(self, **kwargs)
+      GObject.GObject.__init__(self, **kwargs)
 
       self._palette_invoker.attach_tool(self)
 
       if icon_off:
-        self.set_icon(icon_off)
+        self.set_icon_name(icon_off)
 
       self.connect('clicked', self._click_callback)
 
@@ -800,36 +800,36 @@ button3.set_tooltip(_('Flip L/R'))
 button4 = ToggleButtonTool(icon_off='constellations-off',
                            icon_on='constellations-on')
 button4.set_tooltip(_('Draw Constellations'))
-container2 = gtk.Table(columns=6, rows=1)
+container2 = Gtk.Table(columns=6, rows=1)
 # TRANS: http://en.wikipedia.org/wiki/Magnitude_(astronomy) 
-label6 = gtk.Label(_('Mag:'))
-rb7 = gtk.RadioButton(None, _('1'))
-rb8 = gtk.RadioButton(rb7, _('2'))
-rb9 = gtk.RadioButton(rb7, _('3'))
-rb10 = gtk.RadioButton(rb7, _('4'))
-rb11 = gtk.RadioButton(rb7, _('5'))
-rb12 = gtk.RadioButton(rb7, _('6'))
+label6 = Gtk.Label(_('Mag:'))
+rb7 = Gtk.RadioButton(None, _('1'))
+rb8 = Gtk.RadioButton(rb7, _('2'))
+rb9 = Gtk.RadioButton(rb7, _('3'))
+rb10 = Gtk.RadioButton(rb7, _('4'))
+rb11 = Gtk.RadioButton(rb7, _('5'))
+rb12 = Gtk.RadioButton(rb7, _('6'))
 # controls on menubar2 (_('where')):
-container3 = gtk.VBox()
-container4 = gtk.VBox()
+container3 = Gtk.VBox()
+container4 = Gtk.VBox()
 # TRANS: http://en.wikipedia.org/wiki/Longitude
-label1 = gtk.Label(_('Longitude:'))
-entry1 = gtk.Entry()
+label1 = Gtk.Label(_('Longitude:'))
+entry1 = Gtk.Entry()
 entry1.set_width_chars(10)
 # TRANS: http://en.wikipedia.org/wiki/East
-rb1 = gtk.RadioButton(None, _('E'))
+rb1 = Gtk.RadioButton(None, _('E'))
 # TRANS: http://en.wikipedia.org/wiki/West
-rb2 = gtk.RadioButton(rb1, _('W'))
+rb2 = Gtk.RadioButton(rb1, _('W'))
 # TRANS: http://en.wikipedia.org/wiki/Latitude
-label2 = gtk.Label(_('Latitude:'))
-entry2 = gtk.Entry()
+label2 = Gtk.Label(_('Latitude:'))
+entry2 = Gtk.Entry()
 entry2.set_width_chars(10)
 # TRANS: http://en.wikipedia.org/wiki/North
-rb3 = gtk.RadioButton(None, _('N'))
+rb3 = Gtk.RadioButton(None, _('N'))
 # TRANS: http://en.wikipedia.org/wiki/South
-rb4 = gtk.RadioButton(rb3, _('S'))
+rb4 = Gtk.RadioButton(rb3, _('S'))
 icon = Icon(icon_name='dialog-ok')
-button5 = gtk.Button()
+button5 = Gtk.Button()
 button5.set_image(icon)
 icon.show()
 button5.set_label(_('Ok'))
@@ -838,34 +838,34 @@ button51 = ToolButton('home')
 button51.set_tooltip(_('Make home'))
 button51.show()
 # controls on menubar3 (_('when')):
-rb5 = gtk.RadioButton(None, _('Now'))
-rb6 = gtk.RadioButton(rb5, _('Specify'))
-label4 = gtk.Label(_('Time:'))
-entry3 = gtk.Entry()
+rb5 = Gtk.RadioButton(None, _('Now'))
+rb6 = Gtk.RadioButton(rb5, _('Specify'))
+label4 = Gtk.Label(_('Time:'))
+entry3 = Gtk.Entry()
 entry3.set_width_chars(16)
-label5 = gtk.Label(_('Offset:'))
-entry4 = gtk.Entry()
+label5 = Gtk.Label(_('Offset:'))
+entry4 = Gtk.Entry()
 entry4.set_width_chars(7)
 icon = Icon(icon_name='dialog-ok')
-button6 = gtk.Button()
+button6 = Gtk.Button()
 button6.set_image(icon)
 icon.show()
 button6.set_label(_('Ok'))
 button6.show()
 # controls on menubar4 (_('Locate')):
-labell1 = gtk.Label(_('Object type:'))
-objtypecb = gtk.combo_box_new_text()
-planetscb = gtk.combo_box_new_text()
-constscb = gtk.combo_box_new_text()
-starscb = gtk.combo_box_new_text()
-container0 = gtk.HBox()
-container1 = gtk.VBox()
-dsoscb = gtk.combo_box_new_text()
+labell1 = Gtk.Label(_('Object type:'))
+objtypecb = Gtk.combo_box_new_text()
+planetscb = Gtk.combo_box_new_text()
+constscb = Gtk.combo_box_new_text()
+starscb = Gtk.combo_box_new_text()
+container0 = Gtk.HBox()
+container1 = Gtk.VBox()
+dsoscb = Gtk.combo_box_new_text()
 # controls on last menubar (_('About')):
 # labela1 = gtk.Label(_('Version 2.0 (build 115) of 2010.04.21.1530 UT'))
 # labela2 = gtk.Label(' ')
-labela3 = gtk.Label(_('See http://wiki.laptop.org/go/StarChart for help.'))
-labela4 = gtk.Label(' ')
+labela3 = Gtk.Label(_('See http://wiki.laptop.org/go/StarChart for help.'))
+labela4 = Gtk.Label(' ')
 
 # -------------------------------------------------------------------------------
 
@@ -1098,15 +1098,14 @@ class Location():
 
 # ============================== ChartDisplay Object ============================
 
-class ChartDisplay(gtk.DrawingArea):
+class ChartDisplay(Gtk.DrawingArea):
   def __init__(self, context):
     super(ChartDisplay, self).__init__()
     self.context = context
     self.colors = {}
     self.canplot = False
-    self.pangolayout = self.create_pango_layout('')
-    self.add_events(gtk.gdk.BUTTON_PRESS_MASK | gtk.gdk.BUTTON1_MOTION_MASK |
-	gtk.gdk.BUTTON2_MOTION_MASK)
+    self.add_events(Gdk.EventMask.BUTTON_PRESS_MASK |
+        Gdk.EventMask.BUTTON1_MOTION_MASK | Gdk.EventMask.BUTTON2_MOTION_MASK)
     self.connect('button_press_event', self.pressing)
     self.magnifying = False
     self.mag_center = [0, 0]
@@ -1137,11 +1136,12 @@ class ChartDisplay(gtk.DrawingArea):
     self.xoffset = (self.screensize[0] - self.diameter) / 2 - self.margin
     self.yoffset = (self.screensize[1] - self.diameter) / 2 - self.margin
 
+    self.gc = self.get_window().cairo_create()
+    self.pangolayout = PangoCairo.create_layout(self.gc)
+
 # Establish color selections (need only do this once).
 
     if (len(self.colors) == 0):
-      self.gc = self.style.fg_gc[gtk.STATE_NORMAL]
-      self.colormap = self.gc.get_colormap()
       self.colors[0] = self.colormap.alloc_color('white')
       self.colors[1] = self.colormap.alloc_color('black')
       self.colors[2] = self.colormap.alloc_color('red')
@@ -1713,22 +1713,22 @@ class ChartDisplay(gtk.DrawingArea):
 
     if (not self.canplot):
       return
-    self.cleararea()
-    if (invertdisplay):
-      if (nightvision):
-        self.gc.set_foreground(self.colors[2])
-      else:
-        self.gc.set_foreground(self.colors[0])
-    else:
-      self.gc.set_foreground(self.colors[1])
-    self.window.draw_arc(self.gc,
-                              True,
-                              self.xoffset + self.margin - 2,
-                              self.yoffset + self.margin - 2,
-                              self.diameter + 4,
-                              self.diameter + 4,
-                              0,
-                              23040)
+    # self.cleararea()
+    # if (invertdisplay):
+    #   if (nightvision):
+    #     self.gc.set_foreground(self.colors[2])
+    #   else:
+    #     self.gc.set_foreground(self.colors[0])
+    # else:
+    #   self.gc.set_foreground(self.colors[1])
+    # self.window.draw_arc(self.gc,
+    #                           True,
+    #                           self.xoffset + self.margin - 2,
+    #                           self.yoffset + self.margin - 2,
+    #                           self.diameter + 4,
+    #                           self.diameter + 4,
+    #                           0,
+    #                           23040)
 
 # Erase the pixels-to-object and object-to-pixels maps, since objects may now
 # occupy different (x, y).
@@ -1740,55 +1740,79 @@ class ChartDisplay(gtk.DrawingArea):
 
     if (not invertdisplay):
       if (nightvision):
-        self.gc.set_foreground(self.colors[2])
+        # self.gc.set_foreground(self.colors[2])
+        self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
       else:
-        self.gc.set_foreground(self.colors[0])
+        # self.gc.set_foreground(self.colors[0])
+        self.gc.set_source_rgb(self.colors[0].red, self.colors[0].green, self.colors[0].blue)
     else:
-      self.gc.set_foreground(self.colors[1])
-    self.window.draw_arc(self.gc,
-                              False,
-                              self.xoffset + self.margin - 2,
-                              self.yoffset + self.margin - 2,
-                              self.diameter + 4,
-                              self.diameter + 4,
-                              0,
-                              23040)
+      # self.gc.set_foreground(self.colors[1])
+      self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
+    
+    self.gc.arc(self.xoffset + self.margin - 2,
+                    self.yoffset + self.margin - 2,
+                    self.diameter + 4,
+                    0, 2 * pi)
 
 # label the cardinal points.
 
     if (nightvision):
-      self.gc.set_foreground(self.colors[2])
+      # self.gc.set_foreground(self.colors[2])
+      self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
     else:
-      self.gc.set_foreground(self.colors[1])
-    self.pangolayout.set_text(_('N'))
-    self.window.draw_layout(self.gc,
-                     self.xoffset + self.margin + self.diameter / 2 - 10,
-                     self.margin - 30, self.pangolayout)
-    self.pangolayout.set_text(_('S'))
-    self.window.draw_layout(self.gc,
-                     self.xoffset + self.margin + self.diameter / 2 - 10,
-                     2 * self.margin + self.diameter - 30, self.pangolayout)
+      self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
+      # self.gc.set_foreground(self.colors[1])
+    self.pangolayout.set_text(_('N'), -1)
+    # self.window.draw_layout(self.gc,
+    #                  self.xoffset + self.margin + self.diameter / 2 - 10,
+    #                  self.margin - 30, self.pangolayout)
+    self.gc.move_to(self.xoffset + self.margin + self.diameter / 2 - 10,
+        self.margin - 30)
+    PangoCairo.show_layout(self.gc, self.pangolayout)
+    self.gc.stroke()
+
+    self.pangolayout.set_text(_('S'), -1)
+    # self.window.draw_layout(self.gc,
+    #                  self.xoffset + self.margin + self.diameter / 2 - 10,
+    #                  2 * self.margin + self.diameter - 30, self.pangolayout)
+    self.gc.move_to(self.xoffset + self.margin + self.diameter / 2 - 10,
+        2 * self.margin + self.diameter - 30)
+    PangoCairo.show_layout(self.gc, self.pangolayout)
+    self.gc.stroke()
     if (not fliphorizontally):
-      self.pangolayout.set_text(_('E'))
+      self.pangolayout.set_text(_('E'), -1)
     else:
-      self.pangolayout.set_text(_('W'))
-    self.window.draw_layout(self.gc,
-                     self.xoffset + self.margin - 30,
-                     self.margin + self.diameter / 2 - 10, self.pangolayout)
+      self.pangolayout.set_text(_('W'), -1)
+    # self.window.draw_layout(self.gc,
+    #                  self.xoffset + self.margin - 30,
+    #                  self.margin + self.diameter / 2 - 10, self.pangolayout)
+    self.gc.move_to(self.xoffset + self.margin - 30,
+    self.margin + self.diameter / 2 - 10)
+    PangoCairo.show_layout(self.gc, self.pangolayout)
+    self.gc.stroke()
     if (not fliphorizontally):
-      self.pangolayout.set_text(_('W'))
+      self.pangolayout.set_text(_('W'), -1)
     else:
-      self.pangolayout.set_text(_('E'))
-    self.window.draw_layout(self.gc,
-                     self.xoffset + self.margin + self.diameter + 10,
-                     self.margin + self.diameter / 2 - 10, self.pangolayout)
+      self.pangolayout.set_text(_('E'), -1)
+    # self.window.draw_layout(self.gc,
+    #                  self.xoffset + self.margin + self.diameter + 10,
+    #                  self.margin + self.diameter / 2 - 10, self.pangolayout)
+    self.gc.move_to(self.xoffset + self.margin + self.diameter + 10,
+    self.margin + self.diameter / 2 - 10)
+    PangoCairo.show_layout(self.gc, self.pangolayout)
+    self.gc.stroke()
+
     if (not invertdisplay):
       if (nightvision):
-        self.gc.set_foreground(self.colors[2])
+        # self.gc.set_foreground(self.colors[2])
+        self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
       else:
-        self.gc.set_foreground(self.colors[0])
+        # self.gc.set_foreground(self.colors[0])
+        self.gc.set_source_rgb(self.colors[0].red, self.colors[0].green, self.colors[0].blue)
     else:
-      self.gc.set_foreground(self.colors[1])
+      # self.gc.set_foreground(self.colors[1])
+      self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
+    
 
 # Set the time of plotting (now).
 
@@ -1912,11 +1936,15 @@ class ChartDisplay(gtk.DrawingArea):
     if (drawconstellations):
       if (not invertdisplay):
         if (nightvision):
-          self.gc.set_foreground(self.colors[2])
+          # self.gc.set_foreground(self.colors[2])
+          self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
         else:
-          self.gc.set_foreground(self.colors[0])
+          # self.gc.set_foreground(self.colors[0])
+          self.gc.set_source_rgb(self.colors[0].red, self.colors[0].green, self.colors[0].blue)
       else:
-        self.gc.set_foreground(self.colors[1])
+        # self.gc.set_foreground(self.colors[1])
+        self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
+      
       for code, (name, lines) in figures.iteritems():
         for i in range(len(lines)):
           (ra1, dec1, ra2, dec2) = lines[i]
@@ -1932,8 +1960,10 @@ class ChartDisplay(gtk.DrawingArea):
               (px2, py2) = self.azalttoxy(azalt2)
               px2 = px2 + self.margin - 2 + self.xoffset
               py2 = py2 + self.margin - 2 + self.yoffset
-              self.window.draw_line(self.gc, px1, py1, px2, py2)
-
+              # self.window.draw_line(self.gc, px1, py1, px2, py2)
+              self.gc.move_to(int(px1), int(py1))
+              self.gc.line_to(int(px2), int(py2))
+              self.gc.stroke()
 
   def plot_all_planets(self):
 
@@ -2629,19 +2659,19 @@ class ChartDisplay(gtk.DrawingArea):
 
       self.pmap.add(px, py, 'planet', name)
       self.omap.add('planet', name, px, py)
-    self.gc.set_foreground(self.colors[1])
+    # self.gc.set_foreground(self.colors[1])
+    self.gc.set_source_rgb((1/65536.0)*self.colors[1].red,
+            (1/65536.0)*self.colors[1].green,
+            (1/65536.0)*self.colors[1].blue)
     self.location.plot_cross()
     return True
 
 
   def plot_star(self, px, py, starsize):
-    self.window.draw_arc(self.gc, True,
-             px,
-             py,
-             starsize,
-             starsize,
-             0,
-             360*64)
+    self.gc.save()
+    self.gc.arc(int(px), int(py), starsize, 0, 2 * pi)
+    self.gc.fill()
+    self.gc.restore()
 
 
   def plot_planetary_symbol(self, i, px, py):
@@ -2653,117 +2683,183 @@ class ChartDisplay(gtk.DrawingArea):
 
 # mercury
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_arc(self.gc, False, px-5, py-7, 10, 10, 0, 360*64)
-      self.window.draw_line(self.gc, px+4, py-9, px+4, py-7)
-      self.window.draw_line(self.gc, px-4, py-9, px-4, py-7)
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_line(self.gc, px, py+3, px, py+7)
-      self.window.draw_line(self.gc, px-2, py+5, px+2, py+5)
+      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
+      self.gc.arc(px-12, py-12, 24, 0, 2 * pi)
+      self.gc.arc(px-5, py-7, 10, 0, 2 * pi)
+      self.gc.move_to(px+4, py-9)
+      self.gc.line_to(px+4, py-7)
+      self.gc.stroke()
+      self.gc.move_to(px-4, py-9,) 
+      self.gc.line_to(px-4, py-7)
+      self.gc.stroke()
+      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
+      self.gc.move_to(px, py+3) 
+      self.gc.line_to(px, py+7)
+      self.gc.stroke()
+      self.gc.move_to(px-2, py+5) 
+      self.gc.line_to(px+2, py+5)
+      self.gc.stroke()
     elif (i == 1):
 
 # venus
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_arc(self.gc, False, px-5, py-7, 10, 10, 0, 360*64)
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_line(self.gc, px, py+3, px, py+7)
-      self.window.draw_line(self.gc, px-2, py+5, px+2, py+5)
+      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
+      self.gc.arc(px-12, py-12, 24, 0, 2 * pi)
+      self.gc.arc(px-5, py-7, 10, 0, 2 * pi)
+      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
+      self.gc.move_to(px, py+3) 
+      self.gc.line_to(px, py+7)
+      self.gc.stroke()
+      self.gc.move_to(px-2, py+5) 
+      self.gc.line_to(px+2, py+5)
+      self.gc.stroke()
     elif (i == 2):
 
 # moon
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_polygon(self.gc, True, ((px+1, py-11), (px+4, py-11),
-                                               (px+5, py-10), (px+6, py-9),
-                                               (px+7, py-8),  (px+8, py-7),
-                                               (px+10, py-2), (px+12,py),
-                                               (px+10, py+2), (px+8, py+7),
-                                               (px+7, py+8),  (px+6, py+9),
-                                               (px+5, py+10), (px+4,py+11),
-                                               (px+1, py+11), (px+4, py+4),
-                                               (px+6, py+2),  (px+6, py-2),
-                                               (px+4, py-4)))
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
+      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
+      self.gc.arc(px-12, py-12, 24, 0, 2 * pi)
+      self.gc.move_to(px+1, py-11)
+      self.gc.line_to(px+4, py-11)
+      self.gc.line_to(px+5, py-10) 
+      self.gc.line_to(px+6, py-9)
+      self.gc.line_to(px+7, py-8) 
+      self.gc.line_to(px+8, py-7)
+      self.gc.line_to(px+10, py-2) 
+      self.gc.line_to(px+12, py)
+      self.gc.line_to(px+10, py+2) 
+      self.gc.line_to(px+8, py+7)
+      self.gc.line_to(px+7, py+8) 
+      self.gc.line_to(px+6, py+9)
+      self.gc.line_to(px+5, py+10) 
+      self.gc.line_to(px+4, py+11)
+      self.gc.line_to(px+1, py+11) 
+      self.gc.line_to(px+4, py+4)
+      self.gc.line_to(px+6, py+2) 
+      self.gc.line_to(px+6, py-2)
+      self.gc.line_to(px+4, py-4)
+      self.gc.stroke()
+
+      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
     elif (i == 3):
 
 # mars
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_arc(self.gc, False, px-6, py-4, 10, 10, 0, 360*64)
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_line(self.gc, px+2, py-2, px+6, py-6)
-      self.window.draw_line(self.gc, px+3, py-6, px+6, py-6)
-      self.window.draw_line(self.gc, px+6, py-6, px+6, py-3)
+      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
+      self.gc.arc(px-12, py-12, 24, 0, 2 * pi)
+      self.gc.arc(px-6, py-4, 10, 0, 2 * pi)
+      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
+      self.gc.move_to(px+2, py-2) 
+      self.gc.line_to(px+6, py-6)
+      self.stroke()
+      self.gc.move_to(px+3, py-6) 
+      self.gc.line_to(px+6, py-6)
+      self.gc.stroke()
+      self.gc.move_to(px+6, py-6) 
+      self.gc.line_to(px+6, py-3)
+      self.gc.stroke()
     elif (i == 4):
 
 # jupiter
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_line(self.gc, px-6, py-6, px-4, py-8)
-      self.window.draw_line(self.gc, px-4, py-8, px-2, py-8)
-      self.window.draw_line(self.gc, px-2, py-8, px+1, py-6)
-      self.window.draw_line(self.gc, px+1, py-6, px-5, py+2)
-      self.window.draw_line(self.gc, px-5, py+2, px+7, py+2)
-      self.window.draw_line(self.gc, px+4, py-8, px+4, py+7)
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
+      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
+      self.gc.arc(px-12, py-12, 24, 0, 2 * pi)
+      self.gc.move_to(px-6, py-6)
+      self.gc.line_to(px-4, py-8)
+      self.gc.stroke()
+      self.gc.move_to(px-4, py-8)
+      self.gc.line_to(px-2, py-8)
+      self.gc.stroke()
+      self.gc.move_to(px-2, py-8)
+      self.gc.line_to(px+1, py-6)
+      self.gc.stroke()
+      self.gc.move_to(px+1, py-6)
+      self.gc.line_to(px-5, py+2)
+      self.gc.stroke()
+      self.gc.move_to(px-5, py+2)
+      self.gc.line_to(px+7, py+2)
+      self.gc.stroke()
+      self.gc.move_to(px+4, py-8)
+      self.gc.line_to(px+4, py+7)
+      self.gc.stroke()
+      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
     elif (i == 5):
 
 # saturn
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_line(self.gc, px-6, py-6, px-6, py+5)
-      self.window.draw_line(self.gc, px-6, py, px-5, py-1)
-      self.window.draw_line(self.gc, px-5, py-1, px-4, py-2)
-      self.window.draw_line(self.gc, px-4, py-2, px-1, py-3)
-      self.window.draw_line(self.gc, px-1, py-3, px, py-4)
-      self.window.draw_line(self.gc, px, py-4, px+1, py+1)
-      self.window.draw_line(self.gc, px+1, py+1, px-1, py+4)
-      self.window.draw_line(self.gc, px-1, py+4, px, py+5)
-      self.window.draw_line(self.gc, px, py+5, px+6, py+4)
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
+      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
+      self.gc.arc(px-12, py-12, 24, 0, 2 * pi)
+      self.gc.move_to(px-6, py-6)
+      self.gc.line_to(px-6, py+5)
+      self.gc.stroke()
+      self.gc.move_to(px-6, py)
+      self.gc.line_to(px-5, py-1)
+      self.gc.stroke()
+      self.gc.move_to(px-5, py-1)
+      self.gc.line_to(px-4, py-2)
+      self.gc.stroke()
+      self.gc.move_to(px-4, py-2)
+      self.gc.line_to(px-1, py-3)
+      self.gc.stroke()
+      self.gc.move_to(px-1, py-3)
+      self.gc.line_to(px, py-4)
+      self.gc.stroke()
+      self.gc.move_to(px, py-4)
+      self.gc.line_to(px+1, py+1)
+      self.gc.stroke()
+      self.gc.move_to(px+1, py+1)
+      self.gc.line_to(px-1, py+4)
+      self.gc.stroke()
+      self.gc.move_to(px-1, py+4)
+      self.gc.line_to(px, py+5)
+      self.gc.stroke()
+      self.gc.move_to(px, py+5)
+      self.gc.line_to(px+6, py+4)
+      self.gc.stroke()
+ 
+      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
     elif (i == 6):
 
 # uranus
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_arc(self.gc, False, px-5, py-3, 10, 10, 0, 360*64)
-      self.window.draw_arc(self.gc, True, px-2, py, 4, 4, 0, 360*64)
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_line(self.gc, px, py-3, px, py-9)
-      self.window.draw_line(self.gc, px-2, py-5, px, py-9)
-      self.window.draw_line(self.gc, px+2, py-5, px, py-9)
+      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
+      self.gc.arc(px-12, py-12, 24, 0, 2 * pi)
+      self.gc.arc(px-5, py-3, 10, 0, 2 * pi)
+      self.gc.arc(px-2, py, 4, 0, 2 * pi)
+      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
+      self.gc.move_to(px  , py-3)
+      self.gc.line_to(px, py-9)
+      self.gc.stroke()
+      self.gc.move_to(px-2, py-5)
+      self.gc.line_to(px, py-9)
+      self.gc.stroke()
+      self.gc.move_to(px+2, py-5)
+      self.gc.line_to(px, py-9)
+      self.gc.stroke()
     else:
 
 # sun
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_arc(self.gc, True, px-2, py-2, 4, 4, 0, 360*64)
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
+      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
+      self.gc.arc(px-12, py-12, 24, 0, 2 * pi)
+      self.gc.arc(px-2, py-2, 4, 0, 2 * pi)
+      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+                                  Gdk.JOIN_MITER)
 
 
   def plot_DSO(self, type, maja, mina, mag, px, py):
@@ -2797,94 +2893,62 @@ class ChartDisplay(gtk.DrawingArea):
           return # too small.
       if (type == 'Gal'):
 # plot as gray ellipse with solid outline.
-        self.gc.set_foreground(self.colors[3])
-        self.window.draw_arc(self.gc,
-                              True,
-                              px - int(dx / 2),
-                              py - int(dy / 2),
-                              dx - 1,
-                              dy - 1,
-                              0,
-                              23040)
-        self.gc.set_foreground(fg_color)
-        self.window.draw_arc(self.gc,
-                              False,
-                              px - int(dx / 2),
-                              py - int(dy / 2),
-                              dx,
-                              dy,
-                              0,
-                              23040)
+        self.gc.set_source_rgb(self.colors[3].red,
+                                self.colors[3].green,
+                                self.colors[3].blue)
+        self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx - 1, 0, 2 * pi)
+        self.gc.set_source_rgb(fg_color.red,
+                                fg_color.green,
+                                fg_color.blue)
+        self.gc.scale(dx, dy)
+        self.gc.arc(px - int(dx / 2), py - int(dx / 2), 1, 0, 2 * pi)
+
       elif (type == 'PlN'):
 # plot as gray circle with central dot
-        self.gc.set_foreground(self.colors[3])
-        self.window.draw_arc(self.gc,
-                              True,
-                              px - int(dx / 2),
-                              py - int(dx / 2),
-                              dx,
-                              dx,
-                              0,
-                              23040)
-        self.gc.set_foreground(fg_color)
-        self.window.draw_arc(self.gc,
-                              True,
-                              px - 2,
-                              py - 2,
-                              4,
-                              4,
-                              0,
-                              23040)
+        self.gc.set_source_rgb(self.colors[3].red,
+                                self.colors[3].green,
+                                self.colors[3].blue)
+        self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx - 1, 0, 2 * pi)
+        self.gc.set_source_rgb(fg_color.red,
+                                fg_color.green,
+                                fg_color.blue)
+        self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx - 1, 0, 2 * pi)
+        self.gc.arc(px - 2, py - 2, 4, 0, 2 * pi)
+
       elif (type == 'SNR') or (type == 'OCl'):
 # plot as gray circle with no outline.
-        self.gc.set_foreground(self.colors[3])
-        self.window.draw_arc(self.gc,
-                              True,
-                              px - int(dx / 2),
-                              py - int(dx / 2),
-                              dx,
-                              dx,
-                              0,
-                              23040)
-        self.gc.set_foreground(fg_color)
+        self.gc.set_source_rgb(self.colors[3].red,
+                               self.colors[3].green,
+                               self.colors[3].blue)
+        self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx, 0, 2 * pi)
+        self.gc.set_source_rgb(fg_color.red,
+                                fg_color.green,
+                                fg_color.blue)
+
       elif (type == 'C/N') or (type == 'DfN'):
 # plot as gray rectangle with no outline.
-        self.gc.set_foreground(self.colors[3])
-        self.window.draw_rectangle(self.gc,
-                                        True,
-                                        px - int(dx / 2),
-                                        py - int(dy / 2),
-                                        dx,
-                                        dy)
-        self.gc.set_foreground(fg_color)
+        self.gc.set_source_rgb(self.colors[3].red,
+                               self.colors[3].green,
+                               self.colors[3].blue)
+        self.gc.rectangle(px - int(dx / 2),
+                          py - int(dy / 2),
+                          dx,
+                          dy)
+        self.gc.set_source_rgb(fg_color.red,
+                                fg_color.green,
+                                fg_color.blue)
+
       elif (type == 'GCl'):
 # plot as gray circle with outline and central dot.
-        self.gc.set_foreground(self.colors[3])
-        self.window.draw_arc(self.gc,
-                              True,
-                              px - int(dx / 2),
-                              py - int(dx / 2),
-                              dx,
-                              dx,
-                              0,
-                              23040)
-        self.gc.set_foreground(fg_color)
-        self.window.draw_arc(self.gc,
-                              False,
-                              px - int(dx / 2),
-                              py - int(dx / 2),
-                              dx - 1,
-                              dx - 1,
-                              0,
-                              23040)
-        self.window.draw_arc(self.gc,
-                              True,
-                              px - 2,
-                              py - 2,
-                              4,
-                              4,
-                              0,
-                              23040)
+        self.gc.set_source_rgb(self.colors[3].red,
+                                self.colors[3].green,
+                                self.colors[3].blue)
+        self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx - 1, 0, 2 * pi)
+        self.gc.set_source_rgb(fg_color.red,
+                                fg_color.green,
+                                fg_color.blue)
+        self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx - 1, 0, 2 * pi)
+        self.gc.arc(px - 2, py - 2, 4, 0, 2 * pi)
       else:
 #	Dbl = double star
 #	??? = unknown or unclassified object
@@ -2897,15 +2961,15 @@ class ChartDisplay(gtk.DrawingArea):
 # Clear the drawing surface
 
     if (nightvision):
-      self.gc.set_foreground(self.colors[1])
+      self.gc.set_source_rgb((1/65536.0)*self.colors[1].red,
+          (1/65536.0)*self.colors[1].green,
+          (1/65536.0)*self.colors[1].blue)
     else:
-      self.gc.set_foreground(self.colors[3])
-    self.window.draw_rectangle(self.gc,
-                                    True,
-                                    1,
-                                    1,
-                                    self.screensize[0],
-                                    self.screensize[1])
+      self.gc.set_source_rgb((1/65536.0)*self.colors[3].red,
+          (1/65536.0)*self.colors[3].green,
+          (1/65536.0)*self.colors[3].blue)
+    self.gc.rectangle(1, 1, self.screensize[0], self.screensize[1])
+    self.gc.fill()
     label1.queue_draw()
     label2.queue_draw()
     label4.queue_draw()
@@ -3169,16 +3233,25 @@ class StarChart(activity.Activity):
 
 # Create the GUI objects.
 
-    scrolled = gtk.ScrolledWindow()
-    scrolled.set_policy(gtk.POLICY_NEVER, gtk.POLICY_AUTOMATIC)
-    scrolled.props.shadow_type = gtk.SHADOW_NONE
+    scrolled = Gtk.ScrolledWindow()
+    scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+    scrolled.props.shadow_type = Gtk.ShadowType.NONE
     self.chart = ChartDisplay(self)
-    eb = gtk.EventBox()
-    vbox = gtk.VBox(False)
-    self.identifyobject = gtk.Label('')
-    vbox.pack_start(self.identifyobject, expand=False)
-    vbox.pack_start(self.chart)
-    eb.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse('gray'))
+    eb = Gtk.EventBox()
+    vbox = Gtk.VBox(False)
+    self.identifyobject = Gtk.Label("")
+    vbox.pack_start(self.identifyobject, False, True, 0)
+    hbox = Gtk.HBox(False)
+    hbox.pack_start(labelr1, True, True, 0)
+    vbox.pack_start(hbox, False, False, 0)
+    hbox = Gtk.HBox(False)
+    hbox.pack_start(labelq1, False, True, 0)
+    hbox.pack_start(cbq1, True, True, 0)
+    hbox.pack_start(buttonq1, True, True, 0)
+    hbox.pack_start(buttonq2, True, True, 0)
+    vbox.pack_start(hbox, False, False, 0)
+    vbox.pack_start(self.chart, True, True, 0)
+    eb.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("gray"))
 
 # Stack the GUI objects.
 
@@ -3234,7 +3307,7 @@ class StarChart(activity.Activity):
     self.chart.plotchart()
 
   def _toolbar_add(self, toolbar, component):
-    item = gtk.ToolItem()
+    item = Gtk.ToolItem()
     item.add(component)
     toolbar.insert(item, -1)
     component.show()
