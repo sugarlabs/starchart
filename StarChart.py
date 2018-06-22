@@ -1732,13 +1732,10 @@ class ChartDisplay(Gtk.DrawingArea):
         # Plot sky circle
         if (not invertdisplay):
             if (nightvision):
-                # self.gc.set_foreground(self.colors[2])
                 self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
             else:
-                # self.gc.set_foreground(self.colors[0])
                 self.gc.set_source_rgb(self.colors[0].red, self.colors[0].green, self.colors[0].blue)
         else:
-            # self.gc.set_foreground(self.colors[1])
             self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
 
         self.gc.arc(self.xoffset + self.margin + self.diameter/2,
@@ -2622,7 +2619,6 @@ class ChartDisplay(Gtk.DrawingArea):
 
             self.pmap.add(px, py, 'planet', name)
             self.omap.add('planet', name, px, py)
-        # self.gc.set_foreground(self.colors[1])
         self.gc.set_source_rgb((1 / 65536.0) * self.colors[1].red,
                                (1 / 65536.0) * self.colors[1].green,
                                (1 / 65536.0) * self.colors[1].blue)
@@ -2856,15 +2852,16 @@ class ChartDisplay(Gtk.DrawingArea):
                 self.gc.set_source_rgb(self.colors[3].red,
                                        self.colors[3].green,
                                        self.colors[3].blue)
-                # val = (dx-1)/(dy-1)
-                # self.gc.scale(val, 1)
-                self.gc.arc(px - int(dx / 2) + int((dx - 1)/2), py - int(dy / 2)  + int((dy - 1)/2), dy - 1, 0, 2 * pi)
+                self.gc.save()
+                self.gc.scale(int((dx-1)/2), int((dy-1)/2))
+                self.gc.arc(px - int(dx / 2) + int((dx - 1)/2), py - int(dy / 2)  + int((dy - 1)/2), 1, 0, 2 * pi)
                 self.gc.fill()
                 self.gc.set_source_rgb(fg_color.red,
                                        fg_color.green,
                                        fg_color.blue)
-                # self.gc.scale(dx, dy)
-                self.gc.arc(px - int(dx / 2) + 1/2, py - int(dx / 2) + 1/2, 1, 0, 2 * pi)
+                self.gc.scale(dx, dy)
+                self.gc.arc(px, py, 1, 0, 2 * pi)
+                self.gc.restore()
                 self.gc.stroke()
 
             elif (type == 'PlN'):
