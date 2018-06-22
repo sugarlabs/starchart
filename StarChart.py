@@ -1729,7 +1729,6 @@ class ChartDisplay(Gtk.DrawingArea):
         self.omap.clear()
 
         # Plot sky circle
-
         if (not invertdisplay):
             if (nightvision):
                 # self.gc.set_foreground(self.colors[2])
@@ -2652,7 +2651,7 @@ class ChartDisplay(Gtk.DrawingArea):
 
     def plot_star(self, px, py, starsize):
         self.gc.save()
-        self.gc.arc(int(px), int(py), starsize, 0, 2 * pi)
+        self.gc.arc(int(px) + starsize/2, int(py) + starsize/2, starsize, 0, 2 * pi)
         self.gc.fill()
         self.gc.restore()
         self.gc.stroke()
@@ -2667,9 +2666,9 @@ class ChartDisplay(Gtk.DrawingArea):
             # mercury
 
             self.gc.set_line_width(2)
-            self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
+            self.gc.arc(px, py, 24, 0, 2 * pi)
             self.gc.stroke()
-            self.gc.arc(px - 5, py - 7, 10, 0, 2 * pi)
+            self.gc.arc(px, py - 2, 10, 0, 2 * pi)
             self.gc.stroke()
             self.gc.move_to(px + 4, py - 9)
             self.gc.line_to(px + 4, py - 7)
@@ -2689,9 +2688,9 @@ class ChartDisplay(Gtk.DrawingArea):
             # venus
 
             self.gc.set_line_width(2)
-            self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
+            self.gc.arc(px, py, 24, 0, 2 * pi)
             self.gc.stroke()
-            self.gc.arc(px - 5, py - 7, 10, 0, 2 * pi)
+            self.gc.arc(px, py - 2, 10, 0, 2 * pi)
             self.gc.stroke()
             self.gc.set_line_width(1)
             self.gc.move_to(px, py + 3)
@@ -2705,7 +2704,7 @@ class ChartDisplay(Gtk.DrawingArea):
             # moon
 
             self.gc.set_line_width(2)
-            self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
+            self.gc.arc(px, py, 24, 0, 2 * pi)
             self.gc.stroke()
             self.gc.move_to(px + 1, py - 11)
             self.gc.line_to(px + 4, py - 11)
@@ -2737,9 +2736,9 @@ class ChartDisplay(Gtk.DrawingArea):
             #                             Gdk.JOIN_MITER)
             self.gc.set_line_width(2)
 
-            self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
+            self.gc.arc(px, py, 24, 0, 2 * pi)
             self.gc.stroke()
-            self.gc.arc(px - 6, py - 4, 10, 0, 2 * pi)
+            self.gc.arc(px - 1, py + 1, 10, 0, 2 * pi)
             self.gc.stroke()
             # self.gc.set_line_width(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
             #                             Gdk.JOIN_MITER)
@@ -2758,7 +2757,7 @@ class ChartDisplay(Gtk.DrawingArea):
             # jupiter
 
             self.gc.set_line_width(2)
-            self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
+            self.gc.arc(px, py, 24, 0, 2 * pi)
             self.gc.stroke()
             self.gc.move_to(px - 6, py - 6)
             self.gc.line_to(px - 4, py - 8)
@@ -2784,7 +2783,7 @@ class ChartDisplay(Gtk.DrawingArea):
             # saturn
 
             self.gc.set_line_width(2)
-            self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
+            self.gc.arc(px, py, 24, 0, 2 * pi)
             self.gc.stroke()
             self.gc.move_to(px - 6, py - 6)
             self.gc.line_to(px - 6, py + 5)
@@ -2820,11 +2819,11 @@ class ChartDisplay(Gtk.DrawingArea):
             # uranus
 
             self.gc.set_line_width(2)
-            self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
+            self.gc.arc(px, py, 24, 0, 2 * pi)
             self.gc.stroke()
-            self.gc.arc(px - 5, py - 3, 10, 0, 2 * pi)
+            self.gc.arc(px, py + 2, 10, 0, 2 * pi)
             self.gc.stroke()
-            self.gc.arc(px - 2, py, 4, 0, 2 * pi)
+            self.gc.arc(px, py + 2, 4, 0, 2 * pi)
             self.gc.stroke()
             self.gc.set_line_width(1)
             self.gc.move_to(px, py - 3)
@@ -2841,8 +2840,10 @@ class ChartDisplay(Gtk.DrawingArea):
             # sun
 
             self.gc.set_line_width(2)
-            self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
-            self.gc.arc(px - 2, py - 2, 4, 0, 2 * pi)
+            self.gc.arc(px, py, 24, 0, 2 * pi)
+            self.gc.stroke()
+            self.gc.arc(px, py, 4, 0, 2 * pi)
+            self.gc.stroke()
             self.gc.set_line_width(1)
 
     def plot_DSO(self, type, maja, mina, mag, px, py):
@@ -2879,13 +2880,13 @@ class ChartDisplay(Gtk.DrawingArea):
                 self.gc.set_source_rgb(self.colors[3].red,
                                        self.colors[3].green,
                                        self.colors[3].blue)
-                self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx - 1, 0, 2 * pi)
+                self.gc.arc(px - int(dx / 2) + int((dx - 1)/2), py - int(dx / 2)  + int((dx - 1)/2), dx - 1, 0, 2 * pi)
                 self.gc.fill()
                 self.gc.set_source_rgb(fg_color.red,
                                        fg_color.green,
                                        fg_color.blue)
                 self.gc.scale(dx, dy)
-                self.gc.arc(px - int(dx / 2), py - int(dx / 2), 1, 0, 2 * pi)
+                self.gc.arc(px - int(dx / 2) + 1/2, py - int(dx / 2) + 1/2, 1, 0, 2 * pi)
                 self.gc.stroke()
 
             elif (type == 'PlN'):
@@ -2893,13 +2894,12 @@ class ChartDisplay(Gtk.DrawingArea):
                 self.gc.set_source_rgb(self.colors[3].red,
                                        self.colors[3].green,
                                        self.colors[3].blue)
-                self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx - 1, 0, 2 * pi)
+                self.gc.arc(px - int(dx / 2) + int((dx - 1)/2), py - int(dx / 2) + int((dx - 1)/2), dx - 1, 0, 2 * pi)
                 self.gc.fill()
                 self.gc.set_source_rgb(fg_color.red,
                                        fg_color.green,
                                        fg_color.blue)
-                self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx - 1, 0, 2 * pi)
-                self.gc.arc(px - 2, py - 2, 4, 0, 2 * pi)
+                self.gc.arc(px, py, 4, 0, 2 * pi)
                 self.gc.fill()
 
             elif (type == 'SNR') or (type == 'OCl'):
@@ -2907,7 +2907,7 @@ class ChartDisplay(Gtk.DrawingArea):
                 self.gc.set_source_rgb(self.colors[3].red,
                                        self.colors[3].green,
                                        self.colors[3].blue)
-                self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx, 0, 2 * pi)
+                self.gc.arc(px - int(dx / 2) + dx / 2, py - int(dx / 2) + dx / 2, dx, 0, 2 * pi)
                 self.gc.set_source_rgb(fg_color.red,
                                        fg_color.green,
                                        fg_color.blue)
@@ -2936,9 +2936,9 @@ class ChartDisplay(Gtk.DrawingArea):
                 self.gc.set_source_rgb(fg_color.red,
                                        fg_color.green,
                                        fg_color.blue)
-                self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx - 1, 0, 2 * pi)
+                self.gc.arc(px - int(dx / 2) + int((dx - 1)/2), py - int(dx / 2) + int((dx - 1)/2), dx - 1, 0, 2 * pi)
                 self.gc.stroke()
-                self.gc.arc(px - 2, py - 2, 4, 0, 2 * pi)
+                self.gc.arc(px, py, 4, 0, 2 * pi)
                 self.gc.fill()
             else:
                 #	Dbl = double star
