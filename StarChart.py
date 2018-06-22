@@ -180,45 +180,10 @@ if _have_toolbox:
     from sugar3.activity.widgets import StopButton
 from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.palette import Palette, ToolInvoker
+from sugar3.graphics.toggletoolbutton import ToggleToolButton
 from sugar3.graphics.icon import Icon
 import logging
 from gettext import gettext as _
-
-
-class ToggleButtonTool(ToolButton):
-
-    def __init__(self, icon_on=None, icon_off=None, **kwargs):
-        super(ToolButton, self).__init__(icon_off)
-
-        self._icon_on = icon_on
-        self._icon_off = icon_off
-        self._accelerator = None
-        self._tooltip = None
-        self._palette_invoker = ToolInvoker()
-        self._active = False
-
-        GObject.GObject.__init__(self, **kwargs)
-
-        self._palette_invoker.attach_tool(self)
-
-        if icon_off:
-            self.set_icon_name(icon_off)
-
-        self.connect('clicked', self._click_callback)
-
-    def _click_callback(self, button):
-        self.set_active(not self._active)
-
-    def get_active(self):
-        return self._active
-
-    def set_active(self, active):
-        self._active = active
-        if self._active:
-            self.set_icon_name(self._icon_on)
-        else:
-            self.set_icon_name(self._icon_off)
-
 
 # ============================= PLANETARY CATALOG DATA =======================
 #
@@ -806,14 +771,13 @@ def get_planet_index(name):
 #
 # controls on menubar1 (_('what')):
 fullscreen = ToolButton('view-fullscreen')
-button1 = ToggleButtonTool(icon_off='night-off', icon_on='night-on')
+button1 = ToggleToolButton(icon_name='night-off')
 button1.set_tooltip(_('Night Vision'))
-button2 = ToggleButtonTool(icon_off='invert-off', icon_on='invert-on')
+button2 = ToggleToolButton(icon_name='invert-off')
 button2.set_tooltip(_('Invert Display'))
-button3 = ToggleButtonTool(icon_off='left-right', icon_on='right-left')
+button3 = ToggleToolButton(icon_name='left-right')
 button3.set_tooltip(_('Flip L/R'))
-button4 = ToggleButtonTool(icon_off='constellations-off',
-                           icon_on='constellations-on')
+button4 = ToggleToolButton(icon_name='constellations-off')
 button4.set_tooltip(_('Draw Constellations'))
 container2 = Gtk.Table(columns=6, rows=1)
 # TRANS: http://en.wikipedia.org/wiki/Magnitude_(astronomy)
