@@ -2,6 +2,7 @@
 #
 # Copyright (c) 2008 - 2010 by David A. Wallace
 # Copyright (c) 2012 Walter Bender
+# Copyright (c) 2018 Yash Agrawal
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -978,8 +979,8 @@ class PixelsToObjectMap():
         # irrespective of the planet's position in its orbit or phase of
         # illumination.
         pmag = [-1.5, -3.5, -6.0, 1.0, -0.5, 0.5, 5.5, -27.0]
-        for x in range(left, right + 1):
-            for y in range(top, bottom + 1):
+        for x in range(int(left), int(right) + 1):
+            for y in range(int(top), int(bottom) + 1):
                 if self.found(x, y):
                     (type, name) = self.data[(x, y)]
                     if (type != 'star') and (type != 'planet'):
@@ -1085,14 +1086,16 @@ class Location():
 
             x = self.data[1] + 1
             y = self.data[2] + 1
-            self.context.gc.set_foreground(self.context.colors[4])
-            self.context.gc.set_line_attributes(5, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                                gtk.gdk.JOIN_MITER)
+            # self.context.gc.set_foreground(self.context.colors[4])
+            self.gc.set_source_rgb(self.colors[4].red, self.colors[4].green, self.colors[4].blue)
+            self.context.gc.set_line_width(5)
+             # gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
+             #                                    gtk.gdk.JOIN_MITER)
             self.context.window.draw_line(self.context.gc, x, y - 25, x, y + 25)
             self.context.window.draw_line(self.context.gc, x - 25, y, x + 25, y)
-            self.context.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                                gtk.gdk.JOIN_MITER)
-            self.context.gc.set_foreground(self.context.colors[1])
+            self.context.gc.set_line_width(1) 
+            # self.context.gc.set_foreground(self.context.colors[1])
+            self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue) 
         else:
             pass
 
@@ -1143,11 +1146,11 @@ class ChartDisplay(Gtk.DrawingArea):
         # Establish color selections (need only do this once).
 
         if (len(self.colors) == 0):
-            self.colors[0] = self.colormap.alloc_color('white')
-            self.colors[1] = self.colormap.alloc_color('black')
-            self.colors[2] = self.colormap.alloc_color('red')
-            self.colors[3] = self.colormap.alloc_color('gray')
-            self.colors[4] = self.colormap.alloc_color('green')
+            self.colors[0] = Gdk.Color.parse('white')[1]
+            self.colors[1] = Gdk.Color.parse('black')[1]
+            self.colors[2] = Gdk.Color.parse('red')[1]
+            self.colors[3] = Gdk.Color.parse('gray')[1]
+            self.colors[4] = Gdk.Color.parse('green')[1]
             self.canplot = True
         self.plotchart()
 
@@ -1738,10 +1741,11 @@ class ChartDisplay(Gtk.DrawingArea):
             # self.gc.set_foreground(self.colors[1])
             self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
 
-        self.gc.arc(self.xoffset + self.margin - 2,
-                    self.yoffset + self.margin - 2,
-                    self.diameter + 4,
+        self.gc.arc(self.xoffset + self.margin + self.diameter/2,
+                    self.yoffset + self.margin + self.diameter/2,
+                    self.diameter/2,
                     0, 2 * pi)
+        self.gc.stroke() #make fill
 
         # label the cardinal points.
 
@@ -2244,7 +2248,8 @@ class ChartDisplay(Gtk.DrawingArea):
 
             self.pmap.add(px, py, 'planet', name)
             self.omap.add('planet', name, px, py)
-        self.gc.set_foreground(self.colors[1])
+        # self.gc.set_foreground(self.colors[1])
+        self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
         self.location.plot_cross()
         return True
 
@@ -2650,6 +2655,7 @@ class ChartDisplay(Gtk.DrawingArea):
         self.gc.arc(int(px), int(py), starsize, 0, 2 * pi)
         self.gc.fill()
         self.gc.restore()
+        self.gc.stroke()
 
     def plot_planetary_symbol(self, i, px, py):
 
@@ -2660,18 +2666,18 @@ class ChartDisplay(Gtk.DrawingArea):
 
             # mercury
 
-            self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            self.gc.set_line_width(2)
             self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
+            self.gc.stroke()
             self.gc.arc(px - 5, py - 7, 10, 0, 2 * pi)
+            self.gc.stroke()
             self.gc.move_to(px + 4, py - 9)
             self.gc.line_to(px + 4, py - 7)
             self.gc.stroke()
             self.gc.move_to(px - 4, py - 9, )
             self.gc.line_to(px - 4, py - 7)
             self.gc.stroke()
-            self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            self.gc.set_line_width(1)
             self.gc.move_to(px, py + 3)
             self.gc.line_to(px, py + 7)
             self.gc.stroke()
@@ -2682,12 +2688,12 @@ class ChartDisplay(Gtk.DrawingArea):
 
             # venus
 
-            self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            self.gc.set_line_width(2)
             self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
+            self.gc.stroke()
             self.gc.arc(px - 5, py - 7, 10, 0, 2 * pi)
-            self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            self.gc.stroke()
+            self.gc.set_line_width(1)
             self.gc.move_to(px, py + 3)
             self.gc.line_to(px, py + 7)
             self.gc.stroke()
@@ -2698,9 +2704,9 @@ class ChartDisplay(Gtk.DrawingArea):
 
             # moon
 
-            self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            self.gc.set_line_width(2)
             self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
+            self.gc.stroke()
             self.gc.move_to(px + 1, py - 11)
             self.gc.line_to(px + 4, py - 11)
             self.gc.line_to(px + 5, py - 10)
@@ -2722,21 +2728,25 @@ class ChartDisplay(Gtk.DrawingArea):
             self.gc.line_to(px + 4, py - 4)
             self.gc.stroke()
 
-            self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            self.gc.set_line_width(1)
         elif (i == 3):
 
             # mars
 
-            self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            # self.gc.set_line_width(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+            #                             Gdk.JOIN_MITER)
+            self.gc.set_line_width(2)
+
             self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
+            self.gc.stroke()
             self.gc.arc(px - 6, py - 4, 10, 0, 2 * pi)
-            self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            self.gc.stroke()
+            # self.gc.set_line_width(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
+            #                             Gdk.JOIN_MITER)
+            self.gc.set_line_width(1)
             self.gc.move_to(px + 2, py - 2)
             self.gc.line_to(px + 6, py - 6)
-            self.stroke()
+            self.gc.stroke()
             self.gc.move_to(px + 3, py - 6)
             self.gc.line_to(px + 6, py - 6)
             self.gc.stroke()
@@ -2747,9 +2757,9 @@ class ChartDisplay(Gtk.DrawingArea):
 
             # jupiter
 
-            self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            self.gc.set_line_width(2)
             self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
+            self.gc.stroke()
             self.gc.move_to(px - 6, py - 6)
             self.gc.line_to(px - 4, py - 8)
             self.gc.stroke()
@@ -2768,15 +2778,14 @@ class ChartDisplay(Gtk.DrawingArea):
             self.gc.move_to(px + 4, py - 8)
             self.gc.line_to(px + 4, py + 7)
             self.gc.stroke()
-            self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            self.gc.set_line_width(1)
         elif (i == 5):
 
             # saturn
 
-            self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            self.gc.set_line_width(2)
             self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
+            self.gc.stroke()
             self.gc.move_to(px - 6, py - 6)
             self.gc.line_to(px - 6, py + 5)
             self.gc.stroke()
@@ -2805,19 +2814,19 @@ class ChartDisplay(Gtk.DrawingArea):
             self.gc.line_to(px + 6, py + 4)
             self.gc.stroke()
 
-            self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            self.gc.set_line_width(1)
         elif (i == 6):
 
             # uranus
 
-            self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            self.gc.set_line_width(2)
             self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
+            self.gc.stroke()
             self.gc.arc(px - 5, py - 3, 10, 0, 2 * pi)
+            self.gc.stroke()
             self.gc.arc(px - 2, py, 4, 0, 2 * pi)
-            self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            self.gc.stroke()
+            self.gc.set_line_width(1)
             self.gc.move_to(px, py - 3)
             self.gc.line_to(px, py - 9)
             self.gc.stroke()
@@ -2831,12 +2840,10 @@ class ChartDisplay(Gtk.DrawingArea):
 
             # sun
 
-            self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            self.gc.set_line_width(2)
             self.gc.arc(px - 12, py - 12, 24, 0, 2 * pi)
             self.gc.arc(px - 2, py - 2, 4, 0, 2 * pi)
-            self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                        Gdk.JOIN_MITER)
+            self.gc.set_line_width(1)
 
     def plot_DSO(self, type, maja, mina, mag, px, py):
         if (not invertdisplay):
@@ -2873,11 +2880,13 @@ class ChartDisplay(Gtk.DrawingArea):
                                        self.colors[3].green,
                                        self.colors[3].blue)
                 self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx - 1, 0, 2 * pi)
+                self.gc.fill()
                 self.gc.set_source_rgb(fg_color.red,
                                        fg_color.green,
                                        fg_color.blue)
                 self.gc.scale(dx, dy)
                 self.gc.arc(px - int(dx / 2), py - int(dx / 2), 1, 0, 2 * pi)
+                self.gc.stroke()
 
             elif (type == 'PlN'):
                 # plot as gray circle with central dot
@@ -2885,11 +2894,13 @@ class ChartDisplay(Gtk.DrawingArea):
                                        self.colors[3].green,
                                        self.colors[3].blue)
                 self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx - 1, 0, 2 * pi)
+                self.gc.fill()
                 self.gc.set_source_rgb(fg_color.red,
                                        fg_color.green,
                                        fg_color.blue)
                 self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx - 1, 0, 2 * pi)
                 self.gc.arc(px - 2, py - 2, 4, 0, 2 * pi)
+                self.gc.fill()
 
             elif (type == 'SNR') or (type == 'OCl'):
                 # plot as gray circle with no outline.
@@ -2910,6 +2921,7 @@ class ChartDisplay(Gtk.DrawingArea):
                                   py - int(dy / 2),
                                   dx,
                                   dy)
+                self.gc.fill()
                 self.gc.set_source_rgb(fg_color.red,
                                        fg_color.green,
                                        fg_color.blue)
@@ -2920,11 +2932,14 @@ class ChartDisplay(Gtk.DrawingArea):
                                        self.colors[3].green,
                                        self.colors[3].blue)
                 self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx - 1, 0, 2 * pi)
+                self.gc.fill()
                 self.gc.set_source_rgb(fg_color.red,
                                        fg_color.green,
                                        fg_color.blue)
                 self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx - 1, 0, 2 * pi)
+                self.gc.stroke()
                 self.gc.arc(px - 2, py - 2, 4, 0, 2 * pi)
+                self.gc.fill()
             else:
                 #	Dbl = double star
                 #	??? = unknown or unclassified object
@@ -3233,8 +3248,8 @@ class StarChart(activity.Activity):
         vbox = Gtk.VBox(False)
         self.identifyobject = Gtk.Label("")
         vbox.pack_start(self.identifyobject, False, True, 0)
-        # hbox = Gtk.HBox(False)
-        # hbox.pack_start(labelr1, True, True, 0)
+        hbox = Gtk.HBox(False)
+        hbox.pack_start(labell1, True, True, 0)
         # vbox.pack_start(hbox, False, False, 0)
         # hbox = Gtk.HBox(False)
         # hbox.pack_start(labelq1, False, True, 0)
@@ -3242,7 +3257,7 @@ class StarChart(activity.Activity):
         # hbox.pack_start(buttonq1, True, True, 0)
         # hbox.pack_start(buttonq2, True, True, 0)
         # vbox.pack_start(hbox, False, False, 0)
-        # vbox.pack_start(self.chart, True, True, 0)
+        vbox.pack_start(self.chart, True, True, 0)
         eb.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("gray"))
 
         # Stack the GUI objects.
