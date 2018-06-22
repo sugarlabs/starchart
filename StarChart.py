@@ -818,12 +818,12 @@ button4.set_tooltip(_('Draw Constellations'))
 container2 = Gtk.Table(columns=6, rows=1)
 # TRANS: http://en.wikipedia.org/wiki/Magnitude_(astronomy)
 label6 = Gtk.Label(_('Mag:'))
-rb7 = Gtk.RadioButton(None, _('1'))
-rb8 = Gtk.RadioButton(rb7, _('2'))
-rb9 = Gtk.RadioButton(rb7, _('3'))
-rb10 = Gtk.RadioButton(rb7, _('4'))
-rb11 = Gtk.RadioButton(rb7, _('5'))
-rb12 = Gtk.RadioButton(rb7, _('6'))
+rb7 = Gtk.RadioButton.new_with_label_from_widget(None, _('1'))
+rb8 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb7, _('2'))
+rb9 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb7, _('3'))
+rb10 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb7, _('4'))
+rb11 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb7, _('5'))
+rb12 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb7, _('6'))
 # controls on menubar2 (_('where')):
 container3 = Gtk.VBox()
 container4 = Gtk.VBox()
@@ -832,17 +832,17 @@ label1 = Gtk.Label(_('Longitude:'))
 entry1 = Gtk.Entry()
 entry1.set_width_chars(10)
 # TRANS: http://en.wikipedia.org/wiki/East
-rb1 = Gtk.RadioButton(None, _('E'))
+rb1 = Gtk.RadioButton.new_with_label_from_widget(None, _('E'))
 # TRANS: http://en.wikipedia.org/wiki/West
-rb2 = Gtk.RadioButton(rb1, _('W'))
+rb2 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb1, _('W'))
 # TRANS: http://en.wikipedia.org/wiki/Latitude
 label2 = Gtk.Label(_('Latitude:'))
 entry2 = Gtk.Entry()
 entry2.set_width_chars(10)
 # TRANS: http://en.wikipedia.org/wiki/North
-rb3 = Gtk.RadioButton(None, _('N'))
+rb3 = Gtk.RadioButton.new_with_label_from_widget(None, _('N'))
 # TRANS: http://en.wikipedia.org/wiki/South
-rb4 = Gtk.RadioButton(rb3, _('S'))
+rb4 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb3, _('S'))
 icon = Icon(icon_name='dialog-ok')
 button5 = Gtk.Button()
 button5.set_image(icon)
@@ -853,8 +853,8 @@ button51 = ToolButton('home')
 button51.set_tooltip(_('Make home'))
 button51.show()
 # controls on menubar3 (_('when')):
-rb5 = Gtk.RadioButton(None, _('Now'))
-rb6 = Gtk.RadioButton(rb5, _('Specify'))
+rb5 = Gtk.RadioButton.new_with_label_from_widget(None, _('Now'))
+rb6 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb5, _('Specify'))
 label4 = Gtk.Label(_('Time:'))
 entry3 = Gtk.Entry()
 entry3.set_width_chars(16)
@@ -1086,16 +1086,18 @@ class Location():
 
             x = self.data[1] + 1
             y = self.data[2] + 1
-            # self.context.gc.set_foreground(self.context.colors[4])
-            self.gc.set_source_rgb(self.colors[4].red, self.colors[4].green, self.colors[4].blue)
+            self.context.gc.set_source_rgb(self.colors[4].red, self.colors[4].green, self.colors[4].blue)
             self.context.gc.set_line_width(5)
              # gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
              #                                    gtk.gdk.JOIN_MITER)
-            self.context.window.draw_line(self.context.gc, x, y - 25, x, y + 25)
-            self.context.window.draw_line(self.context.gc, x - 25, y, x + 25, y)
+            self.context.gc.move_to(x, y - 25)
+            self.context.gc.line_to(x, y + 25)
+            self.stroke()
+            self.context.gc.move_to(x - 25, y)
+            self.context.gc.line_to(x + 25, y)
             self.context.gc.set_line_width(1) 
-            # self.context.gc.set_foreground(self.context.colors[1])
-            self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue) 
+            self.context.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue) 
+            self.context.gc.stroke()
         else:
             pass
 
@@ -1716,7 +1718,7 @@ class ChartDisplay(Gtk.DrawingArea):
 
         self.gc.arc(self.xoffset + self.margin + self.diameter / 2,
                     self.yoffset + self.margin + self.diameter / 2,
-                    self.diameter / 2,
+                    self.diameter / 2 + 2,
                     0,
                     2 * pi)
         self.gc.fill()
@@ -1741,31 +1743,24 @@ class ChartDisplay(Gtk.DrawingArea):
 
         self.gc.arc(self.xoffset + self.margin + self.diameter/2,
                     self.yoffset + self.margin + self.diameter/2,
-                    self.diameter/2,
+                    self.diameter/2 + 2,
                     0, 2 * pi)
         self.gc.stroke() #make fill
 
         # label the cardinal points.
 
         if (nightvision):
-            # self.gc.set_foreground(self.colors[2])
             self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
         else:
             self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
-            # self.gc.set_foreground(self.colors[1])
         self.pangolayout.set_text(_('N'), -1)
-        # self.window.draw_layout(self.gc,
-        #                  self.xoffset + self.margin + self.diameter / 2 - 10,
-        #                  self.margin - 30, self.pangolayout)
+
         self.gc.move_to(self.xoffset + self.margin + self.diameter / 2 - 10,
                         self.margin - 30)
         PangoCairo.show_layout(self.gc, self.pangolayout)
         self.gc.stroke()
 
         self.pangolayout.set_text(_('S'), -1)
-        # self.window.draw_layout(self.gc,
-        #                  self.xoffset + self.margin + self.diameter / 2 - 10,
-        #                  2 * self.margin + self.diameter - 30, self.pangolayout)
         self.gc.move_to(self.xoffset + self.margin + self.diameter / 2 - 10,
                         2 * self.margin + self.diameter - 30)
         PangoCairo.show_layout(self.gc, self.pangolayout)
@@ -1774,9 +1769,6 @@ class ChartDisplay(Gtk.DrawingArea):
             self.pangolayout.set_text(_('E'), -1)
         else:
             self.pangolayout.set_text(_('W'), -1)
-        # self.window.draw_layout(self.gc,
-        #                  self.xoffset + self.margin - 30,
-        #                  self.margin + self.diameter / 2 - 10, self.pangolayout)
         self.gc.move_to(self.xoffset + self.margin - 30,
                         self.margin + self.diameter / 2 - 10)
         PangoCairo.show_layout(self.gc, self.pangolayout)
@@ -1785,9 +1777,6 @@ class ChartDisplay(Gtk.DrawingArea):
             self.pangolayout.set_text(_('W'), -1)
         else:
             self.pangolayout.set_text(_('E'), -1)
-        # self.window.draw_layout(self.gc,
-        #                  self.xoffset + self.margin + self.diameter + 10,
-        #                  self.margin + self.diameter / 2 - 10, self.pangolayout)
         self.gc.move_to(self.xoffset + self.margin + self.diameter + 10,
                         self.margin + self.diameter / 2 - 10)
         PangoCairo.show_layout(self.gc, self.pangolayout)
@@ -1795,13 +1784,10 @@ class ChartDisplay(Gtk.DrawingArea):
 
         if (not invertdisplay):
             if (nightvision):
-                # self.gc.set_foreground(self.colors[2])
                 self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
             else:
-                # self.gc.set_foreground(self.colors[0])
                 self.gc.set_source_rgb(self.colors[0].red, self.colors[0].green, self.colors[0].blue)
         else:
-            # self.gc.set_foreground(self.colors[1])
             self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
 
         # Set the time of plotting (now).
@@ -1921,13 +1907,10 @@ class ChartDisplay(Gtk.DrawingArea):
         if (drawconstellations):
             if (not invertdisplay):
                 if (nightvision):
-                    # self.gc.set_foreground(self.colors[2])
                     self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
                 else:
-                    # self.gc.set_foreground(self.colors[0])
                     self.gc.set_source_rgb(self.colors[0].red, self.colors[0].green, self.colors[0].blue)
             else:
-                # self.gc.set_foreground(self.colors[1])
                 self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
 
             for code, (name, lines) in figures.iteritems():
@@ -1945,7 +1928,6 @@ class ChartDisplay(Gtk.DrawingArea):
                             (px2, py2) = self.azalttoxy(azalt2)
                             px2 = px2 + self.margin - 2 + self.xoffset
                             py2 = py2 + self.margin - 2 + self.yoffset
-                            # self.window.draw_line(self.gc, px1, py1, px2, py2)
                             self.gc.move_to(int(px1), int(py1))
                             self.gc.line_to(int(px2), int(py2))
                             self.gc.stroke()
@@ -2246,7 +2228,6 @@ class ChartDisplay(Gtk.DrawingArea):
 
             self.pmap.add(px, py, 'planet', name)
             self.omap.add('planet', name, px, py)
-        # self.gc.set_foreground(self.colors[1])
         self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
         self.location.plot_cross()
         return True
@@ -2650,7 +2631,7 @@ class ChartDisplay(Gtk.DrawingArea):
 
     def plot_star(self, px, py, starsize):
         self.gc.save()
-        self.gc.arc(int(px) + starsize/2, int(py) + starsize/2, starsize, 0, 2 * pi)
+        self.gc.arc(int(px) + starsize/2, int(py) + starsize/2, starsize/2, 0, 2 * pi)
         self.gc.fill()
         self.gc.restore()
         self.gc.stroke()
@@ -2665,9 +2646,9 @@ class ChartDisplay(Gtk.DrawingArea):
             # mercury
 
             self.gc.set_line_width(2)
-            self.gc.arc(px, py, 24, 0, 2 * pi)
+            self.gc.arc(px, py, 12, 0, 2 * pi)
             self.gc.stroke()
-            self.gc.arc(px, py - 2, 10, 0, 2 * pi)
+            self.gc.arc(px, py - 2, 5, 0, 2 * pi)
             self.gc.stroke()
             self.gc.move_to(px + 4, py - 9)
             self.gc.line_to(px + 4, py - 7)
@@ -2687,9 +2668,9 @@ class ChartDisplay(Gtk.DrawingArea):
             # venus
 
             self.gc.set_line_width(2)
-            self.gc.arc(px, py, 24, 0, 2 * pi)
+            self.gc.arc(px, py, 12, 0, 2 * pi)
             self.gc.stroke()
-            self.gc.arc(px, py - 2, 10, 0, 2 * pi)
+            self.gc.arc(px, py - 2, 5, 0, 2 * pi)
             self.gc.stroke()
             self.gc.set_line_width(1)
             self.gc.move_to(px, py + 3)
@@ -2703,7 +2684,7 @@ class ChartDisplay(Gtk.DrawingArea):
             # moon
 
             self.gc.set_line_width(2)
-            self.gc.arc(px, py, 24, 0, 2 * pi)
+            self.gc.arc(px, py, 12, 0, 2 * pi)
             self.gc.stroke()
             self.gc.move_to(px + 1, py - 11)
             self.gc.line_to(px + 4, py - 11)
@@ -2731,16 +2712,12 @@ class ChartDisplay(Gtk.DrawingArea):
 
             # mars
 
-            # self.gc.set_line_width(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-            #                             Gdk.JOIN_MITER)
             self.gc.set_line_width(2)
 
-            self.gc.arc(px, py, 24, 0, 2 * pi)
+            self.gc.arc(px, py, 12, 0, 2 * pi)
             self.gc.stroke()
-            self.gc.arc(px - 1, py + 1, 10, 0, 2 * pi)
+            self.gc.arc(px - 1, py + 1, 5, 0, 2 * pi)
             self.gc.stroke()
-            # self.gc.set_line_width(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-            #                             Gdk.JOIN_MITER)
             self.gc.set_line_width(1)
             self.gc.move_to(px + 2, py - 2)
             self.gc.line_to(px + 6, py - 6)
@@ -2756,7 +2733,7 @@ class ChartDisplay(Gtk.DrawingArea):
             # jupiter
 
             self.gc.set_line_width(2)
-            self.gc.arc(px, py, 24, 0, 2 * pi)
+            self.gc.arc(px, py, 12, 0, 2 * pi)
             self.gc.stroke()
             self.gc.move_to(px - 6, py - 6)
             self.gc.line_to(px - 4, py - 8)
@@ -2782,7 +2759,7 @@ class ChartDisplay(Gtk.DrawingArea):
             # saturn
 
             self.gc.set_line_width(2)
-            self.gc.arc(px, py, 24, 0, 2 * pi)
+            self.gc.arc(px, py, 12, 0, 2 * pi)
             self.gc.stroke()
             self.gc.move_to(px - 6, py - 6)
             self.gc.line_to(px - 6, py + 5)
@@ -2818,11 +2795,11 @@ class ChartDisplay(Gtk.DrawingArea):
             # uranus
 
             self.gc.set_line_width(2)
-            self.gc.arc(px, py, 24, 0, 2 * pi)
+            self.gc.arc(px, py, 12, 0, 2 * pi)
             self.gc.stroke()
-            self.gc.arc(px, py + 2, 10, 0, 2 * pi)
+            self.gc.arc(px, py + 2, 5, 0, 2 * pi)
             self.gc.stroke()
-            self.gc.arc(px, py + 2, 4, 0, 2 * pi)
+            self.gc.arc(px, py + 2, 2, 0, 2 * pi)
             self.gc.stroke()
             self.gc.set_line_width(1)
             self.gc.move_to(px, py - 3)
@@ -2839,9 +2816,9 @@ class ChartDisplay(Gtk.DrawingArea):
             # sun
 
             self.gc.set_line_width(2)
-            self.gc.arc(px, py, 24, 0, 2 * pi)
+            self.gc.arc(px, py, 12, 0, 2 * pi)
             self.gc.stroke()
-            self.gc.arc(px, py, 4, 0, 2 * pi)
+            self.gc.arc(px, py, 2, 0, 2 * pi)
             self.gc.stroke()
             self.gc.set_line_width(1)
 
@@ -2879,26 +2856,28 @@ class ChartDisplay(Gtk.DrawingArea):
                 self.gc.set_source_rgb(self.colors[3].red,
                                        self.colors[3].green,
                                        self.colors[3].blue)
-                self.gc.arc(px - int(dx / 2) + int((dx - 1)/2), py - int(dx / 2)  + int((dx - 1)/2), dx - 1, 0, 2 * pi)
+                # val = (dx-1)/(dy-1)
+                # self.gc.scale(val, 1)
+                self.gc.arc(px - int(dx / 2) + int((dx - 1)/2), py - int(dy / 2)  + int((dy - 1)/2), dy - 1, 0, 2 * pi)
                 self.gc.fill()
                 self.gc.set_source_rgb(fg_color.red,
                                        fg_color.green,
                                        fg_color.blue)
-                self.gc.scale(dx, dy)
+                # self.gc.scale(dx, dy)
                 self.gc.arc(px - int(dx / 2) + 1/2, py - int(dx / 2) + 1/2, 1, 0, 2 * pi)
                 self.gc.stroke()
 
             elif (type == 'PlN'):
                 # plot as gray circle with central dot
-                self.gc.set_source_rgb(self.colors[3].red,
-                                       self.colors[3].green,
-                                       self.colors[3].blue)
-                self.gc.arc(px - int(dx / 2) + int((dx - 1)/2), py - int(dx / 2) + int((dx - 1)/2), dx - 1, 0, 2 * pi)
+                self.gc.set_source_rgb((1 / 65536.0) * self.colors[3].red,
+                                       (1 / 65536.0) * self.colors[3].green,
+                                       (1 / 65536.0) * self.colors[3].blue)
+                self.gc.arc(px, py, dx/2 , 0, 2 * pi)
                 self.gc.fill()
                 self.gc.set_source_rgb(fg_color.red,
                                        fg_color.green,
                                        fg_color.blue)
-                self.gc.arc(px, py, 4, 0, 2 * pi)
+                self.gc.arc(px, py, 2, 0, 2 * pi)
                 self.gc.fill()
 
             elif (type == 'SNR') or (type == 'OCl'):
@@ -2906,7 +2885,8 @@ class ChartDisplay(Gtk.DrawingArea):
                 self.gc.set_source_rgb(self.colors[3].red,
                                        self.colors[3].green,
                                        self.colors[3].blue)
-                self.gc.arc(px - int(dx / 2) + dx / 2, py - int(dx / 2) + dx / 2, dx, 0, 2 * pi)
+                self.gc.arc(px, py, dx/2, 0, 2 * pi)
+                self.gc.fill()
                 self.gc.set_source_rgb(fg_color.red,
                                        fg_color.green,
                                        fg_color.blue)
@@ -2930,14 +2910,14 @@ class ChartDisplay(Gtk.DrawingArea):
                 self.gc.set_source_rgb(self.colors[3].red,
                                        self.colors[3].green,
                                        self.colors[3].blue)
-                self.gc.arc(px - int(dx / 2), py - int(dx / 2), dx - 1, 0, 2 * pi)
+                self.gc.arc(px, py, dx/2, 0, 2 * pi)
                 self.gc.fill()
                 self.gc.set_source_rgb(fg_color.red,
                                        fg_color.green,
                                        fg_color.blue)
-                self.gc.arc(px - int(dx / 2) + int((dx - 1)/2), py - int(dx / 2) + int((dx - 1)/2), dx - 1, 0, 2 * pi)
+                self.gc.arc(px - int(dx / 2) + int((dx - 1)/2), py - int(dx / 2) + int((dx - 1)/2), (dx - 1)/2, 0, 2 * pi)
                 self.gc.stroke()
-                self.gc.arc(px, py, 4, 0, 2 * pi)
+                self.gc.arc(px, py, 2, 0, 2 * pi)
                 self.gc.fill()
             else:
                 #	Dbl = double star
@@ -3040,202 +3020,181 @@ class StarChart(activity.Activity):
             abbrev_from_name[name] = id
 
         # Create toolbox
-        # self.what_toolbar = gtk.Toolbar()
-        # self.where_toolbar = gtk.Toolbar()
-        # self.when_toolbar = gtk.Toolbar()
-        # self.locate_toolbar = gtk.Toolbar()
-        # self.about_toolbar = gtk.Toolbar()
+        self.what_toolbar = Gtk.Toolbar()
+        self.where_toolbar = Gtk.Toolbar()
+        self.when_toolbar = Gtk.Toolbar()
+        self.locate_toolbar = Gtk.Toolbar()
+        self.about_toolbar = Gtk.Toolbar()
 
-        # if _have_toolbox:
-        #   toolbox = ToolbarBox()
-        #   activity_button = ActivityToolbarButton(self)
-        #   toolbox.toolbar.insert(activity_button, 0)
-        #   activity_button.show()
-        toolbar_box = ToolbarBox()
-        self.set_toolbar_box(toolbar_box)
-        toolbar_box.show()
+        if _have_toolbox:
+            toolbar_box = ToolbarBox()
+            self.set_toolbar_box(toolbar_box)
+            toolbar_box.show()
 
-        activity_button = ActivityToolbarButton(self)
-        toolbar_box.toolbar.insert(activity_button, -1)
-        activity_button.show()
+            activity_button = ActivityToolbarButton(self)
+            toolbar_box.toolbar.insert(activity_button, -1)
+            activity_button.show()
 
-        separator = Gtk.SeparatorToolItem()
-        separator.props.draw = False
-        separator.set_expand(True)
-        toolbar_box.toolbar.insert(separator, -1)
-        separator.show()
+            what_toolbar_button = ToolbarButton(
+                page=self.what_toolbar,
+                icon_name='toolbar-view')
+            self.what_toolbar.show()
+            toolbar_box.toolbar.insert(what_toolbar_button, -1)
+            what_toolbar_button.show()
 
-        stop_button = StopButton(self)
-        stop_button.props.accelerator = '<Ctrl>q'
-        toolbar_box.toolbar.insert(stop_button, -1)
-        stop_button.show()
+            where_toolbar_button = ToolbarButton(
+              page=self.where_toolbar,
+              icon_name='where')
+            self.where_toolbar.show()
+            toolbar_box.toolbar.insert(where_toolbar_button, -1)
+            where_toolbar_button.show()
 
-        #       what_toolbar_button = ToolbarButton(
-        #         page=self.what_toolbar,
-        #         icon_name='toolbar-view')
-        #       self.what_toolbar.show()
-        #       toolbox.toolbar.insert(what_toolbar_button, -1)
-        #       what_toolbar_button.show()
+            when_toolbar_button = ToolbarButton(
+              page=self.when_toolbar,
+              icon_name='when')
+            self.when_toolbar.show()
+            toolbar_box.toolbar.insert(when_toolbar_button, -1)
+            when_toolbar_button.show()
 
-        #       where_toolbar_button = ToolbarButton(
-        #         page=self.where_toolbar,
-        #         icon_name='where')
-        #       self.where_toolbar.show()
-        #       toolbox.toolbar.insert(where_toolbar_button, -1)
-        #       where_toolbar_button.show()
+            locate_toolbar_button = ToolbarButton(
+              page=self.locate_toolbar,
+              icon_name='locate')
+            self.locate_toolbar.show()
+            toolbar_box.toolbar.insert(locate_toolbar_button, -1)
+            locate_toolbar_button.show()
 
-        #       when_toolbar_button = ToolbarButton(
-        #         page=self.when_toolbar,
-        #         icon_name='when')
-        #       self.when_toolbar.show()
-        #       toolbox.toolbar.insert(when_toolbar_button, -1)
-        #       when_toolbar_button.show()
+            about_toolbar_button = ToolbarButton(
+              page=self.about_toolbar,
+              icon_name='about')
+            self.about_toolbar.show()
+            toolbar_box.toolbar.insert(about_toolbar_button, -1)
+            about_toolbar_button.show()
 
-        #       locate_toolbar_button = ToolbarButton(
-        #         page=self.locate_toolbar,
-        #         icon_name='locate')
-        #       self.locate_toolbar.show()
-        #       toolbox.toolbar.insert(locate_toolbar_button, -1)
-        #       locate_toolbar_button.show()
+            separator = Gtk.SeparatorToolItem()
+            separator.props.draw = False
+            separator.set_expand(True)
+            toolbar_box.toolbar.insert(separator, -1)
+            separator.show()
 
-        #       about_toolbar_button = ToolbarButton(
-        #         page=self.about_toolbar,
-        #         icon_name='about')
-        #       self.about_toolbar.show()
-        #       toolbox.toolbar.insert(about_toolbar_button, -1)
-        #       about_toolbar_button.show()
+            stop_button = StopButton(self)
+            stop_button.props.accelerator = '<Ctrl>q'
+            toolbar_box.toolbar.insert(stop_button, -1)
+            stop_button.show()
 
-        #       separator = gtk.SeparatorToolItem()
-        #       separator.props.draw = False
-        #       separator.set_expand(True)
-        #       toolbox.toolbar.insert(separator, -1)
+        # Fill the toolbox bars
 
-        #       stop_button = StopButton(self)
-        #       stop_button.props.accelerator = '<Ctrl>q'
-        #       toolbox.toolbar.insert(stop_button, -1)
-        #       stop_button.show()
-
-        #       self.set_toolbar_box(toolbox)
-        #       toolbox.show()
-        #       self.toolbar = toolbox.toolbar
-        #     else:
-        #       toolbox = activity.ActivityToolbox(self)
-        #       self.set_toolbox(toolbox)
-
-        # # Fill the toolbox bars
-
-        #     self._toolbar_add(self.what_toolbar, fullscreen)
-        #     separator = gtk.SeparatorToolItem()
-        #     separator.props.draw = True
-        #     separator.set_expand(False)
-        #     self._toolbar_add(self.what_toolbar, separator)
-        #     self._toolbar_add(self.what_toolbar, button1)
-        #     self._toolbar_add(self.what_toolbar, button2)
-        #     self._toolbar_add(self.what_toolbar, button3)
-        #     self._toolbar_add(self.what_toolbar, button4)
-        #     separator = gtk.SeparatorToolItem()
-        #     separator.props.draw = True
-        #     separator.set_expand(False)
-        #     self._toolbar_add(self.what_toolbar, separator)
-        #     self._toolbar_add(self.what_toolbar, label6)
-        #     container2.attach(rb7, 0, 1, 0, 1)
-        #     container2.attach(rb8, 1, 2, 0, 1)
-        #     container2.attach(rb9, 2, 3, 0, 1)
-        #     container2.attach(rb10, 3, 4, 0, 1)
-        #     container2.attach(rb11, 4, 5, 0, 1)
-        #     container2.attach(rb12, 5, 6, 0, 1)
-        #     rb7.show()
-        #     rb9.show()
-        #     rb11.show()
-        #     rb8.show()
-        #     rb10.show()
-        #     rb12.show()
-        #     self._toolbar_add(self.what_toolbar, container2)
-        #     self._toolbar_add(self.where_toolbar, label1)
-        #     self._toolbar_add(self.where_toolbar, entry1)
-        #     container3.add(rb1)
-        #     rb1.show()
-        #     container3.add(rb2)
-        #     rb2.show()
-        #     self._toolbar_add(self.where_toolbar, container3)
-        #     separator = gtk.SeparatorToolItem()
-        #     separator.props.draw = False
-        #     separator.set_expand(False)
-        #     self._toolbar_add(self.where_toolbar, separator)
-        #     self._toolbar_add(self.where_toolbar, label2)
-        #     self._toolbar_add(self.where_toolbar, entry2)
-        #     container4.add(rb3)
-        #     rb3.show()
-        #     container4.add(rb4)
-        #     rb4.show()
-        #     self._toolbar_add(self.where_toolbar, container4)
-        #     separator = gtk.SeparatorToolItem()
-        #     separator.props.draw = False
-        #     separator.set_expand(False)
-        #     self._toolbar_add(self.where_toolbar, separator)
-        #     self._toolbar_add(self.where_toolbar, button5)
-        #     separator = gtk.SeparatorToolItem()
-        #     separator.props.draw = False
-        #     separator.set_expand(False)
-        #     self._toolbar_add(self.where_toolbar, separator)
-        #     self._toolbar_add(self.where_toolbar, button51)
-        #     self._toolbar_add(self.when_toolbar, rb5)
-        #     self._toolbar_add(self.when_toolbar, rb6)
-        #     self._toolbar_add(self.when_toolbar, label4)
-        #     self._toolbar_add(self.when_toolbar, entry3)
-        #     self._toolbar_add(self.when_toolbar, label5)
-        #     self._toolbar_add(self.when_toolbar, entry4)
-        #     separator = gtk.SeparatorToolItem()
-        #     separator.props.draw = False
-        #     separator.set_expand(False)
-        #     self._toolbar_add(self.when_toolbar, separator)
-        #     self._toolbar_add(self.when_toolbar, button6)
-        # #    objtypecb.append_text(_('Constellations'))
-        #     objtypecb.append_text(_('Planets'))
-        #     objtypecb.append_text(_('Stars by Constellation'))
-        #     objtypecb.append_text(_('Brightest Stars'))
-        #     objtypecb.append_text(_('Deep-sky Objects'))
-        #     self._toolbar_add(self.locate_toolbar, labell1)
-        #     self._toolbar_add(self.locate_toolbar, objtypecb)
-        #     (name, wbar, e, a, I, O, L0, dL) = sun
-        #     planetscb.append_text(name)
-        #     (name, L0, P0, N0, I, e, a, phi0, tau) = moon
-        #     planetscb.append_text(name)
-        #     for i in range(len(planets)):
-        #       if (i == 2):
-        #         pass
-        #       else:
-        #         (name, wbar, e, a, I, O, L0, dL) = planets[i]
-        #         planetscb.append_text(name)
-        #     names = []
-        #     for code, (name, lines) in figures.iteritems():
-        # # lines is an array of coordinates.  we ignore it.
-        #       names = names + [name]
-        #     for name in sorted(names):
-        #       constscb.append_text(name)
-        #     for i in range(len(dso_chart)):
-        #       (nM, strCon, ra, dec, mag, majA, minA, posA, strT, strN) = dso_chart[i]
-        #       if (strN == ''):
-        #         dsoscb.append_text(nM)
-        #       else:
-        #         dsoscb.append_text(strN + ' (' + nM +')')
-        #     container0.add(constscb)
-        #     self._toolbar_add(self.locate_toolbar, container0)
-        #     # container1.add(labela1)
-        #     # labela1.show()
-        #     # container1.add(labela2)
-        #     # labela2.show()
-        #     container1.add(labela3)
-        #     labela3.show()
-        #     container1.add(labela4)
-        #     labela4.show()
-        #     self._toolbar_add(self.about_toolbar, container1)
-        #     if not _have_toolbox:
-        #       toolbox.add_toolbar(_('What'), self.what_toolbar)
-        #       toolbox.add_toolbar(_('Where'), self.where_toolbar)
-        #       toolbox.add_toolbar(_('When'), self.when_toolbar)
-        #       toolbox.add_toolbar(_('Locate'), self.locate_toolbar)
-        #       toolbox.add_toolbar(_('About'), self.about_toolbar)
+            self._toolbar_add(self.what_toolbar, fullscreen)
+            separator = Gtk.SeparatorToolItem()
+            separator.props.draw = True
+            separator.set_expand(False)
+            self._toolbar_add(self.what_toolbar, separator)
+            self._toolbar_add(self.what_toolbar, button1)
+            self._toolbar_add(self.what_toolbar, button2)
+            self._toolbar_add(self.what_toolbar, button3)
+            self._toolbar_add(self.what_toolbar, button4)
+            separator = Gtk.SeparatorToolItem()
+            separator.props.draw = True
+            separator.set_expand(False)
+            self._toolbar_add(self.what_toolbar, separator)
+            self._toolbar_add(self.what_toolbar, label6)
+            container2.attach(rb7, 0, 1, 0, 1)
+            container2.attach(rb8, 1, 2, 0, 1)
+            container2.attach(rb9, 2, 3, 0, 1)
+            container2.attach(rb10, 3, 4, 0, 1)
+            container2.attach(rb11, 4, 5, 0, 1)
+            container2.attach(rb12, 5, 6, 0, 1)
+            rb7.show()
+            rb9.show()
+            rb11.show()
+            rb8.show()
+            rb10.show()
+            rb12.show()
+            self._toolbar_add(self.what_toolbar, container2)
+            self._toolbar_add(self.where_toolbar, label1)
+            self._toolbar_add(self.where_toolbar, entry1)
+            container3.add(rb1)
+            rb1.show()
+            container3.add(rb2)
+            rb2.show()
+            self._toolbar_add(self.where_toolbar, container3)
+            separator = Gtk.SeparatorToolItem()
+            separator.props.draw = False
+            separator.set_expand(False)
+            self._toolbar_add(self.where_toolbar, separator)
+            self._toolbar_add(self.where_toolbar, label2)
+            self._toolbar_add(self.where_toolbar, entry2)
+            container4.add(rb3)
+            rb3.show()
+            container4.add(rb4)
+            rb4.show()
+            self._toolbar_add(self.where_toolbar, container4)
+            separator = Gtk.SeparatorToolItem()
+            separator.props.draw = False
+            separator.set_expand(False)
+            self._toolbar_add(self.where_toolbar, separator)
+            self._toolbar_add(self.where_toolbar, button5)
+            separator = Gtk.SeparatorToolItem()
+            separator.props.draw = False
+            separator.set_expand(False)
+            self._toolbar_add(self.where_toolbar, separator)
+            self._toolbar_add(self.where_toolbar, button51)
+            self._toolbar_add(self.when_toolbar, rb5)
+            self._toolbar_add(self.when_toolbar, rb6)
+            self._toolbar_add(self.when_toolbar, label4)
+            self._toolbar_add(self.when_toolbar, entry3)
+            self._toolbar_add(self.when_toolbar, label5)
+            self._toolbar_add(self.when_toolbar, entry4)
+            separator = Gtk.SeparatorToolItem()
+            separator.props.draw = False
+            separator.set_expand(False)
+            self._toolbar_add(self.when_toolbar, separator)
+            self._toolbar_add(self.when_toolbar, button6)
+        #    objtypecb.append_text(_('Constellations'))
+            objtypecb.append_text(_('Planets'))
+            objtypecb.append_text(_('Stars by Constellation'))
+            objtypecb.append_text(_('Brightest Stars'))
+            objtypecb.append_text(_('Deep-sky Objects'))
+            self._toolbar_add(self.locate_toolbar, labell1)
+            self._toolbar_add(self.locate_toolbar, objtypecb)
+            (name, wbar, e, a, I, O, L0, dL) = sun
+            planetscb.append_text(name)
+            (name, L0, P0, N0, I, e, a, phi0, tau) = moon
+            planetscb.append_text(name)
+            for i in range(len(planets)):
+              if (i == 2):
+                pass
+              else:
+                (name, wbar, e, a, I, O, L0, dL) = planets[i]
+                planetscb.append_text(name)
+            names = []
+            for code, (name, lines) in figures.iteritems():
+        # lines is an array of coordinates.  we ignore it.
+              names = names + [name]
+            for name in sorted(names):
+              constscb.append_text(name)
+            for i in range(len(dso_chart)):
+              (nM, strCon, ra, dec, mag, majA, minA, posA, strT, strN) = dso_chart[i]
+              if (strN == ''):
+                dsoscb.append_text(nM)
+              else:
+                dsoscb.append_text(strN + ' (' + nM +')')
+            container0.add(constscb)
+            self._toolbar_add(self.locate_toolbar, container0)
+            # container1.add(labela1)
+            # labela1.show()
+            # container1.add(labela2)
+            # labela2.show()
+            container1.add(labela3)
+            labela3.show()
+            container1.add(labela4)
+            labela4.show()
+            self._toolbar_add(self.about_toolbar, container1)
+            if not _have_toolbox:
+              toolbox.add_toolbar(_('What'), self.what_toolbar)
+              toolbox.add_toolbar(_('Where'), self.where_toolbar)
+              toolbox.add_toolbar(_('When'), self.when_toolbar)
+              toolbox.add_toolbar(_('Locate'), self.locate_toolbar)
+              toolbox.add_toolbar(_('About'), self.about_toolbar)
 
         # Create the GUI objects.
 
@@ -3247,15 +3206,6 @@ class StarChart(activity.Activity):
         vbox = Gtk.VBox(False)
         self.identifyobject = Gtk.Label("")
         vbox.pack_start(self.identifyobject, False, True, 0)
-        # hbox = Gtk.HBox(False)
-        # hbox.pack_start(labell1, True, True, 0)
-        # vbox.pack_start(hbox, False, False, 0)
-        # hbox = Gtk.HBox(False)
-        # hbox.pack_start(labelq1, False, True, 0)
-        # hbox.pack_start(cbq1, True, True, 0)
-        # hbox.pack_start(buttonq1, True, True, 0)
-        # hbox.pack_start(buttonq2, True, True, 0)
-        # vbox.pack_start(hbox, False, False, 0)
         vbox.pack_start(self.chart, True, True, 0)
         eb.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("gray"))
 
