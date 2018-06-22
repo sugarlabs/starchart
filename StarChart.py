@@ -1705,22 +1705,21 @@ class ChartDisplay(Gtk.DrawingArea):
 
         if (not self.canplot):
             return
-        # self.cleararea()
-        # if (invertdisplay):
-        #   if (nightvision):
-        #     self.gc.set_foreground(self.colors[2])
-        #   else:
-        #     self.gc.set_foreground(self.colors[0])
-        # else:
-        #   self.gc.set_foreground(self.colors[1])
-        # self.window.draw_arc(self.gc,
-        #                           True,
-        #                           self.xoffset + self.margin - 2,
-        #                           self.yoffset + self.margin - 2,
-        #                           self.diameter + 4,
-        #                           self.diameter + 4,
-        #                           0,
-        #                           23040)
+        self.cleararea()
+        if (invertdisplay):
+            if (nightvision):
+                self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
+            else:
+                self.gc.set_source_rgb(self.colors[0].red, self.colors[0].green, self.colors[0].blue)
+        else:
+            self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
+
+        self.gc.arc(self.xoffset + self.margin + self.diameter / 2,
+                    self.yoffset + self.margin + self.diameter / 2,
+                    self.diameter / 2,
+                    0,
+                    2 * pi)
+        self.gc.fill()
 
         # Erase the pixels-to-object and object-to-pixels maps, since objects may now
         # occupy different (x, y).
@@ -3248,8 +3247,8 @@ class StarChart(activity.Activity):
         vbox = Gtk.VBox(False)
         self.identifyobject = Gtk.Label("")
         vbox.pack_start(self.identifyobject, False, True, 0)
-        hbox = Gtk.HBox(False)
-        hbox.pack_start(labell1, True, True, 0)
+        # hbox = Gtk.HBox(False)
+        # hbox.pack_start(labell1, True, True, 0)
         # vbox.pack_start(hbox, False, False, 0)
         # hbox = Gtk.HBox(False)
         # hbox.pack_start(labelq1, False, True, 0)
