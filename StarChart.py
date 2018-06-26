@@ -2816,16 +2816,12 @@ class ChartDisplay(Gtk.DrawingArea):
                 self.gc.set_source_rgb(self.colors[3].red,
                                        self.colors[3].green,
                                        self.colors[3].blue)
-                self.gc.save()
-                self.gc.scale(int((dx-1)/2), int((dy-1)/2))
                 self.gc.arc(px - int(dx / 2) + int((dx - 1)/2), py - int(dy / 2)  + int((dy - 1)/2), 1, 0, 2 * pi)
                 self.gc.fill()
                 self.gc.set_source_rgb(fg_color.red,
                                        fg_color.green,
                                        fg_color.blue)
-                self.gc.scale(dx, dy)
                 self.gc.arc(px, py, 1, 0, 2 * pi)
-                self.gc.restore()
                 self.gc.stroke()
 
             elif (type == 'PlN'):
