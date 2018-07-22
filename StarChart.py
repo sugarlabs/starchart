@@ -2819,9 +2819,9 @@ class ChartDisplay(Gtk.DrawingArea):
                     return  # too small.
             if (type == 'Gal'):
                 # plot as gray ellipse with solid outline.
-                self.gc.set_source_rgb(self.colors[3].red,
-                                       self.colors[3].green,
-                                       self.colors[3].blue)
+                self.gc.set_source_rgb((1 / 65536.0) * self.colors[3].red,
+                                       (1 / 65536.0) * self.colors[3].green,
+                                       (1 / 65536.0) * self.colors[3].blue)
                 self.gc.arc(px - int(dx / 2) + int((dx - 1)/2), py - int(dy / 2)  + int((dy - 1)/2), 1, 0, 2 * pi)
                 self.gc.fill()
                 self.gc.set_source_rgb(fg_color.red,
@@ -2845,9 +2845,9 @@ class ChartDisplay(Gtk.DrawingArea):
 
             elif (type == 'SNR') or (type == 'OCl'):
                 # plot as gray circle with no outline.
-                self.gc.set_source_rgb(self.colors[3].red,
-                                       self.colors[3].green,
-                                       self.colors[3].blue)
+                self.gc.set_source_rgb((1 / 65536.0) * self.colors[3].red,
+                                       (1 / 65536.0) * self.colors[3].green,
+                                       (1 / 65536.0) * self.colors[3].blue)
                 self.gc.arc(px, py, dx/2, 0, 2 * pi)
                 self.gc.fill()
                 self.gc.set_source_rgb(fg_color.red,
@@ -2856,9 +2856,9 @@ class ChartDisplay(Gtk.DrawingArea):
 
             elif (type == 'C/N') or (type == 'DfN'):
                 # plot as gray rectangle with no outline.
-                self.gc.set_source_rgb(self.colors[3].red,
-                                       self.colors[3].green,
-                                       self.colors[3].blue)
+                self.gc.set_source_rgb((1 / 65536.0) * self.colors[3].red,
+                                       (1 / 65536.0) * self.colors[3].green,
+                                       (1 / 65536.0) * self.colors[3].blue)
                 self.gc.rectangle(px - int(dx / 2),
                                   py - int(dy / 2),
                                   dx,
@@ -2870,9 +2870,9 @@ class ChartDisplay(Gtk.DrawingArea):
 
             elif (type == 'GCl'):
                 # plot as gray circle with outline and central dot.
-                self.gc.set_source_rgb(self.colors[3].red,
-                                       self.colors[3].green,
-                                       self.colors[3].blue)
+                self.gc.set_source_rgb((1 / 65536.0) * self.colors[3].red,
+                                       (1 / 65536.0) * self.colors[3].green,
+                                       (1 / 65536.0) * self.colors[3].blue)
                 self.gc.arc(px, py, dx/2, 0, 2 * pi)
                 self.gc.fill()
                 self.gc.set_source_rgb(fg_color.red,
