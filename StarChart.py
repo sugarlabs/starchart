@@ -1065,9 +1065,9 @@ class Location():
             self.context.gc.stroke()
             self.context.gc.move_to(x - 25, y)
             self.context.gc.line_to(x + 25, y)
+            self.context.gc.stroke()
             self.context.gc.set_line_width(1) 
             self.context.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue) 
-            self.context.gc.stroke()
         else:
             pass
 
