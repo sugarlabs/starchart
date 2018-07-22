@@ -1029,6 +1029,7 @@ class Location():
     def __init__(self, context):
         self.data = [False, 0, 0]
         self.context = context
+        self.colors = {}
 
     def clear(self):
         self.data = [False, 0, 0]
@@ -1048,15 +1049,20 @@ class Location():
             #  westward.  The code needs to compensate for that somehow.  (Or else
             #  this is a feature, since it shows how the sky moves over time.)
 
+            if (len(self.colors) == 0):
+                self.colors[0] = Gdk.Color.parse('white')[1]
+                self.colors[1] = Gdk.Color.parse('black')[1]
+                self.colors[2] = Gdk.Color.parse('red')[1]
+                self.colors[3] = Gdk.Color.parse('gray')[1]
+                self.colors[4] = Gdk.Color.parse('green')[1]
+
             x = self.data[1] + 1
             y = self.data[2] + 1
             self.context.gc.set_source_rgb(self.colors[4].red, self.colors[4].green, self.colors[4].blue)
             self.context.gc.set_line_width(5)
-             # gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-             #                                    gtk.gdk.JOIN_MITER)
             self.context.gc.move_to(x, y - 25)
             self.context.gc.line_to(x, y + 25)
-            self.stroke()
+            self.context.gc.stroke()
             self.context.gc.move_to(x - 25, y)
             self.context.gc.line_to(x + 25, y)
             self.context.gc.set_line_width(1) 
