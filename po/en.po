@@ -6,25 +6,115 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-10 00:32-0400\n"
-"PO-Revision-Date: 2013-07-10 08:27+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2017-12-01 01:47+0000\n"
+"PO-Revision-Date: 2016-02-21 17:32+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1456075953.000000\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "StarChart"
 msgstr "StarChart"
 
 #. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
 msgid "explore the cosmos"
 msgstr "explore the cosmos"
+
+#. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
+#: dso1.py:33
+msgid "Butterfly Cluster"
+msgstr "Butterfly Cluster"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
+#: dso1.py:35
+msgid "Ptolemy's Cluster"
+msgstr "Ptolemy's Cluster"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
+#: dso1.py:37
+msgid "Lagoon Nebula"
+msgstr "Lagoon Nebula"
+
+#. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
+#: dso1.py:40
+msgid "Wild Duck Cluster"
+msgstr "Wild Duck Cluster"
+
+#. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
+#: dso1.py:43
+msgid "Hercules Cluster"
+msgstr "Hercules Cluster"
+
+#. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
+#: dso1.py:46
+msgid "Omega Nebula"
+msgstr "Omega Nebula"
+
+#. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
+#: dso1.py:49
+msgid "Trifid Nebula"
+msgstr "Trifid Nebula"
+
+#. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
+#: dso1.py:57
+msgid "Andromeda Galaxy"
+msgstr "Andromeda Galaxy"
+
+#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
+#: dso1.py:59
+msgid "Triangulum Galaxy"
+msgstr "Triangulum Galaxy"
+
+#. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
+#: dso1.py:68
+msgid "Orion Nebula"
+msgstr "Orion Nebula"
+
+#. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
+#: dso1.py:70
+msgid "de Mairan's Nebula"
+msgstr "de Mairan's Nebula"
+
+#. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
+#: dso1.py:72
+msgid "Beehive Cluster"
+msgstr "Beehive Cluster"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pleiades
+#: dso1.py:74
+msgid "Pleiades"
+msgstr "Pleiades"
+
+#. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
+#: dso1.py:80
+msgid "Whirlpool Galaxy"
+msgstr "Whirlpool Galaxy"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
+#: dso1.py:86
+msgid "Sunflower Galaxy"
+msgstr "Sunflower Galaxy"
+
+#. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
+#: dso1.py:90
+msgid "Bodes Galaxy"
+msgstr "Bodes Galaxy"
+
+#. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
+#: dso1.py:92
+msgid "Southern Pinwheel Galaxy"
+msgstr "Southern Pinwheel Galaxy"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
+#: dso1.py:96
+msgid "Pinwheel Galaxy"
+msgstr "Pinwheel Galaxy"
 
 #. TRANS: http://en.wikipedia.org/wiki/Mercury_(planet)
 #: StarChart.py:228
@@ -471,7 +561,7 @@ msgstr "Grus"
 msgid "Hercules"
 msgstr "Hercules"
 
-#. TRANS: http://en.wikipedia.org/wiki/Horologium
+#. TRANS: http://en.wikipedia.org/wiki/Horologium_(constellation)
 #: constellations.py:439
 msgid "Horologium"
 msgstr "Horologium"
@@ -711,96 +801,6 @@ msgstr "Volans"
 msgid "Vulpecula"
 msgstr "Vulpecula"
 
-#. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
-#: dso1.py:33
-msgid "Butterfly Cluster"
-msgstr "Butterfly Cluster"
-
-#. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
-#: dso1.py:35
-msgid "Ptolemy's Cluster"
-msgstr "Ptolemy's Cluster"
-
-#. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
-#: dso1.py:37
-msgid "Lagoon Nebula"
-msgstr "Lagoon Nebula"
-
-#. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
-#: dso1.py:40
-msgid "Wild Duck Cluster"
-msgstr "Wild Duck Cluster"
-
-#. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
-#: dso1.py:43
-msgid "Hercules Cluster"
-msgstr "Hercules Cluster"
-
-#. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
-#: dso1.py:46
-msgid "Omega Nebula"
-msgstr "Omega Nebula"
-
-#. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
-#: dso1.py:49
-msgid "Trifid Nebula"
-msgstr "Trifid Nebula"
-
-#. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
-#: dso1.py:57
-msgid "Andromeda Galaxy"
-msgstr "Andromeda Galaxy"
-
-#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
-#: dso1.py:59
-msgid "Triangulum Galaxy"
-msgstr "Triangulum Galaxy"
-
-#. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
-#: dso1.py:68
-msgid "Orion Nebula"
-msgstr "Orion Nebula"
-
-#. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
-#: dso1.py:70
-msgid "de Mairan's Nebula"
-msgstr "de Mairan's Nebula"
-
-#. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
-#: dso1.py:72
-msgid "Beehive Cluster"
-msgstr "Beehive Cluster"
-
-#. TRANS: http://en.wikipedia.org/wiki/Pleiades
-#: dso1.py:74
-msgid "Pleiades"
-msgstr "Pleiades"
-
-#. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
-#: dso1.py:80
-msgid "Whirlpool Galaxy"
-msgstr "Whirlpool Galaxy"
-
-#. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
-#: dso1.py:86
-msgid "Sunflower Galaxy"
-msgstr "Sunflower Galaxy"
-
-#. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
-#: dso1.py:90
-msgid "Bodes Galaxy"
-msgstr "Bodes Galaxy"
-
-#. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
-#: dso1.py:92
-msgid "Southern Pinwheel Galaxy"
-msgstr "Southern Pinwheel Galaxy"
-
-#. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
-#: dso1.py:96
-msgid "Pinwheel Galaxy"
-msgstr "Pinwheel Galaxy"
-
 #. TRANS: http://en.wikipedia.org/wiki/Large_Magellanic_Cloud
 #: dso2.py:36
 msgid "Large Magellanic Cloud"
@@ -885,6 +885,12 @@ msgstr "Veil Nebula"
 #: dso2.py:97
 msgid "North America Nebula"
 msgstr "North America Nebula"
+
+#~ msgid "Canis Venatici"
+#~ msgstr "Canis Venatici"
+
+#~ msgid "de Mairans Nebula"
+#~ msgstr "de Mairans Nebula"
 
 #~ msgid "de Mairan"
 #~ msgstr "de Mairan's Nebula"

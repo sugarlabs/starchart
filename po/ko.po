@@ -1,0 +1,913 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-01 01:47+0000\n"
+"PO-Revision-Date: 2017-12-10 02:15+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1512872125.000000\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "StarChart"
+msgstr "스타 챠트"
+
+#. TRANS: "summary" option from activity.info file
+msgid "explore the cosmos"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
+#: dso1.py:33
+#, fuzzy
+msgid "Butterfly Cluster"
+msgstr "나비 성단(M6, NGC6405)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
+#: dso1.py:35
+#, fuzzy
+msgid "Ptolemy's Cluster"
+msgstr "프톨레미 성단(M7)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
+#: dso1.py:37
+#, fuzzy
+msgid "Lagoon Nebula"
+msgstr "석호 석운(M8, NGC 6523)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
+#: dso1.py:40
+#, fuzzy
+msgid "Wild Duck Cluster"
+msgstr "야생오리 성단(M11)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
+#: dso1.py:43
+msgid "Hercules Cluster"
+msgstr "헤라클레스 클러스터"
+
+#. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
+#: dso1.py:46
+msgid "Omega Nebula"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
+#: dso1.py:49
+msgid "Trifid Nebula"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
+#: dso1.py:57
+msgid "Andromeda Galaxy"
+msgstr "안드로메다 은하계"
+
+#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
+#: dso1.py:59
+#, fuzzy
+msgid "Triangulum Galaxy"
+msgstr "삼각형자리 은하(M33)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
+#: dso1.py:68
+msgid "Orion Nebula"
+msgstr "오리온 성운"
+
+#. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
+#: dso1.py:70
+msgid "de Mairan's Nebula"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
+#: dso1.py:72
+msgid "Beehive Cluster"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Pleiades
+#: dso1.py:74
+msgid "Pleiades"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
+#: dso1.py:80
+#, fuzzy
+msgid "Whirlpool Galaxy"
+msgstr "소용돌이 은하(M51)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
+#: dso1.py:86
+#, fuzzy
+msgid "Sunflower Galaxy"
+msgstr "해바라기 은하(M63 또는 NGC 5055)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
+#: dso1.py:90
+#, fuzzy
+msgid "Bodes Galaxy"
+msgstr "보데 은하(NGC 3031)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
+#: dso1.py:92
+msgid "Southern Pinwheel Galaxy"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
+#: dso1.py:96
+#, fuzzy
+msgid "Pinwheel Galaxy"
+msgstr "바람개비 은하(M101 또는 NGC5457)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Mercury_(planet)
+#: StarChart.py:228
+msgid "Mercury"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Venus
+#: StarChart.py:230
+msgid "Venus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Earth
+#: StarChart.py:232
+msgid "Earth"
+msgstr "지구"
+
+#. TRANS: http://en.wikipedia.org/wiki/Mars
+#: StarChart.py:234
+msgid "Mars"
+msgstr "화성"
+
+#. TRANS: http://en.wikipedia.org/wiki/Jupiter
+#: StarChart.py:236
+msgid "Jupiter"
+msgstr "목성"
+
+#. TRANS: http://en.wikipedia.org/wiki/Saturn
+#: StarChart.py:238
+msgid "Saturn"
+msgstr "토성"
+
+#. TRANS: http://en.wikipedia.org/wiki/Uranus
+#: StarChart.py:240
+msgid "Uranus"
+msgstr "천왕성"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sun
+#: StarChart.py:243 StarChart.py:1012 StarChart.py:1668
+#, fuzzy
+msgid "Sun"
+msgstr "태양"
+
+#. TRANS: http://en.wikipedia.org/wiki/Moon
+#: StarChart.py:250 StarChart.py:1015 StarChart.py:1666
+#, fuzzy
+msgid "Moon"
+msgstr "달"
+
+#: StarChart.py:795
+msgid "Night Vision"
+msgstr "야간 보기"
+
+#: StarChart.py:797
+msgid "Invert Display"
+msgstr ""
+
+#: StarChart.py:799
+msgid "Flip L/R"
+msgstr ""
+
+#: StarChart.py:802
+msgid "Draw Constellations"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Magnitude_(astronomy)
+#: StarChart.py:805
+msgid "Mag:"
+msgstr ""
+
+#: StarChart.py:806
+msgid "1"
+msgstr "1"
+
+#: StarChart.py:807
+msgid "2"
+msgstr "2"
+
+#: StarChart.py:808
+msgid "3"
+msgstr "3"
+
+#: StarChart.py:809
+msgid "4"
+msgstr "4"
+
+#: StarChart.py:810
+msgid "5"
+msgstr "5"
+
+#: StarChart.py:811
+msgid "6"
+msgstr "6"
+
+#. TRANS: http://en.wikipedia.org/wiki/Longitude
+#: StarChart.py:816
+msgid "Longitude:"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/East
+#: StarChart.py:820 StarChart.py:1772 StarChart.py:1781
+msgid "E"
+msgstr "동"
+
+#. TRANS: http://en.wikipedia.org/wiki/West
+#: StarChart.py:822 StarChart.py:1774 StarChart.py:1779
+#, fuzzy
+msgid "W"
+msgstr "서"
+
+#. TRANS: http://en.wikipedia.org/wiki/Latitude
+#: StarChart.py:824
+msgid "Latitude:"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/North
+#: StarChart.py:828 StarChart.py:1763
+msgid "N"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/South
+#: StarChart.py:830 StarChart.py:1767
+msgid "S"
+msgstr ""
+
+#: StarChart.py:835 StarChart.py:853
+msgid "Ok"
+msgstr ""
+
+#: StarChart.py:838
+msgid "Make home"
+msgstr ""
+
+#: StarChart.py:841
+msgid "Now"
+msgstr ""
+
+#: StarChart.py:842
+msgid "Specify"
+msgstr ""
+
+#: StarChart.py:843
+msgid "Time:"
+msgstr "시간:"
+
+#: StarChart.py:846
+#, fuzzy
+msgid "Offset:"
+msgstr "오프셋:"
+
+#: StarChart.py:856
+msgid "Object type:"
+msgstr ""
+
+#: StarChart.py:867
+msgid "See http://wiki.laptop.org/go/StarChart for help."
+msgstr ""
+
+#: StarChart.py:941
+msgid "There is no object here."
+msgstr ""
+
+#: StarChart.py:1008
+msgid "deep-sky object"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Planet
+#: StarChart.py:1011
+msgid "planet"
+msgstr ""
+
+#: StarChart.py:1013 StarChart.py:1016
+msgid "Object is: "
+msgstr ""
+
+#: StarChart.py:1019
+msgid "star"
+msgstr ""
+
+#: StarChart.py:1020
+msgid "Object is "
+msgstr ""
+
+#: StarChart.py:1423 StarChart.py:3124
+msgid "Planets"
+msgstr ""
+
+#: StarChart.py:1434 StarChart.py:3125
+msgid "Stars by Constellation"
+msgstr ""
+
+#: StarChart.py:1448 StarChart.py:3126
+msgid "Brightest Stars"
+msgstr ""
+
+#: StarChart.py:1469 StarChart.py:3127
+msgid "Deep-sky Objects"
+msgstr ""
+
+#: StarChart.py:1634
+msgid "This object is always below the horizon at your location."
+msgstr ""
+
+#: StarChart.py:1637
+msgid "This object is currently not in the field of view."
+msgstr ""
+
+#: StarChart.py:1639
+msgid "This object is currently below your horizon."
+msgstr ""
+
+#: StarChart.py:1679
+msgid "Input Error: The longitude was not understood."
+msgstr ""
+
+#: StarChart.py:1683
+msgid "Input Error: The latitude was not understood."
+msgstr ""
+
+#: StarChart.py:1687
+msgid "Input Error: The time was not understood."
+msgstr ""
+
+#: StarChart.py:1691
+msgid "Input Error: The time zone offset was not understood."
+msgstr ""
+
+#: StarChart.py:2946
+msgid "Star Chart Activity"
+msgstr ""
+
+#: StarChart.py:3164
+msgid "What"
+msgstr "뭐"
+
+#: StarChart.py:3165
+msgid "Where"
+msgstr ""
+
+#: StarChart.py:3166
+msgid "When"
+msgstr "언제"
+
+#: StarChart.py:3167
+#, fuzzy
+msgid "Locate"
+msgstr "위치"
+
+#: StarChart.py:3168
+msgid "About"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Andromeda_(constellation)
+#: constellations.py:15
+msgid "Andromeda"
+msgstr "안드로메다"
+
+#. TRANS: http://en.wikipedia.org/wiki/Antlia
+#: constellations.py:26
+msgid "Antlia"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Apus
+#: constellations.py:31
+msgid "Apus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Aquarius_(constellation)
+#: constellations.py:38
+msgid "Aquarius"
+msgstr "물병자리"
+
+#. TRANS: http://en.wikipedia.org/wiki/Aquila_(constellation)
+#: constellations.py:58
+msgid "Aquila"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Ara_(constellation)
+#: constellations.py:72
+msgid "Ara"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Aries_(constellation)
+#: constellations.py:82
+msgid "Aries"
+msgstr "양자리"
+
+#. TRANS: http://en.wikipedia.org/wiki/Auriga_(constellation)
+#: constellations.py:88
+msgid "Auriga"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Boötes
+#: constellations.py:99
+msgid "Boötes"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Caelum
+#: constellations.py:112
+msgid "Caelum"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Camelopardalis
+#: constellations.py:118
+msgid "Camelopardalis"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Cancer_(constellation)
+#: constellations.py:126
+msgid "Cancer"
+msgstr "게자리"
+
+#. TRANS: http://en.wikipedia.org/wiki/Canes_Venatici
+#: constellations.py:134
+msgid "Canes Venatici"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Canis_Major
+#: constellations.py:140
+msgid "Canis Major"
+msgstr "큰개"
+
+#. TRANS: http://en.wikipedia.org/wiki/Canis_Minor
+#: constellations.py:153
+msgid "Canis Minor"
+msgstr "작은개"
+
+#. TRANS: http://en.wikipedia.org/wiki/Capricornus
+#: constellations.py:157
+msgid "Capricornus"
+msgstr "염소자리"
+
+#. TRANS: http://en.wikipedia.org/wiki/Carina_(constellation)
+#: constellations.py:171
+msgid "Carina"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Cassiopeia_(constellation)
+#: constellations.py:185
+msgid "Cassiopeia"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Centaurus
+#: constellations.py:192
+msgid "Centaurus"
+msgstr "센타우루스"
+
+#. TRANS: http://en.wikipedia.org/wiki/Cepheus_(constellation)
+#: constellations.py:207
+msgid "Cepheus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Cetus
+#: constellations.py:216
+msgid "Cetus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Chamaeleon
+#: constellations.py:234
+msgid "Chamaeleon"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Circinus_(constellation)
+#: constellations.py:241
+msgid "Circinus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Columba_(constellation)
+#: constellations.py:246
+msgid "Columba"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Coma_Berenices
+#: constellations.py:254
+msgid "Coma Berenices"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Corona_Australis
+#: constellations.py:259
+msgid "Corona Australis"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Corona_Borealis
+#: constellations.py:269
+msgid "Corona Borealis"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Corvus_(constellation)
+#: constellations.py:278
+msgid "Corvus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Crater_(constellation)
+#: constellations.py:286
+msgid "Crater"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Crux
+#: constellations.py:297
+msgid "Crux"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Cygnus_(constellation)
+#: constellations.py:302
+msgid "Cygnus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Delphinus
+#: constellations.py:310
+msgid "Delphinus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Dorado
+#: constellations.py:318
+msgid "Dorado"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Draco_(constellation)
+#: constellations.py:324
+msgid "Draco"
+msgstr "용"
+
+#. TRANS: http://en.wikipedia.org/wiki/Equuleus
+#: constellations.py:347
+msgid "Equuleus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Eridanus_(constellation)
+#: constellations.py:352
+msgid "Eridanus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Fornax
+#: constellations.py:385
+msgid "Fornax"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Gemini_(constellation)
+#: constellations.py:392
+msgid "Gemini"
+msgstr "쌍둥이자리"
+
+#. TRANS: http://en.wikipedia.org/wiki/Grus_(constellation)
+#: constellations.py:404
+msgid "Grus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Hercules_(constellation)
+#: constellations.py:417
+msgid "Hercules"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Horologium_(constellation)
+#: constellations.py:439
+msgid "Horologium"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Hydra_(constellation)
+#: constellations.py:447
+msgid "Hydra"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Hydrus
+#: constellations.py:466
+msgid "Hydrus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Indus_(constellation)
+#: constellations.py:472
+msgid "Indus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Lacerta
+#: constellations.py:478
+msgid "Lacerta"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Leo_(constellation)
+#: constellations.py:487
+msgid "Leo"
+msgstr "사자"
+
+#. TRANS: http://en.wikipedia.org/wiki/Leo_Minor
+#: constellations.py:499
+msgid "Leo Minor"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Lepus_(constellation)
+#: constellations.py:504
+msgid "Lepus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Libra_(constellation)
+#: constellations.py:515
+msgid "Libra"
+msgstr "천칭자리"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lupus_(constellation)
+#: constellations.py:524
+msgid "Lupus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Lynx_(constellation)
+#: constellations.py:539
+msgid "Lynx"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Lyra
+#: constellations.py:549
+msgid "Lyra"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Mensa_(constellation)
+#: constellations.py:558
+msgid "Mensa"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Microscopium
+#: constellations.py:564
+msgid "Microscopium"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Monoceros
+#: constellations.py:570
+msgid "Monoceros"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Musca
+#: constellations.py:577
+msgid "Musca"
+msgstr "파리"
+
+#. TRANS: http://en.wikipedia.org/wiki/Norma_(constellation)
+#: constellations.py:585
+msgid "Norma"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Octans
+#: constellations.py:592
+msgid "Octans"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Ophiuchus
+#: constellations.py:598
+msgid "Ophiuchus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Orion_(constellation)
+#: constellations.py:612
+msgid "Orion"
+msgstr "오리온"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pavo_(constellation)
+#: constellations.py:633
+msgid "Pavo"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Pegasus_(constellation)
+#: constellations.py:643
+msgid "Pegasus"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Perseus_(constellation)
+#: constellations.py:660
+#, fuzzy
+msgid "Perseus"
+msgstr "페르세우스"
+
+#. TRANS: http://en.wikipedia.org/wiki/Phoenix_(constellation)
+#: constellations.py:679
+msgid "Phoenix"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Pictor
+#: constellations.py:688
+msgid "Pictor"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Pisces_(constellation)
+#: constellations.py:693
+msgid "Pisces"
+msgstr "물고기"
+
+#. TRANS: http://en.wikipedia.org/wiki/Piscis_Australis
+#: constellations.py:712
+msgid "Piscis Australis"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Puppis
+#: constellations.py:721
+msgid "Puppis"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Pyxis
+#: constellations.py:734
+msgid "Pyxis"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Reticulum
+#: constellations.py:739
+msgid "Reticulum"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Sagitta
+#: constellations.py:747
+msgid "Sagitta"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Sagittarius_(constellation)
+#: constellations.py:753
+msgid "Sagittarius"
+msgstr "궁수자리"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sculptor_(constellation)
+#: constellations.py:772
+msgid "Sculptor"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Scorpius
+#: constellations.py:778
+msgid "Scorpius"
+msgstr "전갈자리"
+
+#. TRANS: http://en.wikipedia.org/wiki/Scutum
+#: constellations.py:795
+msgid "Scutum"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Serpens
+#: constellations.py:800
+msgid "Serpens"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Sextans
+#: constellations.py:819
+msgid "Sextans"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Taurus_(constellation)
+#: constellations.py:826
+msgid "Taurus"
+msgstr "황소자리"
+
+#. TRANS: http://en.wikipedia.org/wiki/Telescopium
+#: constellations.py:840
+msgid "Telescopium"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Triangulum
+#: constellations.py:845
+msgid "Triangulum"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Australis
+#: constellations.py:851
+msgid "Triangulum Australis"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Tucana
+#: constellations.py:857
+msgid "Tucana"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Ursa_Major
+#: constellations.py:865
+msgid "Ursa Major"
+msgstr "큰곰"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ursa_Minor
+#: constellations.py:885
+msgid "Ursa Minor"
+msgstr "작은곰"
+
+#. TRANS: http://en.wikipedia.org/wiki/Vela_(constellation)
+#: constellations.py:895
+msgid "Vela"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Virgo_(constellation)
+#: constellations.py:905
+msgid "Virgo"
+msgstr "처녀자리"
+
+#. TRANS: http://en.wikipedia.org/wiki/Volans
+#: constellations.py:918
+msgid "Volans"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Vulpecula
+#: constellations.py:927
+msgid "Vulpecula"
+msgstr "작은여우"
+
+#. TRANS: http://en.wikipedia.org/wiki/Large_Magellanic_Cloud
+#: dso2.py:36
+#, fuzzy
+msgid "Large Magellanic Cloud"
+msgstr "대 마젤란 성운"
+
+#. TRANS: http://en.wikipedia.org/wiki/47_Tucanae
+#: dso2.py:42
+#, fuzzy
+msgid "47 Tucanae"
+msgstr "47 투카네(큰부리새)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sculptor_Galaxy
+#: dso2.py:44
+#, fuzzy
+msgid "Sculptor Galaxy"
+msgstr "조각가 은하"
+
+#. TRANS: http://en.wikipedia.org/wiki/Small_Magellanic_Cloud
+#: dso2.py:47
+#, fuzzy
+msgid "Small Magellanic Cloud"
+msgstr "소 마젤란 성운(NGC346)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Double_Cluster
+#: dso2.py:51
+msgid "Double Cluster"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/California_Nebula
+#: dso2.py:54
+#, fuzzy
+msgid "California Nebula"
+msgstr "캘리포니아 성운(NGC 1499)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Cone_Nebula
+#: dso2.py:61
+msgid "Cone Nebula"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Rosette_Nebula
+#: dso2.py:64
+msgid "Rosette Nebula"
+msgstr "로제타 성운 (NGC2237-9)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ghost_of_Jupiter
+#: dso2.py:69
+#, fuzzy
+msgid "Ghost of Jupiter"
+msgstr "목성상 성운(NGC 3242"
+
+#. TRANS: http://en.wikipedia.org/wiki/Carina_Nebula
+#: dso2.py:71
+msgid "Eta Carina Nebula"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Jewel_Box_(star_cluster)
+#: dso2.py:74
+#, fuzzy
+msgid "Jewel Box"
+msgstr "보석 상자 성단(NGC 4755)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Centaurus_A
+#: dso2.py:78
+#, fuzzy
+msgid "Centaurus A"
+msgstr "센타우루스 알파"
+
+#. TRANS: http://en.wikipedia.org/wiki/Omega_Centauri
+#: dso2.py:80
+msgid "Omega Centauri"
+msgstr "오메가 센타우리(NGC 5139)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Barnard's_Galaxy
+#: dso2.py:91
+#, fuzzy
+msgid "Barnard's Galaxy"
+msgstr "버나드 은하(IC 4895)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Crescent_Nebula
+#: dso2.py:93
+#, fuzzy
+msgid "Crescent Nebula"
+msgstr "초승달 성운(NGC 6888)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Veil_Nebula
+#: dso2.py:95
+#, fuzzy
+msgid "Veil Nebula"
+msgstr "면사포 성운"
+
+#. TRANS: http://en.wikipedia.org/wiki/North_America_Nebula
+#: dso2.py:97
+msgid "North America Nebula"
+msgstr "북아메리카 성운(NGC 7000)"

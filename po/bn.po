@@ -1,0 +1,887 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-01 01:47+0000\n"
+"PO-Revision-Date: 2018-01-06 19:37+0000\n"
+"Last-Translator: numanccn <numanccn@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: bn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1515267439.000000\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "StarChart"
+msgstr "তারকা চার্ট"
+
+#. TRANS: "summary" option from activity.info file
+msgid "explore the cosmos"
+msgstr "মহাবিশ্ব উদ্ভাবন"
+
+#. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
+#: dso1.py:33
+msgid "Butterfly Cluster"
+msgstr "প্রজাপতি স্তবক"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
+#: dso1.py:35
+msgid "Ptolemy's Cluster"
+msgstr "টলেমী'র স্তবক"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
+#: dso1.py:37
+msgid "Lagoon Nebula"
+msgstr "উপহ্রদ (লেগুন) নীহারিকা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
+#: dso1.py:40
+msgid "Wild Duck Cluster"
+msgstr "বুনো হাঁস স্তবক"
+
+#. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
+#: dso1.py:43
+msgid "Hercules Cluster"
+msgstr "হার্কিউলিস তারকাগুচ্ছ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
+#: dso1.py:46
+msgid "Omega Nebula"
+msgstr "ওমেগা নীহারিকা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
+#: dso1.py:49
+msgid "Trifid Nebula"
+msgstr "তিন-পাপড়ি নীহারিকা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
+#: dso1.py:57
+msgid "Andromeda Galaxy"
+msgstr "অ্যান্ড্রোমিডা নক্ষত্রলোক"
+
+#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
+#: dso1.py:59
+msgid "Triangulum Galaxy"
+msgstr "ত্রিকোণ ছায়াপথ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
+#: dso1.py:68
+msgid "Orion Nebula"
+msgstr "কালপুরুষ নীহারিকা"
+
+#. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
+#: dso1.py:70
+msgid "de Mairan's Nebula"
+msgstr "ডি মারিয়ানের নীহারিকা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
+#: dso1.py:72
+msgid "Beehive Cluster"
+msgstr "মৌচাক তারকাগুচ্ছ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pleiades
+#: dso1.py:74
+msgid "Pleiades"
+msgstr "কৃত্তিকা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
+#: dso1.py:80
+msgid "Whirlpool Galaxy"
+msgstr "ঘূর্ণিস্রোত ছায়াপথ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
+#: dso1.py:86
+msgid "Sunflower Galaxy"
+msgstr "সূর্যমুখী ছায়াপথ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
+#: dso1.py:90
+msgid "Bodes Galaxy"
+msgstr "প্যাড গ্যালাক্সি"
+
+#. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
+#: dso1.py:92
+msgid "Southern Pinwheel Galaxy"
+msgstr "দক্ষিন চরকা নক্ষত্রলোক"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
+#: dso1.py:96
+msgid "Pinwheel Galaxy"
+msgstr "পিনচক্র ছায়াপথ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Mercury_(planet)
+#: StarChart.py:228
+msgid "Mercury"
+msgstr "বুধ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Venus
+#: StarChart.py:230
+msgid "Venus"
+msgstr "শুক্র"
+
+#. TRANS: http://en.wikipedia.org/wiki/Earth
+#: StarChart.py:232
+msgid "Earth"
+msgstr "পৃথিবী"
+
+#. TRANS: http://en.wikipedia.org/wiki/Mars
+#: StarChart.py:234
+msgid "Mars"
+msgstr "মঙ্গল"
+
+#. TRANS: http://en.wikipedia.org/wiki/Jupiter
+#: StarChart.py:236
+msgid "Jupiter"
+msgstr "বৃহস্পতি"
+
+#. TRANS: http://en.wikipedia.org/wiki/Saturn
+#: StarChart.py:238
+msgid "Saturn"
+msgstr "শনি"
+
+#. TRANS: http://en.wikipedia.org/wiki/Uranus
+#: StarChart.py:240
+msgid "Uranus"
+msgstr "ইউরেনাস"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sun
+#: StarChart.py:243 StarChart.py:1012 StarChart.py:1668
+msgid "Sun"
+msgstr "সূর্য"
+
+#. TRANS: http://en.wikipedia.org/wiki/Moon
+#: StarChart.py:250 StarChart.py:1015 StarChart.py:1666
+msgid "Moon"
+msgstr "চাঁদ"
+
+#: StarChart.py:795
+msgid "Night Vision"
+msgstr "রাত দৃষ্টি"
+
+#: StarChart.py:797
+msgid "Invert Display"
+msgstr "প্রদর্শন বিপরীত"
+
+#: StarChart.py:799
+msgid "Flip L/R"
+msgstr "ফ্লিপ এল / আর"
+
+#: StarChart.py:802
+msgid "Draw Constellations"
+msgstr "আঁশ আঁকা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Magnitude_(astronomy)
+#: StarChart.py:805
+msgid "Mag:"
+msgstr "সাময়িক পত্রিকা"
+
+#: StarChart.py:806
+msgid "1"
+msgstr "1"
+
+#: StarChart.py:807
+msgid "2"
+msgstr "২"
+
+#: StarChart.py:808
+msgid "3"
+msgstr "৩"
+
+#: StarChart.py:809
+msgid "4"
+msgstr "৪"
+
+#: StarChart.py:810
+msgid "5"
+msgstr "৫"
+
+#: StarChart.py:811
+msgid "6"
+msgstr "৬"
+
+#. TRANS: http://en.wikipedia.org/wiki/Longitude
+#: StarChart.py:816
+msgid "Longitude:"
+msgstr "দ্রাঘিমাংশ :"
+
+#. TRANS: http://en.wikipedia.org/wiki/East
+#: StarChart.py:820 StarChart.py:1772 StarChart.py:1781
+msgid "E"
+msgstr "পূর্ব"
+
+#. TRANS: http://en.wikipedia.org/wiki/West
+#: StarChart.py:822 StarChart.py:1774 StarChart.py:1779
+msgid "W"
+msgstr "পশ্চিম"
+
+#. TRANS: http://en.wikipedia.org/wiki/Latitude
+#: StarChart.py:824
+msgid "Latitude:"
+msgstr "অক্ষাংশ :"
+
+#. TRANS: http://en.wikipedia.org/wiki/North
+#: StarChart.py:828 StarChart.py:1763
+msgid "N"
+msgstr "উত্তর"
+
+#. TRANS: http://en.wikipedia.org/wiki/South
+#: StarChart.py:830 StarChart.py:1767
+msgid "S"
+msgstr "দক্ষিণ"
+
+#: StarChart.py:835 StarChart.py:853
+msgid "Ok"
+msgstr "ঠিক আছে"
+
+#: StarChart.py:838
+msgid "Make home"
+msgstr "বাড়ি তৈরি করুন"
+
+#: StarChart.py:841
+msgid "Now"
+msgstr "এখন"
+
+#: StarChart.py:842
+msgid "Specify"
+msgstr "নির্দিষ্ট করুন"
+
+#: StarChart.py:843
+msgid "Time:"
+msgstr "সময়"
+
+#: StarChart.py:846
+msgid "Offset:"
+msgstr "অঙ্কুর"
+
+#: StarChart.py:856
+msgid "Object type:"
+msgstr "উদ্দেশ্য নমুনা"
+
+#: StarChart.py:867
+msgid "See http://wiki.laptop.org/go/StarChart for help."
+msgstr "সাহায্যের জন্য http://wiki.laptop.org/go/tarchart দেখুন।"
+
+#: StarChart.py:941
+msgid "There is no object here."
+msgstr "এখানে কোন বস্তু নেই।"
+
+#: StarChart.py:1008
+msgid "deep-sky object"
+msgstr "গভীর আকাশ বস্তু"
+
+#. TRANS: http://en.wikipedia.org/wiki/Planet
+#: StarChart.py:1011
+msgid "planet"
+msgstr "গ্রহ"
+
+#: StarChart.py:1013 StarChart.py:1016
+msgid "Object is: "
+msgstr "উদ্দেশ্য হয়"
+
+#: StarChart.py:1019
+msgid "star"
+msgstr "নক্ষত্র"
+
+#: StarChart.py:1020
+msgid "Object is "
+msgstr "উদ্দেশ্য হয়"
+
+#: StarChart.py:1423 StarChart.py:3124
+msgid "Planets"
+msgstr "গ্রহ"
+
+#: StarChart.py:1434 StarChart.py:3125
+msgid "Stars by Constellation"
+msgstr "তারকা দ্বারা তারকা"
+
+#: StarChart.py:1448 StarChart.py:3126
+msgid "Brightest Stars"
+msgstr "উজ্জ্বল তারা"
+
+#: StarChart.py:1469 StarChart.py:3127
+msgid "Deep-sky Objects"
+msgstr "গভীর আকাশ বস্তু"
+
+#: StarChart.py:1634
+msgid "This object is always below the horizon at your location."
+msgstr "এই অবজেক্টটি সর্বদা আপনার অবস্থানে দিগন্তের নীচে।"
+
+#: StarChart.py:1637
+msgid "This object is currently not in the field of view."
+msgstr "এই বস্তু বর্তমানে দৃশ্যের ক্ষেত্রে নয়।"
+
+#: StarChart.py:1639
+msgid "This object is currently below your horizon."
+msgstr "এই বস্তুটি বর্তমানে আপনার দিগন্তের নীচে।"
+
+#: StarChart.py:1679
+msgid "Input Error: The longitude was not understood."
+msgstr "ইনপুট ত্রুটি: দ্রাঘিমাংশ বোঝা যায় না।"
+
+#: StarChart.py:1683
+msgid "Input Error: The latitude was not understood."
+msgstr "ইনপুট ত্রুটি: অক্ষাংশ বোঝা যায় না।"
+
+#: StarChart.py:1687
+msgid "Input Error: The time was not understood."
+msgstr "ইনপুট ত্রুটি: সময় বোঝা যায় না।"
+
+#: StarChart.py:1691
+msgid "Input Error: The time zone offset was not understood."
+msgstr "ইনপুট ত্রুটি: সময় অঞ্চল অফসেট বোঝা যায় না।"
+
+#: StarChart.py:2946
+msgid "Star Chart Activity"
+msgstr "স্টার চার্ট কার্যকলাপ"
+
+#: StarChart.py:3164
+msgid "What"
+msgstr "কি"
+
+#: StarChart.py:3165
+msgid "Where"
+msgstr "কোথায়"
+
+#: StarChart.py:3166
+msgid "When"
+msgstr "কখন"
+
+#: StarChart.py:3167
+msgid "Locate"
+msgstr "নির্ণয়"
+
+#: StarChart.py:3168
+msgid "About"
+msgstr "বিবরণ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Andromeda_(constellation)
+#: constellations.py:15
+msgid "Andromeda"
+msgstr "সুন্দরী অ্যান্ড্রোমিডা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Antlia
+#: constellations.py:26
+msgid "Antlia"
+msgstr "পাম্প"
+
+#. TRANS: http://en.wikipedia.org/wiki/Apus
+#: constellations.py:31
+msgid "Apus"
+msgstr "স্বর্গপক্ষী"
+
+#. TRANS: http://en.wikipedia.org/wiki/Aquarius_(constellation)
+#: constellations.py:38
+msgid "Aquarius"
+msgstr "জল বাহক (কুম্ভ)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Aquila_(constellation)
+#: constellations.py:58
+msgid "Aquila"
+msgstr "ঈগল"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ara_(constellation)
+#: constellations.py:72
+msgid "Ara"
+msgstr "যজ্ঞবেদী"
+
+#. TRANS: http://en.wikipedia.org/wiki/Aries_(constellation)
+#: constellations.py:82
+msgid "Aries"
+msgstr "ভেড়া (মেষ)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Auriga_(constellation)
+#: constellations.py:88
+msgid "Auriga"
+msgstr "সারথী"
+
+#. TRANS: http://en.wikipedia.org/wiki/Boötes
+#: constellations.py:99
+msgid "Boötes"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Caelum
+#: constellations.py:112
+msgid "Caelum"
+msgstr "বাটালি"
+
+#. TRANS: http://en.wikipedia.org/wiki/Camelopardalis
+#: constellations.py:118
+msgid "Camelopardalis"
+msgstr "জিরাফ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Cancer_(constellation)
+#: constellations.py:126
+msgid "Cancer"
+msgstr "কাঁকড়া (কর্কট)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Canes_Venatici
+#: constellations.py:134
+msgid "Canes Venatici"
+msgstr "শিকারী কুকুর"
+
+#. TRANS: http://en.wikipedia.org/wiki/Canis_Major
+#: constellations.py:140
+msgid "Canis Major"
+msgstr "কুকুর"
+
+#. TRANS: http://en.wikipedia.org/wiki/Canis_Minor
+#: constellations.py:153
+msgid "Canis Minor"
+msgstr "কুকুর ছানা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Capricornus
+#: constellations.py:157
+msgid "Capricornus"
+msgstr "সামুদ্রিক ছাগল (মকর)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Carina_(constellation)
+#: constellations.py:171
+msgid "Carina"
+msgstr "ক্যারিনা (জাহাজের তলি)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Cassiopeia_(constellation)
+#: constellations.py:185
+msgid "Cassiopeia"
+msgstr "সুন্দরী ক্যাসিওপিয়া"
+
+#. TRANS: http://en.wikipedia.org/wiki/Centaurus
+#: constellations.py:192
+msgid "Centaurus"
+msgstr "অশ্বমানব"
+
+#. TRANS: http://en.wikipedia.org/wiki/Cepheus_(constellation)
+#: constellations.py:207
+msgid "Cepheus"
+msgstr "সম্রাট সেফিয়ুস"
+
+#. TRANS: http://en.wikipedia.org/wiki/Cetus
+#: constellations.py:216
+msgid "Cetus"
+msgstr "তিমি"
+
+#. TRANS: http://en.wikipedia.org/wiki/Chamaeleon
+#: constellations.py:234
+msgid "Chamaeleon"
+msgstr "গিরগিটি"
+
+#. TRANS: http://en.wikipedia.org/wiki/Circinus_(constellation)
+#: constellations.py:241
+msgid "Circinus"
+msgstr "কাঁটা কম্পাস"
+
+#. TRANS: http://en.wikipedia.org/wiki/Columba_(constellation)
+#: constellations.py:246
+msgid "Columba"
+msgstr "ঘুঘু পাখি"
+
+#. TRANS: http://en.wikipedia.org/wiki/Coma_Berenices
+#: constellations.py:254
+msgid "Coma Berenices"
+msgstr "বেরিনিসের কেশমন্ডল"
+
+#. TRANS: http://en.wikipedia.org/wiki/Corona_Australis
+#: constellations.py:259
+msgid "Corona Australis"
+msgstr "দক্ষিন রাজমুকুট"
+
+#. TRANS: http://en.wikipedia.org/wiki/Corona_Borealis
+#: constellations.py:269
+msgid "Corona Borealis"
+msgstr "উত্তর রাজমুকুট"
+
+#. TRANS: http://en.wikipedia.org/wiki/Corvus_(constellation)
+#: constellations.py:278
+msgid "Corvus"
+msgstr "কাক"
+
+#. TRANS: http://en.wikipedia.org/wiki/Crater_(constellation)
+#: constellations.py:286
+msgid "Crater"
+msgstr "পেয়ালা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Crux
+#: constellations.py:297
+msgid "Crux"
+msgstr "ক্রুশ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Cygnus_(constellation)
+#: constellations.py:302
+msgid "Cygnus"
+msgstr "হাঁস"
+
+#. TRANS: http://en.wikipedia.org/wiki/Delphinus
+#: constellations.py:310
+msgid "Delphinus"
+msgstr "শুশুক"
+
+#. TRANS: http://en.wikipedia.org/wiki/Dorado
+#: constellations.py:318
+msgid "Dorado"
+msgstr "গোল্ডফিশ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Draco_(constellation)
+#: constellations.py:324
+msgid "Draco"
+msgstr "ড্রাগন"
+
+#. TRANS: http://en.wikipedia.org/wiki/Equuleus
+#: constellations.py:347
+msgid "Equuleus"
+msgstr "ছোটো ঘোড়া"
+
+#. TRANS: http://en.wikipedia.org/wiki/Eridanus_(constellation)
+#: constellations.py:352
+msgid "Eridanus"
+msgstr "এরিডান্যাস নদী"
+
+#. TRANS: http://en.wikipedia.org/wiki/Fornax
+#: constellations.py:385
+msgid "Fornax"
+msgstr "অগ্নিকুণ্ড"
+
+#. TRANS: http://en.wikipedia.org/wiki/Gemini_(constellation)
+#: constellations.py:392
+msgid "Gemini"
+msgstr "যময (মিথুন)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Grus_(constellation)
+#: constellations.py:404
+msgid "Grus"
+msgstr "সারস"
+
+#. TRANS: http://en.wikipedia.org/wiki/Hercules_(constellation)
+#: constellations.py:417
+msgid "Hercules"
+msgstr "বীর হারকিউলিস"
+
+#. TRANS: http://en.wikipedia.org/wiki/Horologium_(constellation)
+#: constellations.py:439
+msgid "Horologium"
+msgstr "দোলক ঘড়ি"
+
+#. TRANS: http://en.wikipedia.org/wiki/Hydra_(constellation)
+#: constellations.py:447
+msgid "Hydra"
+msgstr "হাইড্রা (সর্পদৈত্য)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Hydrus
+#: constellations.py:466
+msgid "Hydrus"
+msgstr "জলসর্প"
+
+#. TRANS: http://en.wikipedia.org/wiki/Indus_(constellation)
+#: constellations.py:472
+msgid "Indus"
+msgstr "আমেরিকার মূল অধিবাসী"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lacerta
+#: constellations.py:478
+msgid "Lacerta"
+msgstr "টিকটিকি"
+
+#. TRANS: http://en.wikipedia.org/wiki/Leo_(constellation)
+#: constellations.py:487
+msgid "Leo"
+msgstr "সিংহ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Leo_Minor
+#: constellations.py:499
+msgid "Leo Minor"
+msgstr "সিংহ শিশু"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lepus_(constellation)
+#: constellations.py:504
+msgid "Lepus"
+msgstr "খরগোশ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Libra_(constellation)
+#: constellations.py:515
+msgid "Libra"
+msgstr "দাঁড়িপাল্লা (তুলা)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lupus_(constellation)
+#: constellations.py:524
+msgid "Lupus"
+msgstr "নেকড়ে"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lynx_(constellation)
+#: constellations.py:539
+msgid "Lynx"
+msgstr "বন বিড়াল"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lyra
+#: constellations.py:549
+msgid "Lyra"
+msgstr "বীনা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Mensa_(constellation)
+#: constellations.py:558
+msgid "Mensa"
+msgstr "সমতল পর্বত"
+
+#. TRANS: http://en.wikipedia.org/wiki/Microscopium
+#: constellations.py:564
+msgid "Microscopium"
+msgstr "অণুবীক্ষন যন্ত্র"
+
+#. TRANS: http://en.wikipedia.org/wiki/Monoceros
+#: constellations.py:570
+msgid "Monoceros"
+msgstr "ইউনিকর্ন (একশৃঙ্গী ঘোড়া)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Musca
+#: constellations.py:577
+msgid "Musca"
+msgstr "মাছি"
+
+#. TRANS: http://en.wikipedia.org/wiki/Norma_(constellation)
+#: constellations.py:585
+msgid "Norma"
+msgstr "মাপদন্ড"
+
+#. TRANS: http://en.wikipedia.org/wiki/Octans
+#: constellations.py:592
+msgid "Octans"
+msgstr "অকট্যান্ট"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ophiuchus
+#: constellations.py:598
+msgid "Ophiuchus"
+msgstr "সাপুড়ে"
+
+#. TRANS: http://en.wikipedia.org/wiki/Orion_(constellation)
+#: constellations.py:612
+msgid "Orion"
+msgstr "কালপুরুষ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pavo_(constellation)
+#: constellations.py:633
+msgid "Pavo"
+msgstr "ময়ুর"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pegasus_(constellation)
+#: constellations.py:643
+msgid "Pegasus"
+msgstr "পক্ষীরাজ ঘোড়া"
+
+#. TRANS: http://en.wikipedia.org/wiki/Perseus_(constellation)
+#: constellations.py:660
+msgid "Perseus"
+msgstr "যোদ্ধা পার্সিয়ুস"
+
+#. TRANS: http://en.wikipedia.org/wiki/Phoenix_(constellation)
+#: constellations.py:679
+msgid "Phoenix"
+msgstr "ফিনিক্স পাখি"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pictor
+#: constellations.py:688
+msgid "Pictor"
+msgstr "চিত্রফলক"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pisces_(constellation)
+#: constellations.py:693
+msgid "Pisces"
+msgstr "মাছ (মীন)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Piscis_Australis
+#: constellations.py:712
+msgid "Piscis Australis"
+msgstr "পিসিস অস্ট্রেলিয়া"
+
+#. TRANS: http://en.wikipedia.org/wiki/Puppis
+#: constellations.py:721
+msgid "Puppis"
+msgstr "পাপিস (জাহাজের পশ্চাতভাগ)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pyxis
+#: constellations.py:734
+msgid "Pyxis"
+msgstr "কম্পাস"
+
+#. TRANS: http://en.wikipedia.org/wiki/Reticulum
+#: constellations.py:739
+msgid "Reticulum"
+msgstr "নিশানা ক্রস"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sagitta
+#: constellations.py:747
+msgid "Sagitta"
+msgstr "তীর"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sagittarius_(constellation)
+#: constellations.py:753
+msgid "Sagittarius"
+msgstr "তীরন্দাজ (ধনু)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sculptor_(constellation)
+#: constellations.py:772
+msgid "Sculptor"
+msgstr "ভাস্কর"
+
+#. TRANS: http://en.wikipedia.org/wiki/Scorpius
+#: constellations.py:778
+msgid "Scorpius"
+msgstr "কাঁকড়া বিছে (বৃশ্চিক)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Scutum
+#: constellations.py:795
+msgid "Scutum"
+msgstr "ঢাল"
+
+#. TRANS: http://en.wikipedia.org/wiki/Serpens
+#: constellations.py:800
+msgid "Serpens"
+msgstr "সাপ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sextans
+#: constellations.py:819
+msgid "Sextans"
+msgstr "সেক্সট্যান্ট"
+
+#. TRANS: http://en.wikipedia.org/wiki/Taurus_(constellation)
+#: constellations.py:826
+msgid "Taurus"
+msgstr "ষাঁড় (বৃষ)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Telescopium
+#: constellations.py:840
+msgid "Telescopium"
+msgstr "দূরবীন"
+
+#. TRANS: http://en.wikipedia.org/wiki/Triangulum
+#: constellations.py:845
+msgid "Triangulum"
+msgstr "ত্রিভূজ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Australis
+#: constellations.py:851
+msgid "Triangulum Australis"
+msgstr "ট্রাইংগুলেটম অস্ট্রেলিয়া"
+
+#. TRANS: http://en.wikipedia.org/wiki/Tucana
+#: constellations.py:857
+msgid "Tucana"
+msgstr "টুকান পাখি"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ursa_Major
+#: constellations.py:865
+msgid "Ursa Major"
+msgstr "ভল্লুক"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ursa_Minor
+#: constellations.py:885
+msgid "Ursa Minor"
+msgstr "ভল্লুক ছানা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Vela_(constellation)
+#: constellations.py:895
+msgid "Vela"
+msgstr "বজরার পাল"
+
+#. TRANS: http://en.wikipedia.org/wiki/Virgo_(constellation)
+#: constellations.py:905
+msgid "Virgo"
+msgstr "কুমারী (কন্যা)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Volans
+#: constellations.py:918
+msgid "Volans"
+msgstr "উড়ুক্কু মাছ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Vulpecula
+#: constellations.py:927
+msgid "Vulpecula"
+msgstr "শিয়াল"
+
+#. TRANS: http://en.wikipedia.org/wiki/Large_Magellanic_Cloud
+#: dso2.py:36
+msgid "Large Magellanic Cloud"
+msgstr "বৃহৎ ম্যাজেলেনীয় মেঘ"
+
+#. TRANS: http://en.wikipedia.org/wiki/47_Tucanae
+#: dso2.py:42
+msgid "47 Tucanae"
+msgstr "47 টুকানা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sculptor_Galaxy
+#: dso2.py:44
+msgid "Sculptor Galaxy"
+msgstr "ভাস্কর ছায়াপথ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Small_Magellanic_Cloud
+#: dso2.py:47
+msgid "Small Magellanic Cloud"
+msgstr "ছোট ম্যাজেলানিয় মেঘপুঞ্জ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Double_Cluster
+#: dso2.py:51
+msgid "Double Cluster"
+msgstr "দ্বৈত তারকাগুচ্ছ"
+
+#. TRANS: http://en.wikipedia.org/wiki/California_Nebula
+#: dso2.py:54
+msgid "California Nebula"
+msgstr "ক্যালিফোর্নিয়া নীহারিকা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Cone_Nebula
+#: dso2.py:61
+msgid "Cone Nebula"
+msgstr "শঙ্কু নীহারিকা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Rosette_Nebula
+#: dso2.py:64
+msgid "Rosette Nebula"
+msgstr "গোলাপাকৃতি নীহারিকা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ghost_of_Jupiter
+#: dso2.py:69
+msgid "Ghost of Jupiter"
+msgstr "জুপিটার এর ঘোস্ট"
+
+#. TRANS: http://en.wikipedia.org/wiki/Carina_Nebula
+#: dso2.py:71
+msgid "Eta Carina Nebula"
+msgstr "ইটা কারিনা নেবুলা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Jewel_Box_(star_cluster)
+#: dso2.py:74
+msgid "Jewel Box"
+msgstr "রত্ন বাক্স"
+
+#. TRANS: http://en.wikipedia.org/wiki/Centaurus_A
+#: dso2.py:78
+msgid "Centaurus A"
+msgstr "অশ্বমানব 'এ'"
+
+#. TRANS: http://en.wikipedia.org/wiki/Omega_Centauri
+#: dso2.py:80
+msgid "Omega Centauri"
+msgstr "ওমেগা শতাব্দী"
+
+#. TRANS: http://en.wikipedia.org/wiki/Barnard's_Galaxy
+#: dso2.py:91
+msgid "Barnard's Galaxy"
+msgstr "বার্নার্ডের ছায়াপথ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Crescent_Nebula
+#: dso2.py:93
+msgid "Crescent Nebula"
+msgstr "অর্ধচন্দ্রাকার নীহারিকা"
+
+#. TRANS: http://en.wikipedia.org/wiki/Veil_Nebula
+#: dso2.py:95
+msgid "Veil Nebula"
+msgstr "পর্দা নীহারিকা"
+
+#. TRANS: http://en.wikipedia.org/wiki/North_America_Nebula
+#: dso2.py:97
+msgid "North America Nebula"
+msgstr "উত্তর আমেরিকা নীহারিকা"

@@ -6,25 +6,115 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-10 00:32-0400\n"
-"PO-Revision-Date: 2013-08-04 18:37+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2017-12-01 01:47+0000\n"
+"PO-Revision-Date: 2018-10-22 17:22+0000\n"
+"Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1540228930.000000\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "StarChart"
 msgstr "Stjernekort"
 
 #. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
 msgid "explore the cosmos"
 msgstr "udforsk kosmos"
+
+#. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
+#: dso1.py:33
+msgid "Butterfly Cluster"
+msgstr "Butterfly-stjernehoben (Messierobjekt 6)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
+#: dso1.py:35
+msgid "Ptolemy's Cluster"
+msgstr "Ptolemaios' stjernehob (Messierobjekt 7)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
+#: dso1.py:37
+msgid "Lagoon Nebula"
+msgstr "Lagunetågen (Lagoon Nebula)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
+#: dso1.py:40
+msgid "Wild Duck Cluster"
+msgstr "Wild Duck Cluster (Messierobjekt 11)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
+#: dso1.py:43
+msgid "Hercules Cluster"
+msgstr "Herkuleshoben (Messierobjekt 13)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
+#: dso1.py:46
+msgid "Omega Nebula"
+msgstr "Omegatågen (Messierobjekt 17)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
+#: dso1.py:49
+msgid "Trifid Nebula"
+msgstr "Trifidtågen (Messierobjekt 20)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
+#: dso1.py:57
+msgid "Andromeda Galaxy"
+msgstr "Andromedagalaksen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
+#: dso1.py:59
+msgid "Triangulum Galaxy"
+msgstr "Triangulum-galaksen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
+#: dso1.py:68
+msgid "Orion Nebula"
+msgstr "Oriontågen"
+
+#. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
+#: dso1.py:70
+msgid "de Mairan's Nebula"
+msgstr "De Mairans tåge i Orion"
+
+#. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
+#: dso1.py:72
+msgid "Beehive Cluster"
+msgstr "Bikube-hoben"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pleiades
+#: dso1.py:74
+msgid "Pleiades"
+msgstr "Syvstjernen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
+#: dso1.py:80
+msgid "Whirlpool Galaxy"
+msgstr "Hvirvelgalaksen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
+#: dso1.py:86
+msgid "Sunflower Galaxy"
+msgstr "Solblomstgalaksen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
+#: dso1.py:90
+msgid "Bodes Galaxy"
+msgstr "Bodes galakse"
+
+#. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
+#: dso1.py:92
+msgid "Southern Pinwheel Galaxy"
+msgstr "Southern Pinwheel Galaxy (Messierobjekt 83)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
+#: dso1.py:96
+msgid "Pinwheel Galaxy"
+msgstr "Pinwheel Galaxy (Messierobjekt 101)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Mercury_(planet)
 #: StarChart.py:228
@@ -148,7 +238,7 @@ msgstr "S"
 
 #: StarChart.py:835 StarChart.py:853
 msgid "Ok"
-msgstr "O.k."
+msgstr "Ok"
 
 #: StarChart.py:838
 msgid "Make home"
@@ -193,7 +283,7 @@ msgstr "planet"
 
 #: StarChart.py:1013 StarChart.py:1016
 msgid "Object is: "
-msgstr "Objekt er:"
+msgstr "Objekt er: "
 
 #: StarChart.py:1019
 msgid "star"
@@ -201,7 +291,7 @@ msgstr "stjerne"
 
 #: StarChart.py:1020
 msgid "Object is "
-msgstr "Objekt er"
+msgstr "Objekt er "
 
 #: StarChart.py:1423 StarChart.py:3124
 msgid "Planets"
@@ -459,7 +549,7 @@ msgstr "Kemiske Ovn el. Ovnen (Fornax)"
 #. TRANS: http://en.wikipedia.org/wiki/Gemini_(constellation)
 #: constellations.py:392
 msgid "Gemini"
-msgstr "Tvillingerne (Gemini) "
+msgstr "Tvillingerne (Gemini)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Grus_(constellation)
 #: constellations.py:404
@@ -471,7 +561,7 @@ msgstr "Tranen (Grus)"
 msgid "Hercules"
 msgstr "Herkules (Hercules)"
 
-#. TRANS: http://en.wikipedia.org/wiki/Horologium
+#. TRANS: http://en.wikipedia.org/wiki/Horologium_(constellation)
 #: constellations.py:439
 msgid "Horologium"
 msgstr "Uret (Horologium)"
@@ -710,96 +800,6 @@ msgstr "Flyvefisken (Volans)"
 #: constellations.py:927
 msgid "Vulpecula"
 msgstr "Ræven (Vulpecula)"
-
-#. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
-#: dso1.py:33
-msgid "Butterfly Cluster"
-msgstr "Butterfly-stjernehoben (Messierobjekt 6)"
-
-#. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
-#: dso1.py:35
-msgid "Ptolemy's Cluster"
-msgstr "Ptolemaios' stjernehob (Messierobjekt 7)"
-
-#. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
-#: dso1.py:37
-msgid "Lagoon Nebula"
-msgstr "Lagunetågen (Lagoon Nebula)"
-
-#. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
-#: dso1.py:40
-msgid "Wild Duck Cluster"
-msgstr "Wild Duck Cluster (Messierobjekt 11)"
-
-#. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
-#: dso1.py:43
-msgid "Hercules Cluster"
-msgstr "Herkuleshoben (Messierobjekt 13)"
-
-#. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
-#: dso1.py:46
-msgid "Omega Nebula"
-msgstr "Omegatågen (Messierobjekt 17)"
-
-#. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
-#: dso1.py:49
-msgid "Trifid Nebula"
-msgstr "Trifidtågen (Messierobjekt 20)"
-
-#. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
-#: dso1.py:57
-msgid "Andromeda Galaxy"
-msgstr "Andromedagalaksen"
-
-#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
-#: dso1.py:59
-msgid "Triangulum Galaxy"
-msgstr "Triangulum-galaksen"
-
-#. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
-#: dso1.py:68
-msgid "Orion Nebula"
-msgstr "Oriontågen"
-
-#. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
-#: dso1.py:70
-msgid "de Mairan's Nebula"
-msgstr "De Mairans tåge i Orion"
-
-#. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
-#: dso1.py:72
-msgid "Beehive Cluster"
-msgstr "Bikube-hoben"
-
-#. TRANS: http://en.wikipedia.org/wiki/Pleiades
-#: dso1.py:74
-msgid "Pleiades"
-msgstr "Syvstjernen"
-
-#. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
-#: dso1.py:80
-msgid "Whirlpool Galaxy"
-msgstr "Hvirvelgalaksen"
-
-#. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
-#: dso1.py:86
-msgid "Sunflower Galaxy"
-msgstr "Solblomstgalaksen"
-
-#. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
-#: dso1.py:90
-msgid "Bodes Galaxy"
-msgstr "Bodes galakse"
-
-#. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
-#: dso1.py:92
-msgid "Southern Pinwheel Galaxy"
-msgstr "Southern Pinwheel Galaxy (Messierobjekt 83)"
-
-#. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
-#: dso1.py:96
-msgid "Pinwheel Galaxy"
-msgstr "Pinwheel Galaxy (Messierobjekt 101)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Large_Magellanic_Cloud
 #: dso2.py:36

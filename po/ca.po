@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-18 14:31-0400\n"
-"PO-Revision-Date: 2016-04-26 09:57+0000\n"
-"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
+"POT-Creation-Date: 2017-12-01 01:47+0000\n"
+"PO-Revision-Date: 2017-12-02 22:25+0000\n"
+"Last-Translator: Robert <rbuj@fedoraproject.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -16,96 +16,105 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1461664634.000000\n"
+"X-POOTLE-MTIME: 1512253515.000000\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "StarChart"
 msgstr "Planisferi celeste"
 
-#. TRANS: http://en.wikipedia.org/wiki/Large_Magellanic_Cloud
-#: dso2.py:36
-msgid "Large Magellanic Cloud"
-msgstr "Gran Núvol de Magalhães"
+#. TRANS: "summary" option from activity.info file
+msgid "explore the cosmos"
+msgstr "exploreu el cosmos"
 
-#. TRANS: http://en.wikipedia.org/wiki/47_Tucanae
-#: dso2.py:42
-msgid "47 Tucanae"
-msgstr "47 Tucanae"
+#. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
+#: dso1.py:33
+msgid "Butterfly Cluster"
+msgstr "Cúmul de la Papallona"
 
-#. TRANS: http://en.wikipedia.org/wiki/Sculptor_Galaxy
-#: dso2.py:44
-msgid "Sculptor Galaxy"
-msgstr "Galàxia d'Escultor"
+#. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
+#: dso1.py:35
+msgid "Ptolemy's Cluster"
+msgstr "Cúmul de Ptolemeu"
 
-#. TRANS: http://en.wikipedia.org/wiki/Small_Magellanic_Cloud
-#: dso2.py:47
-msgid "Small Magellanic Cloud"
-msgstr "Petit Núvol de Magalhães"
+#. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
+#: dso1.py:37
+msgid "Lagoon Nebula"
+msgstr "Nebulosa de la Llacuna"
 
-#. TRANS: http://en.wikipedia.org/wiki/Double_Cluster
-#: dso2.py:51
-msgid "Double Cluster"
-msgstr "Cúmul doble"
+#. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
+#: dso1.py:40
+msgid "Wild Duck Cluster"
+msgstr "Cúmul de l'Ànec Salvatge"
 
-#. TRANS: http://en.wikipedia.org/wiki/California_Nebula
-#: dso2.py:54
-msgid "California Nebula"
-msgstr "Nebulosa de Califòrnia"
+#. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
+#: dso1.py:43
+msgid "Hercules Cluster"
+msgstr "Clúster d'Hércules"
 
-#. TRANS: http://en.wikipedia.org/wiki/Cone_Nebula
-#: dso2.py:61
-msgid "Cone Nebula"
-msgstr "Nebulosa del con"
+#. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
+#: dso1.py:46
+msgid "Omega Nebula"
+msgstr "Nebulosa Omega"
 
-#. TRANS: http://en.wikipedia.org/wiki/Rosette_Nebula
-#: dso2.py:64
-msgid "Rosette Nebula"
-msgstr "Nebulosa de la Roseta"
+#. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
+#: dso1.py:49
+msgid "Trifid Nebula"
+msgstr "Nebulosa Trífida"
 
-#. TRANS: http://en.wikipedia.org/wiki/Ghost_of_Jupiter
-#: dso2.py:69
-msgid "Ghost of Jupiter"
-msgstr "Fantasma de Júpiter"
+#. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
+#: dso1.py:57
+msgid "Andromeda Galaxy"
+msgstr "Gran galàxia d'Andròmeda"
 
-#. TRANS: http://en.wikipedia.org/wiki/Carina_Nebula
-#: dso2.py:71
-msgid "Eta Carina Nebula"
-msgstr "Nebulosa de la Quilla"
+#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
+#: dso1.py:59
+msgid "Triangulum Galaxy"
+msgstr "Galàxia del Triangle"
 
-#. TRANS: http://en.wikipedia.org/wiki/Jewel_Box_(star_cluster)
-#: dso2.py:74
-msgid "Jewel Box"
-msgstr "Kappa Crucis"
+#. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
+#: dso1.py:68
+msgid "Orion Nebula"
+msgstr "Nebulosa d'Orió"
 
-#. TRANS: http://en.wikipedia.org/wiki/Centaurus_A
-#: dso2.py:78
-msgid "Centaurus A"
-msgstr "Centaurus A"
+#. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
+#: dso1.py:70
+msgid "de Mairan's Nebula"
+msgstr "Nebulosa de Mairan"
 
-#. TRANS: http://en.wikipedia.org/wiki/Omega_Centauri
-#: dso2.py:80
-msgid "Omega Centauri"
-msgstr "Omega Centauri"
+#. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
+#: dso1.py:72
+msgid "Beehive Cluster"
+msgstr "Cúmul del pessebre"
 
-#. TRANS: http://en.wikipedia.org/wiki/Barnard's_Galaxy
-#: dso2.py:91
-msgid "Barnard's Galaxy"
-msgstr "Galàxia de Barnard"
+#. TRANS: http://en.wikipedia.org/wiki/Pleiades
+#: dso1.py:74
+msgid "Pleiades"
+msgstr "Plèiades"
 
-#. TRANS: http://en.wikipedia.org/wiki/Crescent_Nebula
-#: dso2.py:93
-msgid "Crescent Nebula"
-msgstr "Nebulosa Crescent"
+#. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
+#: dso1.py:80
+msgid "Whirlpool Galaxy"
+msgstr "Galàxia del Remolí"
 
-#. TRANS: http://en.wikipedia.org/wiki/Veil_Nebula
-#: dso2.py:95
-msgid "Veil Nebula"
-msgstr "Nebulosa del Vel"
+#. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
+#: dso1.py:86
+msgid "Sunflower Galaxy"
+msgstr "Galàxia Girasol"
 
-#. TRANS: http://en.wikipedia.org/wiki/North_America_Nebula
-#: dso2.py:97
-msgid "North America Nebula"
-msgstr "Nebulosa de Nord-Amèrica"
+#. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
+#: dso1.py:90
+msgid "Bodes Galaxy"
+msgstr "Galàxia de Bode"
+
+#. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
+#: dso1.py:92
+msgid "Southern Pinwheel Galaxy"
+msgstr "Galàxia del Molinet Austral"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
+#: dso1.py:96
+msgid "Pinwheel Galaxy"
+msgstr "Galàxia del Molinet"
 
 #. TRANS: http://en.wikipedia.org/wiki/Mercury_(planet)
 #: StarChart.py:228
@@ -352,96 +361,6 @@ msgstr "Ubica"
 msgid "About"
 msgstr "Quant a"
 
-#. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
-#: dso1.py:33
-msgid "Butterfly Cluster"
-msgstr "Cúmul de la Papallona"
-
-#. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
-#: dso1.py:35
-msgid "Ptolemy's Cluster"
-msgstr "Cúmul de Ptolemeu"
-
-#. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
-#: dso1.py:37
-msgid "Lagoon Nebula"
-msgstr "Nebulosa de la Llacuna"
-
-#. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
-#: dso1.py:40
-msgid "Wild Duck Cluster"
-msgstr "Cúmul de l'Ànec Salvatge"
-
-#. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
-#: dso1.py:43
-msgid "Hercules Cluster"
-msgstr "Clúster d'Hércules"
-
-#. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
-#: dso1.py:46
-msgid "Omega Nebula"
-msgstr "Nebulosa Omega"
-
-#. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
-#: dso1.py:49
-msgid "Trifid Nebula"
-msgstr "Nebulosa Trífida"
-
-#. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
-#: dso1.py:57
-msgid "Andromeda Galaxy"
-msgstr "Gran galàxia d'Andròmeda"
-
-#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
-#: dso1.py:59
-msgid "Triangulum Galaxy"
-msgstr "Galàxia del Triangle"
-
-#. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
-#: dso1.py:68
-msgid "Orion Nebula"
-msgstr "Nebulosa d'Orió"
-
-#. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
-#: dso1.py:70
-msgid "de Mairan's Nebula"
-msgstr "Nebulosa de Mairan"
-
-#. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
-#: dso1.py:72
-msgid "Beehive Cluster"
-msgstr "Cúmul del pessebre"
-
-#. TRANS: http://en.wikipedia.org/wiki/Pleiades
-#: dso1.py:74
-msgid "Pleiades"
-msgstr "Plèiades"
-
-#. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
-#: dso1.py:80
-msgid "Whirlpool Galaxy"
-msgstr "Galàxia del Remolí"
-
-#. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
-#: dso1.py:86
-msgid "Sunflower Galaxy"
-msgstr "Galàxia del Gira-sol"
-
-#. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
-#: dso1.py:90
-msgid "Bodes Galaxy"
-msgstr "Galàxia de Bode"
-
-#. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
-#: dso1.py:92
-msgid "Southern Pinwheel Galaxy"
-msgstr "Galàxia del Molinet Austral"
-
-#. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
-#: dso1.py:96
-msgid "Pinwheel Galaxy"
-msgstr "Galàxia del Molinet"
-
 #. TRANS: http://en.wikipedia.org/wiki/Andromeda_(constellation)
 #: constellations.py:15
 msgid "Andromeda"
@@ -450,12 +369,12 @@ msgstr "Andròmeda"
 #. TRANS: http://en.wikipedia.org/wiki/Antlia
 #: constellations.py:26
 msgid "Antlia"
-msgstr "Màquina Pneumàtica"
+msgstr "Màquina Pneumàtica (Antlia)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Apus
 #: constellations.py:31
 msgid "Apus"
-msgstr "Au del Paradís"
+msgstr "Au del Paradís (Apus)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Aquarius_(constellation)
 #: constellations.py:38
@@ -470,7 +389,7 @@ msgstr "Àguila"
 #. TRANS: http://en.wikipedia.org/wiki/Ara_(constellation)
 #: constellations.py:72
 msgid "Ara"
-msgstr "Altar"
+msgstr "Altar (Ara)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Aries_(constellation)
 #: constellations.py:82
@@ -480,7 +399,7 @@ msgstr "Àries"
 #. TRANS: http://en.wikipedia.org/wiki/Auriga_(constellation)
 #: constellations.py:88
 msgid "Auriga"
-msgstr "Cotxer"
+msgstr "Cotxer (Auriga)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Boötes
 #: constellations.py:99
@@ -490,12 +409,12 @@ msgstr "Bover"
 #. TRANS: http://en.wikipedia.org/wiki/Caelum
 #: constellations.py:112
 msgid "Caelum"
-msgstr "Burí"
+msgstr "Burí (Caelum)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Camelopardalis
 #: constellations.py:118
 msgid "Camelopardalis"
-msgstr "Girafa"
+msgstr "Girafa (Camelopardalis)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Cancer_(constellation)
 #: constellations.py:126
@@ -555,7 +474,7 @@ msgstr "Camaleó"
 #. TRANS: http://en.wikipedia.org/wiki/Circinus_(constellation)
 #: constellations.py:241
 msgid "Circinus"
-msgstr "Compàs"
+msgstr "Compàs (Circinus)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Columba_(constellation)
 #: constellations.py:246
@@ -565,7 +484,7 @@ msgstr "Coloma"
 #. TRANS: http://en.wikipedia.org/wiki/Coma_Berenices
 #: constellations.py:254
 msgid "Coma Berenices"
-msgstr "Cabellera de Berenice"
+msgstr "Cabellera de Berenice (Coma Berenices)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Corona_Australis
 #: constellations.py:259
@@ -585,7 +504,7 @@ msgstr "Corb"
 #. TRANS: http://en.wikipedia.org/wiki/Crater_(constellation)
 #: constellations.py:286
 msgid "Crater"
-msgstr "Copa"
+msgstr "Copa (Crater)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Crux
 #: constellations.py:297
@@ -605,7 +524,7 @@ msgstr "Dofí"
 #. TRANS: http://en.wikipedia.org/wiki/Dorado
 #: constellations.py:318
 msgid "Dorado"
-msgstr "Orada"
+msgstr "Orada (Dorado)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Draco_(constellation)
 #: constellations.py:324
@@ -615,7 +534,7 @@ msgstr "Dragó"
 #. TRANS: http://en.wikipedia.org/wiki/Equuleus
 #: constellations.py:347
 msgid "Equuleus"
-msgstr "Cavallet"
+msgstr "Cavallet (Equuleus)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Eridanus_(constellation)
 #: constellations.py:352
@@ -635,27 +554,27 @@ msgstr "Bessons"
 #. TRANS: http://en.wikipedia.org/wiki/Grus_(constellation)
 #: constellations.py:404
 msgid "Grus"
-msgstr "Grua"
+msgstr "Grua (Grus)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Hercules_(constellation)
 #: constellations.py:417
 msgid "Hercules"
 msgstr "Hèrcules"
 
-#. TRANS: http://en.wikipedia.org/wiki/Horologium
+#. TRANS: http://en.wikipedia.org/wiki/Horologium_(constellation)
 #: constellations.py:439
 msgid "Horologium"
-msgstr "Rellotge"
+msgstr "Rellotge (Horologium)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Hydra_(constellation)
 #: constellations.py:447
 msgid "Hydra"
-msgstr "Hidra Femella"
+msgstr "Hidra femella (Hydra)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Hydrus
 #: constellations.py:466
 msgid "Hydrus"
-msgstr "Hidra Mascle"
+msgstr "Hidra mascle (Hydrus)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Indus_(constellation)
 #: constellations.py:472
@@ -680,7 +599,7 @@ msgstr "Lleó Menor"
 #. TRANS: http://en.wikipedia.org/wiki/Lepus_(constellation)
 #: constellations.py:504
 msgid "Lepus"
-msgstr "Llebre"
+msgstr "Llebre (Lepus)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Libra_(constellation)
 #: constellations.py:515
@@ -705,37 +624,37 @@ msgstr "Lira"
 #. TRANS: http://en.wikipedia.org/wiki/Mensa_(constellation)
 #: constellations.py:558
 msgid "Mensa"
-msgstr "Taula"
+msgstr "Taula (Mensa)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Microscopium
 #: constellations.py:564
 msgid "Microscopium"
-msgstr "Microscopi"
+msgstr "Microscopi (Microscopium)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Monoceros
 #: constellations.py:570
 msgid "Monoceros"
-msgstr "Unicorn"
+msgstr "Unicorn (Monoceros)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Musca
 #: constellations.py:577
 msgid "Musca"
-msgstr "Mosca"
+msgstr "Mosca (Musca)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Norma_(constellation)
 #: constellations.py:585
 msgid "Norma"
-msgstr "Escaire"
+msgstr "Escaire (Norma)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Octans
 #: constellations.py:592
 msgid "Octans"
-msgstr "Octant"
+msgstr "Octant (Octans)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Ophiuchus
 #: constellations.py:598
 msgid "Ophiuchus"
-msgstr "Serpentari"
+msgstr "Serpentari (Ophiuchus)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Orion_(constellation)
 #: constellations.py:612
@@ -765,7 +684,7 @@ msgstr "Fènix"
 #. TRANS: http://en.wikipedia.org/wiki/Pictor
 #: constellations.py:688
 msgid "Pictor"
-msgstr "Cavallet de Pintor"
+msgstr "Cavallet del pintor (Pictor)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Pisces_(constellation)
 #: constellations.py:693
@@ -780,17 +699,17 @@ msgstr "Peix Austral"
 #. TRANS: http://en.wikipedia.org/wiki/Puppis
 #: constellations.py:721
 msgid "Puppis"
-msgstr "Popa"
+msgstr "Popa (Puppis)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Pyxis
 #: constellations.py:734
 msgid "Pyxis"
-msgstr "Brúixola"
+msgstr "Brúixola (Pyxis)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Reticulum
 #: constellations.py:739
 msgid "Reticulum"
-msgstr "Reticle"
+msgstr "Reticle (Reticulum)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Sagitta
 #: constellations.py:747
@@ -875,9 +794,94 @@ msgstr "Verge"
 #. TRANS: http://en.wikipedia.org/wiki/Volans
 #: constellations.py:918
 msgid "Volans"
-msgstr "Peix Volador"
+msgstr "Peix Volant (Volans)"
 
 #. TRANS: http://en.wikipedia.org/wiki/Vulpecula
 #: constellations.py:927
 msgid "Vulpecula"
-msgstr "Guineueta"
+msgstr "Guineueta (Vulpecula)"
+
+#. TRANS: http://en.wikipedia.org/wiki/Large_Magellanic_Cloud
+#: dso2.py:36
+msgid "Large Magellanic Cloud"
+msgstr "Gran Núvol de Magalhães"
+
+#. TRANS: http://en.wikipedia.org/wiki/47_Tucanae
+#: dso2.py:42
+msgid "47 Tucanae"
+msgstr "47 Tucanae"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sculptor_Galaxy
+#: dso2.py:44
+msgid "Sculptor Galaxy"
+msgstr "Galàxia d'Escultor"
+
+#. TRANS: http://en.wikipedia.org/wiki/Small_Magellanic_Cloud
+#: dso2.py:47
+msgid "Small Magellanic Cloud"
+msgstr "Petit Núvol de Magallanes"
+
+#. TRANS: http://en.wikipedia.org/wiki/Double_Cluster
+#: dso2.py:51
+msgid "Double Cluster"
+msgstr "Cúmul doble"
+
+#. TRANS: http://en.wikipedia.org/wiki/California_Nebula
+#: dso2.py:54
+msgid "California Nebula"
+msgstr "Nebulosa de Califòrnia"
+
+#. TRANS: http://en.wikipedia.org/wiki/Cone_Nebula
+#: dso2.py:61
+msgid "Cone Nebula"
+msgstr "Nebulosa del con"
+
+#. TRANS: http://en.wikipedia.org/wiki/Rosette_Nebula
+#: dso2.py:64
+msgid "Rosette Nebula"
+msgstr "Nebulosa Roseta"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ghost_of_Jupiter
+#: dso2.py:69
+msgid "Ghost of Jupiter"
+msgstr "Fantasma de Júpiter"
+
+#. TRANS: http://en.wikipedia.org/wiki/Carina_Nebula
+#: dso2.py:71
+msgid "Eta Carina Nebula"
+msgstr "Nebulosa de la Quilla"
+
+#. TRANS: http://en.wikipedia.org/wiki/Jewel_Box_(star_cluster)
+#: dso2.py:74
+msgid "Jewel Box"
+msgstr "Kappa Crucis"
+
+#. TRANS: http://en.wikipedia.org/wiki/Centaurus_A
+#: dso2.py:78
+msgid "Centaurus A"
+msgstr "Centaurus A"
+
+#. TRANS: http://en.wikipedia.org/wiki/Omega_Centauri
+#: dso2.py:80
+msgid "Omega Centauri"
+msgstr "Omega Centauri"
+
+#. TRANS: http://en.wikipedia.org/wiki/Barnard's_Galaxy
+#: dso2.py:91
+msgid "Barnard's Galaxy"
+msgstr "Galàxia de Barnard"
+
+#. TRANS: http://en.wikipedia.org/wiki/Crescent_Nebula
+#: dso2.py:93
+msgid "Crescent Nebula"
+msgstr "Nebulosa Crescent"
+
+#. TRANS: http://en.wikipedia.org/wiki/Veil_Nebula
+#: dso2.py:95
+msgid "Veil Nebula"
+msgstr "Nebulosa del Vel"
+
+#. TRANS: http://en.wikipedia.org/wiki/North_America_Nebula
+#: dso2.py:97
+msgid "North America Nebula"
+msgstr "Nebulosa de Nord-Amèrica"

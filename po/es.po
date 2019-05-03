@@ -6,25 +6,115 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-10 00:32-0400\n"
-"PO-Revision-Date: 2013-07-25 04:17+0200\n"
-"Last-Translator: AlanJAS <alanjas@hotmail.com>\n"
+"POT-Creation-Date: 2017-12-01 01:47+0000\n"
+"PO-Revision-Date: 2017-12-01 03:43+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1512099822.000000\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "StarChart"
 msgstr "Mapa de estrellas"
 
 #. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
 msgid "explore the cosmos"
 msgstr "Explora el cosmos"
+
+#. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
+#: dso1.py:33
+msgid "Butterfly Cluster"
+msgstr "Grupo de la Mariposa"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
+#: dso1.py:35
+msgid "Ptolemy's Cluster"
+msgstr "Grupo de Ptolomeo"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
+#: dso1.py:37
+msgid "Lagoon Nebula"
+msgstr "Nebulosa de la Laguna"
+
+#. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
+#: dso1.py:40
+msgid "Wild Duck Cluster"
+msgstr "Cúmulo del Pato Salvaje"
+
+#. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
+#: dso1.py:43
+msgid "Hercules Cluster"
+msgstr "Grupo de Hércules"
+
+#. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
+#: dso1.py:46
+msgid "Omega Nebula"
+msgstr "Nebulosa Omega"
+
+#. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
+#: dso1.py:49
+msgid "Trifid Nebula"
+msgstr "Nebulosa Trífida"
+
+#. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
+#: dso1.py:57
+msgid "Andromeda Galaxy"
+msgstr "Galaxia Andrómeda"
+
+#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
+#: dso1.py:59
+msgid "Triangulum Galaxy"
+msgstr "Galaxia del Triángulo"
+
+#. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
+#: dso1.py:68
+msgid "Orion Nebula"
+msgstr "Nebulosa de Orión"
+
+#. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
+#: dso1.py:70
+msgid "de Mairan's Nebula"
+msgstr "Nebulosa de Mairan's"
+
+#. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
+#: dso1.py:72
+msgid "Beehive Cluster"
+msgstr "Grupo de la Colmena"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pleiades
+#: dso1.py:74
+msgid "Pleiades"
+msgstr "Pléyades"
+
+#. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
+#: dso1.py:80
+msgid "Whirlpool Galaxy"
+msgstr "Galaxia Remolino"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
+#: dso1.py:86
+msgid "Sunflower Galaxy"
+msgstr "Galaxia del Girasol"
+
+#. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
+#: dso1.py:90
+msgid "Bodes Galaxy"
+msgstr "Galaxia de Bodes"
+
+#. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
+#: dso1.py:92
+msgid "Southern Pinwheel Galaxy"
+msgstr "Galaxia del Molinete del Sur"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
+#: dso1.py:96
+msgid "Pinwheel Galaxy"
+msgstr "Galaxia del Molinete"
 
 #. TRANS: http://en.wikipedia.org/wiki/Mercury_(planet)
 #: StarChart.py:228
@@ -472,7 +562,7 @@ msgstr "Grus"
 msgid "Hercules"
 msgstr "Hércules"
 
-#. TRANS: http://en.wikipedia.org/wiki/Horologium
+#. TRANS: http://en.wikipedia.org/wiki/Horologium_(constellation)
 #: constellations.py:439
 msgid "Horologium"
 msgstr "Horologium"
@@ -711,96 +801,6 @@ msgstr "Volans"
 #: constellations.py:927
 msgid "Vulpecula"
 msgstr "Vulpécula"
-
-#. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
-#: dso1.py:33
-msgid "Butterfly Cluster"
-msgstr "Grupo de la Mariposa"
-
-#. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
-#: dso1.py:35
-msgid "Ptolemy's Cluster"
-msgstr "Grupo de Ptolomeo"
-
-#. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
-#: dso1.py:37
-msgid "Lagoon Nebula"
-msgstr "Nebulosa de la Laguna"
-
-#. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
-#: dso1.py:40
-msgid "Wild Duck Cluster"
-msgstr "Cúmulo del Pato Salvaje"
-
-#. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
-#: dso1.py:43
-msgid "Hercules Cluster"
-msgstr "Grupo de Hércules"
-
-#. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
-#: dso1.py:46
-msgid "Omega Nebula"
-msgstr "Nebulosa de Omega"
-
-#. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
-#: dso1.py:49
-msgid "Trifid Nebula"
-msgstr "Nebulosa Trífida"
-
-#. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
-#: dso1.py:57
-msgid "Andromeda Galaxy"
-msgstr "Galaxia de Andrómeda"
-
-#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
-#: dso1.py:59
-msgid "Triangulum Galaxy"
-msgstr "Galaxia del Triángulo"
-
-#. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
-#: dso1.py:68
-msgid "Orion Nebula"
-msgstr "Nebulosa de Orión"
-
-#. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
-#: dso1.py:70
-msgid "de Mairan's Nebula"
-msgstr "Nebulosa de De Mairan"
-
-#. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
-#: dso1.py:72
-msgid "Beehive Cluster"
-msgstr "Grupo de la Colmena"
-
-#. TRANS: http://en.wikipedia.org/wiki/Pleiades
-#: dso1.py:74
-msgid "Pleiades"
-msgstr "Pléyades"
-
-#. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
-#: dso1.py:80
-msgid "Whirlpool Galaxy"
-msgstr "Galaxia Remolino"
-
-#. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
-#: dso1.py:86
-msgid "Sunflower Galaxy"
-msgstr "Galaxia del Girasol"
-
-#. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
-#: dso1.py:90
-msgid "Bodes Galaxy"
-msgstr "Galaxia de Bodes"
-
-#. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
-#: dso1.py:92
-msgid "Southern Pinwheel Galaxy"
-msgstr "Galaxia del Molinete del Sur"
-
-#. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
-#: dso1.py:96
-msgid "Pinwheel Galaxy"
-msgstr "Galaxia del Molinete"
 
 #. TRANS: http://en.wikipedia.org/wiki/Large_Magellanic_Cloud
 #: dso2.py:36

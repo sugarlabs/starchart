@@ -6,25 +6,115 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-10 00:32-0400\n"
-"PO-Revision-Date: 2013-07-10 15:57+0200\n"
-"Last-Translator: lite <litekok@gmail.com>\n"
+"POT-Creation-Date: 2017-12-01 01:47+0000\n"
+"PO-Revision-Date: 2016-03-18 22:37+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1458340651.000000\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "StarChart"
 msgstr "星图"
 
 #. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
 msgid "explore the cosmos"
 msgstr "探索宇宙"
+
+#. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
+#: dso1.py:33
+msgid "Butterfly Cluster"
+msgstr "蝴蝶星团"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
+#: dso1.py:35
+msgid "Ptolemy's Cluster"
+msgstr "托勒密星团"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
+#: dso1.py:37
+msgid "Lagoon Nebula"
+msgstr "礁湖星云"
+
+#. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
+#: dso1.py:40
+msgid "Wild Duck Cluster"
+msgstr "野鸭星团"
+
+#. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
+#: dso1.py:43
+msgid "Hercules Cluster"
+msgstr "武仙星团"
+
+#. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
+#: dso1.py:46
+msgid "Omega Nebula"
+msgstr "亚米茄星云"
+
+#. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
+#: dso1.py:49
+msgid "Trifid Nebula"
+msgstr "三裂星云"
+
+#. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
+#: dso1.py:57
+msgid "Andromeda Galaxy"
+msgstr "仙女座星系"
+
+#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
+#: dso1.py:59
+msgid "Triangulum Galaxy"
+msgstr "三角座星系"
+
+#. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
+#: dso1.py:68
+msgid "Orion Nebula"
+msgstr "猎户座星云"
+
+#. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
+#: dso1.py:70
+msgid "de Mairan's Nebula"
+msgstr "De Mairans 星云"
+
+#. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
+#: dso1.py:72
+msgid "Beehive Cluster"
+msgstr "蜂巢星团"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pleiades
+#: dso1.py:74
+msgid "Pleiades"
+msgstr "昴宿星团"
+
+#. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
+#: dso1.py:80
+msgid "Whirlpool Galaxy"
+msgstr "涡旋星系"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
+#: dso1.py:86
+msgid "Sunflower Galaxy"
+msgstr "葵花星系"
+
+#. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
+#: dso1.py:90
+msgid "Bodes Galaxy"
+msgstr "波德星系"
+
+#. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
+#: dso1.py:92
+msgid "Southern Pinwheel Galaxy"
+msgstr "南风车星系"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
+#: dso1.py:96
+msgid "Pinwheel Galaxy"
+msgstr "风车星系"
 
 #. TRANS: http://en.wikipedia.org/wiki/Mercury_(planet)
 #: StarChart.py:228
@@ -201,7 +291,7 @@ msgstr "星星"
 
 #: StarChart.py:1020
 msgid "Object is "
-msgstr "天体是"
+msgstr "天体是 "
 
 #: StarChart.py:1423 StarChart.py:3124
 msgid "Planets"
@@ -471,7 +561,7 @@ msgstr "天鹤座"
 msgid "Hercules"
 msgstr "武仙座"
 
-#. TRANS: http://en.wikipedia.org/wiki/Horologium
+#. TRANS: http://en.wikipedia.org/wiki/Horologium_(constellation)
 #: constellations.py:439
 msgid "Horologium"
 msgstr "时钟座"
@@ -710,96 +800,6 @@ msgstr "飞鱼座"
 #: constellations.py:927
 msgid "Vulpecula"
 msgstr "狐狸座"
-
-#. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
-#: dso1.py:33
-msgid "Butterfly Cluster"
-msgstr "蝴蝶星团"
-
-#. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
-#: dso1.py:35
-msgid "Ptolemy's Cluster"
-msgstr "托勒密星团"
-
-#. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
-#: dso1.py:37
-msgid "Lagoon Nebula"
-msgstr "礁湖星云"
-
-#. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
-#: dso1.py:40
-msgid "Wild Duck Cluster"
-msgstr "野鸭星团"
-
-#. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
-#: dso1.py:43
-msgid "Hercules Cluster"
-msgstr "武仙星团"
-
-#. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
-#: dso1.py:46
-msgid "Omega Nebula"
-msgstr "亚米茄星云"
-
-#. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
-#: dso1.py:49
-msgid "Trifid Nebula"
-msgstr "三裂星云"
-
-#. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
-#: dso1.py:57
-msgid "Andromeda Galaxy"
-msgstr "仙女座星系"
-
-#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
-#: dso1.py:59
-msgid "Triangulum Galaxy"
-msgstr "三角座星系"
-
-#. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
-#: dso1.py:68
-msgid "Orion Nebula"
-msgstr "猎户座星云"
-
-#. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
-#: dso1.py:70
-msgid "de Mairan's Nebula"
-msgstr "De Mairans 星云"
-
-#. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
-#: dso1.py:72
-msgid "Beehive Cluster"
-msgstr "蜂巢星团"
-
-#. TRANS: http://en.wikipedia.org/wiki/Pleiades
-#: dso1.py:74
-msgid "Pleiades"
-msgstr "昴宿星团"
-
-#. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
-#: dso1.py:80
-msgid "Whirlpool Galaxy"
-msgstr "涡旋星系"
-
-#. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
-#: dso1.py:86
-msgid "Sunflower Galaxy"
-msgstr "葵花星系"
-
-#. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
-#: dso1.py:90
-msgid "Bodes Galaxy"
-msgstr "波德星系"
-
-#. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
-#: dso1.py:92
-msgid "Southern Pinwheel Galaxy"
-msgstr "南风车星系"
-
-#. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
-#: dso1.py:96
-msgid "Pinwheel Galaxy"
-msgstr "风车星系"
 
 #. TRANS: http://en.wikipedia.org/wiki/Large_Magellanic_Cloud
 #: dso2.py:36

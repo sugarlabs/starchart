@@ -6,33 +6,126 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-10 00:32-0400\n"
-"PO-Revision-Date: 2013-07-08 09:17+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2017-12-01 01:47+0000\n"
+"PO-Revision-Date: 2017-12-01 02:36+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1512095762.000000\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "StarChart"
 msgstr "Աստղային Քարտեզ"
 
 #. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
 msgid "explore the cosmos"
 msgstr ""
 
+#. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
+#: dso1.py:33
+msgid "Butterfly Cluster"
+msgstr "Թիթեռների Բույլ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
+#: dso1.py:35
+msgid "Ptolemy's Cluster"
+msgstr "Պտղոմեոսի Բույլ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
+#: dso1.py:37
+msgid "Lagoon Nebula"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
+#: dso1.py:40
+msgid "Wild Duck Cluster"
+msgstr "Վայրի Բադ Բույլ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
+#: dso1.py:43
+msgid "Hercules Cluster"
+msgstr "Հերկուլես Բույլ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
+#: dso1.py:46
+msgid "Omega Nebula"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
+#: dso1.py:49
+msgid "Trifid Nebula"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
+#: dso1.py:57
+msgid "Andromeda Galaxy"
+msgstr "Անդրոմեդ Գալակտիկա"
+
+#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
+#: dso1.py:59
+msgid "Triangulum Galaxy"
+msgstr "Եռանկյուն Գալակտիկա"
+
+#. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
+#: dso1.py:68
+msgid "Orion Nebula"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
+#: dso1.py:70
+msgid "de Mairan's Nebula"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
+#: dso1.py:72
+msgid "Beehive Cluster"
+msgstr "Փեթակ Բույլ"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pleiades
+#: dso1.py:74
+msgid "Pleiades"
+msgstr "Բազումք"
+
+#. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
+#: dso1.py:80
+msgid "Whirlpool Galaxy"
+msgstr "Հորձանք Գալակտիկա"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
+#: dso1.py:86
+#, fuzzy
+msgid "Sunflower Galaxy"
+msgstr "Արևածաղիկ Գալակտիկա"
+
+#. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
+#: dso1.py:90
+msgid "Bodes Galaxy"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
+#: dso1.py:92
+msgid "Southern Pinwheel Galaxy"
+msgstr "Հարավային Պտուտան Գալակտիկա"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
+#: dso1.py:96
+msgid "Pinwheel Galaxy"
+msgstr "Պտուտան Գալակտիկա"
+
 #. TRANS: http://en.wikipedia.org/wiki/Mercury_(planet)
 #: StarChart.py:228
+#, fuzzy
 msgid "Mercury"
 msgstr "Մերկուրի"
 
 #. TRANS: http://en.wikipedia.org/wiki/Venus
 #: StarChart.py:230
+#, fuzzy
 msgid "Venus"
 msgstr "Վեներա"
 
@@ -43,16 +136,19 @@ msgstr "Երկիր"
 
 #. TRANS: http://en.wikipedia.org/wiki/Mars
 #: StarChart.py:234
+#, fuzzy
 msgid "Mars"
-msgstr "Մարս"
+msgstr "Հրատ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Jupiter
 #: StarChart.py:236
+#, fuzzy
 msgid "Jupiter"
 msgstr "Յուպիտեր"
 
 #. TRANS: http://en.wikipedia.org/wiki/Saturn
 #: StarChart.py:238
+#, fuzzy
 msgid "Saturn"
 msgstr "Սատուրն"
 
@@ -119,35 +215,41 @@ msgstr "6"
 
 #. TRANS: http://en.wikipedia.org/wiki/Longitude
 #: StarChart.py:816
+#, fuzzy
 msgid "Longitude:"
 msgstr "Երկարություն`"
 
 # Արևելք
 #. TRANS: http://en.wikipedia.org/wiki/East
 #: StarChart.py:820 StarChart.py:1772 StarChart.py:1781
+#, fuzzy
 msgid "E"
 msgstr "Ա"
 
 # Արևմուտք
 #. TRANS: http://en.wikipedia.org/wiki/West
 #: StarChart.py:822 StarChart.py:1774 StarChart.py:1779
+#, fuzzy
 msgid "W"
 msgstr "Ա"
 
 #. TRANS: http://en.wikipedia.org/wiki/Latitude
 #: StarChart.py:824
+#, fuzzy
 msgid "Latitude:"
 msgstr "Լայնություն`"
 
 # Հյուսիս
 #. TRANS: http://en.wikipedia.org/wiki/North
 #: StarChart.py:828 StarChart.py:1763
+#, fuzzy
 msgid "N"
 msgstr "Հ"
 
 # Հարավ
 #. TRANS: http://en.wikipedia.org/wiki/South
 #: StarChart.py:830 StarChart.py:1767
+#, fuzzy
 msgid "S"
 msgstr "Հ"
 
@@ -274,23 +376,27 @@ msgid "Locate"
 msgstr "Տեղորոշել"
 
 #: StarChart.py:3168
+#, fuzzy
 msgid "About"
 msgstr "Մասին"
 
 #. TRANS: http://en.wikipedia.org/wiki/Andromeda_(constellation)
 #: constellations.py:15
+#, fuzzy
 msgid "Andromeda"
 msgstr "Անդրոմեդ"
 
 # Համաստեղություն է
 #. TRANS: http://en.wikipedia.org/wiki/Antlia
 #: constellations.py:26
+#, fuzzy
 msgid "Antlia"
 msgstr "Պոմպ"
 
 # նվաղ համաստեղություն է հարավային եչկնքում
 #. TRANS: http://en.wikipedia.org/wiki/Apus
 #: constellations.py:31
+#, fuzzy
 msgid "Apus"
 msgstr "Դրախտային թռչուն"
 
@@ -307,6 +413,7 @@ msgstr "Արծիվ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Ara_(constellation)
 #: constellations.py:72
+#, fuzzy
 msgid "Ara"
 msgstr "Արա"
 
@@ -348,7 +455,6 @@ msgstr "Խեցգետին"
 # համաստեղություն
 #. TRANS: http://en.wikipedia.org/wiki/Canes_Venatici
 #: constellations.py:134
-#, fuzzy
 msgid "Canes Venatici"
 msgstr "Որսկան Շներ"
 
@@ -379,6 +485,7 @@ msgstr "Կասիոպեա"
 
 #. TRANS: http://en.wikipedia.org/wiki/Centaurus
 #: constellations.py:192
+#, fuzzy
 msgid "Centaurus"
 msgstr "Կենտավրոս"
 
@@ -429,6 +536,7 @@ msgstr "Ագռավ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Crater_(constellation)
 #: constellations.py:286
+#, fuzzy
 msgid "Crater"
 msgstr "Խառնարան"
 
@@ -444,6 +552,7 @@ msgstr "Կարապ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Delphinus
 #: constellations.py:310
+#, fuzzy
 msgid "Delphinus"
 msgstr "Դելֆին"
 
@@ -464,6 +573,7 @@ msgstr "Փոքր Ձի"
 
 #. TRANS: http://en.wikipedia.org/wiki/Eridanus_(constellation)
 #: constellations.py:352
+#, fuzzy
 msgid "Eridanus"
 msgstr "Էրիդանոս"
 
@@ -484,10 +594,11 @@ msgstr "Կռունկ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Hercules_(constellation)
 #: constellations.py:417
+#, fuzzy
 msgid "Hercules"
 msgstr "Հերկուլես"
 
-#. TRANS: http://en.wikipedia.org/wiki/Horologium
+#. TRANS: http://en.wikipedia.org/wiki/Horologium_(constellation)
 #: constellations.py:439
 msgid "Horologium"
 msgstr "Ժամացույց"
@@ -504,6 +615,7 @@ msgstr "Հարավային Հիդրա"
 
 #. TRANS: http://en.wikipedia.org/wiki/Indus_(constellation)
 #: constellations.py:472
+#, fuzzy
 msgid "Indus"
 msgstr "Հնդիկ"
 
@@ -559,6 +671,7 @@ msgstr "Մանրադիտակ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Monoceros
 #: constellations.py:570
+#, fuzzy
 msgid "Monoceros"
 msgstr "Միեղջյուր"
 
@@ -569,6 +682,7 @@ msgstr "Ճանճ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Norma_(constellation)
 #: constellations.py:585
+#, fuzzy
 msgid "Norma"
 msgstr "Անկյունաքանոն"
 
@@ -584,6 +698,7 @@ msgstr "Օձակիր"
 
 #. TRANS: http://en.wikipedia.org/wiki/Orion_(constellation)
 #: constellations.py:612
+#, fuzzy
 msgid "Orion"
 msgstr "Օրիոն"
 
@@ -599,6 +714,7 @@ msgstr "Պեգաս"
 
 #. TRANS: http://en.wikipedia.org/wiki/Perseus_(constellation)
 #: constellations.py:660
+#, fuzzy
 msgid "Perseus"
 msgstr "Պերսևս"
 
@@ -639,6 +755,7 @@ msgstr "Ցանց"
 
 #. TRANS: http://en.wikipedia.org/wiki/Sagitta
 #: constellations.py:747
+#, fuzzy
 msgid "Sagitta"
 msgstr "Նետ"
 
@@ -679,6 +796,7 @@ msgstr "Ցուլ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Telescopium
 #: constellations.py:840
+#, fuzzy
 msgid "Telescopium"
 msgstr "Աստղադիտակ"
 
@@ -709,6 +827,7 @@ msgstr "Փոքր Արջ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Vela_(constellation)
 #: constellations.py:895
+#, fuzzy
 msgid "Vela"
 msgstr "Առագաստներ"
 
@@ -724,99 +843,9 @@ msgstr "Թռչող Ձուկ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Vulpecula
 #: constellations.py:927
+#, fuzzy
 msgid "Vulpecula"
 msgstr "Աղվեսիկ"
-
-#. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
-#: dso1.py:33
-msgid "Butterfly Cluster"
-msgstr "Թիթեռների Բույլ"
-
-#. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
-#: dso1.py:35
-msgid "Ptolemy's Cluster"
-msgstr "Պտղոմեոսի Բույլ"
-
-#. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
-#: dso1.py:37
-msgid "Lagoon Nebula"
-msgstr ""
-
-#. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
-#: dso1.py:40
-msgid "Wild Duck Cluster"
-msgstr "Վայրի Բադ Բույլ"
-
-#. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
-#: dso1.py:43
-msgid "Hercules Cluster"
-msgstr "Հերկուլես Բույլ"
-
-#. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
-#: dso1.py:46
-msgid "Omega Nebula"
-msgstr ""
-
-#. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
-#: dso1.py:49
-msgid "Trifid Nebula"
-msgstr ""
-
-#. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
-#: dso1.py:57
-msgid "Andromeda Galaxy"
-msgstr "Անդրոմեդ Գալակտիկա"
-
-#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
-#: dso1.py:59
-msgid "Triangulum Galaxy"
-msgstr "Եռանկյուն Գալակտիկա"
-
-#. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
-#: dso1.py:68
-msgid "Orion Nebula"
-msgstr ""
-
-#. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
-#: dso1.py:70
-msgid "de Mairan's Nebula"
-msgstr ""
-
-#. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
-#: dso1.py:72
-msgid "Beehive Cluster"
-msgstr "Փեթակ Բույլ"
-
-#. TRANS: http://en.wikipedia.org/wiki/Pleiades
-#: dso1.py:74
-msgid "Pleiades"
-msgstr "Բազումք"
-
-#. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
-#: dso1.py:80
-msgid "Whirlpool Galaxy"
-msgstr "Հորձանք Գալակտիկա"
-
-#. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
-#: dso1.py:86
-#, fuzzy
-msgid "Sunflower Galaxy"
-msgstr "Արևածաղիկ Գալակտիկա"
-
-#. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
-#: dso1.py:90
-msgid "Bodes Galaxy"
-msgstr ""
-
-#. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
-#: dso1.py:92
-msgid "Southern Pinwheel Galaxy"
-msgstr "Հարավային Պտուտան Գալակտիկա"
-
-#. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
-#: dso1.py:96
-msgid "Pinwheel Galaxy"
-msgstr "Պտուտան Գալակտիկա"
 
 #. TRANS: http://en.wikipedia.org/wiki/Large_Magellanic_Cloud
 #: dso2.py:36

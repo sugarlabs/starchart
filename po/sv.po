@@ -1,0 +1,887 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-01 01:47+0000\n"
+"PO-Revision-Date: 2017-03-28 23:10+0000\n"
+"Last-Translator: Anders <anders.jonsson@norsjovallen.se>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1490742624.000000\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "StarChart"
+msgstr "Stjärnkarta"
+
+#. TRANS: "summary" option from activity.info file
+msgid "explore the cosmos"
+msgstr ""
+
+#. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
+#: dso1.py:33
+msgid "Butterfly Cluster"
+msgstr "Fjärilshopen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
+#: dso1.py:35
+msgid "Ptolemy's Cluster"
+msgstr "Ptolemaios stjärnhop"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
+#: dso1.py:37
+msgid "Lagoon Nebula"
+msgstr "Lagunnebulosan"
+
+#. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
+#: dso1.py:40
+msgid "Wild Duck Cluster"
+msgstr "Vildandshopen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
+#: dso1.py:43
+msgid "Hercules Cluster"
+msgstr "Herkuleshopen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
+#: dso1.py:46
+msgid "Omega Nebula"
+msgstr "Omeganebulosan"
+
+#. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
+#: dso1.py:49
+msgid "Trifid Nebula"
+msgstr "Trifidnebulosan"
+
+#. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
+#: dso1.py:57
+msgid "Andromeda Galaxy"
+msgstr "Andromedagalaxen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
+#: dso1.py:59
+msgid "Triangulum Galaxy"
+msgstr "Triangelgalaxen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
+#: dso1.py:68
+msgid "Orion Nebula"
+msgstr "Orionnebulosan"
+
+#. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
+#: dso1.py:70
+msgid "de Mairan's Nebula"
+msgstr "De Mairans nebulosa"
+
+#. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
+#: dso1.py:72
+msgid "Beehive Cluster"
+msgstr "Bikupehopen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pleiades
+#: dso1.py:74
+msgid "Pleiades"
+msgstr "Plejaderna"
+
+#. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
+#: dso1.py:80
+msgid "Whirlpool Galaxy"
+msgstr "Malströmsgalaxen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
+#: dso1.py:86
+msgid "Sunflower Galaxy"
+msgstr "Solrosgalaxen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
+#: dso1.py:90
+msgid "Bodes Galaxy"
+msgstr "Bodes galax"
+
+#. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
+#: dso1.py:92
+msgid "Southern Pinwheel Galaxy"
+msgstr "Södra vindsnurregalaxen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
+#: dso1.py:96
+msgid "Pinwheel Galaxy"
+msgstr "Vindsnurregalaxen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Mercury_(planet)
+#: StarChart.py:228
+msgid "Mercury"
+msgstr "Merkurius"
+
+#. TRANS: http://en.wikipedia.org/wiki/Venus
+#: StarChart.py:230
+msgid "Venus"
+msgstr "Venus"
+
+#. TRANS: http://en.wikipedia.org/wiki/Earth
+#: StarChart.py:232
+msgid "Earth"
+msgstr "Jorden"
+
+#. TRANS: http://en.wikipedia.org/wiki/Mars
+#: StarChart.py:234
+msgid "Mars"
+msgstr "Mars"
+
+#. TRANS: http://en.wikipedia.org/wiki/Jupiter
+#: StarChart.py:236
+msgid "Jupiter"
+msgstr "Jupiter"
+
+#. TRANS: http://en.wikipedia.org/wiki/Saturn
+#: StarChart.py:238
+msgid "Saturn"
+msgstr "Saturnus"
+
+#. TRANS: http://en.wikipedia.org/wiki/Uranus
+#: StarChart.py:240
+msgid "Uranus"
+msgstr "Uranus"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sun
+#: StarChart.py:243 StarChart.py:1012 StarChart.py:1668
+msgid "Sun"
+msgstr "Solen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Moon
+#: StarChart.py:250 StarChart.py:1015 StarChart.py:1666
+msgid "Moon"
+msgstr "Månen"
+
+#: StarChart.py:795
+msgid "Night Vision"
+msgstr "Mörkerseende"
+
+#: StarChart.py:797
+msgid "Invert Display"
+msgstr "Invertera skärm"
+
+#: StarChart.py:799
+msgid "Flip L/R"
+msgstr "Växla V/H"
+
+#: StarChart.py:802
+msgid "Draw Constellations"
+msgstr "Rita stjärnbilder"
+
+#. TRANS: http://en.wikipedia.org/wiki/Magnitude_(astronomy)
+#: StarChart.py:805
+msgid "Mag:"
+msgstr "Mag:"
+
+#: StarChart.py:806
+msgid "1"
+msgstr "1"
+
+#: StarChart.py:807
+msgid "2"
+msgstr "2"
+
+#: StarChart.py:808
+msgid "3"
+msgstr "3"
+
+#: StarChart.py:809
+msgid "4"
+msgstr "4"
+
+#: StarChart.py:810
+msgid "5"
+msgstr "5"
+
+#: StarChart.py:811
+msgid "6"
+msgstr "6"
+
+#. TRANS: http://en.wikipedia.org/wiki/Longitude
+#: StarChart.py:816
+msgid "Longitude:"
+msgstr "Longitud:"
+
+#. TRANS: http://en.wikipedia.org/wiki/East
+#: StarChart.py:820 StarChart.py:1772 StarChart.py:1781
+msgid "E"
+msgstr "Ö"
+
+#. TRANS: http://en.wikipedia.org/wiki/West
+#: StarChart.py:822 StarChart.py:1774 StarChart.py:1779
+msgid "W"
+msgstr "V"
+
+#. TRANS: http://en.wikipedia.org/wiki/Latitude
+#: StarChart.py:824
+msgid "Latitude:"
+msgstr "Latitud:"
+
+#. TRANS: http://en.wikipedia.org/wiki/North
+#: StarChart.py:828 StarChart.py:1763
+msgid "N"
+msgstr "N"
+
+#. TRANS: http://en.wikipedia.org/wiki/South
+#: StarChart.py:830 StarChart.py:1767
+msgid "S"
+msgstr "S"
+
+#: StarChart.py:835 StarChart.py:853
+msgid "Ok"
+msgstr "Ok"
+
+#: StarChart.py:838
+msgid "Make home"
+msgstr "Sätt som hem"
+
+#: StarChart.py:841
+msgid "Now"
+msgstr "Nu"
+
+#: StarChart.py:842
+msgid "Specify"
+msgstr "Ange"
+
+#: StarChart.py:843
+msgid "Time:"
+msgstr "Tid:"
+
+#: StarChart.py:846
+msgid "Offset:"
+msgstr "Förskjutning:"
+
+#: StarChart.py:856
+msgid "Object type:"
+msgstr "Objekttyp:"
+
+#: StarChart.py:867
+msgid "See http://wiki.laptop.org/go/StarChart for help."
+msgstr "Se http://wiki.laptop.org/go/StarChart för hjälp."
+
+#: StarChart.py:941
+msgid "There is no object here."
+msgstr "Det finns inget objekt här."
+
+#: StarChart.py:1008
+msgid "deep-sky object"
+msgstr "djuprymdsobjekt"
+
+#. TRANS: http://en.wikipedia.org/wiki/Planet
+#: StarChart.py:1011
+msgid "planet"
+msgstr "planet"
+
+#: StarChart.py:1013 StarChart.py:1016
+msgid "Object is: "
+msgstr "Objekt är: "
+
+#: StarChart.py:1019
+msgid "star"
+msgstr "stjärna"
+
+#: StarChart.py:1020
+msgid "Object is "
+msgstr "Objekt är "
+
+#: StarChart.py:1423 StarChart.py:3124
+msgid "Planets"
+msgstr "Planeter"
+
+#: StarChart.py:1434 StarChart.py:3125
+msgid "Stars by Constellation"
+msgstr "Stjärnor efter stjärnbild"
+
+#: StarChart.py:1448 StarChart.py:3126
+msgid "Brightest Stars"
+msgstr "Ljusaste stjärnor"
+
+#: StarChart.py:1469 StarChart.py:3127
+msgid "Deep-sky Objects"
+msgstr "Djuprymdsobjekt"
+
+#: StarChart.py:1634
+msgid "This object is always below the horizon at your location."
+msgstr "Detta objekt är alltid under horisonten på din position."
+
+#: StarChart.py:1637
+msgid "This object is currently not in the field of view."
+msgstr "Detta objekt är för närvarande inte i synfältet."
+
+#: StarChart.py:1639
+msgid "This object is currently below your horizon."
+msgstr "Detta objekt är för närvarande under din horisont."
+
+#: StarChart.py:1679
+msgid "Input Error: The longitude was not understood."
+msgstr "Inmatningsfel: Longituden förstods inte."
+
+#: StarChart.py:1683
+msgid "Input Error: The latitude was not understood."
+msgstr "Inmatningsfel: Latituden förstods inte."
+
+#: StarChart.py:1687
+msgid "Input Error: The time was not understood."
+msgstr "Inmatningsfel:Tiden förstods inte."
+
+#: StarChart.py:1691
+msgid "Input Error: The time zone offset was not understood."
+msgstr "Inmatningsfel: Tidszonsförskjutningen förstods inte."
+
+#: StarChart.py:2946
+msgid "Star Chart Activity"
+msgstr "Stjärnkartsaktivitet"
+
+#: StarChart.py:3164
+msgid "What"
+msgstr "Vad"
+
+#: StarChart.py:3165
+msgid "Where"
+msgstr "Var"
+
+#: StarChart.py:3166
+msgid "When"
+msgstr "När"
+
+#: StarChart.py:3167
+msgid "Locate"
+msgstr "Hitta"
+
+#: StarChart.py:3168
+msgid "About"
+msgstr "Om"
+
+#. TRANS: http://en.wikipedia.org/wiki/Andromeda_(constellation)
+#: constellations.py:15
+msgid "Andromeda"
+msgstr "Andromeda"
+
+#. TRANS: http://en.wikipedia.org/wiki/Antlia
+#: constellations.py:26
+msgid "Antlia"
+msgstr "Luftpumpen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Apus
+#: constellations.py:31
+msgid "Apus"
+msgstr "Paradisfågeln"
+
+#. TRANS: http://en.wikipedia.org/wiki/Aquarius_(constellation)
+#: constellations.py:38
+msgid "Aquarius"
+msgstr "Vattumannen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Aquila_(constellation)
+#: constellations.py:58
+msgid "Aquila"
+msgstr "Örnen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ara_(constellation)
+#: constellations.py:72
+msgid "Ara"
+msgstr "Altaret"
+
+#. TRANS: http://en.wikipedia.org/wiki/Aries_(constellation)
+#: constellations.py:82
+msgid "Aries"
+msgstr "Väduren"
+
+#. TRANS: http://en.wikipedia.org/wiki/Auriga_(constellation)
+#: constellations.py:88
+msgid "Auriga"
+msgstr "Kusken"
+
+#. TRANS: http://en.wikipedia.org/wiki/Boötes
+#: constellations.py:99
+msgid "Boötes"
+msgstr "Björnvaktaren"
+
+#. TRANS: http://en.wikipedia.org/wiki/Caelum
+#: constellations.py:112
+msgid "Caelum"
+msgstr "Gravstickeln"
+
+#. TRANS: http://en.wikipedia.org/wiki/Camelopardalis
+#: constellations.py:118
+msgid "Camelopardalis"
+msgstr "Giraffen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Cancer_(constellation)
+#: constellations.py:126
+msgid "Cancer"
+msgstr "Kräftan"
+
+#. TRANS: http://en.wikipedia.org/wiki/Canes_Venatici
+#: constellations.py:134
+msgid "Canes Venatici"
+msgstr "Jakthundarna"
+
+#. TRANS: http://en.wikipedia.org/wiki/Canis_Major
+#: constellations.py:140
+msgid "Canis Major"
+msgstr "Stora hunden"
+
+#. TRANS: http://en.wikipedia.org/wiki/Canis_Minor
+#: constellations.py:153
+msgid "Canis Minor"
+msgstr "Lilla hunden"
+
+#. TRANS: http://en.wikipedia.org/wiki/Capricornus
+#: constellations.py:157
+msgid "Capricornus"
+msgstr "Stenbocken"
+
+#. TRANS: http://en.wikipedia.org/wiki/Carina_(constellation)
+#: constellations.py:171
+msgid "Carina"
+msgstr "Kölen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Cassiopeia_(constellation)
+#: constellations.py:185
+msgid "Cassiopeia"
+msgstr "Cassiopeja"
+
+#. TRANS: http://en.wikipedia.org/wiki/Centaurus
+#: constellations.py:192
+msgid "Centaurus"
+msgstr "Kentauren"
+
+#. TRANS: http://en.wikipedia.org/wiki/Cepheus_(constellation)
+#: constellations.py:207
+msgid "Cepheus"
+msgstr "Cepheus"
+
+#. TRANS: http://en.wikipedia.org/wiki/Cetus
+#: constellations.py:216
+msgid "Cetus"
+msgstr "Valfisken"
+
+#. TRANS: http://en.wikipedia.org/wiki/Chamaeleon
+#: constellations.py:234
+msgid "Chamaeleon"
+msgstr "Kameleonten"
+
+#. TRANS: http://en.wikipedia.org/wiki/Circinus_(constellation)
+#: constellations.py:241
+msgid "Circinus"
+msgstr "Cirkelpassaren"
+
+#. TRANS: http://en.wikipedia.org/wiki/Columba_(constellation)
+#: constellations.py:246
+msgid "Columba"
+msgstr "Duvan"
+
+#. TRANS: http://en.wikipedia.org/wiki/Coma_Berenices
+#: constellations.py:254
+msgid "Coma Berenices"
+msgstr "Berenikes hår"
+
+#. TRANS: http://en.wikipedia.org/wiki/Corona_Australis
+#: constellations.py:259
+msgid "Corona Australis"
+msgstr "Södra kronan"
+
+#. TRANS: http://en.wikipedia.org/wiki/Corona_Borealis
+#: constellations.py:269
+msgid "Corona Borealis"
+msgstr "Norra kronan"
+
+#. TRANS: http://en.wikipedia.org/wiki/Corvus_(constellation)
+#: constellations.py:278
+msgid "Corvus"
+msgstr "Korpen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Crater_(constellation)
+#: constellations.py:286
+msgid "Crater"
+msgstr "Bägaren"
+
+#. TRANS: http://en.wikipedia.org/wiki/Crux
+#: constellations.py:297
+msgid "Crux"
+msgstr "Södra korset"
+
+#. TRANS: http://en.wikipedia.org/wiki/Cygnus_(constellation)
+#: constellations.py:302
+msgid "Cygnus"
+msgstr "Svanen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Delphinus
+#: constellations.py:310
+msgid "Delphinus"
+msgstr "Delfinen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Dorado
+#: constellations.py:318
+msgid "Dorado"
+msgstr "Svärdfisken"
+
+#. TRANS: http://en.wikipedia.org/wiki/Draco_(constellation)
+#: constellations.py:324
+msgid "Draco"
+msgstr "Draken"
+
+#. TRANS: http://en.wikipedia.org/wiki/Equuleus
+#: constellations.py:347
+msgid "Equuleus"
+msgstr "Lilla hästen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Eridanus_(constellation)
+#: constellations.py:352
+msgid "Eridanus"
+msgstr "Floden Eridanus"
+
+#. TRANS: http://en.wikipedia.org/wiki/Fornax
+#: constellations.py:385
+msgid "Fornax"
+msgstr "Ugnen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Gemini_(constellation)
+#: constellations.py:392
+msgid "Gemini"
+msgstr "Tvillingarna"
+
+#. TRANS: http://en.wikipedia.org/wiki/Grus_(constellation)
+#: constellations.py:404
+msgid "Grus"
+msgstr "Tranan"
+
+#. TRANS: http://en.wikipedia.org/wiki/Hercules_(constellation)
+#: constellations.py:417
+msgid "Hercules"
+msgstr "Herkules"
+
+#. TRANS: http://en.wikipedia.org/wiki/Horologium_(constellation)
+#: constellations.py:439
+msgid "Horologium"
+msgstr "Pendeluret"
+
+#. TRANS: http://en.wikipedia.org/wiki/Hydra_(constellation)
+#: constellations.py:447
+msgid "Hydra"
+msgstr "Vattenormen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Hydrus
+#: constellations.py:466
+msgid "Hydrus"
+msgstr "Lilla vattenormen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Indus_(constellation)
+#: constellations.py:472
+msgid "Indus"
+msgstr "Indianen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lacerta
+#: constellations.py:478
+msgid "Lacerta"
+msgstr "Ödlan"
+
+#. TRANS: http://en.wikipedia.org/wiki/Leo_(constellation)
+#: constellations.py:487
+msgid "Leo"
+msgstr "Lejonet"
+
+#. TRANS: http://en.wikipedia.org/wiki/Leo_Minor
+#: constellations.py:499
+msgid "Leo Minor"
+msgstr "Lilla lejonet"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lepus_(constellation)
+#: constellations.py:504
+msgid "Lepus"
+msgstr "Haren"
+
+#. TRANS: http://en.wikipedia.org/wiki/Libra_(constellation)
+#: constellations.py:515
+msgid "Libra"
+msgstr "Vågen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lupus_(constellation)
+#: constellations.py:524
+msgid "Lupus"
+msgstr "Vargen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lynx_(constellation)
+#: constellations.py:539
+msgid "Lynx"
+msgstr "Lodjuret"
+
+#. TRANS: http://en.wikipedia.org/wiki/Lyra
+#: constellations.py:549
+msgid "Lyra"
+msgstr "Lyran"
+
+#. TRANS: http://en.wikipedia.org/wiki/Mensa_(constellation)
+#: constellations.py:558
+msgid "Mensa"
+msgstr "Taffelberget"
+
+#. TRANS: http://en.wikipedia.org/wiki/Microscopium
+#: constellations.py:564
+msgid "Microscopium"
+msgstr "Mikroskopet"
+
+#. TRANS: http://en.wikipedia.org/wiki/Monoceros
+#: constellations.py:570
+msgid "Monoceros"
+msgstr "Enhörningen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Musca
+#: constellations.py:577
+msgid "Musca"
+msgstr "Flugan"
+
+#. TRANS: http://en.wikipedia.org/wiki/Norma_(constellation)
+#: constellations.py:585
+msgid "Norma"
+msgstr "Vinkelhaken"
+
+#. TRANS: http://en.wikipedia.org/wiki/Octans
+#: constellations.py:592
+msgid "Octans"
+msgstr "Oktanten"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ophiuchus
+#: constellations.py:598
+msgid "Ophiuchus"
+msgstr "Ormbäraren"
+
+#. TRANS: http://en.wikipedia.org/wiki/Orion_(constellation)
+#: constellations.py:612
+msgid "Orion"
+msgstr "Orion"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pavo_(constellation)
+#: constellations.py:633
+msgid "Pavo"
+msgstr "Påfågeln"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pegasus_(constellation)
+#: constellations.py:643
+msgid "Pegasus"
+msgstr "Pegasus"
+
+#. TRANS: http://en.wikipedia.org/wiki/Perseus_(constellation)
+#: constellations.py:660
+msgid "Perseus"
+msgstr "Perseus"
+
+#. TRANS: http://en.wikipedia.org/wiki/Phoenix_(constellation)
+#: constellations.py:679
+msgid "Phoenix"
+msgstr "Fenix"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pictor
+#: constellations.py:688
+msgid "Pictor"
+msgstr "Målaren"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pisces_(constellation)
+#: constellations.py:693
+msgid "Pisces"
+msgstr "Fiskarna"
+
+#. TRANS: http://en.wikipedia.org/wiki/Piscis_Australis
+#: constellations.py:712
+msgid "Piscis Australis"
+msgstr "Södra fisken"
+
+#. TRANS: http://en.wikipedia.org/wiki/Puppis
+#: constellations.py:721
+msgid "Puppis"
+msgstr "Akterskeppet"
+
+#. TRANS: http://en.wikipedia.org/wiki/Pyxis
+#: constellations.py:734
+msgid "Pyxis"
+msgstr "Kompassen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Reticulum
+#: constellations.py:739
+msgid "Reticulum"
+msgstr "Rombiska nätet"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sagitta
+#: constellations.py:747
+msgid "Sagitta"
+msgstr "Pilen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sagittarius_(constellation)
+#: constellations.py:753
+msgid "Sagittarius"
+msgstr "Skytten"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sculptor_(constellation)
+#: constellations.py:772
+msgid "Sculptor"
+msgstr "Bildhuggaren"
+
+#. TRANS: http://en.wikipedia.org/wiki/Scorpius
+#: constellations.py:778
+msgid "Scorpius"
+msgstr "Skorpionen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Scutum
+#: constellations.py:795
+msgid "Scutum"
+msgstr "Skölden"
+
+#. TRANS: http://en.wikipedia.org/wiki/Serpens
+#: constellations.py:800
+msgid "Serpens"
+msgstr "Ormen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sextans
+#: constellations.py:819
+msgid "Sextans"
+msgstr "Sextanten"
+
+#. TRANS: http://en.wikipedia.org/wiki/Taurus_(constellation)
+#: constellations.py:826
+msgid "Taurus"
+msgstr "Oxen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Telescopium
+#: constellations.py:840
+msgid "Telescopium"
+msgstr "Kikaren"
+
+#. TRANS: http://en.wikipedia.org/wiki/Triangulum
+#: constellations.py:845
+msgid "Triangulum"
+msgstr "Triangeln"
+
+#. TRANS: http://en.wikipedia.org/wiki/Triangulum_Australis
+#: constellations.py:851
+msgid "Triangulum Australis"
+msgstr "Södra triangeln"
+
+#. TRANS: http://en.wikipedia.org/wiki/Tucana
+#: constellations.py:857
+msgid "Tucana"
+msgstr "Tukanen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ursa_Major
+#: constellations.py:865
+msgid "Ursa Major"
+msgstr "Stora björnen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ursa_Minor
+#: constellations.py:885
+msgid "Ursa Minor"
+msgstr "Lilla björnen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Vela_(constellation)
+#: constellations.py:895
+msgid "Vela"
+msgstr "Seglet"
+
+#. TRANS: http://en.wikipedia.org/wiki/Virgo_(constellation)
+#: constellations.py:905
+msgid "Virgo"
+msgstr "Jungfrun"
+
+#. TRANS: http://en.wikipedia.org/wiki/Volans
+#: constellations.py:918
+msgid "Volans"
+msgstr "Flygfisken"
+
+#. TRANS: http://en.wikipedia.org/wiki/Vulpecula
+#: constellations.py:927
+msgid "Vulpecula"
+msgstr "Räven"
+
+#. TRANS: http://en.wikipedia.org/wiki/Large_Magellanic_Cloud
+#: dso2.py:36
+msgid "Large Magellanic Cloud"
+msgstr "Stora magellanska molnet"
+
+#. TRANS: http://en.wikipedia.org/wiki/47_Tucanae
+#: dso2.py:42
+msgid "47 Tucanae"
+msgstr "47 Tucanae"
+
+#. TRANS: http://en.wikipedia.org/wiki/Sculptor_Galaxy
+#: dso2.py:44
+msgid "Sculptor Galaxy"
+msgstr "Bildhuggargalaxen"
+
+#. TRANS: http://en.wikipedia.org/wiki/Small_Magellanic_Cloud
+#: dso2.py:47
+msgid "Small Magellanic Cloud"
+msgstr "Lilla magellanska molnet"
+
+#. TRANS: http://en.wikipedia.org/wiki/Double_Cluster
+#: dso2.py:51
+msgid "Double Cluster"
+msgstr "Dubbelhopen"
+
+#. TRANS: http://en.wikipedia.org/wiki/California_Nebula
+#: dso2.py:54
+msgid "California Nebula"
+msgstr "Kaliforniennebulosan"
+
+#. TRANS: http://en.wikipedia.org/wiki/Cone_Nebula
+#: dso2.py:61
+msgid "Cone Nebula"
+msgstr "Konnebulosan"
+
+#. TRANS: http://en.wikipedia.org/wiki/Rosette_Nebula
+#: dso2.py:64
+msgid "Rosette Nebula"
+msgstr "Rosettnebulosan"
+
+#. TRANS: http://en.wikipedia.org/wiki/Ghost_of_Jupiter
+#: dso2.py:69
+msgid "Ghost of Jupiter"
+msgstr "Jupiters spöke"
+
+#. TRANS: http://en.wikipedia.org/wiki/Carina_Nebula
+#: dso2.py:71
+msgid "Eta Carina Nebula"
+msgstr "Eta Carinae-nebulosan"
+
+#. TRANS: http://en.wikipedia.org/wiki/Jewel_Box_(star_cluster)
+#: dso2.py:74
+msgid "Jewel Box"
+msgstr "Juvelskrinet"
+
+#. TRANS: http://en.wikipedia.org/wiki/Centaurus_A
+#: dso2.py:78
+msgid "Centaurus A"
+msgstr "Galax Centaurus A"
+
+#. TRANS: http://en.wikipedia.org/wiki/Omega_Centauri
+#: dso2.py:80
+msgid "Omega Centauri"
+msgstr "Omega Centauri"
+
+#. TRANS: http://en.wikipedia.org/wiki/Barnard's_Galaxy
+#: dso2.py:91
+msgid "Barnard's Galaxy"
+msgstr "Barnards galax"
+
+#. TRANS: http://en.wikipedia.org/wiki/Crescent_Nebula
+#: dso2.py:93
+msgid "Crescent Nebula"
+msgstr "Crescentnebulosan"
+
+#. TRANS: http://en.wikipedia.org/wiki/Veil_Nebula
+#: dso2.py:95
+msgid "Veil Nebula"
+msgstr "Cirrusnebulosan"
+
+#. TRANS: http://en.wikipedia.org/wiki/North_America_Nebula
+#: dso2.py:97
+msgid "North America Nebula"
+msgstr "Nordamerikanebulosan"
