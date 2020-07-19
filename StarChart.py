@@ -1100,7 +1100,7 @@ class ChartDisplay(Gtk.DrawingArea):
 
         self.location = Location(self)
 
-    def area_expose_cb(self, area, event):
+    def draw_cb(self, widget, c):
 
         # Determine the area we can draw upon and adjust the chart accordingly.
 
@@ -1112,8 +1112,8 @@ class ChartDisplay(Gtk.DrawingArea):
         self.xoffset = (self.screensize[0] - self.diameter) / 2 - self.margin
         self.yoffset = (self.screensize[1] - self.diameter) / 2 - self.margin
 
-        self.gc = self.get_window().cairo_create()
-        self.pangolayout = PangoCairo.create_layout(self.gc)
+        self.gc = c
+        self.pangolayout = PangoCairo.create_layout(c)
 
         # Establish color selections (need only do this once).
 
@@ -3195,7 +3195,7 @@ class StarChart(activity.Activity):
         button6.connect('clicked', self.chart.callback, 'time change')
         rb6.connect('clicked', self.chart.callback, 'user time')
         rb5.connect('clicked', self.chart.callback, 'now time')
-        self.chart.connect('draw', self.chart.area_expose_cb)
+        self.chart.connect('draw', self.chart.draw_cb)
         objtypecb.connect('changed', self.chart.callback, 'objtype sel')
         constscb.connect('changed', self.chart.callback, 'constellation sel')
         starscb.connect('changed', self.chart.callback, 'star sel')
