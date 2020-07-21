@@ -836,7 +836,7 @@ dsoscb = Gtk.ComboBoxText.new()
 # controls on last menubar (_('About')):
 # labela1 = gtk.Label(_('Version 2.0 (build 115) of 2010.04.21.1530 UT'))
 # labela2 = gtk.Label(' ')
-labela3 = Gtk.Label(_('See http://wiki.laptop.org/go/StarChart for help.'))
+labela3 = Gtk.Label(_('See https://help.sugarlabs.org/en/starchart.html for help.'))
 labela4 = Gtk.Label(' ')
 
 
