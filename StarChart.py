@@ -167,17 +167,10 @@ from time import time as systime
 from math import sin, cos, tan, asin, acos, atan, pi, sqrt, atan2
 from sugar3.activity import activity
 from sugar3.activity.activity import get_bundle_path
-
-try:
-    from sugar3.graphics.toolbarbox import ToolbarBox
-
-    _have_toolbox = True
-except ImportError:
-    _have_toolbox = False
-if _have_toolbox:
-    from sugar3.activity.widgets import ActivityToolbarButton
-    from sugar3.graphics.toolbarbox import ToolbarButton
-    from sugar3.activity.widgets import StopButton
+from sugar3.graphics.toolbarbox import ToolbarBox
+from sugar3.activity.widgets import ActivityToolbarButton
+from sugar3.graphics.toolbarbox import ToolbarButton
+from sugar3.activity.widgets import StopButton
 from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.palette import Palette, ToolInvoker
 from sugar3.graphics.toggletoolbutton import ToggleToolButton
@@ -2990,175 +2983,170 @@ class StarChart(activity.Activity):
         self.locate_toolbar = Gtk.Toolbar()
         self.about_toolbar = Gtk.Toolbar()
 
-        if _have_toolbox:
-            toolbar_box = ToolbarBox()
-            self.set_toolbar_box(toolbar_box)
-            toolbar_box.show()
 
-            activity_button = ActivityToolbarButton(self)
-            toolbar_box.toolbar.insert(activity_button, -1)
-            activity_button.show()
+        toolbar_box = ToolbarBox()
+        self.set_toolbar_box(toolbar_box)
+        toolbar_box.show()
 
-            what_toolbar_button = ToolbarButton(
-                page=self.what_toolbar,
-                icon_name='toolbar-view')
-            self.what_toolbar.show()
-            toolbar_box.toolbar.insert(what_toolbar_button, -1)
-            what_toolbar_button.show()
+        activity_button = ActivityToolbarButton(self)
+        toolbar_box.toolbar.insert(activity_button, -1)
+        activity_button.show()
 
-            where_toolbar_button = ToolbarButton(
-              page=self.where_toolbar,
-              icon_name='where')
-            self.where_toolbar.show()
-            toolbar_box.toolbar.insert(where_toolbar_button, -1)
-            where_toolbar_button.show()
+        what_toolbar_button = ToolbarButton(
+            page=self.what_toolbar,
+            icon_name='toolbar-view')
+        self.what_toolbar.show()
+        toolbar_box.toolbar.insert(what_toolbar_button, -1)
+        what_toolbar_button.show()
 
-            when_toolbar_button = ToolbarButton(
-              page=self.when_toolbar,
-              icon_name='when')
-            self.when_toolbar.show()
-            toolbar_box.toolbar.insert(when_toolbar_button, -1)
-            when_toolbar_button.show()
+        where_toolbar_button = ToolbarButton(
+            page=self.where_toolbar,
+            icon_name='where')
+        self.where_toolbar.show()
+        toolbar_box.toolbar.insert(where_toolbar_button, -1)
+        where_toolbar_button.show()
 
-            locate_toolbar_button = ToolbarButton(
-              page=self.locate_toolbar,
-              icon_name='locate')
-            self.locate_toolbar.show()
-            toolbar_box.toolbar.insert(locate_toolbar_button, -1)
-            locate_toolbar_button.show()
+        when_toolbar_button = ToolbarButton(
+            page=self.when_toolbar,
+            icon_name='when')
+        self.when_toolbar.show()
+        toolbar_box.toolbar.insert(when_toolbar_button, -1)
+        when_toolbar_button.show()
 
-            about_toolbar_button = ToolbarButton(
-              page=self.about_toolbar,
-              icon_name='about')
-            self.about_toolbar.show()
-            toolbar_box.toolbar.insert(about_toolbar_button, -1)
-            about_toolbar_button.show()
+        locate_toolbar_button = ToolbarButton(
+            page=self.locate_toolbar,
+            icon_name='locate')
+        self.locate_toolbar.show()
+        toolbar_box.toolbar.insert(locate_toolbar_button, -1)
+        locate_toolbar_button.show()
 
-            separator = Gtk.SeparatorToolItem()
-            separator.props.draw = False
-            separator.set_expand(True)
-            toolbar_box.toolbar.insert(separator, -1)
-            separator.show()
+        about_toolbar_button = ToolbarButton(
+            page=self.about_toolbar,
+            icon_name='about')
+        self.about_toolbar.show()
+        toolbar_box.toolbar.insert(about_toolbar_button, -1)
+        about_toolbar_button.show()
 
-            stop_button = StopButton(self)
-            stop_button.props.accelerator = '<Ctrl>q'
-            toolbar_box.toolbar.insert(stop_button, -1)
-            stop_button.show()
+        separator = Gtk.SeparatorToolItem()
+        separator.props.draw = False
+        separator.set_expand(True)
+        toolbar_box.toolbar.insert(separator, -1)
+        separator.show()
+
+        stop_button = StopButton(self)
+        stop_button.props.accelerator = '<Ctrl>q'
+        toolbar_box.toolbar.insert(stop_button, -1)
+        stop_button.show()
 
         # Fill the toolbox bars
 
-            self._toolbar_add(self.what_toolbar, fullscreen)
-            separator = Gtk.SeparatorToolItem()
-            separator.props.draw = True
-            separator.set_expand(False)
-            self._toolbar_add(self.what_toolbar, separator)
-            self._toolbar_add(self.what_toolbar, button1)
-            self._toolbar_add(self.what_toolbar, button2)
-            self._toolbar_add(self.what_toolbar, button3)
-            self._toolbar_add(self.what_toolbar, button4)
-            separator = Gtk.SeparatorToolItem()
-            separator.props.draw = True
-            separator.set_expand(False)
-            self._toolbar_add(self.what_toolbar, separator)
-            self._toolbar_add(self.what_toolbar, label6)
-            container2.attach(rb7, 0, 1, 0, 1)
-            container2.attach(rb8, 1, 2, 0, 1)
-            container2.attach(rb9, 2, 3, 0, 1)
-            container2.attach(rb10, 3, 4, 0, 1)
-            container2.attach(rb11, 4, 5, 0, 1)
-            container2.attach(rb12, 5, 6, 0, 1)
-            rb7.show()
-            rb9.show()
-            rb11.show()
-            rb8.show()
-            rb10.show()
-            rb12.show()
-            self._toolbar_add(self.what_toolbar, container2)
-            self._toolbar_add(self.where_toolbar, label1)
-            self._toolbar_add(self.where_toolbar, entry1)
-            container3.add(rb1)
-            rb1.show()
-            container3.add(rb2)
-            rb2.show()
-            self._toolbar_add(self.where_toolbar, container3)
-            separator = Gtk.SeparatorToolItem()
-            separator.props.draw = False
-            separator.set_expand(False)
-            self._toolbar_add(self.where_toolbar, separator)
-            self._toolbar_add(self.where_toolbar, label2)
-            self._toolbar_add(self.where_toolbar, entry2)
-            container4.add(rb3)
-            rb3.show()
-            container4.add(rb4)
-            rb4.show()
-            self._toolbar_add(self.where_toolbar, container4)
-            separator = Gtk.SeparatorToolItem()
-            separator.props.draw = False
-            separator.set_expand(False)
-            self._toolbar_add(self.where_toolbar, separator)
-            self._toolbar_add(self.where_toolbar, button5)
-            separator = Gtk.SeparatorToolItem()
-            separator.props.draw = False
-            separator.set_expand(False)
-            self._toolbar_add(self.where_toolbar, separator)
-            self._toolbar_add(self.where_toolbar, button51)
-            self._toolbar_add(self.when_toolbar, rb5)
-            self._toolbar_add(self.when_toolbar, rb6)
-            self._toolbar_add(self.when_toolbar, label4)
-            self._toolbar_add(self.when_toolbar, entry3)
-            self._toolbar_add(self.when_toolbar, label5)
-            self._toolbar_add(self.when_toolbar, entry4)
-            separator = Gtk.SeparatorToolItem()
-            separator.props.draw = False
-            separator.set_expand(False)
-            self._toolbar_add(self.when_toolbar, separator)
-            self._toolbar_add(self.when_toolbar, button6)
+        self._toolbar_add(self.what_toolbar, fullscreen)
+        separator = Gtk.SeparatorToolItem()
+        separator.props.draw = True
+        separator.set_expand(False)
+        self._toolbar_add(self.what_toolbar, separator)
+        self._toolbar_add(self.what_toolbar, button1)
+        self._toolbar_add(self.what_toolbar, button2)
+        self._toolbar_add(self.what_toolbar, button3)
+        self._toolbar_add(self.what_toolbar, button4)
+        separator = Gtk.SeparatorToolItem()
+        separator.props.draw = True
+        separator.set_expand(False)
+        self._toolbar_add(self.what_toolbar, separator)
+        self._toolbar_add(self.what_toolbar, label6)
+        container2.attach(rb7, 0, 1, 0, 1)
+        container2.attach(rb8, 1, 2, 0, 1)
+        container2.attach(rb9, 2, 3, 0, 1)
+        container2.attach(rb10, 3, 4, 0, 1)
+        container2.attach(rb11, 4, 5, 0, 1)
+        container2.attach(rb12, 5, 6, 0, 1)
+        rb7.show()
+        rb9.show()
+        rb11.show()
+        rb8.show()
+        rb10.show()
+        rb12.show()
+        self._toolbar_add(self.what_toolbar, container2)
+        self._toolbar_add(self.where_toolbar, label1)
+        self._toolbar_add(self.where_toolbar, entry1)
+        container3.add(rb1)
+        rb1.show()
+        container3.add(rb2)
+        rb2.show()
+        self._toolbar_add(self.where_toolbar, container3)
+        separator = Gtk.SeparatorToolItem()
+        separator.props.draw = False
+        separator.set_expand(False)
+        self._toolbar_add(self.where_toolbar, separator)
+        self._toolbar_add(self.where_toolbar, label2)
+        self._toolbar_add(self.where_toolbar, entry2)
+        container4.add(rb3)
+        rb3.show()
+        container4.add(rb4)
+        rb4.show()
+        self._toolbar_add(self.where_toolbar, container4)
+        separator = Gtk.SeparatorToolItem()
+        separator.props.draw = False
+        separator.set_expand(False)
+        self._toolbar_add(self.where_toolbar, separator)
+        self._toolbar_add(self.where_toolbar, button5)
+        separator = Gtk.SeparatorToolItem()
+        separator.props.draw = False
+        separator.set_expand(False)
+        self._toolbar_add(self.where_toolbar, separator)
+        self._toolbar_add(self.where_toolbar, button51)
+        self._toolbar_add(self.when_toolbar, rb5)
+        self._toolbar_add(self.when_toolbar, rb6)
+        self._toolbar_add(self.when_toolbar, label4)
+        self._toolbar_add(self.when_toolbar, entry3)
+        self._toolbar_add(self.when_toolbar, label5)
+        self._toolbar_add(self.when_toolbar, entry4)
+        separator = Gtk.SeparatorToolItem()
+        separator.props.draw = False
+        separator.set_expand(False)
+        self._toolbar_add(self.when_toolbar, separator)
+        self._toolbar_add(self.when_toolbar, button6)
         #    objtypecb.append_text(_('Constellations'))
-            objtypecb.append_text(_('Planets'))
-            objtypecb.append_text(_('Stars by Constellation'))
-            objtypecb.append_text(_('Brightest Stars'))
-            objtypecb.append_text(_('Deep-sky Objects'))
-            self._toolbar_add(self.locate_toolbar, labell1)
-            self._toolbar_add(self.locate_toolbar, objtypecb)
-            (name, wbar, e, a, I, O, L0, dL) = sun
-            planetscb.append_text(name)
-            (name, L0, P0, N0, I, e, a, phi0, tau) = moon
-            planetscb.append_text(name)
-            for i in range(len(planets)):
-              if (i == 2):
+        objtypecb.append_text(_('Planets'))
+        objtypecb.append_text(_('Stars by Constellation'))
+        objtypecb.append_text(_('Brightest Stars'))
+        objtypecb.append_text(_('Deep-sky Objects'))
+        self._toolbar_add(self.locate_toolbar, labell1)
+        self._toolbar_add(self.locate_toolbar, objtypecb)
+        (name, wbar, e, a, I, O, L0, dL) = sun
+        planetscb.append_text(name)
+        (name, L0, P0, N0, I, e, a, phi0, tau) = moon
+        planetscb.append_text(name)
+        for i in range(len(planets)):
+            if (i == 2):
                 pass
-              else:
+            else:
                 (name, wbar, e, a, I, O, L0, dL) = planets[i]
                 planetscb.append_text(name)
-            names = []
-            for code, (name, lines) in figures.items():
-        # lines is an array of coordinates.  we ignore it.
-              names = names + [name]
-            for name in sorted(names):
-              constscb.append_text(name)
-            for i in range(len(dso_chart)):
-              (nM, strCon, ra, dec, mag, majA, minA, posA, strT, strN) = dso_chart[i]
-              if (strN == ''):
+        names = []
+        for code, (name, lines) in figures.items():
+            # lines is an array of coordinates.  we ignore it.
+            names = names + [name]
+        for name in sorted(names):
+            constscb.append_text(name)
+        for i in range(len(dso_chart)):
+            (nM, strCon, ra, dec, mag, majA, minA, posA, strT, strN) = dso_chart[i]
+            if (strN == ''):
                 dsoscb.append_text(nM)
-              else:
-                dsoscb.append_text(strN + ' (' + nM +')')
-            container0.add(constscb)
-            self._toolbar_add(self.locate_toolbar, container0)
-            # container1.add(labela1)
-            # labela1.show()
-            # container1.add(labela2)
-            # labela2.show()
-            container1.add(labela3)
-            labela3.show()
-            container1.add(labela4)
-            labela4.show()
-            self._toolbar_add(self.about_toolbar, container1)
-            if not _have_toolbox:
-              toolbox.add_toolbar(_('What'), self.what_toolbar)
-              toolbox.add_toolbar(_('Where'), self.where_toolbar)
-              toolbox.add_toolbar(_('When'), self.when_toolbar)
-              toolbox.add_toolbar(_('Locate'), self.locate_toolbar)
-              toolbox.add_toolbar(_('About'), self.about_toolbar)
+            else:
+                dsoscb.append_text(strN + ' (' + nM + ')')
+        container0.add(constscb)
+        self._toolbar_add(self.locate_toolbar, container0)
+        # container1.add(labela1)
+        # labela1.show()
+        # container1.add(labela2)
+        # labela2.show()
+        container1.add(labela3)
+        labela3.show()
+        container1.add(labela4)
+        labela4.show()
+        self._toolbar_add(self.about_toolbar, container1)
+
 
         # Create the GUI objects.
 
@@ -3217,9 +3205,6 @@ class StarChart(activity.Activity):
         # FIXME: We can't do sharing yet, so hide the control for it.
 
         self.max_participants = 1
-        if not _have_toolbox:
-            toolbar = toolbox.get_activity_toolbar()
-            toolbar.share.hide()
 
         # Establish initial state of controls and do a plot.
 
