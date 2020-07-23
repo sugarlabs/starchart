@@ -52,7 +52,7 @@
 #     The list of NGC objects came from several sources including:
 #       http://www.hawastsoc.org/deepsky/bennett.html
 #       http://www.wikipedia.org
-#     
+#
 #
 #  ACKNOWLEDGEMENTS
 #
@@ -298,22 +298,6 @@ dso_chart = dso_chart + dsupplement
 # declination from its name.
 abbrev_from_name = {}
 dec_from_planet = {}
-
-# ============================= STATE INFORMATION =============================
-
-# initial settings for display options
-nightvision = False
-invertdisplay = False
-fliphorizontally = False
-drawconstellations = True
-limitingmagnitude = 4.0
-saved_lmag = 4.0
-# initial settings for time
-specifytime = False
-saved_specifytime = False
-now = datetime.utcnow()
-zoneoffset = -300
-
 
 # ============================== START OF CODE ================================
 
@@ -839,32 +823,6 @@ dsoscb = Gtk.ComboBoxText.new()
 labela3 = Gtk.Label(_('See https://help.sugarlabs.org/en/starchart.html for help.'))
 labela4 = Gtk.Label(' ')
 
-
-# -------------------------------------------------------------------------------
-
-# Set control states and values from the state variables.
-
-def initialize_controls():
-    button1.set_active(nightvision)
-    button2.set_active(invertdisplay)
-    button3.set_active(fliphorizontally)
-    button4.set_active(drawconstellations)
-    rb12.set_active(limitingmagnitude >= 6.0)
-    rb11.set_active((limitingmagnitude >= 5.0) and (limitingmagnitude < 6.0))
-    rb10.set_active((limitingmagnitude >= 4.0) and (limitingmagnitude < 5.0))
-    rb9.set_active((limitingmagnitude >= 3.0) and (limitingmagnitude < 4.0))
-    rb8.set_active((limitingmagnitude >= 2.0) and (limitingmagnitude < 3.0))
-    rb7.set_active((limitingmagnitude >= 1.0) and (limitingmagnitude < 2.0))
-    #  rb7.set_active(limitingmagnitude < 1.0)
-    entry2.set_text(floattoangle(abs(latitude)))
-    rb4.set_active(latitude < 0.0)
-    rb3.set_active(latitude >= 0.0)
-    entry1.set_text(floattoangle(abs(longitude)))
-    rb2.set_active(longitude < 0.0)
-    rb1.set_active(longitude >= 0.0)
-    rb6.set_active(specifytime)
-
-
 # ========================= PixelsToObjectMap Class ============================
 #
 # This code is central to implementing the  "Identify" feature.
@@ -1059,8 +1017,8 @@ class Location():
             self.context.gc.move_to(x - 25, y)
             self.context.gc.line_to(x + 25, y)
             self.context.gc.stroke()
-            self.context.gc.set_line_width(1) 
-            self.context.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue) 
+            self.context.gc.set_line_width(1)
+            self.context.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
         else:
             pass
 
@@ -1078,7 +1036,18 @@ class ChartDisplay(Gtk.DrawingArea):
         self.connect('button_press_event', self.pressing)
         self.magnifying = False
         self.mag_center = [0, 0]
-        if (not specifytime):
+        self.nightvision = False
+        self.invertdisplay = False
+        self.fliphorizontally = False
+        self.drawconstellations = True
+        self.limitingmagnitude = 4.0
+        self.saved_lmag = 4.0
+        # initial settings for time
+        self.specifytime = False
+        self.saved_specifytime = False
+        self.now = datetime.utcnow()
+        self.zoneoffset = -300
+        if (not self.specifytime):
             GObject.timeout_add(60000, self.timer1_cb)
 
         # The pmap object maintains a map between the chart display's pixel coordinates
@@ -1123,7 +1092,7 @@ class ChartDisplay(Gtk.DrawingArea):
 
     def timer1_cb(self):
         # do not redraw the chart if we're not advancing time.
-        if (not specifytime):
+        if (not self.specifytime):
             self.plotchart()
         return True
 
@@ -1141,7 +1110,7 @@ class ChartDisplay(Gtk.DrawingArea):
         # draw the chart so east is on the right by default.
         # When flipped, east is on the left, like a map.
 
-        if (fliphorizontally):
+        if (self.fliphorizontally):
             x = int(self.diameter / 2.0 + r * sin(az))
         else:
             x = int(self.diameter / 2.0 - r * sin(az))
@@ -1158,7 +1127,7 @@ class ChartDisplay(Gtk.DrawingArea):
         dy = (self.margin - 2 + self.yoffset + self.diameter / 2.0) - y
         dx = (self.margin - 2 + self.xoffset + self.diameter / 2.0) - x
         # Compensate for which way the chart is flipped.
-        if (fliphorizontally):
+        if (self.fliphorizontally):
             dx = -dx
         r = sqrt(dx * dx + dy * dy)
         # prevent divide-by-zero:
@@ -1182,32 +1151,22 @@ class ChartDisplay(Gtk.DrawingArea):
 
         # Handle control changes here.
 
-        global nightvision
-        global invertdisplay
-        global fliphorizontally
-        global drawconstellations
-        global limitingmagnitude
-        global saved_lmag
-        global longitude
-        global latitude
-        global specifytime
-
         if (data == None):
             return False
         elif (data == 'night vision'):
-            nightvision = button1.get_active()
+            self.nightvision = button1.get_active()
             self.plotchart()
             return False
         elif (data == 'invert display'):
-            invertdisplay = button2.get_active()
+            self.invertdisplay = button2.get_active()
             self.plotchart()
             return False
         elif (data == 'flip horizontally'):
-            fliphorizontally = button3.get_active()
+            self.fliphorizontally = button3.get_active()
             self.plotchart()
             return False
         elif (data == 'draw constellations'):
-            drawconstellations = button4.get_active()
+            self.drawconstellations = button4.get_active()
             self.plotchart()
             return False
         elif (data == 'home location set'):
@@ -1312,27 +1271,27 @@ class ChartDisplay(Gtk.DrawingArea):
             self.plotchart()
             return False
         elif (data == 'user time'):
-            specifytime = True
-            saved_specifytime = True
+            self.specifytime = True
+            self.saved_specifytime = True
             return True
         elif (data == 'now time'):
-            specifytime = False
-            saved_specifytime = False
-            now = datetime.utcnow()
+            self.specifytime = False
+            self.saved_specifytime = False
+            self.now = datetime.utcnow()
             (tstr, ostr) = set_time_and_UTC_offset()
             entry3.set_text(tstr)
             entry4.set_text(ostr)
             self.plotchart()
             return True
         elif (data == 'time change'):
-            specifytime = rb6.get_active()
-            saved_specifytime = specifytime
-            if (specifytime):
+            self.specifytime = rb6.get_active()
+            self.saved_specifytime = self.specifytime
+            if (self.specifytime):
                 if (syntax_check_time() == False):
                     self.time_error()
-                    specifytime = False
-                    saved_specifytime = False
-                    now = datetime.utcnow()
+                    self.specifytime = False
+                    self.saved_specifytime = False
+                    self.now = datetime.utcnow()
                     (tstr, ostr) = set_time_and_UTC_offset()
                     entry3.set_text(tstr)
                     entry4.set_text(ostr)
@@ -1340,9 +1299,9 @@ class ChartDisplay(Gtk.DrawingArea):
                 else:
                     if (syntax_check_zone() == False):
                         self.zone_error()
-                        specifytime = False
-                        saved_specifytime = False
-                        now = datetime.utcnow()
+                        self.specifytime = False
+                        self.saved_specifytime = False
+                        self.now = datetime.utcnow()
                         (tstr, ostr) = set_time_and_UTC_offset()
                         entry3.set_text(tstr)
                         entry4.set_text(ostr)
@@ -1355,33 +1314,33 @@ class ChartDisplay(Gtk.DrawingArea):
             self.plotchart()
             return False
         elif (data == 'rb7 clicked'):
-            limitingmagnitude = 1.0
-            saved_lmag = 1.0
+            self.limitingmagnitude = 1.0
+            self.saved_lmag = 1.0
             self.plotchart()
             return False
         elif (data == 'rb8 clicked'):
-            limitingmagnitude = 2.0
-            saved_lmag = 2.0
+            self.limitingmagnitude = 2.0
+            self.saved_lmag = 2.0
             self.plotchart()
             return False
         elif (data == 'rb9 clicked'):
-            limitingmagnitude = 3.0
-            saved_lmag = 3.0
+            self.limitingmagnitude = 3.0
+            self.saved_lmag = 3.0
             self.plotchart()
             return False
         elif (data == 'rb10 clicked'):
-            limitingmagnitude = 4.0
-            saved_lmag = 4.0
+            self.limitingmagnitude = 4.0
+            self.saved_lmag = 4.0
             self.plotchart()
             return False
         elif (data == 'rb11 clicked'):
-            limitingmagnitude = 5.0
-            saved_lmag = 5.0
+            self.limitingmagnitude = 5.0
+            self.saved_lmag = 5.0
             self.plotchart()
             return False
         elif (data == 'rb12 clicked'):
-            limitingmagnitude = 6.0
-            saved_lmag = 6.0
+            self.limitingmagnitude = 6.0
+            self.saved_lmag = 6.0
             self.plotchart()
             return False
         elif (data == 'objtype sel'):
@@ -1520,20 +1479,17 @@ class ChartDisplay(Gtk.DrawingArea):
             self.located(x, y)
 
     def magnify(self, x, y):
-        global limitingmagnitude
-        global specifytime
-        global saved_specifytime
         if (can_magnify):
             # Toggle magnification state.
             if (self.magnifying):
                 self.magnifying = False
-                limitingmagnitude = saved_lmag
-                specifytime = saved_specifytime
+                self.limitingmagnitude = self.saved_lmag
+                self.specifytime = self.saved_specifytime
             else:
                 self.magnifying = True
-                limitingmagnitude = 9.0
-                saved_specifytime = specifytime
-                specifytime = True
+                self.limitingmagnitude = 9.0
+                self.saved_specifytime = self.specifytime
+                self.specifytime = True
                 # Save x,y.  Re-plot.
                 self.mag_center[0] = x
                 self.mag_center[1] = y
@@ -1672,8 +1628,8 @@ class ChartDisplay(Gtk.DrawingArea):
         if (not self.canplot):
             return
         self.cleararea()
-        if (invertdisplay):
-            if (nightvision):
+        if (self.invertdisplay):
+            if (self.nightvision):
                 self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
             else:
                 self.gc.set_source_rgb(self.colors[0].red, self.colors[0].green, self.colors[0].blue)
@@ -1694,8 +1650,8 @@ class ChartDisplay(Gtk.DrawingArea):
         self.omap.clear()
 
         # Plot sky circle
-        if (not invertdisplay):
-            if (nightvision):
+        if (not self.invertdisplay):
+            if (self.nightvision):
                 self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
             else:
                 self.gc.set_source_rgb(self.colors[0].red, self.colors[0].green, self.colors[0].blue)
@@ -1710,7 +1666,7 @@ class ChartDisplay(Gtk.DrawingArea):
 
         # label the cardinal points.
 
-        if (nightvision):
+        if (self.nightvision):
             self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
         else:
             self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
@@ -1726,7 +1682,7 @@ class ChartDisplay(Gtk.DrawingArea):
                         2 * self.margin + self.diameter - 30)
         PangoCairo.show_layout(self.gc, self.pangolayout)
         self.gc.stroke()
-        if (not fliphorizontally):
+        if (not self.fliphorizontally):
             self.pangolayout.set_text(_('E'), -1)
         else:
             self.pangolayout.set_text(_('W'), -1)
@@ -1734,7 +1690,7 @@ class ChartDisplay(Gtk.DrawingArea):
                         self.margin + self.diameter / 2 - 10)
         PangoCairo.show_layout(self.gc, self.pangolayout)
         self.gc.stroke()
-        if (not fliphorizontally):
+        if (not self.fliphorizontally):
             self.pangolayout.set_text(_('W'), -1)
         else:
             self.pangolayout.set_text(_('E'), -1)
@@ -1743,8 +1699,8 @@ class ChartDisplay(Gtk.DrawingArea):
         PangoCairo.show_layout(self.gc, self.pangolayout)
         self.gc.stroke()
 
-        if (not invertdisplay):
-            if (nightvision):
+        if (not self.invertdisplay):
+            if (self.nightvision):
                 self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
             else:
                 self.gc.set_source_rgb(self.colors[0].red, self.colors[0].green, self.colors[0].blue)
@@ -1753,7 +1709,7 @@ class ChartDisplay(Gtk.DrawingArea):
 
         # Set the time of plotting (now).
 
-        if (not specifytime):
+        if (not self.specifytime):
             now = datetime.utcnow()
             (tstr, ostr) = set_time_and_UTC_offset()
             entry3.set_text(tstr)
@@ -1812,7 +1768,7 @@ class ChartDisplay(Gtk.DrawingArea):
 
                 # if the star is bright enough, add it to pmap and plot it.
 
-                if (mag <= limitingmagnitude):
+                if (mag <= self.limitingmagnitude):
                     self.pmap.add(px, py, 'star', name)
                     self.plot_star(px, py, starsize)
 
@@ -1865,9 +1821,9 @@ class ChartDisplay(Gtk.DrawingArea):
         # plotting a star but we have to figure out the alt/az coordinates for both ends
         # of the line segment.
 
-        if (drawconstellations):
-            if (not invertdisplay):
-                if (nightvision):
+        if (self.drawconstellations):
+            if (not self.invertdisplay):
+                if (self.nightvision):
                     self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
                 else:
                     self.gc.set_source_rgb(self.colors[0].red, self.colors[0].green, self.colors[0].blue)
@@ -2783,8 +2739,8 @@ class ChartDisplay(Gtk.DrawingArea):
             self.gc.set_line_width(1)
 
     def plot_DSO(self, type, maja, mina, mag, px, py):
-        if (not invertdisplay):
-            if (nightvision):
+        if (not self.invertdisplay):
+            if (self.nightvision):
                 fg_color = self.colors[2]
             else:
                 fg_color = self.colors[0]
@@ -2886,7 +2842,7 @@ class ChartDisplay(Gtk.DrawingArea):
 
         # Clear the drawing surface
 
-        if (nightvision):
+        if (self.nightvision):
             self.gc.set_source_rgb((1 / 65536.0) * self.colors[1].red,
                                    (1 / 65536.0) * self.colors[1].green,
                                    (1 / 65536.0) * self.colors[1].blue)
@@ -2926,25 +2882,33 @@ class ChartDisplay(Gtk.DrawingArea):
 
 class StarChart(activity.Activity):
     def __init__(self, handle):
-        global now
-        global zoneoffset
-        global abbrev_from_name
-        global longitude
-        global latitude
+
+        self.nightvision = False
+        self.invertdisplay = False
+        self.fliphorizontally = False
+        self.drawconstellations = True
+        self.limitingmagnitude = 4.0
+        self.saved_lmag = 4.0
+        # initial settings for time
+        self.specifytime = False
+        self.saved_specifytime = False
+        self.now = datetime.utcnow()
+        self.zoneoffset = -300
+
         activity.Activity.__init__(self, handle)
         os.chdir(get_bundle_path())
         self.set_title(_('Star Chart Activity'))
 
         # Iniitialize time to now and offset to our zone.
 
-        now = datetime.utcnow()
+        self.now = datetime.utcnow()
         (tstr, ostr) = set_time_and_UTC_offset()
         (hh, mm) = parse_zone_offset(ostr)
-        zoneoffset = 60 * hh
+        self.zoneoffset = 60 * hh
         if (hh < 0):
-            zoneoffset = zoneoffset - mm
+            self.zoneoffset = self.zoneoffset - mm
         else:
-            zoneoffset = zoneoffset + mm
+            self.zoneoffset = self.zoneoffset + mm
 
         # If the file StarChart.cfg exists in the Activity's data directory,
         # get the longitude and latitude settings stored there.  This will
@@ -3205,11 +3169,32 @@ class StarChart(activity.Activity):
         # FIXME: We can't do sharing yet, so hide the control for it.
 
         self.max_participants = 1
+        self.initialize_controls()
+        self.chart.plotchart()
 
+
+    def initialize_controls(self):
         # Establish initial state of controls and do a plot.
 
-        initialize_controls()
-        self.chart.plotchart()
+        button1.set_active(self.nightvision)
+        button2.set_active(self.invertdisplay)
+        button3.set_active(self.fliphorizontally)
+        button4.set_active(self.drawconstellations)
+        rb12.set_active(self.limitingmagnitude >= 6.0)
+        rb11.set_active((self.limitingmagnitude >= 5.0) and (self.limitingmagnitude < 6.0))
+        rb10.set_active((self.limitingmagnitude >= 4.0) and (self.limitingmagnitude < 5.0))
+        rb9.set_active((self.limitingmagnitude >= 3.0) and (self.limitingmagnitude < 4.0))
+        rb8.set_active((self.limitingmagnitude >= 2.0) and (self.limitingmagnitude < 3.0))
+        rb7.set_active((self.limitingmagnitude >= 1.0) and (self.limitingmagnitude < 2.0))
+        #  rb7.set_active(limitingmagnitude < 1.0)
+        entry2.set_text(floattoangle(abs(latitude)))
+        rb4.set_active(latitude < 0.0)
+        rb3.set_active(latitude >= 0.0)
+        entry1.set_text(floattoangle(abs(longitude)))
+        rb2.set_active(longitude < 0.0)
+        rb1.set_active(longitude >= 0.0)
+        rb6.set_active(self.specifytime)
+
 
     def _toolbar_add(self, toolbar, component):
         item = Gtk.ToolItem()
@@ -3223,60 +3208,48 @@ class StarChart(activity.Activity):
         self.fullscreen()
 
     def read_file(self, filename):
-        global nightvision
-        global invertdisplay
-        global fliphorizontally
-        global drawconstellations
-        global limitingmagnitude
-        global saved_lmag
-        global latitude
-        global longitude
-        global specifytime
-        global saved_specifytime
-        global zoneoffset
-        global now
 
         f = open(filename, 'r')
-        nightvision = bool(int(self.metadata.get('Night_Vision', '0')))
-        invertdisplay = bool(int(self.metadata.get('Invert', '0')))
-        fliphorizontally = bool(int(self.metadata.get('Flip', '0')))
-        drawconstellations = bool(int(self.metadata.get('Constellations', '1')))
-        limitingmagnitude = float(self.metadata.get('Magnitude', '4.0'))
+        self.nightvision = bool(int(self.metadata.get('Night_Vision', '0')))
+        self.invertdisplay = bool(int(self.metadata.get('Invert', '0')))
+        self.fliphorizontally = bool(int(self.metadata.get('Flip', '0')))
+        self.drawconstellations = bool(int(self.metadata.get('Constellations', '1')))
+        self.limitingmagnitude = float(self.metadata.get('Magnitude', '4.0'))
         if 'Lmag' in self.metadata:
-            saved_lmag = float(self.metadata.get('Lmag'))
-        specifytime = bool(int(self.metadata.get('Specify_Time', '0')))
-        saved_specifytime = specifytime
-        if (specifytime):
-            ts = self.metadata.get('Time', now.strftime('%Y/%m/%d,%H:%M'))
-            zs = self.metadata.get('Zone_Offset', str(zoneoffset))
+            self.saved_lmag = float(self.metadata.get('Lmag'))
+        self.specifytime = bool(int(self.metadata.get('Specify_Time', '0')))
+        self.saved_specifytime = self.specifytime
+        if (self.specifytime):
+            ts = self.metadata.get('Time', self.now.strftime('%Y/%m/%d,%H:%M'))
+            zs = self.metadata.get('Zone_Offset', str(self.zoneoffset))
             entry3.set_text(ts)
             entry4.set_text(zs)
-            now = get_time_and_UTC_offset(entry3.get_text(), entry4.get_text())
+            self.now = get_time_and_UTC_offset(entry3.get_text(), entry4.get_text())
             (hh, mm) = parse_zone_offset(entry4.get_text())
-            zoneoffset = 60 * hh
+            self.zoneoffset = 60 * hh
             if (hh < 0):
-                zoneoffset = zoneoffset - mm
+                self.zoneoffset = self.zoneoffset - mm
             else:
-                zoneoffset = zoneoffset + mm
-        initialize_controls()
+                self.zoneoffset = self.zoneoffset + mm
+        self.initialize_controls()
         self.chart.plotchart()
 
     def write_file(self, filename):
         f = open(filename, 'w')
-        self.metadata['Night_Vision'] = str(int(nightvision))
-        self.metadata['Invert'] = str(int(invertdisplay))
-        self.metadata['Flip'] = str(int(fliphorizontally))
-        self.metadata['Constellations'] = str(int(drawconstellations))
-        self.metadata['Magnitude'] = str(limitingmagnitude)
+        self.metadata['Night_Vision'] = str(int(self.nightvision))
+        self.metadata['Invert'] = str(int(self.invertdisplay))
+        self.metadata['Flip'] = str(int(self.fliphorizontally))
+        self.metadata['Constellations'] = str(int(self.drawconstellations))
+        self.metadata['Magnitude'] = str(self.limitingmagnitude)
         self.metadata['Latitude'] = str(latitude)
         self.metadata['Longitude'] = str(longitude)
-        self.metadata['Specify_Time'] = str(int(specifytime))
+        self.metadata['Specify_Time'] = str(int(self.specifytime))
         # Unlike the other settings, it's easier to store the time and zone offset as
         # they are represented in the text entry controls than to attempt to convert
         # now and zoneoffset into a representation of local time and offset.
         self.metadata['Time'] = entry3.get_text()
         self.metadata['Zone_Offset'] = entry4.get_text()
-        self.metadata['Lmag'] = str(saved_lmag)
+        self.metadata['Lmag'] = str(self.saved_lmag)
         f.close()
 
     def update_config(self):
