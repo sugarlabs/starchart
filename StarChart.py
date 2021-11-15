@@ -118,14 +118,9 @@
 # ================== NON-STANDARD BUT REQUIRED LOCALIZATION ===================
 
 # The settings for the observer's coordinates
-try:
-    import observatory
-
-    longitude = observatory.data[0]
-    latitude = observatory.data[1]
-except:
-    longitude = 0.0
-    latitude = 0.0
+import observatory
+longitude = observatory.data[0]
+latitude = observatory.data[1]
 
 # "nonlocal_timezone_correction" allows your XO to keep one timezone
 # while the program's "now" expresses time in another timezone.  This
@@ -138,15 +133,6 @@ nonlocal_timezone_correction = 0.0
 
 # If traveling, create "travel.py" to define alternate location and timezone.
 # (If "travel.py" does not exist, we use our home observatory parameters.)
-
-try:
-    import travel
-
-    longitude = travel.data[0]
-    latitude = travel.data[1]
-    nonlocal_timezone_correction = travel.data[2]
-except:
-    pass
 
 # =================================== IMPORTS ================================
 
@@ -1071,8 +1057,8 @@ class ChartDisplay(Gtk.DrawingArea):
         self.margin = 40
         self.diameter = min(self.screensize[0], self.screensize[1]) - \
                         2 * self.margin
-        self.xoffset = (self.screensize[0] - self.diameter) / 2 - self.margin
-        self.yoffset = (self.screensize[1] - self.diameter) / 2 - self.margin
+        self.xoffset = (self.screensize[0] - self.diameter) // 2 - self.margin
+        self.yoffset = (self.screensize[1] - self.diameter) // 2 - self.margin
 
         self.gc = c
         self.pangolayout = PangoCairo.create_layout(c)
@@ -1347,7 +1333,7 @@ class ChartDisplay(Gtk.DrawingArea):
             # Get selection and expose object selector control(s).
             selstr = objtypecb.get_active_text()
             if (selstr == _('Planets')):
-                for i in reversed(list(range(len(container0.get_children())))):
+                for i in list(range(len(container0.get_children()))):
                     container0.remove(container0.get_children()[i])
                 container0.add(planetscb)
                 planetscb.show()
@@ -1358,7 +1344,7 @@ class ChartDisplay(Gtk.DrawingArea):
                 planetscb.set_active(-1)
                 self.context.identifyobject.set_label('')
             elif (selstr == _('Stars by Constellation')):
-                for i in reversed(list(range(len(container0.get_children())))):
+                for i in list(range(len(container0.get_children()))):
                     container0.remove(container0.get_children()[i])
                 container0.add(constscb)
                 container0.add(starscb)
@@ -1372,7 +1358,7 @@ class ChartDisplay(Gtk.DrawingArea):
                 planetscb.set_active(-1)
                 self.context.identifyobject.set_label('')
             elif (selstr == _('Brightest Stars')):
-                for i in reversed(list(range(len(container0.get_children())))):
+                for i in list(range(len(container0.get_children()))):
                     container0.remove(container0.get_children()[i])
                 container0.add(starscb)
                 starscb.get_model().clear()
@@ -1393,7 +1379,7 @@ class ChartDisplay(Gtk.DrawingArea):
                 planetscb.set_active(-1)
                 self.context.identifyobject.set_label('')
             elif (selstr == _('Deep-sky Objects')):
-                for i in reversed(list(range(len(container0.get_children())))):
+                for i in list(range(len(container0.get_children()))):
                     container0.remove(container0.get_children()[i])
                 container0.add(dsoscb)
                 dsoscb.show()
@@ -1617,6 +1603,8 @@ class ChartDisplay(Gtk.DrawingArea):
                 self.plot_magnified()
             else:
                 self.plot_whole_sky()
+
+        self.queue_draw()
         return True
 
     def plotfield(self):
@@ -1636,9 +1624,9 @@ class ChartDisplay(Gtk.DrawingArea):
         else:
             self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
 
-        self.gc.arc(self.xoffset + self.margin + self.diameter / 2,
-                    self.yoffset + self.margin + self.diameter / 2,
-                    self.diameter / 2 + 2,
+        self.gc.arc(self.xoffset + self.margin + self.diameter // 2,
+                    self.yoffset + self.margin + self.diameter // 2,
+                    self.diameter // 2 + 2,
                     0,
                     2 * pi)
         self.gc.fill()
@@ -1658,9 +1646,9 @@ class ChartDisplay(Gtk.DrawingArea):
         else:
             self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
 
-        self.gc.arc(self.xoffset + self.margin + self.diameter/2,
-                    self.yoffset + self.margin + self.diameter/2,
-                    self.diameter/2 + 2,
+        self.gc.arc(self.xoffset + self.margin + self.diameter//2,
+                    self.yoffset + self.margin + self.diameter//2,
+                    self.diameter//2 + 2,
                     0, 2 * pi)
         self.gc.stroke() #make fill
 
@@ -1672,13 +1660,13 @@ class ChartDisplay(Gtk.DrawingArea):
             self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
         self.pangolayout.set_text(_('N'), -1)
 
-        self.gc.move_to(self.xoffset + self.margin + self.diameter / 2 - 10,
+        self.gc.move_to(self.xoffset + self.margin + self.diameter // 2 - 10,
                         self.margin - 30)
         PangoCairo.show_layout(self.gc, self.pangolayout)
         self.gc.stroke()
 
         self.pangolayout.set_text(_('S'), -1)
-        self.gc.move_to(self.xoffset + self.margin + self.diameter / 2 - 10,
+        self.gc.move_to(self.xoffset + self.margin + self.diameter // 2 - 10,
                         2 * self.margin + self.diameter - 30)
         PangoCairo.show_layout(self.gc, self.pangolayout)
         self.gc.stroke()
@@ -1687,15 +1675,7 @@ class ChartDisplay(Gtk.DrawingArea):
         else:
             self.pangolayout.set_text(_('W'), -1)
         self.gc.move_to(self.xoffset + self.margin - 30,
-                        self.margin + self.diameter / 2 - 10)
-        PangoCairo.show_layout(self.gc, self.pangolayout)
-        self.gc.stroke()
-        if (not self.fliphorizontally):
-            self.pangolayout.set_text(_('W'), -1)
-        else:
-            self.pangolayout.set_text(_('E'), -1)
-        self.gc.move_to(self.xoffset + self.margin + self.diameter + 10,
-                        self.margin + self.diameter / 2 - 10)
+                        self.margin + self.diameter // 2 - 10)
         PangoCairo.show_layout(self.gc, self.pangolayout)
         self.gc.stroke()
 
