@@ -7,190 +7,193 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-01 01:47+0000\n"
-"PO-Revision-Date: 2021-04-17 23:37+0000\n"
-"Last-Translator: Anders <anders.jonsson@norsjovallen.se>\n"
+"PO-Revision-Date: 2022-10-07 07:50+0000\n"
+"Last-Translator: Sourabha <sourabha.project@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: sv\n"
+"Language: kn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1618702633.000000\n"
+"X-POOTLE-MTIME: 1665129031.000000\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "StarChart"
-msgstr "Stjärnkarta"
+msgstr "ಸ್ಟಾರ್‌ಚಾರ್ಟ್"
 
 #. TRANS: "summary" option from activity.info file
 msgid "explore the cosmos"
-msgstr "utforska kosmos"
+msgstr "ಬ್ರಹ್ಮಾಂಡವನ್ನು ಅನ್ವೇಷಿಸಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
 #: dso1.py:33
 msgid "Butterfly Cluster"
-msgstr "Fjärilshopen"
+msgstr "ಬಟರ್ಫ್ಲೈ ಕ್ಲಸ್ಟರ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Ptolemy's_Cluster
 #: dso1.py:35
 msgid "Ptolemy's Cluster"
-msgstr "Ptolemaios stjärnhop"
+msgstr "ಟಾಲೆಮಿಯ ಕ್ಲಸ್ಟರ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Lagoon_Nebula
 #: dso1.py:37
 msgid "Lagoon Nebula"
-msgstr "Lagunnebulosan"
+msgstr "ಲಗೂನ್ ನೀಹಾರಿಕೆ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Wild_Duck_Cluster
 #: dso1.py:40
 msgid "Wild Duck Cluster"
-msgstr "Vildandshopen"
+msgstr "ವೈಲ್ಡ್ ಡಕ್ ಕ್ಲಸ್ಟರ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Hercules_Cluster
 #: dso1.py:43
 msgid "Hercules Cluster"
-msgstr "Herkuleshopen"
+msgstr "ಹರ್ಕ್ಯುಲಸ್ ಕ್ಲಸ್ಟರ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Omega_Nebula
 #: dso1.py:46
 msgid "Omega Nebula"
-msgstr "Omeganebulosan"
+msgstr "ಒಮೆಗಾ ನೀಹಾರಿಕೆ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Trifid_Nebula
 #: dso1.py:49
 msgid "Trifid Nebula"
-msgstr "Trifidnebulosan"
+msgstr "ಟ್ರಿಫಿಡ್ ನೀಹಾರಿಕೆ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Andromeda_Galaxy
 #: dso1.py:57
 msgid "Andromeda Galaxy"
-msgstr "Andromedagalaxen"
+msgstr "ಆಂಡ್ರೊಮಿಡಾ ಗ್ಯಾಲಕ್ಸಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Triangulum_Galaxy
 #: dso1.py:59
 msgid "Triangulum Galaxy"
-msgstr "Triangelgalaxen"
+msgstr "ತ್ರಿಕೋನ ಗ್ಯಾಲಕ್ಸಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Orion_Nebula
 #: dso1.py:68
 msgid "Orion Nebula"
-msgstr "Orionnebulosan"
+msgstr "ಓರಿಯನ್ ನೀಹಾರಿಕೆ"
 
 #. TRANS: http://en.wikipedia.org/wiki/De_Mairan's_Nebula
 #: dso1.py:70
 msgid "de Mairan's Nebula"
-msgstr "De Mairans nebulosa"
+msgstr "ಡಿ ಮೈರಾನ್ ನೆಬ್ಯುಲಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Beehive_Cluster
 #: dso1.py:72
 msgid "Beehive Cluster"
-msgstr "Bikupehopen"
+msgstr "ಬೀಹೈವ್ ಕ್ಲಸ್ಟರ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Pleiades
 #: dso1.py:74
 msgid "Pleiades"
-msgstr "Plejaderna"
+msgstr "ಪ್ಲೆಯೆಡ್ಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
 #: dso1.py:80
 msgid "Whirlpool Galaxy"
-msgstr "Malströmsgalaxen"
+msgstr "ವರ್ಲ್ಪೂಲ್ ಗ್ಯಾಲಕ್ಸಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Sunflower_Galaxy
 #: dso1.py:86
 msgid "Sunflower Galaxy"
-msgstr "Solrosgalaxen"
+msgstr "ಸೂರ್ಯಕಾಂತಿ ಗ್ಯಾಲಕ್ಸಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Bodes_Galaxy
 #: dso1.py:90
 msgid "Bodes Galaxy"
-msgstr "Bodes galax"
+msgstr "ಬೋಡ್ಸ್ ಗ್ಯಾಲಕ್ಸಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Southern_Pinwheel_Galaxy
 #: dso1.py:92
 msgid "Southern Pinwheel Galaxy"
-msgstr "Södra vindsnurregalaxen"
+msgstr "ದಕ್ಷಿಣ ಪಿನ್‌ವೀಲ್ ಗ್ಯಾಲಕ್ಸಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Pinwheel_Galaxy
 #: dso1.py:96
 msgid "Pinwheel Galaxy"
-msgstr "Vindsnurregalaxen"
+msgstr "ಪಿನ್ವೀಲ್ ಗ್ಯಾಲಕ್ಸಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Mercury_(planet)
 #: StarChart.py:228
 msgid "Mercury"
-msgstr "Merkurius"
+msgstr "ಮರ್ಕ್ಯುರಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Venus
 #: StarChart.py:230
 msgid "Venus"
-msgstr "Venus"
+msgstr "ಶುಕ್ರ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Earth
 #: StarChart.py:232
 msgid "Earth"
-msgstr "Jorden"
+msgstr "ಭೂಮಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Mars
 #: StarChart.py:234
 msgid "Mars"
-msgstr "Mars"
+msgstr "ಮಂಗಳ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Jupiter
 #: StarChart.py:236
 msgid "Jupiter"
-msgstr "Jupiter"
+msgstr "ಗುರು"
 
 #. TRANS: http://en.wikipedia.org/wiki/Saturn
 #: StarChart.py:238
 msgid "Saturn"
-msgstr "Saturnus"
+msgstr "ಶನಿಗ್ರಹ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Uranus
 #: StarChart.py:240
 msgid "Uranus"
-msgstr "Uranus"
+msgstr "ಯುರೇನಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Sun
 #: StarChart.py:243 StarChart.py:1012 StarChart.py:1668
 msgid "Sun"
-msgstr "Solen"
+msgstr "ಸೂರ್ಯ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Moon
 #: StarChart.py:250 StarChart.py:1015 StarChart.py:1666
 msgid "Moon"
-msgstr "Månen"
+msgstr "ಚಂದ್ರ"
 
 #: StarChart.py:795
 msgid "Night Vision"
-msgstr "Mörkerseende"
+msgstr "ರಾತ್ರಿ ನೋಟ"
 
 #: StarChart.py:797
 msgid "Invert Display"
-msgstr "Invertera skärm"
+msgstr "ಇನ್ವರ್ಟ್ ಡಿಸ್ಪ್ಲೇ"
 
 #: StarChart.py:799
 msgid "Flip L/R"
-msgstr "Växla V/H"
+msgstr "ಫ್ಲಿಪ್ ಎಲ್/ಆರ್"
 
 #: StarChart.py:802
 msgid "Draw Constellations"
-msgstr "Rita stjärnbilder"
+msgstr "ನಕ್ಷತ್ರಪುಂಜಗಳನ್ನು ಎಳೆಯಿರಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Magnitude_(astronomy)
 #: StarChart.py:805
 msgid "Mag:"
-msgstr "Mag:"
+msgstr "ಮ್ಯಾಗ್:"
 
 #: StarChart.py:806
+#, fuzzy
 msgid "1"
 msgstr "1"
 
 #: StarChart.py:807
+#, fuzzy
 msgid "2"
 msgstr "2"
 
 #: StarChart.py:808
+#, fuzzy
 msgid "3"
 msgstr "3"
 
@@ -209,679 +212,693 @@ msgstr "6"
 #. TRANS: http://en.wikipedia.org/wiki/Longitude
 #: StarChart.py:816
 msgid "Longitude:"
-msgstr "Longitud:"
+msgstr "ರೇಖಾಂಶ:"
 
 #. TRANS: http://en.wikipedia.org/wiki/East
 #: StarChart.py:820 StarChart.py:1772 StarChart.py:1781
 msgid "E"
-msgstr "Ö"
+msgstr "ಇ"
 
 #. TRANS: http://en.wikipedia.org/wiki/West
 #: StarChart.py:822 StarChart.py:1774 StarChart.py:1779
 msgid "W"
-msgstr "V"
+msgstr "ಡಬ್ಲ್ಯೂ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Latitude
 #: StarChart.py:824
 msgid "Latitude:"
-msgstr "Latitud:"
+msgstr "ಅಕ್ಷಾಂಶ:"
 
 #. TRANS: http://en.wikipedia.org/wiki/North
 #: StarChart.py:828 StarChart.py:1763
 msgid "N"
-msgstr "N"
+msgstr "ಎನ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/South
 #: StarChart.py:830 StarChart.py:1767
 msgid "S"
-msgstr "S"
+msgstr "ಎಸ್"
 
 #: StarChart.py:835 StarChart.py:853
 msgid "Ok"
-msgstr "Ok"
+msgstr "ಸರಿ"
 
 #: StarChart.py:838
 msgid "Make home"
-msgstr "Sätt som hem"
+msgstr "ಮನೆ ಮಾಡಿ"
 
 #: StarChart.py:841
 msgid "Now"
-msgstr "Nu"
+msgstr "ಈಗ"
 
 #: StarChart.py:842
 msgid "Specify"
-msgstr "Ange"
+msgstr "ಸೂಚಿಸಿ"
 
 #: StarChart.py:843
 msgid "Time:"
-msgstr "Tid:"
+msgstr "ಸಮಯ:"
 
 #: StarChart.py:846
 msgid "Offset:"
-msgstr "Förskjutning:"
+msgstr "ಆಫ್‌ಸೆಟ್:"
 
 #: StarChart.py:856
 msgid "Object type:"
-msgstr "Objekttyp:"
+msgstr "ವಸ್ತುವಿನ ಪ್ರಕಾರ:"
 
 #: StarChart.py:867
 msgid "See http://wiki.laptop.org/go/StarChart for help."
-msgstr "Se http://wiki.laptop.org/go/StarChart för hjälp."
+msgstr "ಸಹಾಯಕ್ಕಾಗಿ http://wiki.laptop.org/go/StarChart ಅನ್ನು ನೋಡಿ."
 
 #: StarChart.py:941
 msgid "There is no object here."
-msgstr "Det finns inget objekt här."
+msgstr "ಇಲ್ಲಿ ಯಾವುದೇ ವಸ್ತುವಿಲ್ಲ."
 
 #: StarChart.py:1008
 msgid "deep-sky object"
-msgstr "djuprymdsobjekt"
+msgstr "ಆಳವಾದ ಆಕಾಶದ ವಸ್ತು"
 
 #. TRANS: http://en.wikipedia.org/wiki/Planet
 #: StarChart.py:1011
 msgid "planet"
-msgstr "planet"
+msgstr "ಗ್ರಹ"
 
 #: StarChart.py:1013 StarChart.py:1016
 msgid "Object is: "
-msgstr "Objekt är: "
+msgstr "ವಸ್ತುವೆಂದರೆ:"
 
 #: StarChart.py:1019
 msgid "star"
-msgstr "stjärna"
+msgstr "ನಕ್ಷತ್ರ"
 
 #: StarChart.py:1020
 msgid "Object is "
-msgstr "Objekt är "
+msgstr "ವಸ್ತುವಾಗಿದೆ"
 
 #: StarChart.py:1423 StarChart.py:3124
 msgid "Planets"
-msgstr "Planeter"
+msgstr "ಗ್ರಹಗಳು"
 
 #: StarChart.py:1434 StarChart.py:3125
 msgid "Stars by Constellation"
-msgstr "Stjärnor efter stjärnbild"
+msgstr "ನಕ್ಷತ್ರಪುಂಜದಿಂದ ನಕ್ಷತ್ರಗಳು"
 
 #: StarChart.py:1448 StarChart.py:3126
 msgid "Brightest Stars"
-msgstr "Ljusaste stjärnor"
+msgstr "ಪ್ರಕಾಶಮಾನವಾದ ನಕ್ಷತ್ರಗಳು"
 
 #: StarChart.py:1469 StarChart.py:3127
 msgid "Deep-sky Objects"
-msgstr "Djuprymdsobjekt"
+msgstr "ಆಳವಾದ ಆಕಾಶದ ವಸ್ತುಗಳು"
 
 #: StarChart.py:1634
 msgid "This object is always below the horizon at your location."
-msgstr "Detta objekt är alltid under horisonten på din position."
+msgstr "ಈ ವಸ್ತುವು ಯಾವಾಗಲೂ ನಿಮ್ಮ ಸ್ಥಳದಲ್ಲಿ ಹಾರಿಜಾನ್‌ಗಿಂತ ಕೆಳಗಿರುತ್ತದೆ."
 
 #: StarChart.py:1637
 msgid "This object is currently not in the field of view."
-msgstr "Detta objekt är för närvarande inte i synfältet."
+msgstr "ಈ ವಸ್ತುವು ಪ್ರಸ್ತುತ ವೀಕ್ಷಣೆಯ ಕ್ಷೇತ್ರದಲ್ಲಿಲ್ಲ."
 
 #: StarChart.py:1639
 msgid "This object is currently below your horizon."
-msgstr "Detta objekt är för närvarande under din horisont."
+msgstr "ಈ ವಸ್ತುವು ಪ್ರಸ್ತುತ ನಿಮ್ಮ ಹಾರಿಜಾನ್‌ಗಿಂತ ಕೆಳಗಿದೆ."
 
 #: StarChart.py:1679
 msgid "Input Error: The longitude was not understood."
-msgstr "Inmatningsfel: Longituden förstods inte."
+msgstr "ಇನ್‌ಪುಟ್ ದೋಷ: ರೇಖಾಂಶ ಅರ್ಥವಾಗಲಿಲ್ಲ."
 
 #: StarChart.py:1683
 msgid "Input Error: The latitude was not understood."
-msgstr "Inmatningsfel: Latituden förstods inte."
+msgstr "ಇನ್‌ಪುಟ್ ದೋಷ: ಅಕ್ಷಾಂಶ ಅರ್ಥವಾಗಲಿಲ್ಲ."
 
 #: StarChart.py:1687
 msgid "Input Error: The time was not understood."
-msgstr "Inmatningsfel:Tiden förstods inte."
+msgstr "ಇನ್‌ಪುಟ್ ದೋಷ: ಸಮಯ ಅರ್ಥವಾಗಲಿಲ್ಲ."
 
 #: StarChart.py:1691
 msgid "Input Error: The time zone offset was not understood."
-msgstr "Inmatningsfel: Tidszonsförskjutningen förstods inte."
+msgstr "ಇನ್‌ಪುಟ್ ದೋಷ: ಸಮಯ ವಲಯ ಆಫ್‌ಸೆಟ್ ಅರ್ಥವಾಗಲಿಲ್ಲ."
 
 #: StarChart.py:2946
 msgid "Star Chart Activity"
-msgstr "Stjärnkartsaktivitet"
+msgstr "ಸ್ಟಾರ್ ಚಾರ್ಟ್ ಚಟುವಟಿಕೆ"
 
 #: StarChart.py:3164
 msgid "What"
-msgstr "Vad"
+msgstr "ಏನು"
 
 #: StarChart.py:3165
 msgid "Where"
-msgstr "Var"
+msgstr "ಎಲ್ಲಿ"
 
 #: StarChart.py:3166
 msgid "When"
-msgstr "När"
+msgstr "ಯಾವಾಗ"
 
 #: StarChart.py:3167
 msgid "Locate"
-msgstr "Hitta"
+msgstr "ಪತ್ತೆ ಮಾಡಿ"
 
 #: StarChart.py:3168
 msgid "About"
-msgstr "Om"
+msgstr "ಬಗ್ಗೆ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Andromeda_(constellation)
 #: constellations.py:15
 msgid "Andromeda"
-msgstr "Andromeda"
+msgstr "ಆಂಡ್ರೊಮಿಡಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Antlia
 #: constellations.py:26
 msgid "Antlia"
-msgstr "Luftpumpen"
+msgstr "ಆಂಟ್ಲಿಯಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Apus
 #: constellations.py:31
 msgid "Apus"
-msgstr "Paradisfågeln"
+msgstr "ಅಪುಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Aquarius_(constellation)
 #: constellations.py:38
+#, fuzzy
 msgid "Aquarius"
-msgstr "Vattumannen"
+msgstr "ಕುಂಭ ರಾಶಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Aquila_(constellation)
 #: constellations.py:58
 msgid "Aquila"
-msgstr "Örnen"
+msgstr "ಅಕ್ವಿಲಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Ara_(constellation)
 #: constellations.py:72
 msgid "Ara"
-msgstr "Altaret"
+msgstr "ಅರಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Aries_(constellation)
 #: constellations.py:82
+#, fuzzy
 msgid "Aries"
-msgstr "Väduren"
+msgstr "ಮೇಷ ರಾಶಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Auriga_(constellation)
 #: constellations.py:88
 msgid "Auriga"
-msgstr "Kusken"
+msgstr "ಔರಿಗಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Boötes
 #: constellations.py:99
 msgid "Boötes"
-msgstr "Björnvaktaren"
+msgstr "ಬೂಟ್ಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Caelum
 #: constellations.py:112
 msgid "Caelum"
-msgstr "Gravstickeln"
+msgstr "ಕೇಲಮ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Camelopardalis
 #: constellations.py:118
 msgid "Camelopardalis"
-msgstr "Giraffen"
+msgstr "ಕ್ಯಾಮೆಲೋಪರ್ಡಾಲಿಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Cancer_(constellation)
 #: constellations.py:126
 msgid "Cancer"
-msgstr "Kräftan"
+msgstr "ಕ್ಯಾನ್ಸರ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Canes_Venatici
 #: constellations.py:134
 msgid "Canes Venatici"
-msgstr "Jakthundarna"
+msgstr "ಕ್ಯಾನೆಸ್ ವೆನಾಟಿಸಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Canis_Major
 #: constellations.py:140
 msgid "Canis Major"
-msgstr "Stora hunden"
+msgstr "ಕ್ಯಾನಿಸ್ ಮೇಜರ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Canis_Minor
 #: constellations.py:153
 msgid "Canis Minor"
-msgstr "Lilla hunden"
+msgstr ""
 
 #. TRANS: http://en.wikipedia.org/wiki/Capricornus
 #: constellations.py:157
+#, fuzzy
 msgid "Capricornus"
-msgstr "Stenbocken"
+msgstr "ಮಕರ ಸಂಕ್ರಾಂತಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Carina_(constellation)
 #: constellations.py:171
 msgid "Carina"
-msgstr "Kölen"
+msgstr "ಕರೀನಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Cassiopeia_(constellation)
 #: constellations.py:185
 msgid "Cassiopeia"
-msgstr "Cassiopeja"
+msgstr "ಕ್ಯಾಸಿಯೋಪಿಯಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Centaurus
 #: constellations.py:192
 msgid "Centaurus"
-msgstr "Kentauren"
+msgstr "ಸೆಂಟಾರಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Cepheus_(constellation)
 #: constellations.py:207
 msgid "Cepheus"
-msgstr "Cepheus"
+msgstr "ಸೆಫಿಯಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Cetus
 #: constellations.py:216
 msgid "Cetus"
-msgstr "Valfisken"
+msgstr "ಸೆಟಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Chamaeleon
 #: constellations.py:234
 msgid "Chamaeleon"
-msgstr "Kameleonten"
+msgstr "ಗೋಸುಂಬೆ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Circinus_(constellation)
 #: constellations.py:241
 msgid "Circinus"
-msgstr "Cirkelpassaren"
+msgstr "ಸರ್ಕಿನಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Columba_(constellation)
 #: constellations.py:246
 msgid "Columba"
-msgstr "Duvan"
+msgstr "ಕೊಲಂಬಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Coma_Berenices
 #: constellations.py:254
 msgid "Coma Berenices"
-msgstr "Berenikes hår"
+msgstr "ಕೋಮಾ ಬೆರೆನಿಸಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Corona_Australis
 #: constellations.py:259
 msgid "Corona Australis"
-msgstr "Södra kronan"
+msgstr "ಕರೋನಾ ಆಸ್ಟ್ರೇಲಿಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Corona_Borealis
 #: constellations.py:269
 msgid "Corona Borealis"
-msgstr "Norra kronan"
+msgstr "ಕರೋನಾ ಬೋರಿಯಾಲಿಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Corvus_(constellation)
 #: constellations.py:278
 msgid "Corvus"
-msgstr "Korpen"
+msgstr "ಕೊರ್ವಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Crater_(constellation)
 #: constellations.py:286
+#, fuzzy
 msgid "Crater"
-msgstr "Bägaren"
+msgstr "ಕುಳಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Crux
 #: constellations.py:297
 msgid "Crux"
-msgstr "Södra korset"
+msgstr "ಕ್ರಕ್ಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Cygnus_(constellation)
 #: constellations.py:302
 msgid "Cygnus"
-msgstr "Svanen"
+msgstr "ಸಿಗ್ನಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Delphinus
 #: constellations.py:310
 msgid "Delphinus"
-msgstr "Delfinen"
+msgstr "ಡೆಲ್ಫಿನಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Dorado
 #: constellations.py:318
 msgid "Dorado"
-msgstr "Svärdfisken"
+msgstr ""
 
 #. TRANS: http://en.wikipedia.org/wiki/Draco_(constellation)
 #: constellations.py:324
 msgid "Draco"
-msgstr "Draken"
+msgstr ""
 
 #. TRANS: http://en.wikipedia.org/wiki/Equuleus
 #: constellations.py:347
 msgid "Equuleus"
-msgstr "Lilla hästen"
+msgstr ""
 
 #. TRANS: http://en.wikipedia.org/wiki/Eridanus_(constellation)
 #: constellations.py:352
 msgid "Eridanus"
-msgstr "Floden Eridanus"
+msgstr ""
 
 #. TRANS: http://en.wikipedia.org/wiki/Fornax
 #: constellations.py:385
 msgid "Fornax"
-msgstr "Ugnen"
+msgstr "ಫೋರ್ನಾಕ್ಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Gemini_(constellation)
 #: constellations.py:392
+#, fuzzy
 msgid "Gemini"
-msgstr "Tvillingarna"
+msgstr "ಮಿಥುನ ರಾಶಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Grus_(constellation)
 #: constellations.py:404
 msgid "Grus"
-msgstr "Tranan"
+msgstr "ಗ್ರಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Hercules_(constellation)
 #: constellations.py:417
 msgid "Hercules"
-msgstr "Herkules"
+msgstr "ಹರ್ಕ್ಯುಲಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Horologium_(constellation)
 #: constellations.py:439
 msgid "Horologium"
-msgstr "Pendeluret"
+msgstr "ಹೋರೊಲೊಜಿಯಂ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Hydra_(constellation)
 #: constellations.py:447
 msgid "Hydra"
-msgstr "Vattenormen"
+msgstr "ಹೈಡ್ರಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Hydrus
 #: constellations.py:466
 msgid "Hydrus"
-msgstr "Lilla vattenormen"
+msgstr "ಹೈಡ್ರಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Indus_(constellation)
 #: constellations.py:472
+#, fuzzy
 msgid "Indus"
-msgstr "Indianen"
+msgstr "ಸಿಂಧೂ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Lacerta
 #: constellations.py:478
 msgid "Lacerta"
-msgstr "Ödlan"
+msgstr "ಲಾಸೆರ್ಟಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Leo_(constellation)
 #: constellations.py:487
+#, fuzzy
 msgid "Leo"
-msgstr "Lejonet"
+msgstr "ಸಿಂಹ ರಾಶಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Leo_Minor
 #: constellations.py:499
 msgid "Leo Minor"
-msgstr "Lilla lejonet"
+msgstr "ಲಿಯೋ ಮೈನರ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Lepus_(constellation)
 #: constellations.py:504
 msgid "Lepus"
-msgstr "Haren"
+msgstr "ಲೆಪಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Libra_(constellation)
 #: constellations.py:515
+#, fuzzy
 msgid "Libra"
-msgstr "Vågen"
+msgstr "ತುಲಾ ರಾಶಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Lupus_(constellation)
 #: constellations.py:524
 msgid "Lupus"
-msgstr "Vargen"
+msgstr "ಲೂಪಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Lynx_(constellation)
 #: constellations.py:539
 msgid "Lynx"
-msgstr "Lodjuret"
+msgstr "ಲಿಂಕ್ಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Lyra
 #: constellations.py:549
 msgid "Lyra"
-msgstr "Lyran"
+msgstr "ಲೈರಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Mensa_(constellation)
 #: constellations.py:558
 msgid "Mensa"
-msgstr "Taffelberget"
+msgstr "ಮೆನ್ಸಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Microscopium
 #: constellations.py:564
+#, fuzzy
 msgid "Microscopium"
-msgstr "Mikroskopet"
+msgstr "ಸೂಕ್ಷ್ಮದರ್ಶಕ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Monoceros
 #: constellations.py:570
 msgid "Monoceros"
-msgstr "Enhörningen"
+msgstr "ಮೊನೊಸೆರೊಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Musca
 #: constellations.py:577
 msgid "Musca"
-msgstr "Flugan"
+msgstr "ಮಸ್ಕಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Norma_(constellation)
 #: constellations.py:585
 msgid "Norma"
-msgstr "Vinkelhaken"
+msgstr "ನಾರ್ಮ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Octans
 #: constellations.py:592
 msgid "Octans"
-msgstr "Oktanten"
+msgstr "ಆಕ್ಟಾನ್ಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Ophiuchus
 #: constellations.py:598
 msgid "Ophiuchus"
-msgstr "Ormbäraren"
+msgstr "ಒಫಿಯುಚಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Orion_(constellation)
 #: constellations.py:612
 msgid "Orion"
-msgstr "Orion"
+msgstr "ಓರಿಯನ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Pavo_(constellation)
 #: constellations.py:633
 msgid "Pavo"
-msgstr "Påfågeln"
+msgstr "ಪಾವೊ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Pegasus_(constellation)
 #: constellations.py:643
 msgid "Pegasus"
-msgstr "Pegasus"
+msgstr "ಪೆಗಾಸಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Perseus_(constellation)
 #: constellations.py:660
 msgid "Perseus"
-msgstr "Perseus"
+msgstr "ಪರ್ಸೀಯಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Phoenix_(constellation)
 #: constellations.py:679
 msgid "Phoenix"
-msgstr "Fenix"
+msgstr "ಫೀನಿಕ್ಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Pictor
 #: constellations.py:688
 msgid "Pictor"
-msgstr "Målaren"
+msgstr "ಪಿಕ್ಟರ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Pisces_(constellation)
 #: constellations.py:693
+#, fuzzy
 msgid "Pisces"
-msgstr "Fiskarna"
+msgstr "ಮೀನ ರಾಶಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Piscis_Australis
 #: constellations.py:712
 msgid "Piscis Australis"
-msgstr "Södra fisken"
+msgstr "ಪಿಸ್ಸಿಸ್ ಆಸ್ಟ್ರೇಲಿಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Puppis
 #: constellations.py:721
 msgid "Puppis"
-msgstr "Akterskeppet"
+msgstr "ನಾಯಿಮರಿಗಳು"
 
 #. TRANS: http://en.wikipedia.org/wiki/Pyxis
 #: constellations.py:734
 msgid "Pyxis"
-msgstr "Kompassen"
+msgstr "ಪಿಕ್ಸಿಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Reticulum
 #: constellations.py:739
 msgid "Reticulum"
-msgstr "Rombiska nätet"
+msgstr "ರೆಟಿಕ್ಯುಲಮ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Sagitta
 #: constellations.py:747
 msgid "Sagitta"
-msgstr "Pilen"
+msgstr "ಸಗಿತ್ತಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Sagittarius_(constellation)
 #: constellations.py:753
+#, fuzzy
 msgid "Sagittarius"
-msgstr "Skytten"
+msgstr "ಧನು ರಾಶಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Sculptor_(constellation)
 #: constellations.py:772
+#, fuzzy
 msgid "Sculptor"
-msgstr "Bildhuggaren"
+msgstr "ಶಿಲ್ಪಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Scorpius
 #: constellations.py:778
 msgid "Scorpius"
-msgstr "Skorpionen"
+msgstr "ಸ್ಕಾರ್ಪಿಯಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Scutum
 #: constellations.py:795
 msgid "Scutum"
-msgstr "Skölden"
+msgstr "ಸ್ಕುಟಮ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Serpens
 #: constellations.py:800
 msgid "Serpens"
-msgstr "Ormen"
+msgstr "ಸರ್ಪಗಳು"
 
 #. TRANS: http://en.wikipedia.org/wiki/Sextans
 #: constellations.py:819
 msgid "Sextans"
-msgstr "Sextanten"
+msgstr "ಸೆಕ್ಸ್ಟನ್ಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Taurus_(constellation)
 #: constellations.py:826
+#, fuzzy
 msgid "Taurus"
-msgstr "Oxen"
+msgstr "ವೃಷಭ ರಾಶಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Telescopium
 #: constellations.py:840
 msgid "Telescopium"
-msgstr "Kikaren"
+msgstr "ಟೆಲಿಸ್ಕೋಪಿಯಂ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Triangulum
 #: constellations.py:845
 msgid "Triangulum"
-msgstr "Triangeln"
+msgstr "ತ್ರಿಕೋನ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Triangulum_Australis
 #: constellations.py:851
 msgid "Triangulum Australis"
-msgstr "Södra triangeln"
+msgstr "ತ್ರಿಕೋನ ಆಸ್ಟ್ರೇಲಿಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Tucana
 #: constellations.py:857
 msgid "Tucana"
-msgstr "Tukanen"
+msgstr "ಟುಕಾನಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Ursa_Major
 #: constellations.py:865
 msgid "Ursa Major"
-msgstr "Stora björnen"
+msgstr "ಉರ್ಸಾ ಮೇಜರ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Ursa_Minor
 #: constellations.py:885
 msgid "Ursa Minor"
-msgstr "Lilla björnen"
+msgstr "ಉರ್ಸಾ ಮೈನರ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Vela_(constellation)
 #: constellations.py:895
 msgid "Vela"
-msgstr "Seglet"
+msgstr "ವೇಲಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Virgo_(constellation)
 #: constellations.py:905
+#, fuzzy
 msgid "Virgo"
-msgstr "Jungfrun"
+msgstr "ಕನ್ಯಾರಾಶಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Volans
 #: constellations.py:918
 msgid "Volans"
-msgstr "Flygfisken"
+msgstr "ವೋಲನ್ಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Vulpecula
 #: constellations.py:927
 msgid "Vulpecula"
-msgstr "Räven"
+msgstr "ವಲ್ಪೆಕುಲಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Large_Magellanic_Cloud
 #: dso2.py:36
 msgid "Large Magellanic Cloud"
-msgstr "Stora magellanska molnet"
+msgstr "ದೊಡ್ಡ ಮೆಗೆಲಾನಿಕ್ ಮೇಘ"
 
 #. TRANS: http://en.wikipedia.org/wiki/47_Tucanae
 #: dso2.py:42
 msgid "47 Tucanae"
-msgstr "47 Tucanae"
+msgstr "47 ಟುಕಾನೆ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Sculptor_Galaxy
 #: dso2.py:44
 msgid "Sculptor Galaxy"
-msgstr "Bildhuggargalaxen"
+msgstr "ಶಿಲ್ಪಿ ಗ್ಯಾಲಕ್ಸಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Small_Magellanic_Cloud
 #: dso2.py:47
 msgid "Small Magellanic Cloud"
-msgstr "Lilla magellanska molnet"
+msgstr "ಸಣ್ಣ ಮೆಗೆಲಾನಿಕ್ ಮೇಘ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Double_Cluster
 #: dso2.py:51
 msgid "Double Cluster"
-msgstr "Dubbelhopen"
+msgstr "ಡಬಲ್ ಕ್ಲಸ್ಟರ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/California_Nebula
 #: dso2.py:54
 msgid "California Nebula"
-msgstr "Kaliforniennebulosan"
+msgstr "ಕ್ಯಾಲಿಫೋರ್ನಿಯಾ ನೆಬ್ಯುಲಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Cone_Nebula
 #: dso2.py:61
 msgid "Cone Nebula"
-msgstr "Konnebulosan"
+msgstr "ಕೋನ್ ನೀಹಾರಿಕೆ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Rosette_Nebula
 #: dso2.py:64
 msgid "Rosette Nebula"
-msgstr "Rosettnebulosan"
+msgstr "ರೋಸೆಟ್ ನೀಹಾರಿಕೆ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Ghost_of_Jupiter
 #: dso2.py:69
 msgid "Ghost of Jupiter"
-msgstr "Jupiters spöke"
+msgstr "ಗುರುಗ್ರಹದ ಪ್ರೇತ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Carina_Nebula
 #: dso2.py:71
 msgid "Eta Carina Nebula"
-msgstr "Eta Carinae-nebulosan"
+msgstr "ಎಟಾ ಕ್ಯಾರಿನಾ ನೆಬ್ಯುಲಾ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Jewel_Box_(star_cluster)
 #: dso2.py:74
 msgid "Jewel Box"
-msgstr "Juvelskrinet"
+msgstr "ಜ್ಯುವೆಲ್ ಬಾಕ್ಸ್"
 
 #. TRANS: http://en.wikipedia.org/wiki/Centaurus_A
 #: dso2.py:78
 msgid "Centaurus A"
-msgstr "Galax Centaurus A"
+msgstr "ಸೆಂಟಾರಸ್ ಎ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Omega_Centauri
 #: dso2.py:80
 msgid "Omega Centauri"
-msgstr "Omega Centauri"
+msgstr "ಒಮೆಗಾ ಸೆಂಟೌರಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Barnard's_Galaxy
 #: dso2.py:91
 msgid "Barnard's Galaxy"
-msgstr "Barnards galax"
+msgstr "ಬರ್ನಾರ್ಡ್ ಗ್ಯಾಲಕ್ಸಿ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Crescent_Nebula
 #: dso2.py:93
 msgid "Crescent Nebula"
-msgstr "Crescentnebulosan"
+msgstr "ಕ್ರೆಸೆಂಟ್ ನೀಹಾರಿಕೆ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Veil_Nebula
 #: dso2.py:95
 msgid "Veil Nebula"
-msgstr "Cirrusnebulosan"
+msgstr "ಮುಸುಕು ನೀಹಾರಿಕೆ"
 
 #. TRANS: http://en.wikipedia.org/wiki/North_America_Nebula
 #: dso2.py:97
 msgid "North America Nebula"
-msgstr "Nordamerikanebulosan"
+msgstr "ಉತ್ತರ ಅಮೇರಿಕಾ ನೆಬ್ಯುಲಾ"

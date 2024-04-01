@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-01 01:47+0000\n"
-"PO-Revision-Date: 2018-02-22 17:22+0000\n"
+"PO-Revision-Date: 2024-03-30 12:49+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1519320171.000000\n"
+"X-POOTLE-MTIME: 1711802944.000000\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "StarChart"
@@ -824,7 +824,7 @@ msgstr "ענן מגלן הקטן"
 #. TRANS: http://en.wikipedia.org/wiki/Double_Cluster
 #: dso2.py:51
 msgid "Double Cluster"
-msgstr ""
+msgstr "צביר כפול"
 
 #. TRANS: http://en.wikipedia.org/wiki/California_Nebula
 #: dso2.py:54
@@ -869,7 +869,7 @@ msgstr "אומגה בקנטאור"
 #. TRANS: http://en.wikipedia.org/wiki/Barnard's_Galaxy
 #: dso2.py:91
 msgid "Barnard's Galaxy"
-msgstr ""
+msgstr "גלקסיית ברנרד"
 
 #. TRANS: http://en.wikipedia.org/wiki/Crescent_Nebula
 #: dso2.py:93
