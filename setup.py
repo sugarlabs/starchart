@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import os
 import sys
 
@@ -26,7 +26,7 @@ if len(sys.argv) > 1 and '--no-sugar' == sys.argv[1]:
            data_files = DATA_FILES,
            )
 else: 
-    from sugar.activity import bundlebuilder
+    from sugar3.activity import bundlebuilder
 
     if __name__ == "__main__":
         bundlebuilder.start()

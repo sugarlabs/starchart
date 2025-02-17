@@ -5,6 +5,6 @@ icon = StarChart
 show_launcher = yes
 license = GPLv2+
 bundle_id = org.laptop.StarChart
-exec = sugar-activity StarChart.StarChart
+exec = sugar3-activity StarChart.StarChart
 summary = explore the cosmos
 category = science

@@ -148,9 +148,11 @@ except:
 
 # =================================== IMPORTS ================================
 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
+from gi.repository import GObject
+from gi.repository import GLib
 import sys
 import os
 import gobject
@@ -158,20 +160,20 @@ from datetime import *
 from time import sleep
 from time import time as systime
 from math import sin, cos, tan, asin, acos, atan, pi, sqrt, atan2
-from sugar.activity import activity
-from sugar.activity.activity import get_bundle_path
+from sugar3.activity import activity
+from sugar3.activity.activity import get_bundle_path
 try:
-    from sugar.graphics.toolbarbox import ToolbarBox
+    from sugar3.graphics.toolbarbox import ToolbarBox
     _have_toolbox = True
 except ImportError:
     _have_toolbox = False
 if _have_toolbox:
-    from sugar.activity.widgets import ActivityToolbarButton
-    from sugar.graphics.toolbarbox import ToolbarButton
-    from sugar.activity.widgets import StopButton
-from sugar.graphics.toolbutton import ToolButton
-from sugar.graphics.palette import Palette, ToolInvoker
-from sugar.graphics.icon import Icon
+    from sugar3.activity.widgets import ActivityToolbarButton
+    from sugar3.graphics.toolbarbox import ToolbarButton
+    from sugar3.activity.widgets import StopButton
+from sugar3.graphics.toolbutton import ToolButton
+from sugar3.graphics.palette import Palette, ToolInvoker
+from sugar3.graphics.icon import Icon
 import logging
 from gettext import gettext as _
 
@@ -942,7 +944,7 @@ class PixelsToObjectMap():
 
 
   def get_count(self):
-    return len(self.data.keys())
+    return len(list(self.data.keys()))
 
 
   def found(self, x, y):
@@ -1111,7 +1113,7 @@ class ChartDisplay(gtk.DrawingArea):
     self.magnifying = False
     self.mag_center = [0, 0]
     if (not specifytime):
-      gobject.timeout_add(60000, self.timer1_cb)
+      GLib.timeout_add(60000, self.timer1_cb)
 
 # The pmap object maintains a map between the chart display's pixel coordinates
 # (x, y) and a visible object (type, name) for the "Identify" feature.
@@ -1187,7 +1189,8 @@ class ChartDisplay(gtk.DrawingArea):
 
 # Convert pixel position (x, y) to horizon (az, alt) coordinates
 
-  def xytohorizon(self, (x, y)):
+  def xytohorizon(self, xxx_todo_changeme):
+    (x, y) = xxx_todo_changeme
     dy = (self.margin - 2 + self.yoffset + self.diameter / 2.0) - y
     dx = (self.margin - 2 + self.xoffset + self.diameter / 2.0) - x
 # Compensate for which way the chart is flipped.
@@ -1421,7 +1424,7 @@ class ChartDisplay(gtk.DrawingArea):
 # Get selection and expose object selector control(s).
       selstr = objtypecb.get_active_text()
       if (selstr == _('Planets')):
-        for i in reversed(range(len(container0.get_children()))):
+        for i in reversed(list(range(len(container0.get_children())))):
           container0.remove(container0.get_children()[i])
         container0.add(planetscb)
         planetscb.show()
@@ -1432,7 +1435,7 @@ class ChartDisplay(gtk.DrawingArea):
         planetscb.set_active(-1)
         self.context.identifyobject.set_label('')
       elif (selstr == _('Stars by Constellation')):
-        for i in reversed(range(len(container0.get_children()))):
+        for i in reversed(list(range(len(container0.get_children())))):
           container0.remove(container0.get_children()[i])
         container0.add(constscb)
         container0.add(starscb)
@@ -1446,14 +1449,14 @@ class ChartDisplay(gtk.DrawingArea):
         planetscb.set_active(-1)
         self.context.identifyobject.set_label('')
       elif (selstr == _('Brightest Stars')):
-        for i in reversed(range(len(container0.get_children()))):
+        for i in reversed(list(range(len(container0.get_children())))):
           container0.remove(container0.get_children()[i])
         container0.add(starscb)
         starscb.get_model().clear()
 # Load the combobox with the names of stars whose magnitude is +1.50
 # or brighter
         names = []
-        for name, (ra, dec, mag, cid) in star_chart.iteritems():
+        for name, (ra, dec, mag, cid) in star_chart.items():
           if (mag <= 1.50):
             names = names + [name]
         for name in sorted(names):
@@ -1467,7 +1470,7 @@ class ChartDisplay(gtk.DrawingArea):
         planetscb.set_active(-1)
         self.context.identifyobject.set_label('')
       elif (selstr == _('Deep-sky Objects')):
-        for i in reversed(range(len(container0.get_children()))):
+        for i in reversed(list(range(len(container0.get_children())))):
           container0.remove(container0.get_children()[i])
         container0.add(dsoscb)
         dsoscb.show()
@@ -1495,7 +1498,7 @@ class ChartDisplay(gtk.DrawingArea):
 # Load the stars combobox with the names of all stars having this
 # constellation ID.
         names = []
-        for name, (ra, dec, mag, cid) in star_chart.iteritems():
+        for name, (ra, dec, mag, cid) in star_chart.items():
           if (cid == const_id):
             names = names + [name]
         for name in sorted(names):
@@ -1830,7 +1833,7 @@ class ChartDisplay(gtk.DrawingArea):
 
 
   def plot_all_stars(self):
-    for name, (ra, dec, mag, cid) in star_chart.iteritems():
+    for name, (ra, dec, mag, cid) in star_chart.items():
 
 # convert the ra and dec from the J2000 epoch to the plot time
 
@@ -1917,7 +1920,7 @@ class ChartDisplay(gtk.DrawingArea):
           self.gc.set_foreground(self.colors[0])
       else:
         self.gc.set_foreground(self.colors[1])
-      for code, (name, lines) in figures.iteritems():
+      for code, (name, lines) in figures.items():
         for i in range(len(lines)):
           (ra1, dec1, ra2, dec2) = lines[i]
           polar1 = epochpolartonow((ra1, dec1), now)
@@ -2284,7 +2287,7 @@ class ChartDisplay(gtk.DrawingArea):
 
 # Plot the stars within the field of view
 
-    for name, (ra, dec, mag, cid) in star_chart.iteritems():
+    for name, (ra, dec, mag, cid) in star_chart.items():
 
 # Convert the ra and dec from the J2000 epoch to the plot time
 
@@ -3138,7 +3141,7 @@ class StarChart(activity.Activity):
         (name, wbar, e, a, I, O, L0, dL) = planets[i]
         planetscb.append_text(name)
     names = []
-    for code, (name, lines) in figures.iteritems():
+    for code, (name, lines) in figures.items():
 # lines is an array of coordinates.  we ignore it.
       names = names + [name]
     for name in sorted(names):
