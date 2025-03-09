@@ -148,30 +148,38 @@ except:
 
 # =================================== IMPORTS ================================
 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+
+gi.require_version('Gtk', '3.0')
+gi.require_version('Gdk', '3.0')
+gi.require_version('PangoCairo', '1.0')
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GObject
+from gi.repository import PangoCairo
 import sys
 import os
-import gobject
 from datetime import *
 from time import sleep
 from time import time as systime
 from math import sin, cos, tan, asin, acos, atan, pi, sqrt, atan2
-from sugar.activity import activity
-from sugar.activity.activity import get_bundle_path
+from sugar3.activity import activity
+from sugar3.activity.activity import get_bundle_path
+
 try:
-    from sugar.graphics.toolbarbox import ToolbarBox
+    from sugar3.graphics.toolbarbox import ToolbarBox
+
     _have_toolbox = True
 except ImportError:
     _have_toolbox = False
 if _have_toolbox:
-    from sugar.activity.widgets import ActivityToolbarButton
-    from sugar.graphics.toolbarbox import ToolbarButton
-    from sugar.activity.widgets import StopButton
-from sugar.graphics.toolbutton import ToolButton
-from sugar.graphics.palette import Palette, ToolInvoker
-from sugar.graphics.icon import Icon
+    from sugar3.activity.widgets import ActivityToolbarButton
+    from sugar3.graphics.toolbarbox import ToolbarButton
+    from sugar3.activity.widgets import StopButton
+from sugar3.graphics.toolbutton import ToolButton
+from sugar3.graphics.palette import Palette, ToolInvoker
+from sugar3.graphics.toggletoolbutton import ToggleToolButton
+from sugar3.graphics.icon import Icon
 import logging
 from gettext import gettext as _
 
@@ -353,7 +361,7 @@ def dtor(a):
 
 
 def rtod(r):
-  return r * 180.0 / pi
+    return r * 180.0 / pi
 
 
 # This function converts a decimal time to hours, minutes and seconds
@@ -791,45 +799,44 @@ def get_planet_index(name):
 #
 # controls on menubar1 (_('what')):
 fullscreen = ToolButton('view-fullscreen')
-button1 = ToggleButtonTool(icon_off='night-off', icon_on='night-on')
+button1 = ToggleToolButton(icon_name='night-off')
 button1.set_tooltip(_('Night Vision'))
-button2 = ToggleButtonTool(icon_off='invert-off', icon_on='invert-on')
+button2 = ToggleToolButton(icon_name='invert-off')
 button2.set_tooltip(_('Invert Display'))
-button3 = ToggleButtonTool(icon_off='left-right', icon_on='right-left')
+button3 = ToggleToolButton(icon_name='left-right')
 button3.set_tooltip(_('Flip L/R'))
-button4 = ToggleButtonTool(icon_off='constellations-off',
-                           icon_on='constellations-on')
+button4 = ToggleToolButton(icon_name='constellations-off')
 button4.set_tooltip(_('Draw Constellations'))
-container2 = gtk.Table(columns=6, rows=1)
-# TRANS: http://en.wikipedia.org/wiki/Magnitude_(astronomy) 
-label6 = gtk.Label(_('Mag:'))
-rb7 = gtk.RadioButton(None, _('1'))
-rb8 = gtk.RadioButton(rb7, _('2'))
-rb9 = gtk.RadioButton(rb7, _('3'))
-rb10 = gtk.RadioButton(rb7, _('4'))
-rb11 = gtk.RadioButton(rb7, _('5'))
-rb12 = gtk.RadioButton(rb7, _('6'))
+container2 = Gtk.Table(columns=6, rows=1)
+# TRANS: http://en.wikipedia.org/wiki/Magnitude_(astronomy)
+label6 = Gtk.Label(_('Mag:'))
+rb7 = Gtk.RadioButton.new_with_label_from_widget(None, _('1'))
+rb8 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb7, _('2'))
+rb9 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb7, _('3'))
+rb10 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb7, _('4'))
+rb11 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb7, _('5'))
+rb12 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb7, _('6'))
 # controls on menubar2 (_('where')):
-container3 = gtk.VBox()
-container4 = gtk.VBox()
+container3 = Gtk.VBox()
+container4 = Gtk.VBox()
 # TRANS: http://en.wikipedia.org/wiki/Longitude
-label1 = gtk.Label(_('Longitude:'))
-entry1 = gtk.Entry()
+label1 = Gtk.Label(_('Longitude:'))
+entry1 = Gtk.Entry()
 entry1.set_width_chars(10)
 # TRANS: http://en.wikipedia.org/wiki/East
-rb1 = gtk.RadioButton(None, _('E'))
+rb1 = Gtk.RadioButton.new_with_label_from_widget(None, _('E'))
 # TRANS: http://en.wikipedia.org/wiki/West
-rb2 = gtk.RadioButton(rb1, _('W'))
+rb2 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb1, _('W'))
 # TRANS: http://en.wikipedia.org/wiki/Latitude
-label2 = gtk.Label(_('Latitude:'))
-entry2 = gtk.Entry()
+label2 = Gtk.Label(_('Latitude:'))
+entry2 = Gtk.Entry()
 entry2.set_width_chars(10)
 # TRANS: http://en.wikipedia.org/wiki/North
-rb3 = gtk.RadioButton(None, _('N'))
+rb3 = Gtk.RadioButton.new_with_label_from_widget(None, _('N'))
 # TRANS: http://en.wikipedia.org/wiki/South
-rb4 = gtk.RadioButton(rb3, _('S'))
+rb4 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb3, _('S'))
 icon = Icon(icon_name='dialog-ok')
-button5 = gtk.Button()
+button5 = Gtk.Button()
 button5.set_image(icon)
 icon.show()
 button5.set_label(_('Ok'))
@@ -838,34 +845,34 @@ button51 = ToolButton('home')
 button51.set_tooltip(_('Make home'))
 button51.show()
 # controls on menubar3 (_('when')):
-rb5 = gtk.RadioButton(None, _('Now'))
-rb6 = gtk.RadioButton(rb5, _('Specify'))
-label4 = gtk.Label(_('Time:'))
-entry3 = gtk.Entry()
+rb5 = Gtk.RadioButton.new_with_label_from_widget(None, _('Now'))
+rb6 = Gtk.RadioButton.new_with_mnemonic_from_widget(rb5, _('Specify'))
+label4 = Gtk.Label(_('Time:'))
+entry3 = Gtk.Entry()
 entry3.set_width_chars(16)
-label5 = gtk.Label(_('Offset:'))
-entry4 = gtk.Entry()
+label5 = Gtk.Label(_('Offset:'))
+entry4 = Gtk.Entry()
 entry4.set_width_chars(7)
 icon = Icon(icon_name='dialog-ok')
-button6 = gtk.Button()
+button6 = Gtk.Button()
 button6.set_image(icon)
 icon.show()
 button6.set_label(_('Ok'))
 button6.show()
 # controls on menubar4 (_('Locate')):
-labell1 = gtk.Label(_('Object type:'))
-objtypecb = gtk.combo_box_new_text()
-planetscb = gtk.combo_box_new_text()
-constscb = gtk.combo_box_new_text()
-starscb = gtk.combo_box_new_text()
-container0 = gtk.HBox()
-container1 = gtk.VBox()
-dsoscb = gtk.combo_box_new_text()
+labell1 = Gtk.Label(_('Object type:'))
+objtypecb = Gtk.ComboBoxText.new()
+planetscb = Gtk.ComboBoxText.new()
+constscb = Gtk.ComboBoxText.new()
+starscb = Gtk.ComboBoxText.new()
+container0 = Gtk.HBox()
+container1 = Gtk.VBox()
+dsoscb = Gtk.ComboBoxText.new()
 # controls on last menubar (_('About')):
 # labela1 = gtk.Label(_('Version 2.0 (build 115) of 2010.04.21.1530 UT'))
 # labela2 = gtk.Label(' ')
-labela3 = gtk.Label(_('See http://wiki.laptop.org/go/StarChart for help.'))
-labela4 = gtk.Label(' ')
+labela3 = Gtk.Label(_('See http://wiki.laptop.org/go/StarChart for help.'))
+labela4 = Gtk.Label(' ')
 
 # -------------------------------------------------------------------------------
 
@@ -942,7 +949,7 @@ class PixelsToObjectMap():
 
 
   def get_count(self):
-    return len(self.data.keys())
+    return len(list(self.data.keys()))
 
 
   def found(self, x, y):
@@ -969,8 +976,8 @@ class PixelsToObjectMap():
 # irrespective of the planet's position in its orbit or phase of
 # illumination.
     pmag = [ -1.5, -3.5, -6.0, 1.0, -0.5, 0.5, 5.5, -27.0 ]
-    for x in range(left, right + 1):
-      for y in range(top, bottom + 1):
+    for x in range(int(left), int(right) + 1):
+      for y in range(int(top), int(bottom) + 1):
         if self.found(x, y):
           (type, name) = self.data[(x, y)]
           if (type != 'star') and (type != 'planet'):
@@ -1073,7 +1080,7 @@ class Location():
   def is_set(self):
     return self.data[0]
 
-  def plot_cross(self):
+  def plot_cross(self, cr):
     if (self.is_set()):
 
 #  Draw a cross using heavy green lines, centered on the object with
@@ -1082,36 +1089,52 @@ class Location():
 #  westward.  The code needs to compensate for that somehow.  (Or else
 #  this is a feature, since it shows how the sky moves over time.)
 
-      x = self.data[1] + 1
-      y = self.data[2] + 1
-      self.context.gc.set_foreground(self.context.colors[4])
-      self.context.gc.set_line_attributes(5, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                gtk.gdk.JOIN_MITER)
-      self.context.window.draw_line(self.context.gc, x, y - 25, x, y + 25)
-      self.context.window.draw_line(self.context.gc, x - 25, y, x + 25, y)
-      self.context.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                gtk.gdk.JOIN_MITER)
-      self.context.gc.set_foreground(self.context.colors[1])
-    else:
-      pass
+        x = self.data[1] + 1
+        y = self.data[2] + 1
+        cr.set_source_rgba(*self.context.colors[4])
+        cr.set_line_width(5)
+            
+        cr.move_to(x, y - 25)
+        cr.line_to(x, y + 25)
+        cr.stroke()
+
+        cr.move_to(x - 25, y)
+        cr.line_to(x + 25, y)
+        cr.stroke()
+            
+        cr.set_line_width(1)
+        cr.set_source_rgba(*self.context.colors[1])
+        cr.stroke()
+
 
 
 # ============================== ChartDisplay Object ============================
 
-class ChartDisplay(gtk.DrawingArea):
+class ChartDisplay(Gtk.DrawingArea):
   def __init__(self, context):
     super(ChartDisplay, self).__init__()
     self.context = context
     self.colors = {}
     self.canplot = False
-    self.pangolayout = self.create_pango_layout('')
-    self.add_events(gtk.gdk.BUTTON_PRESS_MASK | gtk.gdk.BUTTON1_MOTION_MASK |
-	gtk.gdk.BUTTON2_MOTION_MASK)
+
+    self.add_events(Gdk.EventMask.BUTTON_PRESS_MASK |
+                      Gdk.EventMask.BUTTON1_MOTION_MASK | Gdk.EventMask.BUTTON2_MOTION_MASK)
     self.connect('button_press_event', self.pressing)
     self.magnifying = False
     self.mag_center = [0, 0]
-    if (not specifytime):
-      gobject.timeout_add(60000, self.timer1_cb)
+    self.nightvision = False
+    self.invertdisplay = False
+    self.fliphorizontally = False
+    self.drawconstellations = True
+    self.limitingmagnitude = 4.0
+    self.saved_lmag = 4.0
+    # initial settings for time
+    self.specifytime = False
+    self.saved_specifytime = False
+    self.now = datetime.utcnow()
+    self.zoneoffset = -300
+    if (not self.specifytime):
+        GObject.timeout_add(60000, self.timer1_cb)
 
 # The pmap object maintains a map between the chart display's pixel coordinates
 # (x, y) and a visible object (type, name) for the "Identify" feature.
@@ -1125,7 +1148,7 @@ class ChartDisplay(gtk.DrawingArea):
 
     self.location = Location(self)
 
-  def area_expose_cb(self, area, event):
+  def draw_cb(self, widget, c):
 
 # Determine the area we can draw upon and adjust the chart accordingly.
 
@@ -1134,19 +1157,19 @@ class ChartDisplay(gtk.DrawingArea):
     self.margin = 40
     self.diameter = min(self.screensize[0], self.screensize[1]) - \
                     2 * self.margin
-    self.xoffset = (self.screensize[0] - self.diameter) / 2 - self.margin
-    self.yoffset = (self.screensize[1] - self.diameter) / 2 - self.margin
+    self.xoffset = (self.screensize[0] - self.diameter) // 2 - self.margin
+    self.yoffset = (self.screensize[1] - self.diameter) // 2 - self.margin
+    self.gc = c
+    self.pangolayout = PangoCairo.create_layout(c)
 
 # Establish color selections (need only do this once).
 
     if (len(self.colors) == 0):
-      self.gc = self.style.fg_gc[gtk.STATE_NORMAL]
-      self.colormap = self.gc.get_colormap()
-      self.colors[0] = self.colormap.alloc_color('white')
-      self.colors[1] = self.colormap.alloc_color('black')
-      self.colors[2] = self.colormap.alloc_color('red')
-      self.colors[3] = self.colormap.alloc_color('gray')
-      self.colors[4] = self.colormap.alloc_color('green')
+      self.colors[0] = Gdk.Color.parse('white')[1]
+      self.colors[1] = Gdk.Color.parse('black')[1]
+      self.colors[2] = Gdk.Color.parse('red')[1]
+      self.colors[3] = Gdk.Color.parse('gray')[1]
+      self.colors[4] = Gdk.Color.parse('green')[1]
       self.canplot = True
     self.plotchart()
 
@@ -1155,7 +1178,7 @@ class ChartDisplay(gtk.DrawingArea):
 
   def timer1_cb(self):
 # do not redraw the chart if we're not advancing time.
-    if (not specifytime):
+    if (not self.specifytime):
       self.plotchart()
     return True
 
@@ -1174,7 +1197,7 @@ class ChartDisplay(gtk.DrawingArea):
 # draw the chart so east is on the right by default.
 # When flipped, east is on the left, like a map.
 
-    if (fliphorizontally):
+    if (self.fliphorizontally):
       x = int(self.diameter / 2.0 + r * sin(az))
     else:
       x = int(self.diameter / 2.0 - r * sin(az))
@@ -1187,11 +1210,12 @@ class ChartDisplay(gtk.DrawingArea):
 
 # Convert pixel position (x, y) to horizon (az, alt) coordinates
 
-  def xytohorizon(self, (x, y)):
+  def xytohorizon(self, xxx_todo_changeme):
+    (x, y) = xxx_todo_changeme
     dy = (self.margin - 2 + self.yoffset + self.diameter / 2.0) - y
     dx = (self.margin - 2 + self.xoffset + self.diameter / 2.0) - x
 # Compensate for which way the chart is flipped.
-    if (fliphorizontally):
+    if (self.fliphorizontally):
       dx = -dx
     r = sqrt(dx * dx + dy * dy)
 # prevent divide-by-zero:
@@ -1215,32 +1239,22 @@ class ChartDisplay(gtk.DrawingArea):
 
 # Handle control changes here.
 
-    global nightvision
-    global invertdisplay
-    global fliphorizontally
-    global drawconstellations
-    global limitingmagnitude
-    global saved_lmag
-    global longitude
-    global latitude
-    global specifytime
-
     if (data == None):
       return False
     elif (data == 'night vision'):
-      nightvision = button1.get_active()
+      self.nightvision = button1.get_active()
       self.plotchart()
       return False
     elif (data == 'invert display'):
-      invertdisplay = button2.get_active()
+      self.invertdisplay = button2.get_active()
       self.plotchart()
       return False
     elif (data == 'flip horizontally'):
-      fliphorizontally = button3.get_active()
+      self.fliphorizontally = button3.get_active()
       self.plotchart()
       return False
     elif (data == 'draw constellations'):
-      drawconstellations = button4.get_active()
+      self.drawconstellations = button4.get_active()
       self.plotchart()
       return False
     elif (data == 'home location set'):
@@ -1345,27 +1359,27 @@ class ChartDisplay(gtk.DrawingArea):
       self.plotchart()
       return False
     elif (data == 'user time'):
-      specifytime = True
-      saved_specifytime = True
+      self.specifytime = True
+      self.saved_specifytime = True
       return True
     elif (data == 'now time'):
-      specifytime = False
-      saved_specifytime = False
-      now = datetime.utcnow()
+      self.specifytime = False
+      self.saved_specifytime = False
+      self.now = datetime.utcnow()
       (tstr, ostr) = set_time_and_UTC_offset()
       entry3.set_text(tstr)
       entry4.set_text(ostr)
       self.plotchart()
       return True
     elif (data == 'time change'):
-      specifytime = rb6.get_active()
-      saved_specifytime = specifytime
-      if (specifytime):
+      self.specifytime = rb6.get_active()
+      self.saved_specifytime = self.specifytime
+      if (self.specifytime):
         if (syntax_check_time() == False):
           self.time_error()
-          specifytime = False
-          saved_specifytime = False
-          now = datetime.utcnow()
+          self.specifytime = False
+          self.saved_specifytime = False
+          self.now = datetime.utcnow()
           (tstr, ostr) = set_time_and_UTC_offset()
           entry3.set_text(tstr)
           entry4.set_text(ostr)
@@ -1373,9 +1387,9 @@ class ChartDisplay(gtk.DrawingArea):
         else:
           if (syntax_check_zone() == False):
             self.zone_error()
-            specifytime = False
-            saved_specifytime = False
-            now = datetime.utcnow()
+            self.specifytime = False
+            self.saved_specifytime = False
+            self.now = datetime.utcnow()
             (tstr, ostr) = set_time_and_UTC_offset()
             entry3.set_text(tstr)
             entry4.set_text(ostr)
@@ -1388,40 +1402,40 @@ class ChartDisplay(gtk.DrawingArea):
       self.plotchart()
       return False
     elif (data == 'rb7 clicked'):
-      limitingmagnitude = 1.0
-      saved_lmag = 1.0
+      self.limitingmagnitude = 1.0
+      self.saved_lmag = 1.0
       self.plotchart()
       return False
     elif (data == 'rb8 clicked'):
-      limitingmagnitude = 2.0
-      saved_lmag = 2.0
+      self.limitingmagnitude = 2.0
+      self.saved_lmag = 2.0
       self.plotchart()
       return False
     elif (data == 'rb9 clicked'):
-      limitingmagnitude = 3.0
-      saved_lmag = 3.0
+      self.limitingmagnitude = 3.0
+      self.saved_lmag = 3.0
       self.plotchart()
       return False
     elif (data == 'rb10 clicked'):
-      limitingmagnitude = 4.0
-      saved_lmag = 4.0
+      self.limitingmagnitude = 4.0
+      self.saved_lmag = 4.0
       self.plotchart()
       return False
     elif (data == 'rb11 clicked'):
-      limitingmagnitude = 5.0
-      saved_lmag = 5.0
+      self.limitingmagnitude = 5.0
+      self.saved_lmag = 5.0
       self.plotchart()
       return False
     elif (data == 'rb12 clicked'):
-      limitingmagnitude = 6.0
-      saved_lmag = 6.0
+      self.limitingmagnitude = 6.0
+      self.saved_lmag = 6.0
       self.plotchart()
       return False
     elif (data == 'objtype sel'):
 # Get selection and expose object selector control(s).
       selstr = objtypecb.get_active_text()
       if (selstr == _('Planets')):
-        for i in reversed(range(len(container0.get_children()))):
+        for i in list(range(len(container0.get_children()))):
           container0.remove(container0.get_children()[i])
         container0.add(planetscb)
         planetscb.show()
@@ -1432,7 +1446,7 @@ class ChartDisplay(gtk.DrawingArea):
         planetscb.set_active(-1)
         self.context.identifyobject.set_label('')
       elif (selstr == _('Stars by Constellation')):
-        for i in reversed(range(len(container0.get_children()))):
+        for i in list(range(len(container0.get_children()))):
           container0.remove(container0.get_children()[i])
         container0.add(constscb)
         container0.add(starscb)
@@ -1446,14 +1460,14 @@ class ChartDisplay(gtk.DrawingArea):
         planetscb.set_active(-1)
         self.context.identifyobject.set_label('')
       elif (selstr == _('Brightest Stars')):
-        for i in reversed(range(len(container0.get_children()))):
+        for i in list(range(len(container0.get_children()))):
           container0.remove(container0.get_children()[i])
         container0.add(starscb)
         starscb.get_model().clear()
 # Load the combobox with the names of stars whose magnitude is +1.50
 # or brighter
         names = []
-        for name, (ra, dec, mag, cid) in star_chart.iteritems():
+        for name, (ra, dec, mag, cid) in star_chart.items():
           if (mag <= 1.50):
             names = names + [name]
         for name in sorted(names):
@@ -1467,7 +1481,7 @@ class ChartDisplay(gtk.DrawingArea):
         planetscb.set_active(-1)
         self.context.identifyobject.set_label('')
       elif (selstr == _('Deep-sky Objects')):
-        for i in reversed(range(len(container0.get_children()))):
+        for i in list(range(len(container0.get_children()))):
           container0.remove(container0.get_children()[i])
         container0.add(dsoscb)
         dsoscb.show()
@@ -1495,7 +1509,7 @@ class ChartDisplay(gtk.DrawingArea):
 # Load the stars combobox with the names of all stars having this
 # constellation ID.
         names = []
-        for name, (ra, dec, mag, cid) in star_chart.iteritems():
+        for name, (ra, dec, mag, cid) in star_chart.items():
           if (cid == const_id):
             names = names + [name]
         for name in sorted(names):
@@ -1555,20 +1569,17 @@ class ChartDisplay(gtk.DrawingArea):
 
 
   def magnify(self, x, y):
-    global limitingmagnitude
-    global specifytime
-    global saved_specifytime
     if (can_magnify):
-# Toggle magnification state.
+      # Toggle magnification state.
       if (self.magnifying):
         self.magnifying = False
-        limitingmagnitude = saved_lmag
-        specifytime = saved_specifytime
+        self.limitingmagnitude = self.saved_lmag
+        self.specifytime = self.saved_specifytime
       else:
         self.magnifying = True
-        limitingmagnitude = 9.0
-        saved_specifytime = specifytime
-        specifytime = True
+        self.limitingmagnitude = 9.0
+        self.saved_specifytime = self.specifytime
+        self.specifytime = True
 # Save x,y.  Re-plot.
         self.mag_center[0] = x
         self.mag_center[1] = y
@@ -1702,6 +1713,7 @@ class ChartDisplay(gtk.DrawingArea):
         self.plot_magnified()
       else:
         self.plot_whole_sky()
+    self.queue_draw()
     return True
 
 
@@ -1714,21 +1726,20 @@ class ChartDisplay(gtk.DrawingArea):
     if (not self.canplot):
       return
     self.cleararea()
-    if (invertdisplay):
-      if (nightvision):
-        self.gc.set_foreground(self.colors[2])
+    if (self.invertdisplay):
+      if (self.nightvision):
+        self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
       else:
-        self.gc.set_foreground(self.colors[0])
+        self.gc.set_source_rgb(self.colors[0].red, self.colors[0].green, self.colors[0].blue)
     else:
-      self.gc.set_foreground(self.colors[1])
-    self.window.draw_arc(self.gc,
-                              True,
-                              self.xoffset + self.margin - 2,
-                              self.yoffset + self.margin - 2,
-                              self.diameter + 4,
-                              self.diameter + 4,
-                              0,
-                              23040)
+      self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
+
+    self.gc.arc(self.xoffset + self.margin + self.diameter // 2,
+                self.yoffset + self.margin + self.diameter // 2,
+                self.diameter // 2 + 2,
+                0,
+                2 * pi)
+    self.gc.fill()
 
 # Erase the pixels-to-object and object-to-pixels maps, since objects may now
 # occupy different (x, y).
@@ -1738,61 +1749,58 @@ class ChartDisplay(gtk.DrawingArea):
 
 # Plot sky circle
 
-    if (not invertdisplay):
-      if (nightvision):
-        self.gc.set_foreground(self.colors[2])
+    if (not self.invertdisplay):
+      if (self.nightvision):
+        self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
       else:
-        self.gc.set_foreground(self.colors[0])
+        self.gc.set_source_rgb(self.colors[0].red, self.colors[0].green, self.colors[0].blue)
     else:
-      self.gc.set_foreground(self.colors[1])
-    self.window.draw_arc(self.gc,
-                              False,
-                              self.xoffset + self.margin - 2,
-                              self.yoffset + self.margin - 2,
-                              self.diameter + 4,
-                              self.diameter + 4,
-                              0,
-                              23040)
+      self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
 
-# label the cardinal points.
+    self.gc.arc(self.xoffset + self.margin + self.diameter//2,
+                self.yoffset + self.margin + self.diameter//2,
+                self.diameter//2 + 2,
+                0, 2 * pi)
+    self.gc.stroke() #make fill
 
-    if (nightvision):
-      self.gc.set_foreground(self.colors[2])
+        # label the cardinal points.
+
+    if (self.nightvision):
+      self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
     else:
-      self.gc.set_foreground(self.colors[1])
-    self.pangolayout.set_text(_('N'))
-    self.window.draw_layout(self.gc,
-                     self.xoffset + self.margin + self.diameter / 2 - 10,
-                     self.margin - 30, self.pangolayout)
-    self.pangolayout.set_text(_('S'))
-    self.window.draw_layout(self.gc,
-                     self.xoffset + self.margin + self.diameter / 2 - 10,
-                     2 * self.margin + self.diameter - 30, self.pangolayout)
-    if (not fliphorizontally):
-      self.pangolayout.set_text(_('E'))
+      self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
+    self.pangolayout.set_text(_('N'), -1)
+
+    self.gc.move_to(self.xoffset + self.margin + self.diameter // 2 - 10,
+                    self.margin - 30)
+    PangoCairo.show_layout(self.gc, self.pangolayout)
+    self.gc.stroke()
+
+    self.pangolayout.set_text(_('S'), -1)
+    self.gc.move_to(self.xoffset + self.margin + self.diameter // 2 - 10,
+                    2 * self.margin + self.diameter - 30)
+    PangoCairo.show_layout(self.gc, self.pangolayout)
+    self.gc.stroke()
+    if (not self.fliphorizontally):
+      self.pangolayout.set_text(_('E'), -1)
     else:
-      self.pangolayout.set_text(_('W'))
-    self.window.draw_layout(self.gc,
-                     self.xoffset + self.margin - 30,
-                     self.margin + self.diameter / 2 - 10, self.pangolayout)
-    if (not fliphorizontally):
-      self.pangolayout.set_text(_('W'))
-    else:
-      self.pangolayout.set_text(_('E'))
-    self.window.draw_layout(self.gc,
-                     self.xoffset + self.margin + self.diameter + 10,
-                     self.margin + self.diameter / 2 - 10, self.pangolayout)
-    if (not invertdisplay):
-      if (nightvision):
-        self.gc.set_foreground(self.colors[2])
+      self.pangolayout.set_text(_('W'), -1)
+    self.gc.move_to(self.xoffset + self.margin - 30,
+                    self.margin + self.diameter // 2 - 10)
+    PangoCairo.show_layout(self.gc, self.pangolayout)
+    self.gc.stroke()
+
+    if (not self.invertdisplay):
+      if (self.nightvision):
+        self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
       else:
-        self.gc.set_foreground(self.colors[0])
+        self.gc.set_source_rgb(self.colors[0].red, self.colors[0].green, self.colors[0].blue)
     else:
-      self.gc.set_foreground(self.colors[1])
+      self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
 
 # Set the time of plotting (now).
 
-    if (not specifytime):
+    if (not self.specifytime):
       now = datetime.utcnow()
       (tstr, ostr) = set_time_and_UTC_offset()
       entry3.set_text(tstr)
@@ -1830,7 +1838,7 @@ class ChartDisplay(gtk.DrawingArea):
 
 
   def plot_all_stars(self):
-    for name, (ra, dec, mag, cid) in star_chart.iteritems():
+    for name, (ra, dec, mag, cid) in star_chart.items():
 
 # convert the ra and dec from the J2000 epoch to the plot time
 
@@ -1854,7 +1862,7 @@ class ChartDisplay(gtk.DrawingArea):
 
 # if the star is bright enough, add it to pmap and plot it.
 
-        if (mag <= limitingmagnitude):
+        if (mag <= self.limitingmagnitude):
           self.pmap.add(px, py, 'star', name)
           self.plot_star(px, py, starsize)
 
@@ -1909,31 +1917,32 @@ class ChartDisplay(gtk.DrawingArea):
 # plotting a star but we have to figure out the alt/az coordinates for both ends
 # of the line segment.
 
-    if (drawconstellations):
-      if (not invertdisplay):
-        if (nightvision):
-          self.gc.set_foreground(self.colors[2])
+    if (self.drawconstellations):
+      if (not self.invertdisplay):
+        if (self.nightvision):
+          self.gc.set_source_rgb(self.colors[2].red, self.colors[2].green, self.colors[2].blue)
         else:
-          self.gc.set_foreground(self.colors[0])
+          self.gc.set_source_rgb(self.colors[0].red, self.colors[0].green, self.colors[0].blue)
       else:
-        self.gc.set_foreground(self.colors[1])
-      for code, (name, lines) in figures.iteritems():
+        self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
+      for code, (name, lines) in figures.items():
         for i in range(len(lines)):
           (ra1, dec1, ra2, dec2) = lines[i]
           polar1 = epochpolartonow((ra1, dec1), now)
           azalt1 = polartoazalt(polar1, now)
-          if (azalt1[1] >=  0.0175):
+          if (azalt1[1] >= 0.0175):
             (px1, py1) = self.azalttoxy(azalt1)
             px1 = px1 + self.margin - 2 + self.xoffset
             py1 = py1 + self.margin - 2 + self.yoffset
             polar2 = epochpolartonow((ra2, dec2), now)
             azalt2 = polartoazalt(polar2, now)
-            if (azalt2[1] >=  0.0175):
+            if (azalt2[1] >= 0.0175):
               (px2, py2) = self.azalttoxy(azalt2)
               px2 = px2 + self.margin - 2 + self.xoffset
               py2 = py2 + self.margin - 2 + self.yoffset
-              self.window.draw_line(self.gc, px1, py1, px2, py2)
-
+              self.gc.move_to(int(px1), int(py1))
+              self.gc.line_to(int(px2), int(py2))
+              self.gc.stroke()
 
   def plot_all_planets(self):
 
@@ -2231,7 +2240,7 @@ class ChartDisplay(gtk.DrawingArea):
 
       self.pmap.add(px, py, 'planet', name)
       self.omap.add('planet', name, px, py)
-    self.gc.set_foreground(self.colors[1])
+    self.gc.set_source_rgb(self.colors[1].red, self.colors[1].green, self.colors[1].blue)
     self.location.plot_cross()
     return True
 
@@ -2284,7 +2293,7 @@ class ChartDisplay(gtk.DrawingArea):
 
 # Plot the stars within the field of view
 
-    for name, (ra, dec, mag, cid) in star_chart.iteritems():
+    for name, (ra, dec, mag, cid) in star_chart.items():
 
 # Convert the ra and dec from the J2000 epoch to the plot time
 
@@ -2629,20 +2638,19 @@ class ChartDisplay(gtk.DrawingArea):
 
       self.pmap.add(px, py, 'planet', name)
       self.omap.add('planet', name, px, py)
-    self.gc.set_foreground(self.colors[1])
+    self.gc.set_source_rgb((1 / 65536.0) * self.colors[1].red,
+                           (1 / 65536.0) * self.colors[1].green,
+                           (1 / 65536.0) * self.colors[1].blue)
     self.location.plot_cross()
     return True
 
 
   def plot_star(self, px, py, starsize):
-    self.window.draw_arc(self.gc, True,
-             px,
-             py,
-             starsize,
-             starsize,
-             0,
-             360*64)
-
+    self.gc.save()
+    self.gc.arc(int(px) + starsize/2, int(py) + starsize/2, starsize/2, 0, 2 * pi)
+    self.gc.fill()
+    self.gc.restore()
+    self.gc.stroke()
 
   def plot_planetary_symbol(self, i, px, py):
 
@@ -2653,122 +2661,183 @@ class ChartDisplay(gtk.DrawingArea):
 
 # mercury
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_arc(self.gc, False, px-5, py-7, 10, 10, 0, 360*64)
-      self.window.draw_line(self.gc, px+4, py-9, px+4, py-7)
-      self.window.draw_line(self.gc, px-4, py-9, px-4, py-7)
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_line(self.gc, px, py+3, px, py+7)
-      self.window.draw_line(self.gc, px-2, py+5, px+2, py+5)
+      self.gc.set_line_width(2)
+      self.gc.arc(px, py, 12, 0, 2 * pi)
+      self.gc.stroke()
+      self.gc.arc(px, py - 2, 5, 0, 2 * pi)
+      self.gc.stroke()
+      self.gc.move_to(px + 4, py - 9)
+      self.gc.line_to(px + 4, py - 7)
+      self.gc.stroke()
+      self.gc.move_to(px - 4, py - 9, )
+      self.gc.line_to(px - 4, py - 7)
+      self.gc.stroke()
+      self.gc.set_line_width(1)
+      self.gc.move_to(px, py + 3)
+      self.gc.line_to(px, py + 7)
+      self.gc.stroke()
+      self.gc.move_to(px - 2, py + 5)
+      self.gc.line_to(px + 2, py + 5)
+      self.gc.stroke()
     elif (i == 1):
 
 # venus
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_arc(self.gc, False, px-5, py-7, 10, 10, 0, 360*64)
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_line(self.gc, px, py+3, px, py+7)
-      self.window.draw_line(self.gc, px-2, py+5, px+2, py+5)
+      self.gc.set_line_width(2)
+      self.gc.arc(px, py, 12, 0, 2 * pi)
+      self.gc.stroke()
+      self.gc.arc(px, py - 2, 5, 0, 2 * pi)
+      self.gc.stroke()
+      self.gc.set_line_width(1)
+      self.gc.move_to(px, py + 3)
+      self.gc.line_to(px, py + 7)
+      self.gc.stroke()
+      self.gc.move_to(px - 2, py + 5)
+      self.gc.line_to(px + 2, py + 5)
+      self.gc.stroke()
     elif (i == 2):
 
 # moon
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_polygon(self.gc, True, ((px+1, py-11), (px+4, py-11),
-                                               (px+5, py-10), (px+6, py-9),
-                                               (px+7, py-8),  (px+8, py-7),
-                                               (px+10, py-2), (px+12,py),
-                                               (px+10, py+2), (px+8, py+7),
-                                               (px+7, py+8),  (px+6, py+9),
-                                               (px+5, py+10), (px+4,py+11),
-                                               (px+1, py+11), (px+4, py+4),
-                                               (px+6, py+2),  (px+6, py-2),
-                                               (px+4, py-4)))
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
+      self.gc.set_line_width(2)
+      self.gc.arc(px, py, 12, 0, 2 * pi)
+      self.gc.stroke()
+      self.gc.move_to(px + 1, py - 11)
+      self.gc.line_to(px + 4, py - 11)
+      self.gc.line_to(px + 5, py - 10)
+      self.gc.line_to(px + 6, py - 9)
+      self.gc.line_to(px + 7, py - 8)
+      self.gc.line_to(px + 8, py - 7)
+      self.gc.line_to(px + 10, py - 2)
+      self.gc.line_to(px + 12, py)
+      self.gc.line_to(px + 10, py + 2)
+      self.gc.line_to(px + 8, py + 7)
+      self.gc.line_to(px + 7, py + 8)
+      self.gc.line_to(px + 6, py + 9)
+      self.gc.line_to(px + 5, py + 10)
+      self.gc.line_to(px + 4, py + 11)
+      self.gc.line_to(px + 1, py + 11)
+      self.gc.line_to(px + 4, py + 4)
+      self.gc.line_to(px + 6, py + 2)
+      self.gc.line_to(px + 6, py - 2)
+      self.gc.line_to(px + 4, py - 4)
+      self.gc.stroke()
+      self.gc.set_line_width(1)
     elif (i == 3):
 
 # mars
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_arc(self.gc, False, px-6, py-4, 10, 10, 0, 360*64)
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_line(self.gc, px+2, py-2, px+6, py-6)
-      self.window.draw_line(self.gc, px+3, py-6, px+6, py-6)
-      self.window.draw_line(self.gc, px+6, py-6, px+6, py-3)
+      self.gc.set_line_width(2)
+      self.gc.arc(px, py, 12, 0, 2 * pi)
+      self.gc.stroke()
+      self.gc.arc(px - 1, py + 1, 5, 0, 2 * pi)
+      self.gc.stroke()
+      self.gc.set_line_width(1)
+      self.gc.move_to(px + 2, py - 2)
+      self.gc.line_to(px + 6, py - 6)
+      self.gc.stroke()
+      self.gc.move_to(px + 3, py - 6)
+      self.gc.line_to(px + 6, py - 6)
+      self.gc.stroke()
+      self.gc.move_to(px + 6, py - 6)
+      self.gc.line_to(px + 6, py - 3)
+      self.gc.stroke()
     elif (i == 4):
 
 # jupiter
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_line(self.gc, px-6, py-6, px-4, py-8)
-      self.window.draw_line(self.gc, px-4, py-8, px-2, py-8)
-      self.window.draw_line(self.gc, px-2, py-8, px+1, py-6)
-      self.window.draw_line(self.gc, px+1, py-6, px-5, py+2)
-      self.window.draw_line(self.gc, px-5, py+2, px+7, py+2)
-      self.window.draw_line(self.gc, px+4, py-8, px+4, py+7)
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
+      self.gc.set_line_width(2)
+      self.gc.arc(px, py, 12, 0, 2 * pi)
+      self.gc.stroke()
+      self.gc.move_to(px - 6, py - 6)
+      self.gc.line_to(px - 4, py - 8)
+      self.gc.stroke()
+      self.gc.move_to(px - 4, py - 8)
+      self.gc.line_to(px - 2, py - 8)
+      self.gc.stroke()
+      self.gc.move_to(px - 2, py - 8)
+      self.gc.line_to(px + 1, py - 6)
+      self.gc.stroke()
+      self.gc.move_to(px + 1, py - 6)
+      self.gc.line_to(px - 5, py + 2)
+      self.gc.stroke()
+      self.gc.move_to(px - 5, py + 2)
+      self.gc.line_to(px + 7, py + 2)
+      self.gc.stroke()
+      self.gc.move_to(px + 4, py - 8)
+      self.gc.line_to(px + 4, py + 7)
+      self.gc.stroke()
+      self.gc.set_line_width(1)
     elif (i == 5):
 
 # saturn
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_line(self.gc, px-6, py-6, px-6, py+5)
-      self.window.draw_line(self.gc, px-6, py, px-5, py-1)
-      self.window.draw_line(self.gc, px-5, py-1, px-4, py-2)
-      self.window.draw_line(self.gc, px-4, py-2, px-1, py-3)
-      self.window.draw_line(self.gc, px-1, py-3, px, py-4)
-      self.window.draw_line(self.gc, px, py-4, px+1, py+1)
-      self.window.draw_line(self.gc, px+1, py+1, px-1, py+4)
-      self.window.draw_line(self.gc, px-1, py+4, px, py+5)
-      self.window.draw_line(self.gc, px, py+5, px+6, py+4)
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
+      self.gc.set_line_width(2)
+      self.gc.arc(px, py, 12, 0, 2 * pi)
+      self.gc.stroke()
+      self.gc.move_to(px - 6, py - 6)
+      self.gc.line_to(px - 6, py + 5)
+      self.gc.stroke()
+      self.gc.move_to(px - 6, py)
+      self.gc.line_to(px - 5, py - 1)
+      self.gc.stroke()
+      self.gc.move_to(px - 5, py - 1)
+      self.gc.line_to(px - 4, py - 2)
+      self.gc.stroke()
+      self.gc.move_to(px - 4, py - 2)
+      self.gc.line_to(px - 1, py - 3)
+      self.gc.stroke()
+      self.gc.move_to(px - 1, py - 3)
+      self.gc.line_to(px, py - 4)
+      self.gc.stroke()
+      self.gc.move_to(px, py - 4)
+      self.gc.line_to(px + 1, py + 1)
+      self.gc.stroke()
+      self.gc.move_to(px + 1, py + 1)
+      self.gc.line_to(px - 1, py + 4)
+      self.gc.stroke()
+      self.gc.move_to(px - 1, py + 4)
+      self.gc.line_to(px, py + 5)
+      self.gc.stroke()
+      self.gc.move_to(px, py + 5)
+      self.gc.line_to(px + 6, py + 4)
+      self.gc.stroke()
+      self.gc.set_line_width(1)
     elif (i == 6):
 
 # uranus
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_arc(self.gc, False, px-5, py-3, 10, 10, 0, 360*64)
-      self.window.draw_arc(self.gc, True, px-2, py, 4, 4, 0, 360*64)
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_line(self.gc, px, py-3, px, py-9)
-      self.window.draw_line(self.gc, px-2, py-5, px, py-9)
-      self.window.draw_line(self.gc, px+2, py-5, px, py-9)
+      self.gc.set_line_width(2)
+      self.gc.arc(px, py, 12, 0, 2 * pi)
+      self.gc.stroke()
+      self.gc.arc(px, py + 2, 5, 0, 2 * pi)
+      self.gc.stroke()
+      self.gc.arc(px, py + 2, 2, 0, 2 * pi)
+      self.gc.stroke()
+      self.gc.set_line_width(1)
+      self.gc.move_to(px, py - 3)
+      self.gc.line_to(px, py - 9)
+      self.gc.stroke()
+      self.gc.move_to(px - 2, py - 5)
+      self.gc.line_to(px, py - 9)
+      self.gc.stroke()
+      self.gc.move_to(px + 2, py - 5)
+      self.gc.line_to(px, py - 9)
+      self.gc.stroke()
     else:
 
 # sun
 
-      self.gc.set_line_attributes(2, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_arc(self.gc, True, px-2, py-2, 4, 4, 0, 360*64)
-      self.gc.set_line_attributes(1, gtk.gdk.LINE_SOLID, gtk.gdk.CAP_BUTT,
-                                  gtk.gdk.JOIN_MITER)
-
+      self.gc.set_line_width(2)
+      self.gc.arc(px, py, 12, 0, 2 * pi)
+      self.gc.stroke()
+      self.gc.arc(px, py, 2, 0, 2 * pi)
+      self.gc.stroke()
+      self.gc.set_line_width(1)
 
   def plot_DSO(self, type, maja, mina, mag, px, py):
-    if (not invertdisplay):
-      if (nightvision):
+    if (not self.invertdisplay):
+      if (self.nightvision):
         fg_color = self.colors[2]
       else:
         fg_color = self.colors[0]
@@ -2797,94 +2866,69 @@ class ChartDisplay(gtk.DrawingArea):
           return # too small.
       if (type == 'Gal'):
 # plot as gray ellipse with solid outline.
-        self.gc.set_foreground(self.colors[3])
-        self.window.draw_arc(self.gc,
-                              True,
-                              px - int(dx / 2),
-                              py - int(dy / 2),
-                              dx - 1,
-                              dy - 1,
-                              0,
-                              23040)
-        self.gc.set_foreground(fg_color)
-        self.window.draw_arc(self.gc,
-                              False,
-                              px - int(dx / 2),
-                              py - int(dy / 2),
-                              dx,
-                              dy,
-                              0,
-                              23040)
+        self.gc.set_source_rgb((1 / 65536.0) * self.colors[3].red,
+                               (1 / 65536.0) * self.colors[3].green,
+                               (1 / 65536.0) * self.colors[3].blue)
+        self.gc.arc(px - int(dx / 2) + int((dx - 1)/2), py - int(dy / 2)  + int((dy - 1)/2), 1, 0, 2 * pi)
+        self.gc.fill()
+        self.gc.set_source_rgb(fg_color.red,
+                               fg_color.green,
+                               fg_color.blue)
+        self.gc.arc(px, py, 1, 0, 2 * pi)
+        self.gc.stroke()
+
       elif (type == 'PlN'):
 # plot as gray circle with central dot
-        self.gc.set_foreground(self.colors[3])
-        self.window.draw_arc(self.gc,
-                              True,
-                              px - int(dx / 2),
-                              py - int(dx / 2),
-                              dx,
-                              dx,
-                              0,
-                              23040)
-        self.gc.set_foreground(fg_color)
-        self.window.draw_arc(self.gc,
-                              True,
-                              px - 2,
-                              py - 2,
-                              4,
-                              4,
-                              0,
-                              23040)
+        self.gc.set_source_rgb((1 / 65536.0) * self.colors[3].red,
+                               (1 / 65536.0) * self.colors[3].green,
+                               (1 / 65536.0) * self.colors[3].blue)
+        self.gc.arc(px, py, dx/2 , 0, 2 * pi)
+        self.gc.fill()
+        self.gc.set_source_rgb(fg_color.red,
+                               fg_color.green,
+                               fg_color.blue)
+        self.gc.arc(px, py, 2, 0, 2 * pi)
+        self.gc.fill()
+
       elif (type == 'SNR') or (type == 'OCl'):
 # plot as gray circle with no outline.
-        self.gc.set_foreground(self.colors[3])
-        self.window.draw_arc(self.gc,
-                              True,
-                              px - int(dx / 2),
-                              py - int(dx / 2),
-                              dx,
-                              dx,
-                              0,
-                              23040)
-        self.gc.set_foreground(fg_color)
+        self.gc.set_source_rgb((1 / 65536.0) * self.colors[3].red,
+                               (1 / 65536.0) * self.colors[3].green,
+                               (1 / 65536.0) * self.colors[3].blue)
+        self.gc.arc(px, py, dx/2, 0, 2 * pi)
+        self.gc.fill()
+        self.gc.set_source_rgb(fg_color.red,
+                               fg_color.green,
+                               fg_color.blue)
+
       elif (type == 'C/N') or (type == 'DfN'):
 # plot as gray rectangle with no outline.
-        self.gc.set_foreground(self.colors[3])
-        self.window.draw_rectangle(self.gc,
-                                        True,
-                                        px - int(dx / 2),
-                                        py - int(dy / 2),
-                                        dx,
-                                        dy)
-        self.gc.set_foreground(fg_color)
+        self.gc.set_source_rgb((1 / 65536.0) * self.colors[3].red,
+                               (1 / 65536.0) * self.colors[3].green,
+                               (1 / 65536.0) * self.colors[3].blue)
+        self.gc.rectangle(px - int(dx / 2),
+                          py - int(dy / 2),
+                          dx,
+                          dy)
+        self.gc.fill()
+        self.gc.set_source_rgb(fg_color.red,
+                               fg_color.green,
+                               fg_color.blue)
+
       elif (type == 'GCl'):
 # plot as gray circle with outline and central dot.
-        self.gc.set_foreground(self.colors[3])
-        self.window.draw_arc(self.gc,
-                              True,
-                              px - int(dx / 2),
-                              py - int(dx / 2),
-                              dx,
-                              dx,
-                              0,
-                              23040)
-        self.gc.set_foreground(fg_color)
-        self.window.draw_arc(self.gc,
-                              False,
-                              px - int(dx / 2),
-                              py - int(dx / 2),
-                              dx - 1,
-                              dx - 1,
-                              0,
-                              23040)
-        self.window.draw_arc(self.gc,
-                              True,
-                              px - 2,
-                              py - 2,
-                              4,
-                              4,
-                              0,
-                              23040)
+        self.gc.set_source_rgb((1 / 65536.0) * self.colors[3].red,
+                               (1 / 65536.0) * self.colors[3].green,
+                               (1 / 65536.0) * self.colors[3].blue)
+        self.gc.arc(px, py, dx/2, 0, 2 * pi)
+        self.gc.fill()
+        self.gc.set_source_rgb(fg_color.red,
+                               fg_color.green,
+                               fg_color.blue)
+        self.gc.arc(px - int(dx / 2) + int((dx - 1)/2), py - int(dx / 2) + int((dx - 1)/2), (dx - 1)/2, 0, 2 * pi)
+        self.gc.stroke()
+        self.gc.arc(px, py, 2, 0, 2 * pi)
+        self.gc.fill()
       else:
 #	Dbl = double star
 #	??? = unknown or unclassified object
@@ -2893,19 +2937,17 @@ class ChartDisplay(gtk.DrawingArea):
 
       
   def cleararea(self):
-    
-# Clear the drawing surface
-
-    if (nightvision):
-      self.gc.set_foreground(self.colors[1])
+      # Clear the drawing surface
+    if (self.nightvision):
+      self.gc.set_source_rgb((1 / 65536.0) * self.colors[1].red,
+                             (1 / 65536.0) * self.colors[1].green,
+                             (1 / 65536.0) * self.colors[1].blue)
     else:
-      self.gc.set_foreground(self.colors[3])
-    self.window.draw_rectangle(self.gc,
-                                    True,
-                                    1,
-                                    1,
-                                    self.screensize[0],
-                                    self.screensize[1])
+      self.gc.set_source_rgb((1 / 65536.0) * self.colors[3].red,
+                             (1 / 65536.0) * self.colors[3].green,
+                             (1 / 65536.0) * self.colors[3].blue)
+    self.gc.rectangle(1, 1, self.screensize[0], self.screensize[1])
+    self.gc.fill()
     label1.queue_draw()
     label2.queue_draw()
     label4.queue_draw()
@@ -2936,25 +2978,33 @@ class ChartDisplay(gtk.DrawingArea):
 
 class StarChart(activity.Activity):
   def __init__(self, handle):
-    global now
-    global zoneoffset
-    global abbrev_from_name
-    global longitude
-    global latitude
+
+    self.nightvision = False
+    self.invertdisplay = False
+    self.fliphorizontally = False
+    self.drawconstellations = True
+    self.limitingmagnitude = 4.0
+    self.saved_lmag = 4.0
+    # initial settings for time
+    self.specifytime = False
+    self.saved_specifytime = False
+    self.now = datetime.utcnow()
+    self.zoneoffset = -300
+
     activity.Activity.__init__(self, handle)
     os.chdir(get_bundle_path())
     self.set_title(_('Star Chart Activity'))
                     
 # Iniitialize time to now and offset to our zone.
 
-    now = datetime.utcnow()
+    self.now = datetime.utcnow()
     (tstr, ostr) = set_time_and_UTC_offset()
     (hh, mm) = parse_zone_offset(ostr)
-    zoneoffset = 60 * hh
+    self.zoneoffset = 60 * hh
     if (hh < 0):
-      zoneoffset = zoneoffset - mm
+      self.zoneoffset = self.zoneoffset - mm
     else:
-      zoneoffset = zoneoffset + mm
+      self.zoneoffset = self.zoneoffset + mm
 
 # If the file StarChart.cfg exists in the Activity's data directory,
 # get the longitude and latitude settings stored there.  This will
@@ -2988,74 +3038,70 @@ class StarChart(activity.Activity):
 
 # Create toolbox
       
-    self.what_toolbar = gtk.Toolbar()
-    self.where_toolbar = gtk.Toolbar()
-    self.when_toolbar = gtk.Toolbar()
-    self.locate_toolbar = gtk.Toolbar()
-    self.about_toolbar = gtk.Toolbar()
+    self.what_toolbar = Gtk.Toolbar()
+    self.where_toolbar = Gtk.Toolbar()
+    self.when_toolbar = Gtk.Toolbar()
+    self.locate_toolbar = Gtk.Toolbar()
+    self.about_toolbar = Gtk.Toolbar()
  
-    if _have_toolbox:
-      toolbox = ToolbarBox()
-      activity_button = ActivityToolbarButton(self)
-      toolbox.toolbar.insert(activity_button, 0)
-      activity_button.show()
+    toolbar_box = ToolbarBox()
+    self.set_toolbar_box(toolbar_box)
+    toolbar_box.show()
 
-      what_toolbar_button = ToolbarButton(
-        page=self.what_toolbar,
-        icon_name='toolbar-view')
-      self.what_toolbar.show()
-      toolbox.toolbar.insert(what_toolbar_button, -1)
-      what_toolbar_button.show()
+    activity_button = ActivityToolbarButton(self)
+    toolbar_box.toolbar.insert(activity_button, -1)
+    activity_button.show()
 
-      where_toolbar_button = ToolbarButton(
-        page=self.where_toolbar,
-        icon_name='where')
-      self.where_toolbar.show()
-      toolbox.toolbar.insert(where_toolbar_button, -1)
-      where_toolbar_button.show()
+    what_toolbar_button = ToolbarButton(
+      page=self.what_toolbar,
+      icon_name='toolbar-view')
+    self.what_toolbar.show()
+    toolbar_box.toolbar.insert(what_toolbar_button, -1)
+    what_toolbar_button.show()
 
-      when_toolbar_button = ToolbarButton(
-        page=self.when_toolbar,
-        icon_name='when')
-      self.when_toolbar.show()
-      toolbox.toolbar.insert(when_toolbar_button, -1)
-      when_toolbar_button.show()
+    where_toolbar_button = ToolbarButton(
+      page=self.where_toolbar,
+      icon_name='where')
+    self.where_toolbar.show()
+    toolbar_box.toolbar.insert(where_toolbar_button, -1)
+    where_toolbar_button.show()
 
-      locate_toolbar_button = ToolbarButton(
-        page=self.locate_toolbar,
-        icon_name='locate')
-      self.locate_toolbar.show()
-      toolbox.toolbar.insert(locate_toolbar_button, -1)
-      locate_toolbar_button.show()
+    when_toolbar_button = ToolbarButton(
+      page=self.when_toolbar,
+      icon_name='when')
+    self.when_toolbar.show()
+    toolbar_box.toolbar.insert(when_toolbar_button, -1)
+    when_toolbar_button.show()
 
-      about_toolbar_button = ToolbarButton(
-        page=self.about_toolbar,
-        icon_name='about')
-      self.about_toolbar.show()
-      toolbox.toolbar.insert(about_toolbar_button, -1)
-      about_toolbar_button.show()
+    locate_toolbar_button = ToolbarButton(
+      page=self.locate_toolbar,
+      icon_name='locate')
+    self.locate_toolbar.show()
+    toolbar_box.toolbar.insert(locate_toolbar_button, -1)
+    locate_toolbar_button.show()
 
-      separator = gtk.SeparatorToolItem()
-      separator.props.draw = False
-      separator.set_expand(True)
-      toolbox.toolbar.insert(separator, -1)
+    about_toolbar_button = ToolbarButton(
+      page=self.about_toolbar,
+      icon_name='about')
+    self.about_toolbar.show()
+    toolbar_box.toolbar.insert(about_toolbar_button, -1)
+    about_toolbar_button.show()
 
-      stop_button = StopButton(self)
-      stop_button.props.accelerator = '<Ctrl>q'
-      toolbox.toolbar.insert(stop_button, -1)
-      stop_button.show()
+    separator = Gtk.SeparatorToolItem()
+    separator.props.draw = False
+    separator.set_expand(True)
+    toolbar_box.toolbar.insert(separator, -1)
+    separator.show()
 
-      self.set_toolbar_box(toolbox)
-      toolbox.show()
-      self.toolbar = toolbox.toolbar
-    else:
-      toolbox = activity.ActivityToolbox(self)
-      self.set_toolbox(toolbox)
+    stop_button = StopButton(self)
+    stop_button.props.accelerator = '<Ctrl>q'
+    toolbar_box.toolbar.insert(stop_button, -1)
+    stop_button.show()
 
 # Fill the toolbox bars
 
     self._toolbar_add(self.what_toolbar, fullscreen)
-    separator = gtk.SeparatorToolItem()
+    separator = Gtk.SeparatorToolItem()
     separator.props.draw = True
     separator.set_expand(False)
     self._toolbar_add(self.what_toolbar, separator)
@@ -3063,7 +3109,7 @@ class StarChart(activity.Activity):
     self._toolbar_add(self.what_toolbar, button2)
     self._toolbar_add(self.what_toolbar, button3)
     self._toolbar_add(self.what_toolbar, button4)
-    separator = gtk.SeparatorToolItem()
+    separator = Gtk.SeparatorToolItem()
     separator.props.draw = True
     separator.set_expand(False)
     self._toolbar_add(self.what_toolbar, separator)
@@ -3088,7 +3134,7 @@ class StarChart(activity.Activity):
     container3.add(rb2)
     rb2.show()
     self._toolbar_add(self.where_toolbar, container3)
-    separator = gtk.SeparatorToolItem()
+    separator = Gtk.SeparatorToolItem()
     separator.props.draw = False
     separator.set_expand(False)
     self._toolbar_add(self.where_toolbar, separator)
@@ -3099,12 +3145,12 @@ class StarChart(activity.Activity):
     container4.add(rb4)
     rb4.show()
     self._toolbar_add(self.where_toolbar, container4)
-    separator = gtk.SeparatorToolItem()
+    separator = Gtk.SeparatorToolItem()
     separator.props.draw = False
     separator.set_expand(False)
     self._toolbar_add(self.where_toolbar, separator)
     self._toolbar_add(self.where_toolbar, button5)
-    separator = gtk.SeparatorToolItem()
+    separator = Gtk.SeparatorToolItem()
     separator.props.draw = False
     separator.set_expand(False)
     self._toolbar_add(self.where_toolbar, separator)
@@ -3115,7 +3161,7 @@ class StarChart(activity.Activity):
     self._toolbar_add(self.when_toolbar, entry3)
     self._toolbar_add(self.when_toolbar, label5)
     self._toolbar_add(self.when_toolbar, entry4)
-    separator = gtk.SeparatorToolItem()
+    separator = Gtk.SeparatorToolItem()
     separator.props.draw = False
     separator.set_expand(False)
     self._toolbar_add(self.when_toolbar, separator)
@@ -3138,7 +3184,7 @@ class StarChart(activity.Activity):
         (name, wbar, e, a, I, O, L0, dL) = planets[i]
         planetscb.append_text(name)
     names = []
-    for code, (name, lines) in figures.iteritems():
+    for code, (name, lines) in figures.items():
 # lines is an array of coordinates.  we ignore it.
       names = names + [name]
     for name in sorted(names):
@@ -3160,25 +3206,19 @@ class StarChart(activity.Activity):
     container1.add(labela4)
     labela4.show()
     self._toolbar_add(self.about_toolbar, container1)
-    if not _have_toolbox:
-      toolbox.add_toolbar(_('What'), self.what_toolbar)
-      toolbox.add_toolbar(_('Where'), self.where_toolbar)
-      toolbox.add_toolbar(_('When'), self.when_toolbar)
-      toolbox.add_toolbar(_('Locate'), self.locate_toolbar)
-      toolbox.add_toolbar(_('About'), self.about_toolbar)
 
 # Create the GUI objects.
 
-    scrolled = gtk.ScrolledWindow()
-    scrolled.set_policy(gtk.POLICY_NEVER, gtk.POLICY_AUTOMATIC)
-    scrolled.props.shadow_type = gtk.SHADOW_NONE
+    scrolled = Gtk.ScrolledWindow()
+    scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+    scrolled.props.shadow_type = Gtk.ShadowType.NONE
     self.chart = ChartDisplay(self)
-    eb = gtk.EventBox()
-    vbox = gtk.VBox(False)
-    self.identifyobject = gtk.Label('')
-    vbox.pack_start(self.identifyobject, expand=False)
-    vbox.pack_start(self.chart)
-    eb.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse('gray'))
+    eb = Gtk.EventBox()
+    vbox = Gtk.VBox(False)
+    self.identifyobject = Gtk.Label("")
+    vbox.pack_start(self.identifyobject, False, True, 0)
+    vbox.pack_start(self.chart, True, True, 0)
+    eb.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("gray"))
 
 # Stack the GUI objects.
 
@@ -3202,7 +3242,7 @@ class StarChart(activity.Activity):
     button6.connect('clicked', self.chart.callback, 'time change')
     rb6.connect('clicked', self.chart.callback, 'user time')
     rb5.connect('clicked', self.chart.callback, 'now time')
-    self.chart.connect('expose_event', self.chart.area_expose_cb)
+    self.chart.connect('draw', self.chart.draw_cb)
     objtypecb.connect('changed', self.chart.callback, 'objtype sel')
     constscb.connect('changed', self.chart.callback, 'constellation sel')
     starscb.connect('changed', self.chart.callback, 'star sel')
@@ -3215,26 +3255,40 @@ class StarChart(activity.Activity):
 
 # Show the GUI stack.
 
-    toolbox.show()
+    # toolbox.show()
     self.chart.show()
     eb.show()
     scrolled.show()
     self.show_all()
 
 # FIXME: We can't do sharing yet, so hide the control for it.
-
     self.max_participants = 1
-    if not _have_toolbox:
-      toolbar = toolbox.get_activity_toolbar()
-      toolbar.share.hide()
-
-# Establish initial state of controls and do a plot.
-
-    initialize_controls()
+    self.initialize_controls()
     self.chart.plotchart()
 
+  def initialize_controls(self):
+    # Establish initial state of controls and do a plot.
+    button1.set_active(self.nightvision)
+    button2.set_active(self.invertdisplay)
+    button3.set_active(self.fliphorizontally)
+    button4.set_active(self.drawconstellations)
+    rb12.set_active(self.limitingmagnitude >= 6.0)
+    rb11.set_active((self.limitingmagnitude >= 5.0) and (self.limitingmagnitude < 6.0))
+    rb10.set_active((self.limitingmagnitude >= 4.0) and (self.limitingmagnitude < 5.0))
+    rb9.set_active((self.limitingmagnitude >= 3.0) and (self.limitingmagnitude < 4.0))
+    rb8.set_active((self.limitingmagnitude >= 2.0) and (self.limitingmagnitude < 3.0))
+    rb7.set_active((self.limitingmagnitude >= 1.0) and (self.limitingmagnitude < 2.0))
+    #  rb7.set_active(limitingmagnitude < 1.0)
+    entry2.set_text(floattoangle(abs(latitude)))
+    rb4.set_active(latitude < 0.0)
+    rb3.set_active(latitude >= 0.0)
+    entry1.set_text(floattoangle(abs(longitude)))
+    rb2.set_active(longitude < 0.0)
+    rb1.set_active(longitude >= 0.0)
+    rb6.set_active(self.specifytime)
+
   def _toolbar_add(self, toolbar, component):
-    item = gtk.ToolItem()
+    item = Gtk.ToolItem()
     item.add(component)
     toolbar.insert(item, -1)
     component.show()
@@ -3245,61 +3299,48 @@ class StarChart(activity.Activity):
         self.fullscreen()
 
   def read_file(self, filename):
-    global nightvision
-    global invertdisplay
-    global fliphorizontally
-    global drawconstellations
-    global limitingmagnitude
-    global saved_lmag
-    global latitude
-    global longitude
-    global specifytime
-    global saved_specifytime
-    global zoneoffset
-    global now
-
     f = open(filename, 'r')
-    nightvision = bool(int(self.metadata.get('Night_Vision', '0')))
-    invertdisplay = bool(int(self.metadata.get('Invert', '0')))
-    fliphorizontally = bool(int(self.metadata.get('Flip', '0')))
-    drawconstellations = bool(int(self.metadata.get('Constellations', '1')))
-    limitingmagnitude = float(self.metadata.get('Magnitude', '4.0'))
+    self.nightvision = bool(int(self.metadata.get('Night_Vision', '0')))
+    self.invertdisplay = bool(int(self.metadata.get('Invert', '0')))
+    self.fliphorizontally = bool(int(self.metadata.get('Flip', '0')))
+    self.drawconstellations = bool(int(self.metadata.get('Constellations', '1')))
+    self.limitingmagnitude = float(self.metadata.get('Magnitude', '4.0'))
     if 'Lmag' in self.metadata:
-      saved_lmag = float(self.metadata.get('Lmag'))
-    specifytime = bool(int(self.metadata.get('Specify_Time', '0')))
-    saved_specifytime = specifytime
-    if (specifytime):
-      ts = self.metadata.get('Time', now.strftime('%Y/%m/%d,%H:%M'))
-      zs = self.metadata.get('Zone_Offset', str(zoneoffset))
+      self.saved_lmag = float(self.metadata.get('Lmag'))
+    self.specifytime = bool(int(self.metadata.get('Specify_Time', '0')))
+    self.saved_specifytime = self.specifytime
+    if (self.specifytime):
+      ts = self.metadata.get('Time', self.now.strftime('%Y/%m/%d,%H:%M'))
+      zs = self.metadata.get('Zone_Offset', str(self.zoneoffset))
       entry3.set_text(ts)
       entry4.set_text(zs)
-      now = get_time_and_UTC_offset(entry3.get_text(), entry4.get_text())
+      self.now = get_time_and_UTC_offset(entry3.get_text(), entry4.get_text())
       (hh, mm) = parse_zone_offset(entry4.get_text())
-      zoneoffset = 60 * hh
+      self.zoneoffset = 60 * hh
       if (hh < 0):
-        zoneoffset = zoneoffset - mm
+        self.zoneoffset = self.zoneoffset - mm
       else:
-        zoneoffset = zoneoffset + mm
-    initialize_controls()
+        self.zoneoffset = self.zoneoffset + mm
+    self.initialize_controls()
     self.chart.plotchart()
 
     
   def write_file(self, filename):
     f = open(filename, 'w')
-    self.metadata['Night_Vision'] = str(int(nightvision))
-    self.metadata['Invert'] = str(int(invertdisplay))
-    self.metadata['Flip'] = str(int(fliphorizontally))
-    self.metadata['Constellations'] = str(int(drawconstellations))
-    self.metadata['Magnitude'] = str(limitingmagnitude)
+    self.metadata['Night_Vision'] = str(int(self.nightvision))
+    self.metadata['Invert'] = str(int(self.invertdisplay))
+    self.metadata['Flip'] = str(int(self.fliphorizontally))
+    self.metadata['Constellations'] = str(int(self.drawconstellations))
+    self.metadata['Magnitude'] = str(self.limitingmagnitude)
     self.metadata['Latitude'] = str(latitude)
     self.metadata['Longitude'] = str(longitude)
-    self.metadata['Specify_Time'] = str(int(specifytime))
+    self.metadata['Specify_Time'] = str(int(self.specifytime))
 # Unlike the other settings, it's easier to store the time and zone offset as
 # they are represented in the text entry controls than to attempt to convert
 # now and zoneoffset into a representation of local time and offset.
     self.metadata['Time'] = entry3.get_text()
     self.metadata['Zone_Offset'] = entry4.get_text()
-    self.metadata['Lmag'] = str(saved_lmag)
+    self.metadata['Lmag'] = str(self.saved_lmag)
     f.close()
 
 
