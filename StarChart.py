@@ -807,31 +807,31 @@ button4.set_tooltip(_('Draw Constellations'))
 container2 = Gtk.Table(columns=6, rows=1)
 # TRANS: http://en.wikipedia.org/wiki/Magnitude_(astronomy) 
 label6 = Gtk.Label(_('Mag:'))
-rb7 = Gtk.RadioButton(None, _('1'))
-rb8 = Gtk.RadioButton(rb7, _('2'))
-rb9 = Gtk.RadioButton(rb7, _('3'))
-rb10 = Gtk.RadioButton(rb7, _('4'))
-rb11 = Gtk.RadioButton(rb7, _('5'))
-rb12 = Gtk.RadioButton(rb7, _('6'))
+rb7 = Gtk.RadioButton.new_with_label_from_widget(None, _('1'))
+rb8 = Gtk.RadioButton.new_with_label_from_widget(rb7, _('2'))
+rb9 = Gtk.RadioButton.new_with_label_from_widget(rb7, _('3'))
+rb10 = Gtk.RadioButton.new_with_label_from_widget(rb7, _('4'))
+rb11 = Gtk.RadioButton.new_with_label_from_widget(rb7, _('5'))
+rb12 = Gtk.RadioButton.new_with_label_from_widget(rb7, _('6'))
 # controls on menubar2 (_('where')):
-container3 = Gtk.VBox()
-container4 = Gtk.VBox()
+container3 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+container4 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 # TRANS: http://en.wikipedia.org/wiki/Longitude
 label1 = Gtk.Label(_('Longitude:'))
 entry1 = Gtk.Entry()
 entry1.set_width_chars(10)
 # TRANS: http://en.wikipedia.org/wiki/East
-rb1 = Gtk.RadioButton(None, _('E'))
+rb1 = Gtk.RadioButton.new_with_label_from_widget(None, _('E'))
 # TRANS: http://en.wikipedia.org/wiki/West
-rb2 = Gtk.RadioButton(rb1, _('W'))
+rb2 = Gtk.RadioButton.new_with_label_from_widget(rb1, _('W'))
 # TRANS: http://en.wikipedia.org/wiki/Latitude
 label2 = Gtk.Label(_('Latitude:'))
 entry2 = Gtk.Entry()
 entry2.set_width_chars(10)
 # TRANS: http://en.wikipedia.org/wiki/North
-rb3 = Gtk.RadioButton(None, _('N'))
+rb3 = Gtk.RadioButton.new_with_label_from_widget(None, _('N'))
 # TRANS: http://en.wikipedia.org/wiki/South
-rb4 = Gtk.RadioButton(rb3, _('S'))
+rb4 = Gtk.RadioButton.new_with_label_from_widget(rb3, _('S'))
 icon = Icon(icon_name='dialog-ok')
 button5 = Gtk.Button()
 button5.set_image(icon)
@@ -842,8 +842,8 @@ button51 = ToolButton('home')
 button51.set_tooltip(_('Make home'))
 button51.show()
 # controls on menubar3 (_('when')):
-rb5 = Gtk.RadioButton(None, _('Now'))
-rb6 = Gtk.RadioButton(rb5, _('Specify'))
+rb5 = Gtk.RadioButton.new_with_label_from_widget(None, _('Now'))
+rb6 = Gtk.RadioButton.new_with_label_from_widget(rb5, _('Specify'))
 label4 = Gtk.Label(_('Time:'))
 entry3 = Gtk.Entry()
 entry3.set_width_chars(16)
@@ -862,8 +862,8 @@ objtypecb = Gtk.ComboBoxText()
 planetscb = Gtk.ComboBoxText()
 constscb = Gtk.ComboBoxText()
 starscb = Gtk.ComboBoxText()
-container0 = Gtk.HBox()
-container1 = Gtk.VBox()
+container0 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+container1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 dsoscb = Gtk.ComboBoxText()
 # controls on last menubar (_('About')):
 # labela1 = Gtk.Label(_('Version 2.0 (build 115) of 2010.04.21.1530 UT'))
@@ -946,7 +946,7 @@ class PixelsToObjectMap():
 
 
   def get_count(self):
-    return len(self.data.keys())
+    return len(list(self.data.keys()))
 
 
   def found(self, x, y):
@@ -1191,7 +1191,8 @@ class ChartDisplay(Gtk.DrawingArea):
 
 # Convert pixel position (x, y) to horizon (az, alt) coordinates
 
-  def xytohorizon(self, (x, y)):
+  def xytohorizon(self, xxx_todo_changeme):
+    (x, y) = xxx_todo_changeme
     dy = (self.margin - 2 + self.yoffset + self.diameter / 2.0) - y
     dx = (self.margin - 2 + self.xoffset + self.diameter / 2.0) - x
 # Compensate for which way the chart is flipped.
@@ -1425,7 +1426,7 @@ class ChartDisplay(Gtk.DrawingArea):
 # Get selection and expose object selector control(s).
       selstr = objtypecb.get_active_text()
       if (selstr == _('Planets')):
-        for i in reversed(range(len(container0.get_children()))):
+        for i in reversed(list(range(len(container0.get_children())))):
           container0.remove(container0.get_children()[i])
         container0.add(planetscb)
         planetscb.show()
@@ -1436,7 +1437,7 @@ class ChartDisplay(Gtk.DrawingArea):
         planetscb.set_active(-1)
         self.context.identifyobject.set_label('')
       elif (selstr == _('Stars by Constellation')):
-        for i in reversed(range(len(container0.get_children()))):
+        for i in reversed(list(range(len(container0.get_children())))):
           container0.remove(container0.get_children()[i])
         container0.add(constscb)
         container0.add(starscb)
@@ -1450,14 +1451,14 @@ class ChartDisplay(Gtk.DrawingArea):
         planetscb.set_active(-1)
         self.context.identifyobject.set_label('')
       elif (selstr == _('Brightest Stars')):
-        for i in reversed(range(len(container0.get_children()))):
+        for i in reversed(list(range(len(container0.get_children())))):
           container0.remove(container0.get_children()[i])
         container0.add(starscb)
         starscb.get_model().clear()
 # Load the combobox with the names of stars whose magnitude is +1.50
 # or brighter
         names = []
-        for name, (ra, dec, mag, cid) in star_chart.iteritems():
+        for name, (ra, dec, mag, cid) in star_chart.items():
           if (mag <= 1.50):
             names = names + [name]
         for name in sorted(names):
@@ -1471,7 +1472,7 @@ class ChartDisplay(Gtk.DrawingArea):
         planetscb.set_active(-1)
         self.context.identifyobject.set_label('')
       elif (selstr == _('Deep-sky Objects')):
-        for i in reversed(range(len(container0.get_children()))):
+        for i in reversed(list(range(len(container0.get_children())))):
           container0.remove(container0.get_children()[i])
         container0.add(dsoscb)
         dsoscb.show()
@@ -1499,7 +1500,7 @@ class ChartDisplay(Gtk.DrawingArea):
 # Load the stars combobox with the names of all stars having this
 # constellation ID.
         names = []
-        for name, (ra, dec, mag, cid) in star_chart.iteritems():
+        for name, (ra, dec, mag, cid) in star_chart.items():
           if (cid == const_id):
             names = names + [name]
         for name in sorted(names):
@@ -1764,9 +1765,10 @@ class ChartDisplay(Gtk.DrawingArea):
         r, g, b = self.colors[1]
     cr.set_source_rgb(r, g, b)
 
-    def draw_label(text, x, y):
+    def draw_label(self, cr, text, x, y):
         self.pangolayout.set_text(text)
-        self.window.draw_layout(cr, x, y, self.pangolayout)
+        cr.move_to(x, y)
+        PangoCairo.show_layout(cr, self.pangolayout)
 
     draw_label(_('N'), self.xoffset + self.margin + self.diameter / 2 - 10,
                self.margin - 30)
@@ -1823,7 +1825,7 @@ class ChartDisplay(Gtk.DrawingArea):
 
 
   def plot_all_stars(self):
-    for name, (ra, dec, mag, cid) in star_chart.iteritems():
+    for name, (ra, dec, mag, cid) in star_chart.items():
 
 # convert the ra and dec from the J2000 epoch to the plot time
 
@@ -1896,7 +1898,7 @@ class ChartDisplay(Gtk.DrawingArea):
             self.omap.add('dso',  strN + ' (' + nM + ')', px, py)
 
 
-  def plot_all_constellations(self):
+  def plot_all_constellations(self,cr):
 
 # Plot the constellation figures.  This is essentially the same process as for
 # plotting a star but we have to figure out the alt/az coordinates for both ends
@@ -1905,12 +1907,13 @@ class ChartDisplay(Gtk.DrawingArea):
     if (drawconstellations):
       if (not invertdisplay):
         if (nightvision):
-          self.gc.set_foreground(self.colors[2])
+          r, g, b = self.colors[2]  
         else:
-          self.gc.set_foreground(self.colors[0])
+          r, g, b = self.colors[0]
       else:
-        self.gc.set_foreground(self.colors[1])
-      for code, (name, lines) in figures.iteritems():
+        r, g, b = self.colors[0]
+      cr.set_source_rgb(r, g, b)
+      for code, (name, lines) in figures.items():
         for i in range(len(lines)):
           (ra1, dec1, ra2, dec2) = lines[i]
           polar1 = epochpolartonow((ra1, dec1), now)
@@ -1925,7 +1928,9 @@ class ChartDisplay(Gtk.DrawingArea):
               (px2, py2) = self.azalttoxy(azalt2)
               px2 = px2 + self.margin - 2 + self.xoffset
               py2 = py2 + self.margin - 2 + self.yoffset
-              self.window.draw_line(self.gc, px1, py1, px2, py2)
+              cr.move_to(px1, py1)
+              cr.line_to(px2, py2)
+              cr.stroke()
 
 
   def plot_all_planets(self):
@@ -2277,7 +2282,7 @@ class ChartDisplay(Gtk.DrawingArea):
 
 # Plot the stars within the field of view
 
-    for name, (ra, dec, mag, cid) in star_chart.iteritems():
+    for name, (ra, dec, mag, cid) in star_chart.items():
 
 # Convert the ra and dec from the J2000 epoch to the plot time
 
@@ -2628,13 +2633,11 @@ class ChartDisplay(Gtk.DrawingArea):
 
 
   def plot_star(self, px, py, starsize):
-    self.window.draw_arc(self.gc, True,
-             px,
-             py,
-             starsize,
-             starsize,
-             0,
-             360*64)
+    cr = self.cr
+    r, g, b = self.colors[0]
+    cr.set_source_rgb(r, g, b)
+    cr.arc(px + starsize / 2, py + starsize / 2, starsize / 2, 0, 2 * math.pi)
+    cr.fill()
 
 
   def plot_planetary_symbol(self, i, px, py):
@@ -2646,117 +2649,182 @@ class ChartDisplay(Gtk.DrawingArea):
 
 # mercury
 
-      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_arc(self.gc, False, px-5, py-7, 10, 10, 0, 360*64)
-      self.window.draw_line(self.gc, px+4, py-9, px+4, py-7)
-      self.window.draw_line(self.gc, px-4, py-9, px-4, py-7)
-      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
-      self.window.draw_line(self.gc, px, py+3, px, py+7)
-      self.window.draw_line(self.gc, px-2, py+5, px+2, py+5)
+            self.gc.set_line_width(2)
+            self.gc.arc(px, py, 12, 0, 2 * pi)
+            self.gc.stroke()
+            self.gc.arc(px, py - 2, 5, 0, 2 * pi)
+            self.gc.stroke()
+            self.gc.move_to(px + 4, py - 9)
+            self.gc.line_to(px + 4, py - 7)
+            self.gc.stroke()
+            self.gc.move_to(px - 4, py - 9, )
+            self.gc.line_to(px - 4, py - 7)
+            self.gc.stroke()
+            self.gc.set_line_width(1)
+            self.gc.move_to(px, py + 3)
+            self.gc.line_to(px, py + 7)
+            self.gc.stroke()
+            self.gc.move_to(px - 2, py + 5)
+            self.gc.line_to(px + 2, py + 5)
+            self.gc.stroke()
     elif (i == 1):
 
 # venus
 
-      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_arc(self.gc, False, px-5, py-7, 10, 10, 0, 360*64)
-      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
-      self.window.draw_line(self.gc, px, py+3, px, py+7)
-      self.window.draw_line(self.gc, px-2, py+5, px+2, py+5)
+            self.gc.set_line_width(2)
+            self.gc.arc(px, py, 12, 0, 2 * pi)
+            self.gc.stroke()
+            self.gc.arc(px, py - 2, 5, 0, 2 * pi)
+            self.gc.stroke()
+            self.gc.set_line_width(1)
+            self.gc.move_to(px, py + 3)
+            self.gc.line_to(px, py + 7)
+            self.gc.stroke()
+            self.gc.move_to(px - 2, py + 5)
+            self.gc.line_to(px + 2, py + 5)
+            self.gc.stroke()
     elif (i == 2):
 
 # moon
 
-      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_polygon(self.gc, True, ((px+1, py-11), (px+4, py-11),
-                                               (px+5, py-10), (px+6, py-9),
-                                               (px+7, py-8),  (px+8, py-7),
-                                               (px+10, py-2), (px+12,py),
-                                               (px+10, py+2), (px+8, py+7),
-                                               (px+7, py+8),  (px+6, py+9),
-                                               (px+5, py+10), (px+4,py+11),
-                                               (px+1, py+11), (px+4, py+4),
-                                               (px+6, py+2),  (px+6, py-2),
-                                               (px+4, py-4)))
-      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
+            self.gc.set_line_width(2)
+            self.gc.arc(px, py, 12, 0, 2 * pi)
+            self.gc.stroke()
+            self.gc.move_to(px + 1, py - 11)
+            self.gc.line_to(px + 4, py - 11)
+            self.gc.line_to(px + 5, py - 10)
+            self.gc.line_to(px + 6, py - 9)
+            self.gc.line_to(px + 7, py - 8)
+            self.gc.line_to(px + 8, py - 7)
+            self.gc.line_to(px + 10, py - 2)
+            self.gc.line_to(px + 12, py)
+            self.gc.line_to(px + 10, py + 2)
+            self.gc.line_to(px + 8, py + 7)
+            self.gc.line_to(px + 7, py + 8)
+            self.gc.line_to(px + 6, py + 9)
+            self.gc.line_to(px + 5, py + 10)
+            self.gc.line_to(px + 4, py + 11)
+            self.gc.line_to(px + 1, py + 11)
+            self.gc.line_to(px + 4, py + 4)
+            self.gc.line_to(px + 6, py + 2)
+            self.gc.line_to(px + 6, py - 2)
+            self.gc.line_to(px + 4, py - 4)
+            self.gc.stroke()
+
+            self.gc.set_line_width(1)
     elif (i == 3):
 
 # mars
 
-      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_arc(self.gc, False, px-6, py-4, 10, 10, 0, 360*64)
-      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
-      self.window.draw_line(self.gc, px+2, py-2, px+6, py-6)
-      self.window.draw_line(self.gc, px+3, py-6, px+6, py-6)
-      self.window.draw_line(self.gc, px+6, py-6, px+6, py-3)
+            self.gc.set_line_width(2)
+
+            self.gc.arc(px, py, 12, 0, 2 * pi)
+            self.gc.stroke()
+            self.gc.arc(px - 1, py + 1, 5, 0, 2 * pi)
+            self.gc.stroke()
+            self.gc.set_line_width(1)
+            self.gc.move_to(px + 2, py - 2)
+            self.gc.line_to(px + 6, py - 6)
+            self.gc.stroke()
+            self.gc.move_to(px + 3, py - 6)
+            self.gc.line_to(px + 6, py - 6)
+            self.gc.stroke()
+            self.gc.move_to(px + 6, py - 6)
+            self.gc.line_to(px + 6, py - 3)
+            self.gc.stroke()
     elif (i == 4):
 
 # jupiter
 
-      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_line(self.gc, px-6, py-6, px-4, py-8)
-      self.window.draw_line(self.gc, px-4, py-8, px-2, py-8)
-      self.window.draw_line(self.gc, px-2, py-8, px+1, py-6)
-      self.window.draw_line(self.gc, px+1, py-6, px-5, py+2)
-      self.window.draw_line(self.gc, px-5, py+2, px+7, py+2)
-      self.window.draw_line(self.gc, px+4, py-8, px+4, py+7)
-      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
+            self.gc.set_line_width(2)
+            self.gc.arc(px, py, 12, 0, 2 * pi)
+            self.gc.stroke()
+            self.gc.move_to(px - 6, py - 6)
+            self.gc.line_to(px - 4, py - 8)
+            self.gc.stroke()
+            self.gc.move_to(px - 4, py - 8)
+            self.gc.line_to(px - 2, py - 8)
+            self.gc.stroke()
+            self.gc.move_to(px - 2, py - 8)
+            self.gc.line_to(px + 1, py - 6)
+            self.gc.stroke()
+            self.gc.move_to(px + 1, py - 6)
+            self.gc.line_to(px - 5, py + 2)
+            self.gc.stroke()
+            self.gc.move_to(px - 5, py + 2)
+            self.gc.line_to(px + 7, py + 2)
+            self.gc.stroke()
+            self.gc.move_to(px + 4, py - 8)
+            self.gc.line_to(px + 4, py + 7)
+            self.gc.stroke()
+            self.gc.set_line_width(1)
     elif (i == 5):
 
 # saturn
 
-      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_line(self.gc, px-6, py-6, px-6, py+5)
-      self.window.draw_line(self.gc, px-6, py, px-5, py-1)
-      self.window.draw_line(self.gc, px-5, py-1, px-4, py-2)
-      self.window.draw_line(self.gc, px-4, py-2, px-1, py-3)
-      self.window.draw_line(self.gc, px-1, py-3, px, py-4)
-      self.window.draw_line(self.gc, px, py-4, px+1, py+1)
-      self.window.draw_line(self.gc, px+1, py+1, px-1, py+4)
-      self.window.draw_line(self.gc, px-1, py+4, px, py+5)
-      self.window.draw_line(self.gc, px, py+5, px+6, py+4)
-      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
+            self.gc.set_line_width(2)
+            self.gc.arc(px, py, 12, 0, 2 * pi)
+            self.gc.stroke()
+            self.gc.move_to(px - 6, py - 6)
+            self.gc.line_to(px - 6, py + 5)
+            self.gc.stroke()
+            self.gc.move_to(px - 6, py)
+            self.gc.line_to(px - 5, py - 1)
+            self.gc.stroke()
+            self.gc.move_to(px - 5, py - 1)
+            self.gc.line_to(px - 4, py - 2)
+            self.gc.stroke()
+            self.gc.move_to(px - 4, py - 2)
+            self.gc.line_to(px - 1, py - 3)
+            self.gc.stroke()
+            self.gc.move_to(px - 1, py - 3)
+            self.gc.line_to(px, py - 4)
+            self.gc.stroke()
+            self.gc.move_to(px, py - 4)
+            self.gc.line_to(px + 1, py + 1)
+            self.gc.stroke()
+            self.gc.move_to(px + 1, py + 1)
+            self.gc.line_to(px - 1, py + 4)
+            self.gc.stroke()
+            self.gc.move_to(px - 1, py + 4)
+            self.gc.line_to(px, py + 5)
+            self.gc.stroke()
+            self.gc.move_to(px, py + 5)
+            self.gc.line_to(px + 6, py + 4)
+            self.gc.stroke()
+
+            self.gc.set_line_width(1)
     elif (i == 6):
 
 # uranus
 
-      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_arc(self.gc, False, px-5, py-3, 10, 10, 0, 360*64)
-      self.window.draw_arc(self.gc, True, px-2, py, 4, 4, 0, 360*64)
-      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
-      self.window.draw_line(self.gc, px, py-3, px, py-9)
-      self.window.draw_line(self.gc, px-2, py-5, px, py-9)
-      self.window.draw_line(self.gc, px+2, py-5, px, py-9)
+            self.gc.set_line_width(2)
+            self.gc.arc(px, py, 12, 0, 2 * pi)
+            self.gc.stroke()
+            self.gc.arc(px, py + 2, 5, 0, 2 * pi)
+            self.gc.stroke()
+            self.gc.arc(px, py + 2, 2, 0, 2 * pi)
+            self.gc.stroke()
+            self.gc.set_line_width(1)
+            self.gc.move_to(px, py - 3)
+            self.gc.line_to(px, py - 9)
+            self.gc.stroke()
+            self.gc.move_to(px - 2, py - 5)
+            self.gc.line_to(px, py - 9)
+            self.gc.stroke()
+            self.gc.move_to(px + 2, py - 5)
+            self.gc.line_to(px, py - 9)
+            self.gc.stroke()
     else:
 
 # sun
 
-      self.gc.set_line_attributes(2, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
-      self.window.draw_arc(self.gc, False, px-12, py-12, 24, 24, 0, 360*64)
-      self.window.draw_arc(self.gc, True, px-2, py-2, 4, 4, 0, 360*64)
-      self.gc.set_line_attributes(1, Gdk.LINE_SOLID, Gdk.CAP_BUTT,
-                                  Gdk.JOIN_MITER)
+            self.gc.set_line_width(2)
+            self.gc.arc(px, py, 12, 0, 2 * pi)
+            self.gc.stroke()
+            self.gc.arc(px, py, 2, 0, 2 * pi)
+            self.gc.stroke()
+            self.gc.set_line_width(1)
 
 
   def plot_DSO(self, type, maja, mina, mag, px, py):
@@ -3129,7 +3197,7 @@ class StarChart(activity.Activity):
         (name, wbar, e, a, I, O, L0, dL) = planets[i]
         planetscb.append_text(name)
     names = []
-    for code, (name, lines) in figures.iteritems():
+    for code, (name, lines) in figures.items():
 # lines is an array of coordinates.  we ignore it.
       names = names + [name]
     for name in sorted(names):
