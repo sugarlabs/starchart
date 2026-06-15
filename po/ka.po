@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-18 14:31-0400\n"
-"PO-Revision-Date: 2026-06-15 07:48+0000\n"
+"PO-Revision-Date: 2026-06-15 08:49+0000\n"
 "Last-Translator: NF <rkavt@smartprojects.ge>\n"
 "Language-Team: Georgian <http://weblate.sugarlabs.org/projects/"
 "sugar-activities/starchart/ka/>\n"
@@ -726,52 +726,52 @@ msgstr "ბუზი"
 #. TRANS: http://en.wikipedia.org/wiki/Norma_(constellation)
 #: constellations.py:585
 msgid "Norma"
-msgstr ""
+msgstr "გონიო"
 
 #. TRANS: http://en.wikipedia.org/wiki/Octans
 #: constellations.py:592
 msgid "Octans"
-msgstr ""
+msgstr "ოქტანტი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Ophiuchus
 #: constellations.py:598
 msgid "Ophiuchus"
-msgstr ""
+msgstr "გველისმჭერი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Orion_(constellation)
 #: constellations.py:612
 msgid "Orion"
-msgstr ""
+msgstr "ორიონი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Pavo_(constellation)
 #: constellations.py:633
 msgid "Pavo"
-msgstr ""
+msgstr "ფარშავანგი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Pegasus_(constellation)
 #: constellations.py:643
 msgid "Pegasus"
-msgstr ""
+msgstr "პეგასი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Perseus_(constellation)
 #: constellations.py:660
 msgid "Perseus"
-msgstr ""
+msgstr "პერსევსი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Phoenix_(constellation)
 #: constellations.py:679
 msgid "Phoenix"
-msgstr ""
+msgstr "ფენიქსი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Pictor
 #: constellations.py:688
 msgid "Pictor"
-msgstr ""
+msgstr "მხატვარი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Pisces_(constellation)
 #: constellations.py:693
 msgid "Pisces"
-msgstr ""
+msgstr "თევზები"
 
 #. TRANS: http://en.wikipedia.org/wiki/Piscis_Australis
 #: constellations.py:712
@@ -781,67 +781,67 @@ msgstr ""
 #. TRANS: http://en.wikipedia.org/wiki/Puppis
 #: constellations.py:721
 msgid "Puppis"
-msgstr ""
+msgstr "კიჩო"
 
 #. TRANS: http://en.wikipedia.org/wiki/Pyxis
 #: constellations.py:734
 msgid "Pyxis"
-msgstr ""
+msgstr "კომპასი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Reticulum
 #: constellations.py:739
 msgid "Reticulum"
-msgstr ""
+msgstr "ბადურა"
 
 #. TRANS: http://en.wikipedia.org/wiki/Sagitta
 #: constellations.py:747
 msgid "Sagitta"
-msgstr ""
+msgstr "ისარი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Sagittarius_(constellation)
 #: constellations.py:753
 msgid "Sagittarius"
-msgstr ""
+msgstr "მშვილდოსანი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Sculptor_(constellation)
 #: constellations.py:772
 msgid "Sculptor"
-msgstr ""
+msgstr "მოქანდაკე"
 
 #. TRANS: http://en.wikipedia.org/wiki/Scorpius
 #: constellations.py:778
 msgid "Scorpius"
-msgstr ""
+msgstr "ღრიანკალი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Scutum
 #: constellations.py:795
 msgid "Scutum"
-msgstr ""
+msgstr "ფარი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Serpens
 #: constellations.py:800
 msgid "Serpens"
-msgstr ""
+msgstr "გველი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Sextans
 #: constellations.py:819
 msgid "Sextans"
-msgstr ""
+msgstr "სექსტანტა"
 
 #. TRANS: http://en.wikipedia.org/wiki/Taurus_(constellation)
 #: constellations.py:826
 msgid "Taurus"
-msgstr ""
+msgstr "კურო"
 
 #. TRANS: http://en.wikipedia.org/wiki/Telescopium
 #: constellations.py:840
 msgid "Telescopium"
-msgstr ""
+msgstr "ტელესკოპი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Triangulum
 #: constellations.py:845
 msgid "Triangulum"
-msgstr ""
+msgstr "სამკუთხედი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Triangulum_Australis
 #: constellations.py:851
@@ -851,7 +851,7 @@ msgstr ""
 #. TRANS: http://en.wikipedia.org/wiki/Tucana
 #: constellations.py:857
 msgid "Tucana"
-msgstr ""
+msgstr "ტუკანა"
 
 #. TRANS: http://en.wikipedia.org/wiki/Ursa_Major
 #: constellations.py:865
@@ -866,19 +866,19 @@ msgstr ""
 #. TRANS: http://en.wikipedia.org/wiki/Vela_(constellation)
 #: constellations.py:895
 msgid "Vela"
-msgstr ""
+msgstr "იალქნები"
 
 #. TRANS: http://en.wikipedia.org/wiki/Virgo_(constellation)
 #: constellations.py:905
 msgid "Virgo"
-msgstr ""
+msgstr "ქალწული"
 
 #. TRANS: http://en.wikipedia.org/wiki/Volans
 #: constellations.py:918
 msgid "Volans"
-msgstr ""
+msgstr "მფრინავი თევზი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Vulpecula
 #: constellations.py:927
 msgid "Vulpecula"
-msgstr ""
+msgstr "მელია"
