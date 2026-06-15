@@ -8,17 +8,20 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-18 14:31-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-06-15 07:48+0000\n"
+"Last-Translator: NF <rkavt@smartprojects.ge>\n"
+"Language-Team: Georgian <http://weblate.sugarlabs.org/projects/"
+"sugar-activities/starchart/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.4.2\n"
 
 #: activity/activity.info:2
 msgid "StarChart"
-msgstr ""
+msgstr "ვარსკვლავების რუკა"
 
 #. TRANS: http://en.wikipedia.org/wiki/Large_Magellanic_Cloud
 #: dso2.py:36
@@ -108,47 +111,47 @@ msgstr ""
 #. TRANS: http://en.wikipedia.org/wiki/Mercury_(planet)
 #: StarChart.py:228
 msgid "Mercury"
-msgstr ""
+msgstr "მერკური"
 
 #. TRANS: http://en.wikipedia.org/wiki/Venus
 #: StarChart.py:230
 msgid "Venus"
-msgstr ""
+msgstr "ვენერა"
 
 #. TRANS: http://en.wikipedia.org/wiki/Earth
 #: StarChart.py:232
 msgid "Earth"
-msgstr ""
+msgstr "დედამიწა"
 
 #. TRANS: http://en.wikipedia.org/wiki/Mars
 #: StarChart.py:234
 msgid "Mars"
-msgstr ""
+msgstr "მარსი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Jupiter
 #: StarChart.py:236
 msgid "Jupiter"
-msgstr ""
+msgstr "იუპიტერი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Saturn
 #: StarChart.py:238
 msgid "Saturn"
-msgstr ""
+msgstr "სატურნი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Uranus
 #: StarChart.py:240
 msgid "Uranus"
-msgstr ""
+msgstr "ურანი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Sun
 #: StarChart.py:243 StarChart.py:1012 StarChart.py:1668
 msgid "Sun"
-msgstr ""
+msgstr "მზე"
 
 #. TRANS: http://en.wikipedia.org/wiki/Moon
 #: StarChart.py:250 StarChart.py:1015 StarChart.py:1666
 msgid "Moon"
-msgstr ""
+msgstr "მთვარე"
 
 #: StarChart.py:795
 msgid "Night Vision"
@@ -169,65 +172,65 @@ msgstr ""
 #. TRANS: http://en.wikipedia.org/wiki/Magnitude_(astronomy)
 #: StarChart.py:805
 msgid "Mag:"
-msgstr ""
+msgstr "ვარსკვლავიერი სიდიდე:"
 
 #: StarChart.py:806
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: StarChart.py:807
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: StarChart.py:808
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: StarChart.py:809
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: StarChart.py:810
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: StarChart.py:811
 msgid "6"
-msgstr ""
+msgstr "6"
 
 #. TRANS: http://en.wikipedia.org/wiki/Longitude
 #: StarChart.py:816
 msgid "Longitude:"
-msgstr ""
+msgstr "გრძედი:"
 
 #. TRANS: http://en.wikipedia.org/wiki/East
 #: StarChart.py:820 StarChart.py:1772 StarChart.py:1781
 msgid "E"
-msgstr ""
+msgstr "აღმ"
 
 #. TRANS: http://en.wikipedia.org/wiki/West
 #: StarChart.py:822 StarChart.py:1774 StarChart.py:1779
 msgid "W"
-msgstr ""
+msgstr "დას"
 
 #. TRANS: http://en.wikipedia.org/wiki/Latitude
 #: StarChart.py:824
 msgid "Latitude:"
-msgstr ""
+msgstr "განედი:"
 
 #. TRANS: http://en.wikipedia.org/wiki/North
 #: StarChart.py:828 StarChart.py:1763
 msgid "N"
-msgstr ""
+msgstr "ჩრდ"
 
 #. TRANS: http://en.wikipedia.org/wiki/South
 #: StarChart.py:830 StarChart.py:1767
 msgid "S"
-msgstr ""
+msgstr "სამხ"
 
 #: StarChart.py:835 StarChart.py:853
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #: StarChart.py:838
 msgid "Make home"
@@ -235,19 +238,19 @@ msgstr ""
 
 #: StarChart.py:841
 msgid "Now"
-msgstr ""
+msgstr "ახლა"
 
 #: StarChart.py:842
 msgid "Specify"
-msgstr ""
+msgstr "მიუთითეთ"
 
 #: StarChart.py:843
 msgid "Time:"
-msgstr ""
+msgstr "დრო:"
 
 #: StarChart.py:846
 msgid "Offset:"
-msgstr ""
+msgstr "წანაცვლება:"
 
 #: StarChart.py:856
 msgid "Object type:"
@@ -268,7 +271,7 @@ msgstr ""
 #. TRANS: http://en.wikipedia.org/wiki/Planet
 #: StarChart.py:1011
 msgid "planet"
-msgstr ""
+msgstr "პლანეტა"
 
 #: StarChart.py:1013 StarChart.py:1016
 msgid "Object is: "
@@ -276,7 +279,7 @@ msgstr ""
 
 #: StarChart.py:1019
 msgid "star"
-msgstr ""
+msgstr "ვარსკვლავი"
 
 #: StarChart.py:1020
 msgid "Object is "
@@ -284,7 +287,7 @@ msgstr ""
 
 #: StarChart.py:1423 StarChart.py:3124
 msgid "Planets"
-msgstr ""
+msgstr "პლანეტები"
 
 #: StarChart.py:1434 StarChart.py:3125
 msgid "Stars by Constellation"
@@ -332,23 +335,23 @@ msgstr ""
 
 #: StarChart.py:3164
 msgid "What"
-msgstr ""
+msgstr "რა"
 
 #: StarChart.py:3165
 msgid "Where"
-msgstr ""
+msgstr "სად"
 
 #: StarChart.py:3166
 msgid "When"
-msgstr ""
+msgstr "როდის"
 
 #: StarChart.py:3167
 msgid "Locate"
-msgstr ""
+msgstr "მოძებნა"
 
 #: StarChart.py:3168
 msgid "About"
-msgstr ""
+msgstr "შესახებ"
 
 #. TRANS: http://en.wikipedia.org/wiki/Butterfly_Cluster
 #: dso1.py:33
@@ -413,7 +416,7 @@ msgstr ""
 #. TRANS: http://en.wikipedia.org/wiki/Pleiades
 #: dso1.py:74
 msgid "Pleiades"
-msgstr ""
+msgstr "პლეადები"
 
 #. TRANS: http://en.wikipedia.org/wiki/Whirlpool_Galaxy
 #: dso1.py:80
@@ -443,62 +446,62 @@ msgstr ""
 #. TRANS: http://en.wikipedia.org/wiki/Andromeda_(constellation)
 #: constellations.py:15
 msgid "Andromeda"
-msgstr ""
+msgstr "ანდრომედა"
 
 #. TRANS: http://en.wikipedia.org/wiki/Antlia
 #: constellations.py:26
 msgid "Antlia"
-msgstr ""
+msgstr "ტუმბო"
 
 #. TRANS: http://en.wikipedia.org/wiki/Apus
 #: constellations.py:31
 msgid "Apus"
-msgstr ""
+msgstr "სამოთხის ჩიტი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Aquarius_(constellation)
 #: constellations.py:38
 msgid "Aquarius"
-msgstr ""
+msgstr "მერწყული"
 
 #. TRANS: http://en.wikipedia.org/wiki/Aquila_(constellation)
 #: constellations.py:58
 msgid "Aquila"
-msgstr ""
+msgstr "არწივი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Ara_(constellation)
 #: constellations.py:72
 msgid "Ara"
-msgstr ""
+msgstr "სამსხვერპლო"
 
 #. TRANS: http://en.wikipedia.org/wiki/Aries_(constellation)
 #: constellations.py:82
 msgid "Aries"
-msgstr ""
+msgstr "ვერძი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Auriga_(constellation)
 #: constellations.py:88
 msgid "Auriga"
-msgstr ""
+msgstr "მეეტლე"
 
 #. TRANS: http://en.wikipedia.org/wiki/Boötes
 #: constellations.py:99
 msgid "Boötes"
-msgstr ""
+msgstr "მენახირე"
 
 #. TRANS: http://en.wikipedia.org/wiki/Caelum
 #: constellations.py:112
 msgid "Caelum"
-msgstr ""
+msgstr "საჭრისი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Camelopardalis
 #: constellations.py:118
 msgid "Camelopardalis"
-msgstr ""
+msgstr "ჟირაფი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Cancer_(constellation)
 #: constellations.py:126
 msgid "Cancer"
-msgstr ""
+msgstr "კიბო"
 
 #. TRANS: http://en.wikipedia.org/wiki/Canes_Venatici
 #: constellations.py:134
@@ -518,47 +521,47 @@ msgstr ""
 #. TRANS: http://en.wikipedia.org/wiki/Capricornus
 #: constellations.py:157
 msgid "Capricornus"
-msgstr ""
+msgstr "თხის რქა"
 
 #. TRANS: http://en.wikipedia.org/wiki/Carina_(constellation)
 #: constellations.py:171
 msgid "Carina"
-msgstr ""
+msgstr "გემის ხერხემალი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Cassiopeia_(constellation)
 #: constellations.py:185
 msgid "Cassiopeia"
-msgstr ""
+msgstr "კასიოპეა"
 
 #. TRANS: http://en.wikipedia.org/wiki/Centaurus
 #: constellations.py:192
 msgid "Centaurus"
-msgstr ""
+msgstr "კენტავრი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Cepheus_(constellation)
 #: constellations.py:207
 msgid "Cepheus"
-msgstr ""
+msgstr "ცეფევსი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Cetus
 #: constellations.py:216
 msgid "Cetus"
-msgstr ""
+msgstr "ვეშაპი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Chamaeleon
 #: constellations.py:234
 msgid "Chamaeleon"
-msgstr ""
+msgstr "ქამელეონი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Circinus_(constellation)
 #: constellations.py:241
 msgid "Circinus"
-msgstr ""
+msgstr "ფარგალი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Columba_(constellation)
 #: constellations.py:246
 msgid "Columba"
-msgstr ""
+msgstr "მტრედი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Coma_Berenices
 #: constellations.py:254
@@ -578,97 +581,97 @@ msgstr ""
 #. TRANS: http://en.wikipedia.org/wiki/Corvus_(constellation)
 #: constellations.py:278
 msgid "Corvus"
-msgstr ""
+msgstr "ყორანი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Crater_(constellation)
 #: constellations.py:286
 msgid "Crater"
-msgstr ""
+msgstr "ფიალა"
 
 #. TRANS: http://en.wikipedia.org/wiki/Crux
 #: constellations.py:297
 msgid "Crux"
-msgstr ""
+msgstr "ჯვარი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Cygnus_(constellation)
 #: constellations.py:302
 msgid "Cygnus"
-msgstr ""
+msgstr "გედი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Delphinus
 #: constellations.py:310
 msgid "Delphinus"
-msgstr ""
+msgstr "დელფინი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Dorado
 #: constellations.py:318
 msgid "Dorado"
-msgstr ""
+msgstr "ოქროს თევზი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Draco_(constellation)
 #: constellations.py:324
 msgid "Draco"
-msgstr ""
+msgstr "გველეშაპი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Equuleus
 #: constellations.py:347
 msgid "Equuleus"
-msgstr ""
+msgstr "კვიცი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Eridanus_(constellation)
 #: constellations.py:352
 msgid "Eridanus"
-msgstr ""
+msgstr "ერიდანუსი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Fornax
 #: constellations.py:385
 msgid "Fornax"
-msgstr ""
+msgstr "ღუმელი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Gemini_(constellation)
 #: constellations.py:392
 msgid "Gemini"
-msgstr ""
+msgstr "მარჩბივი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Grus_(constellation)
 #: constellations.py:404
 msgid "Grus"
-msgstr ""
+msgstr "წერო"
 
 #. TRANS: http://en.wikipedia.org/wiki/Hercules_(constellation)
 #: constellations.py:417
 msgid "Hercules"
-msgstr ""
+msgstr "ჰერკულესი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Horologium_(constellation)
 #: constellations.py:439
 msgid "Horologium"
-msgstr ""
+msgstr "საათი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Hydra_(constellation)
 #: constellations.py:447
 msgid "Hydra"
-msgstr ""
+msgstr "ჰიდრა"
 
 #. TRANS: http://en.wikipedia.org/wiki/Hydrus
 #: constellations.py:466
 msgid "Hydrus"
-msgstr ""
+msgstr "სამხრეთის ჰიდრა"
 
 #. TRANS: http://en.wikipedia.org/wiki/Indus_(constellation)
 #: constellations.py:472
 msgid "Indus"
-msgstr ""
+msgstr "ინდოელი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Lacerta
 #: constellations.py:478
 msgid "Lacerta"
-msgstr ""
+msgstr "ხვლიკი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Leo_(constellation)
 #: constellations.py:487
 msgid "Leo"
-msgstr ""
+msgstr "ლომი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Leo_Minor
 #: constellations.py:499
@@ -678,47 +681,47 @@ msgstr ""
 #. TRANS: http://en.wikipedia.org/wiki/Lepus_(constellation)
 #: constellations.py:504
 msgid "Lepus"
-msgstr ""
+msgstr "კურდღელი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Libra_(constellation)
 #: constellations.py:515
 msgid "Libra"
-msgstr ""
+msgstr "სასწორი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Lupus_(constellation)
 #: constellations.py:524
 msgid "Lupus"
-msgstr ""
+msgstr "მგელი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Lynx_(constellation)
 #: constellations.py:539
 msgid "Lynx"
-msgstr ""
+msgstr "ფოცხვერი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Lyra
 #: constellations.py:549
 msgid "Lyra"
-msgstr ""
+msgstr "ქნარი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Mensa_(constellation)
 #: constellations.py:558
 msgid "Mensa"
-msgstr ""
+msgstr "მაგიდა მთა"
 
 #. TRANS: http://en.wikipedia.org/wiki/Microscopium
 #: constellations.py:564
 msgid "Microscopium"
-msgstr ""
+msgstr "მიკროსკოპი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Monoceros
 #: constellations.py:570
 msgid "Monoceros"
-msgstr ""
+msgstr "მარტორქა"
 
 #. TRANS: http://en.wikipedia.org/wiki/Musca
 #: constellations.py:577
 msgid "Musca"
-msgstr ""
+msgstr "ბუზი"
 
 #. TRANS: http://en.wikipedia.org/wiki/Norma_(constellation)
 #: constellations.py:585
